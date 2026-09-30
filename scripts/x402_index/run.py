@@ -41,3 +41,9 @@ if __name__ == '__main__':
     step(os.path.join(HERE, 'review_unlisted.py'))  # top unlisted sellers until unclassed < 25% of clean USD
     step(os.path.join(HERE, 'build.py'))
     step(os.path.join(HERE, 'site.py'))
+    # ORDER_013: market / buyer / seller-quality stats (cached per week while the raw week is still on disk), then the
+    # listing classes (new listing texts only; OR_CAP applies) and the posted-price / Price comps data.
+    step(os.path.join(HERE, '..', 'x402_market', 'build.py'))
+    if a.weekly and os.environ.get('OPENROUTER_API_KEY'):
+        step(os.path.join(HERE, '..', 'x402_prices', 'classify_listings.py'), '--model', 'google/gemini-2.5-flash-lite')
+    step(os.path.join(HERE, '..', 'x402_prices', 'build.py'))

@@ -1,0 +1,19 @@
+---
+title: "This week in x402"
+subtitle: "A numbers-only weekly report generated from the index every Monday. RSS below."
+description: "Weekly x402 numbers: demand-cleaned spend, genuine buyers, active sellers, content + data, concentration and movers."
+listing:
+  contents: "20*.qmd"
+  sort: "date desc"
+  type: table
+  fields: [date, title, description]
+  field-display-names:
+    date: "Published"
+  date-format: iso
+  sort-ui: false
+  filter-ui: false
+  feed:
+    title: "This week in x402 (wknipe.com)"
+---
+
+[RSS feed](index.xml)

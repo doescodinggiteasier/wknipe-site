@@ -20,3 +20,15 @@ state/x402_week_*/
 local/
 predictions/private/
 .DS_Store
+
+# ORDER_013: generated at render by site/_pages.py / _pages4.py (never edit by hand)
+site/_gen/
+site/badges/seller/
+site/badges/status/
+site/weekly/20??-??-??.qmd
+site/assets/search-*.json
+site/assets/glossary.json
+site/x402/sellers/0x*.qmd
+# daily price map baseline lives in the Actions cache
+state/bazaar_daily/
+site/x402/prices/changes.xml

@@ -1,0 +1,7 @@
+---
+title: "Badges"
+subtitle: "Embeddable SVG badges: a seller's demand-cleaned volume, an endpoint's 402 status, a publisher's AI policy."
+description: "Embeddable badges for x402 sellers (clean volume, genuine buyers), endpoints (402 status) and publishers (AI-access policy)."
+---
+
+{{< include ../_gen/badges.md >}}

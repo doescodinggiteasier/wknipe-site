@@ -92,6 +92,28 @@ def price_stats(category: str = 'all') -> list[dict]:
     return [{k: _num(v) for k, v in r.items() if k != 'category'} for r in _rows('prices_weekly.csv') if r['category'] == category]
 
 
+MARKET = os.path.join(HERE, '..', '..', 'data', 'x402_market')
+MARKET_METRICS = ('waterfall', 'category_mix', 'concentration', 'buyers_weekly', 'retention', 'buyer_spend_histogram',
+                  'sellers_per_buyer', 'buyer_tiers', 'tickets', 'facilitators', 'tripwire', 'movers')
+
+
+@server.tool()
+def market_series(metric: str, week: str = '', category: str = '') -> list[dict]:
+    """ORDER_013 market statistics behind wknipe.com/x402/ (one of: waterfall = USD each filter removes;
+    category_mix; concentration = top-1/top-10 share and HHI; buyers_weekly = new/returning genuine buyers;
+    retention; buyer_spend_histogram; sellers_per_buyer; buyer_tiers; tickets = payment size p10/median/p90;
+    facilitators = raw vs clean per facilitator; tripwire; movers). Optional week (YYYY-MM-DD) and category filters."""
+    if metric not in MARKET_METRICS: raise ToolError(f'metric must be one of {MARKET_METRICS}')
+    if API:
+        q = f'/v1/series?metric={metric}' + (f'&week={week}' if week else '') + (f'&category={category}' if category else '')
+        return _api(q)['rows']
+    with open(os.path.join(MARKET, metric + '.csv'), newline='') as f:
+        rows = list(csv.DictReader(f))
+    if week: rows = [r for r in rows if r.get('week_start', r.get('cohort_week')) == week]
+    if category: rows = [r for r in rows if r.get('category') == category]
+    return [{k: _num(v) for k, v in r.items()} for r in rows]
+
+
 @server.tool()
 def method() -> dict:
     """Key definitions of the index: what a settlement is, the filters, the categories, and known biases."""

@@ -1,71 +1,9 @@
 ---
-title: "x402 seller leaderboard"
-description: "Who AI agents actually pay on x402 (Base): every seller with at least five genuine buyers last week, ranked by demand-cleaned USD."
+title: "x402 sellers"
+subtitle: "Every seller with at least five genuine buyers last week, ranked by demand-cleaned USD, with repeat-buyer rate and top-buyer share."
+description: "Who AI agents actually pay on x402 (Base): sellers with at least five genuine buyers, demand-cleaned USD, repeat buyers, top-buyer share, posted and paid prices."
 body-classes: wide
+image: /og/sellers.png
 ---
 
-```{ojs}
-//| echo: false
-doc = FileAttachment("../data/sellers.json").json()
-labels = ({content: "Content", data: "Data", search: "Search", compute: "Compute & tools", other: "Other", large_ticket: "Large ticket (unidentified)", unclassed: "Unclassed"})
-usd = (x) => x == null ? "–" : "$" + (Math.abs(x) >= 100 ? Math.round(x).toLocaleString("en-US") : x.toFixed(2))
-price = (x) => x == null ? "–" : x < 1 ? "$" + (+x.toPrecision(3)).toString() : "$" + x.toFixed(2)
-fmtWeek = (w) => d3.utcFormat("%-d %b %Y")(new Date(w))
-last4 = doc.weeks.slice(-4)
-board = doc.sellers.filter((s) => s.qualifies_latest).map((s) => ({
-  rank: s.rank, seller: s, category: s.category, usd: s.latest.usd, payments: s.latest.payments, buyers: s.latest.buyers,
-  median_paid: s.latest.median_paid, posted: s.posted_usd ? s.posted_usd.median : null, first_seen: s.first_seen_week,
-  trend: last4.map((w) => (s.history.find((h) => h.week === w) || {usd: 0}).usd)
-}))
-spark = (vals) => {
-  const w = 84, h = 22, top = Math.max(...vals) || 1, step = (w - 4) / Math.max(1, vals.length - 1);
-  const pts = vals.map((v, i) => [2 + i * step, h - 3 - (h - 6) * v / top]);
-  return htl.svg`<svg width=${w} height=${h} viewBox="0 0 ${w} ${h}" style="color: var(--bs-primary); vertical-align: middle">
-    <title>${vals.map((v, i) => fmtWeek(last4[i]) + ": " + usd(v)).join("\n")}</title>
-    <polyline points=${pts.map((p) => p.join(",")).join(" ")} fill="none" stroke="currentColor" stroke-width="1.6"/>
-    <circle cx=${pts[pts.length - 1][0]} cy=${pts[pts.length - 1][1]} r="2.2" fill="currentColor"/></svg>`
-}
-```
-
-```{ojs}
-//| echo: false
-html`<div class="stat-strip">
-  <div class="stat"><div class="k">Week of</div><div class="v">${fmtWeek(doc.latest_week)}</div></div>
-  <div class="stat"><div class="k">Sellers on the board</div><div class="v">${board.length}</div><div>at least ${doc.min_buyers} distinct clean buyers</div></div>
-  <div class="stat"><div class="k">Their clean USD</div><div class="v">${usd(d3.sum(board, (d) => d.usd))}</div></div>
-  <div class="stat"><div class="k">Named in a listing</div><div class="v">${board.filter((d) => d.seller.label).length}</div><div>the rest are shown as addresses</div></div>
-</div>`
-```
-
-```{ojs}
-//| echo: false
-viewof q = Inputs.search(board, {placeholder: "Search name, host or address", label: "Search",
-  columns: ["seller"], filter: (query) => (d) => {
-    const s = d.seller, t = [s.label, s.address, ...(s.hosts || [])].join(" ").toLowerCase();
-    return query.toLowerCase().split(/\s+/).every((w) => t.includes(w));
-  }})
-viewof cat = Inputs.select(["all", ...Object.keys(labels)], {label: "Category", format: (c) => c === "all" ? "All categories" : labels[c]})
-```
-
-```{ojs}
-//| echo: false
-Inputs.table(q.filter((d) => cat === "all" || d.category === cat), {
-  columns: ["rank", "seller", "category", "usd", "buyers", "payments", "median_paid", "posted", "trend", "first_seen"],
-  header: {rank: "#", seller: "Seller", category: "Category", usd: "Clean USD", buyers: "Buyers", payments: "Payments",
-           median_paid: "Median paid", posted: "Posted", trend: "4 weeks", first_seen: "First seen"},
-  format: {
-    seller: (s) => htl.html`<a href="${s.address}.html">${s.label || s.address.slice(0, 6) + "…" + s.address.slice(-4)}</a>`,
-    category: (c) => labels[c], usd: usd, median_paid: price, posted: price, trend: spark,
-    buyers: (x) => x.toLocaleString("en-US"), payments: (x) => x.toLocaleString("en-US"),
-    first_seen: (w) => d3.utcFormat("%-d %b")(new Date(w))
-  },
-  sort: "rank", rows: 30, maxWidth: 1400, layout: "auto", select: false,
-  width: {seller: 220}
-})
-```
-
-**Reading the table.** *Clean USD*, *buyers* and *payments* count only what survives the [x402 Clean Index](../index.qmd) filters: self-payments, closed payment loops, funding-linked payer–seller pairs, fan-out manufacture and single-buyer dust are removed. *Median paid* is the seller's median clean payment; *posted* is the median per-call price in its Coinbase Bazaar listing. *First seen* is the first week the seller appears in the cleaned index (history starts ${fmtWeek(doc.history_starts)}); click a column header to sort, and a seller for its page and full history.
-
-**Names are self-declared.** A name is what the seller wrote in its Bazaar or x402scan listing; a listing called "CoinGecko" may be a reseller. We don't infer who operates an address; unlisted sellers are shown as addresses with a Basescan link.
-
-**Data:** [sellers_latest.csv](../data/sellers_latest.csv) · [sellers.json](../data/sellers.json) (all weeks, every seller that ever qualified) · CC BY 4.0. Updated every Monday.
+{{< include ../../_gen/sellers.md >}}

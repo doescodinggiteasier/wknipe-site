@@ -6,6 +6,13 @@ project:
     - "_redirects"
     - "index.json"
     - "fonts/*"
+    - "favicon.svg"
+    - "x402/prices/changes.xml"
+    - "assets/*"
+    - "assets/vendor/*"
+    - "og/*"
+    - "badges/seller/*"
+    - "badges/status/*"
     - "x402/data/*"
     - "agents/data/*"
     - "predictions/data/*"
@@ -20,20 +27,53 @@ website:
   site-url: "https://wknipe.com"
   draft-mode: gone   # drafts (the essay stub) are not published; `quarto preview` still shows them
   repo-url: "https://github.com/doescodinggiteasier/wknipe-site"
+  favicon: favicon.svg
+  search: false
+  open-graph: true
+  twitter-card: true
   navbar:
     title: "Wes Knipe"
     collapse: false
     search: false
     right:
+      - text: Data
+        menu:
+          - href: x402/index.qmd
+            text: Market
+          - href: x402/sellers/index.qmd
+            text: Sellers
+          - href: x402/buyers/index.qmd
+            text: Buyers
+          - href: x402/prices/index.qmd
+            text: Prices
+          - href: access/index.qmd
+            text: State of AI access
+          - href: weekly/index.qmd
+            text: This week in x402
+      - text: Tools
+        menu:
+          - href: x402/prices/comps.qmd
+            text: Price comps
+          - href: x402/status/index.qmd
+            text: Endpoint status
+          - href: check/index.qmd
+            text: AI-policy checker
+          - href: agents/index.qmd
+            text: Agent benchmark
+          - href: api/index.qmd
+            text: API
+          - href: badges/index.qmd
+            text: Badges
       - href: writing/index.qmd
         text: Writing
-      - href: index/index.qmd
-        text: Index
       - href: about.qmd
         text: About
+      - href: "#k"
+        text: "Search ⌘K"
+        aria-label: "Search the site"
   page-footer:
     left: |
-      [wes@wknipe.com](mailto:wes@wknipe.com) · [RSS](/feed.xml) · [GitHub](https://github.com/doescodinggiteasier/wknipe-site) · Code MIT · Data & writing CC BY 4.0
+      [wes@wknipe.com](mailto:wes@wknipe.com) · [API](/api/) · [Index](/index/) · [RSS](/feed.xml) · [GitHub](https://github.com/doescodinggiteasier/wknipe-site) · Code MIT · Data & writing CC BY 4.0
 
 format:
   html:
@@ -46,3 +86,7 @@ format:
     title-block-banner: false
     smooth-scroll: false
     anchor-sections: false
+    include-in-header:
+      text: '<link rel="preload" href="/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>'
+    include-after-body:
+      text: '<script defer src="/assets/wk.js?v=14"></script>' 

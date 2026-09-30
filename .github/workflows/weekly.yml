@@ -3,7 +3,9 @@
 # Monday 14:00 UTC collects the previous Mon-Sun week from Blockscout (2.5-4 h inside published rate limits).
 # If collection is not finished after 4.5 h, progress goes to the Actions cache and the Tuesday/Wednesday runs resume it.
 # Any failure in the filters, the classifier or the builds turns the run red and nothing is deployed.
-# OpenRouter is used only to classify sellers never seen before (cached labels), hard-capped at $0.50 per run.
+# OpenRouter is used only to classify sellers and Bazaar listings never seen before (cached labels), hard-capped at
+# $0.50 per run for both together (one ledger). ORDER_013 adds the market stats, prices / Price comps data and the
+# weekly State of AI access census.
 name: weekly
 
 on:
@@ -115,6 +117,16 @@ jobs:
         if: steps.wk.outputs.skip != 'true' && steps.pipe.outputs.pending != 'true'
         working-directory: apps/x402-index-api
         run: npm ci
+
+      - name: State of AI access census (Tranco top 1,000; ~4,000 polite requests)
+        if: steps.wk.outputs.skip != 'true' && steps.pipe.outputs.pending != 'true' && inputs.deploy_only != true
+        run: |
+          git config user.name "wknipe-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node --experimental-strip-types scripts/access/census.mjs --top 1000 --concurrency 12
+          python3 scripts/access/summarise.py
+          git add data/ai_access state/ai_access
+          if ! git diff --cached --quiet; then git commit -m "data: AI access census $(date -u +%F)"; git pull --rebase && git push; fi
 
       - name: Unit tests (AI-policy checker)
         if: steps.wk.outputs.skip != 'true' && steps.pipe.outputs.pending != 'true'

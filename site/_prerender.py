@@ -39,3 +39,5 @@ if os.path.exists(os.path.join(paper, 'x402_measured.pdf')) and '\ndraft: true' 
         shutil.copy(os.path.join(paper, f), os.path.join(here, 'paper', 'files'))
 import _index_pages
 print('index entries:', _index_pages.build())
+import _pages
+print('ORDER_013 pages:', _pages.build())

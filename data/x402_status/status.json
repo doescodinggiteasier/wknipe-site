@@ -1,0 +1,95 @@
+{
+ "built": "2026-09-30",
+ "latest_day": "2026-09-30",
+ "days": 1,
+ "user_agent": "wknipe-x402-status/1.0 (+https://wknipe.com/x402/status/; one unpaid request per endpoint per day)",
+ "scope_latest": {
+  "endpoints_listed": 19072,
+  "sellers_with_buyers_listed": 512,
+  "endpoints_of_sellers_with_buyers": 12166,
+  "priority_checked_today": 1974,
+  "rotating_checked_today": 763,
+  "caps": {
+   "per_seller_daily": 5,
+   "per_host_daily": 60,
+   "per_day": 4000
+  }
+ },
+ "latest": [
+  {
+   "date": "2026-09-30",
+   "scope": "all",
+   "checked": 2737,
+   "hosts": 945,
+   "responds": 0.9967,
+   "valid_402": 0.9467,
+   "price_match_of_valid": 0.9603,
+   "payto_match_of_valid": 0.9671,
+   "median_latency_ms": 288,
+   "p90_latency_ms": 753
+  },
+  {
+   "date": "2026-09-30",
+   "scope": "priority",
+   "checked": 1974,
+   "hosts": 656,
+   "responds": 0.9959,
+   "valid_402": 0.9559,
+   "price_match_of_valid": 0.9639,
+   "payto_match_of_valid": 0.9931,
+   "median_latency_ms": 276,
+   "p90_latency_ms": 712
+  }
+ ],
+ "endpoints_7d": 2737,
+ "failure_reasons_7d": [
+  [
+   "HTTP 400",
+   79
+  ],
+  [
+   "HTTP 404",
+   18
+  ],
+  [
+   "HTTP 200",
+   15
+  ],
+  [
+   "no response (TimeoutError)",
+   9
+  ],
+  [
+   "HTTP 502",
+   8
+  ],
+  [
+   "HTTP 503",
+   7
+  ],
+  [
+   "HTTP 422",
+   3
+  ],
+  [
+   "HTTP 403",
+   2
+  ],
+  [
+   "HTTP 500",
+   2
+  ],
+  [
+   "HTTP 401",
+   1
+  ],
+  [
+   "HTTP 410",
+   1
+  ],
+  [
+   "HTTP 530",
+   1
+  ]
+ ]
+}

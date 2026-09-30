@@ -1,0 +1,77 @@
+date,since,host,resource,pay_to,category,what,old_usd,new_usd,change
+2026-09-30,2026-09-27,scry.solanahub.de,https://scry.solanahub.de/x402/wallet/:address/quick-flag,0xf4a904d8326786d90157cf791c281302f11b2036,data,wallet intelligence badges,0.001,0.005,4.0
+2026-09-30,2026-09-27,4yearcycle.com,https://4yearcycle.com/x402/web-search,0x9862ca83b72ab95521f457aff6e6efb03d8164c3,search,web search with ranked results,0.03,0.01,-0.6667
+2026-09-30,2026-09-27,x402.aispace.bot,https://x402.aispace.bot/api/v1/video/transcriptions,0xa7f3ad0e69f61864092fabba6cee00af6e584689,compute,youtube video transcription by url,0.003,0.01,2.3333
+2026-09-30,2026-09-27,x402.aispace.bot,https://x402.aispace.bot/api/v1/responses,0xa7f3ad0e69f61864092fabba6cee00af6e584689,compute,openai compatible agent response,0.004805,0.01,1.0812
+2026-09-30,2026-09-27,x402.aispace.bot,https://x402.aispace.bot/api/v1/crypto/rpc/base,0xa7f3ad0e69f61864092fabba6cee00af6e584689,data,evm rpc network data,0.001,0.01,9.0
+2026-09-30,2026-09-27,base.mapleai.shop,https://base.mapleai.shop/jev,0x63db6eaf635a31bbc6714fe37bdc85243864f611,compute,structured decisions via systemone,0.001004,0.001002,-0.002
+2026-09-30,2026-09-27,api.losbeto.xyz,https://api.losbeto.xyz/br-archive,0xd5ba9711a3d052846a3695c70e7fcb8b3168fe7d,data,brazil market data point in time,0.05,0.09,0.8
+2026-09-30,2026-09-27,api.losbeto.xyz,https://api.losbeto.xyz/br-doc,0xd5ba9711a3d052846a3695c70e7fcb8b3168fe7d,data,brazilian document validation,0.004,0.01,1.5
+2026-09-30,2026-09-27,api.losbeto.xyz,https://api.losbeto.xyz/br-bizdays,0xd5ba9711a3d052846a3695c70e7fcb8b3168fe7d,data,brazilian business days between dates,0.004,0.01,1.5
+2026-09-30,2026-09-27,api.losbeto.xyz,https://api.losbeto.xyz/br-pix-code,0xd5ba9711a3d052846a3695c70e7fcb8b3168fe7d,other,generate pix payment code,0.004,0.01,1.5
+2026-09-30,2026-09-27,api.losbeto.xyz,https://api.losbeto.xyz/br-pix-parse,0xd5ba9711a3d052846a3695c70e7fcb8b3168fe7d,data,pix qr code data validation,0.004,0.01,1.5
+2026-09-30,2026-09-27,api.losbeto.xyz,https://api.losbeto.xyz/ai-news,0xd5ba9711a3d052846a3695c70e7fcb8b3168fe7d,content,crypto market news headlines,0.008,0.01,0.25
+2026-09-30,2026-09-27,api.losbeto.xyz,https://api.losbeto.xyz/web-search,0xd5ba9711a3d052846a3695c70e7fcb8b3168fe7d,search,web search results to text,0.008,0.01,0.25
+2026-09-30,2026-09-27,api.losbeto.xyz,https://api.losbeto.xyz/mempool,0xd5ba9711a3d052846a3695c70e7fcb8b3168fe7d,data,solana network conditions and fees,0.008,0.01,0.25
+2026-09-30,2026-09-27,api.losbeto.xyz,https://api.losbeto.xyz/agent-market,0xd5ba9711a3d052846a3695c70e7fcb8b3168fe7d,data,market catalog data,0.005,0.01,1.0
+2026-09-30,2026-09-27,api.losbeto.xyz,https://api.losbeto.xyz/trust-hash,0xd5ba9711a3d052846a3695c70e7fcb8b3168fe7d,other,proof of data hash for audit,0.003,0.01,2.3333
+2026-09-30,2026-09-27,api.losbeto.xyz,https://api.losbeto.xyz/pyth-price,0xd5ba9711a3d052846a3695c70e7fcb8b3168fe7d,data,crypto price and confidence,0.003,0.01,2.3333
+2026-09-30,2026-09-27,blockrun.ai,https://blockrun.ai/api/v1/search,0xe9030014f5dae217d0a152f02a043567b16c1abf,search,web and news search results,0.2635,0.081,-0.6926
+2026-09-30,2026-09-27,ari001.tailb4ac3a.ts.net,https://ari001.tailb4ac3a.ts.net/v1/context/compact,0xd94ce1924dedd6f3442380a4f075dc3796fb2875,compute,compact web page to token budget,0.03,0.01,-0.6667
+2026-09-30,2026-09-27,api.maxwellinternational.ai,https://api.maxwellinternational.ai/v1/food/near-resort,0x5976376b0c2125655e01d0a7758c744c43fb6d93,data,restaurants near ski resort,0.1,0.02,-0.8
+2026-09-30,2026-09-27,flat-rate-llm.kikoribera03.workers.dev,https://flat-rate-llm.kikoribera03.workers.dev/v1/time/zones,0xc210ea7d5692a6401adf25bbcb7acde9cdb7e9ff,compute,time zone lookup and details,0.0025,0.005,1.0
+2026-09-30,2026-09-27,flat-rate-llm.kikoribera03.workers.dev,https://flat-rate-llm.kikoribera03.workers.dev/v1/time/now,0xc210ea7d5692a6401adf25bbcb7acde9cdb7e9ff,compute,current time in timezone,0.0025,0.005,1.0
+2026-09-30,2026-09-27,flat-rate-llm.kikoribera03.workers.dev,https://flat-rate-llm.kikoribera03.workers.dev/v1/time/convert,0xc210ea7d5692a6401adf25bbcb7acde9cdb7e9ff,compute,time zone conversion with daylight saving,0.0025,0.005,1.0
+2026-09-30,2026-09-27,flat-rate-llm.kikoribera03.workers.dev,https://flat-rate-llm.kikoribera03.workers.dev/v1/content/fact,0xc210ea7d5692a6401adf25bbcb7acde9cdb7e9ff,compute,generate random fact by topic,0.0025,0.005,1.0
+2026-09-30,2026-09-27,flat-rate-llm.kikoribera03.workers.dev,https://flat-rate-llm.kikoribera03.workers.dev/v1/random/number,0xc210ea7d5692a6401adf25bbcb7acde9cdb7e9ff,compute,random number generation,0.0025,0.005,1.0
+2026-09-30,2026-09-27,flat-rate-llm.kikoribera03.workers.dev,https://flat-rate-llm.kikoribera03.workers.dev/v1/random/password,0xc210ea7d5692a6401adf25bbcb7acde9cdb7e9ff,compute,generate random password with entropy,0.0025,0.005,1.0
+2026-09-30,2026-09-27,flat-rate-llm.kikoribera03.workers.dev,https://flat-rate-llm.kikoribera03.workers.dev/v1/random/coinflip,0xc210ea7d5692a6401adf25bbcb7acde9cdb7e9ff,compute,random coin flip result,0.0025,0.005,1.0
+2026-09-30,2026-09-27,flat-rate-llm.kikoribera03.workers.dev,https://flat-rate-llm.kikoribera03.workers.dev/v1/random/dice,0xc210ea7d5692a6401adf25bbcb7acde9cdb7e9ff,compute,dice roll simulation,0.0025,0.005,1.0
+2026-09-30,2026-09-27,flat-rate-llm.kikoribera03.workers.dev,https://flat-rate-llm.kikoribera03.workers.dev/v1/util/verify-signature,0xc210ea7d5692a6401adf25bbcb7acde9cdb7e9ff,compute,verify wallet signature ecrecover,0.0025,0.005,1.0
+2026-09-30,2026-09-27,flat-rate-llm.kikoribera03.workers.dev,https://flat-rate-llm.kikoribera03.workers.dev/v1/util/uuid,0xc210ea7d5692a6401adf25bbcb7acde9cdb7e9ff,compute,generate uuid v4,0.0025,0.005,1.0
+2026-09-30,2026-09-27,flat-rate-llm.kikoribera03.workers.dev,https://flat-rate-llm.kikoribera03.workers.dev/v1/util/base64,0xc210ea7d5692a6401adf25bbcb7acde9cdb7e9ff,compute,base64 encode and decode,0.0025,0.005,1.0
+2026-09-30,2026-09-27,flat-rate-llm.kikoribera03.workers.dev,https://flat-rate-llm.kikoribera03.workers.dev/v1/util/hex,0xc210ea7d5692a6401adf25bbcb7acde9cdb7e9ff,compute,hex decimal utf8 text conversion,0.0025,0.005,1.0
+2026-09-30,2026-09-27,flat-rate-llm.kikoribera03.workers.dev,https://flat-rate-llm.kikoribera03.workers.dev/v1/util/units,0xc210ea7d5692a6401adf25bbcb7acde9cdb7e9ff,compute,token unit conversion,0.0025,0.005,1.0
+2026-09-30,2026-09-27,flat-rate-llm.kikoribera03.workers.dev,https://flat-rate-llm.kikoribera03.workers.dev/v1/util/address,0xc210ea7d5692a6401adf25bbcb7acde9cdb7e9ff,compute,evm address validation and checksum,0.0025,0.005,1.0
+2026-09-30,2026-09-27,flat-rate-llm.kikoribera03.workers.dev,https://flat-rate-llm.kikoribera03.workers.dev/v1/util/sha256,0xc210ea7d5692a6401adf25bbcb7acde9cdb7e9ff,compute,sha256 hash calculation,0.0025,0.005,1.0
+2026-09-30,2026-09-27,flat-rate-llm.kikoribera03.workers.dev,https://flat-rate-llm.kikoribera03.workers.dev/v1/util/keccak256,0xc210ea7d5692a6401adf25bbcb7acde9cdb7e9ff,compute,keccak256 hash string or hex,0.0025,0.005,1.0
+2026-09-30,2026-09-27,flat-rate-llm.kikoribera03.workers.dev,https://flat-rate-llm.kikoribera03.workers.dev/v1/ai/speech,0xc210ea7d5692a6401adf25bbcb7acde9cdb7e9ff,compute,text to speech audio generation,0.005,0.01,1.0
+2026-09-30,2026-09-27,flat-rate-llm.kikoribera03.workers.dev,https://flat-rate-llm.kikoribera03.workers.dev/v1/ai/image,0xc210ea7d5692a6401adf25bbcb7acde9cdb7e9ff,compute,text to image generation,0.01,0.02,1.0
+2026-09-30,2026-09-27,odds.rjhsignaltech.workers.dev,https://odds.rjhsignaltech.workers.dev/v1/forecast,0x2e8dfc2a77adcdd865a46293844c250462a1c32d,compute,ai probability forecast for yes/no,0.05,0.01,-0.8
+2026-09-30,2026-09-27,app.x402receipts.com,https://app.x402receipts.com/api/v1/receipts,0xaa1252d726567293cffe6ca495e32c6aecfdc56d,other,agent spending audit trail,1.0,0.01,-0.99
+2026-09-30,2026-09-27,dripstack.com,https://dripstack.com/api/v2/stock-picks,0xbf22b6ddb5a08c823856a779f1004eea60c5ab92,content,stock picks newsletter articles,2.5,4.0,0.6
+2026-09-30,2026-09-27,wailand.tailf99551.ts.net,https://wailand.tailf99551.ts.net/v1/opportunities,0x32e293a7fa946331b3ecd013cf0461bf32c99a9d,data,public funding calls lookup,0.1,0.015,-0.85
+2026-09-30,2026-09-27,api.maxwellinternational.ai,https://api.maxwellinternational.ai/v1/food/venues,0x5976376b0c2125655e01d0a7758c744c43fb6d93,data,restaurant venue details lookup,0.05,0.02,-0.6
+2026-09-30,2026-09-27,flat-rate-llm.kikoribera03.workers.dev,https://flat-rate-llm.kikoribera03.workers.dev/v1/content/word-of-the-day,0xc210ea7d5692a6401adf25bbcb7acde9cdb7e9ff,content,daily word definition and example,0.0025,0.005,1.0
+2026-09-30,2026-09-27,flat-rate-llm.kikoribera03.workers.dev,https://flat-rate-llm.kikoribera03.workers.dev/v1/content/advice,0xc210ea7d5692a6401adf25bbcb7acde9cdb7e9ff,compute,generate practical advice from prompt,0.0025,0.005,1.0
+2026-09-30,2026-09-27,flat-rate-llm.kikoribera03.workers.dev,https://flat-rate-llm.kikoribera03.workers.dev/v1/content/riddle,0xc210ea7d5692a6401adf25bbcb7acde9cdb7e9ff,compute,riddle with hashed answer,0.0025,0.005,1.0
+2026-09-30,2026-09-27,flat-rate-llm.kikoribera03.workers.dev,https://flat-rate-llm.kikoribera03.workers.dev/v1/content/joke,0xc210ea7d5692a6401adf25bbcb7acde9cdb7e9ff,compute,joke generation with parameters,0.0025,0.005,1.0
+2026-09-30,2026-09-27,flat-rate-llm.kikoribera03.workers.dev,https://flat-rate-llm.kikoribera03.workers.dev/v1/content/horror-story,0xc210ea7d5692a6401adf25bbcb7acde9cdb7e9ff,compute,generate two sentence horror story,0.0025,0.005,1.0
+2026-09-30,2026-09-27,flat-rate-llm.kikoribera03.workers.dev,https://flat-rate-llm.kikoribera03.workers.dev/v1/random/shuffle,0xc210ea7d5692a6401adf25bbcb7acde9cdb7e9ff,compute,shuffle list order,0.0025,0.005,1.0
+2026-09-30,2026-09-27,flat-rate-llm.kikoribera03.workers.dev,https://flat-rate-llm.kikoribera03.workers.dev/v1/random/pick,0xc210ea7d5692a6401adf25bbcb7acde9cdb7e9ff,compute,random item selection from list,0.0025,0.005,1.0
+2026-09-30,2026-09-27,exp-100k-001-v2.vercel.app,https://exp-100k-001-v2.vercel.app/v1/verticals/medical-equipment/buyer-map,0x1e937abc519f7b9f959986bfe259d29f745f6ecf,data,medical equipment buyer leads,0.1,0.01,-0.9
+2026-09-30,2026-09-27,twitr.sh,https://twitr.sh/api/tools/radar,0xb5194a98dbdbb7028b585db26b972e7f0f3f826a,content,trending topics and breaking stories,0.001,0.0024,1.4
+2026-09-30,2026-09-27,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/fundamentals/MSFT,0x48d5a78d480b4c32de319c2aef69e682dc304615,data,company fundamentals and filings,0.01,0.005,-0.5
+2026-09-30,2026-09-27,x402.shizu.me,https://x402.shizu.me/bounty,0x217e5fe265eb78b29067bf8324ef03a7d8e167c4,other,agent task marketplace listing,0.006,0.005,-0.1667
+2026-09-30,2026-09-27,scry.solanahub.de,https://scry.solanahub.de/x402/wallet/:address/pnl,0xf4a904d8326786d90157cf791c281302f11b2036,data,solana wallet pnl per transaction,0.002,0.008,3.0
+2026-09-30,2026-09-27,flat-rate-llm.kikoribera03.workers.dev,https://flat-rate-llm.kikoribera03.workers.dev/v1/ai/transcribe,0xc210ea7d5692a6401adf25bbcb7acde9cdb7e9ff,compute,audio transcription to text,0.01,0.02,1.0
+2026-09-30,2026-09-27,agent402.tools,https://agent402.tools/api/fed-funds,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,data,federal funds rate history,0.01,0.005,-0.5
+2026-09-30,2026-09-27,agent402.tools,https://agent402.tools/api/skill/gas-optimizer,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,data,gas prices and eth price,0.008,0.007,-0.125
+2026-09-30,2026-09-27,api.xynaptic.io,https://api.xynaptic.io/v1/crypto-brief-live,0x4ff893df9ab8603d5460fbbaee0d9b8c0fa4d5e9,data,real-time crypto prices,0.05,0.01,-0.8
+2026-09-30,2026-09-27,agents.daedalusdevelopmentgroup.com,https://agents.daedalusdevelopmentgroup.com/v1/model-consensus,0x8afbd522f8a16bea184b41c593b8925a66830bc6,compute,model consensus computation,0.03,0.01,-0.6667
+2026-09-30,2026-09-27,agents.daedalusdevelopmentgroup.com,https://agents.daedalusdevelopmentgroup.com/v1/image-generation,0x8afbd522f8a16bea184b41c593b8925a66830bc6,compute,image generation from prompt,0.03,0.01,-0.6667
+2026-09-30,2026-09-27,flat-rate-llm.kikoribera03.workers.dev,https://flat-rate-llm.kikoribera03.workers.dev/v1/util/selector,0xc210ea7d5692a6401adf25bbcb7acde9cdb7e9ff,compute,solidity function selector and topic,0.0025,0.005,1.0
+2026-09-30,2026-09-27,flat-rate-llm.kikoribera03.workers.dev,https://flat-rate-llm.kikoribera03.workers.dev/v1/content/roast,0xc210ea7d5692a6401adf25bbcb7acde9cdb7e9ff,compute,developer roast generation,0.0025,0.005,1.0
+2026-09-30,2026-09-27,api.aestheticdata.io,https://api.aestheticdata.io/x402/regulatory/eu/devices,0x407ebfbe56172fac4795541eb5aef6f463cfc868,data,eudamed udi-di list lookup,0.001,0.002,1.0
+2026-09-30,2026-09-27,minia2a.uk,https://minia2a.uk/x402/x402-publish-1790058399583-adversarial-claim-ve,0xf16f0882de08315b438e9f3a2abfb2d2e5d94eca,other,publish adversarial claim,0.05,0.01,-0.8
+2026-09-30,2026-09-27,api.particle.pro,https://api.particle.pro/v1/podcasts/guests/:id/appearances,0x59f3a6dcb6f482c53872dd8f8f9e1f9161a1c5f7,content,podcast guest appearances list,0.01,0.03,2.0
+2026-09-30,2026-09-27,replicate.x402.paywithlocus.com,https://replicate.x402.paywithlocus.com/replicate/run,0x3c5cbe28eca3b96023c45d3f877da834f1c7d5fa,compute,run arbitrary computation or tool,0.053001,0.008,-0.8491
+2026-09-30,2026-09-27,minia2a.uk,https://minia2a.uk/x402/x402-dns,0xab62452b4b019bc4402bffcca6c706d16d72a7bf,compute,dns record lookup,0.001,0.01,9.0
+2026-09-30,2026-09-27,minia2a.uk,https://minia2a.uk/x402/x402-math,0xab62452b4b019bc4402bffcca6c706d16d72a7bf,compute,mathematical calculation execution,0.001,0.01,9.0
+2026-09-30,2026-09-27,minia2a.uk,https://minia2a.uk/x402/prompt-templates,0xab62452b4b019bc4402bffcca6c706d16d72a7bf,content,ai prompt templates library,0.001,0.01,9.0
+2026-09-30,2026-09-27,minia2a.uk,https://minia2a.uk/x402/markdown,0xab62452b4b019bc4402bffcca6c706d16d72a7bf,compute,web page to markdown conversion,0.001,0.01,9.0
+2026-09-30,2026-09-27,minia2a.uk,https://minia2a.uk/x402/keywords,0xab62452b4b019bc4402bffcca6c706d16d72a7bf,search,web page scrape to markdown,0.001,0.01,9.0
+2026-09-30,2026-09-27,minia2a.uk,https://minia2a.uk/x402/http-analyze,0xab62452b4b019bc4402bffcca6c706d16d72a7bf,compute,http request analysis and reporting,0.001,0.01,9.0
+2026-09-30,2026-09-27,minia2a.uk,https://minia2a.uk/x402/dns,0xab62452b4b019bc4402bffcca6c706d16d72a7bf,compute,dns record lookup,0.001,0.01,9.0
+2026-09-30,2026-09-27,minia2a.uk,https://minia2a.uk/x402/date-math,0xab62452b4b019bc4402bffcca6c706d16d72a7bf,compute,date calculation and manipulation,0.001,0.01,9.0
+2026-09-30,2026-09-27,minia2a.uk,https://minia2a.uk/x402/country,0xab62452b4b019bc4402bffcca6c706d16d72a7bf,data,country information lookup,0.001,0.01,9.0

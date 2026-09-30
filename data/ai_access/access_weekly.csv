@@ -1,0 +1,123 @@
+date,population,metric,value,n
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),content_signal,0.02425,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),rsl,0.00063,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),any_ai_bot_blocked,0.10335,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),named_block:petalbot,0.06754,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),named_block:gptbot,0.03282,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),named_block:amazonbot,0.03084,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),named_block:bytespider,0.03047,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),named_block:claudebot,0.02853,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),named_block:meta-externalagent,0.02693,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),named_block:ccbot,0.02666,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),named_block:google-extended,0.02502,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),named_block:applebot-extended,0.02441,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),named_block:anthropic-ai,0.00445,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),named_block:facebookbot,0.00413,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),named_block:chatgpt-user,0.00396,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),named_block:cohere-ai,0.00324,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),named_block:omgili,0.00313,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),named_block:imagesiftbot,0.00307,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),named_block:diffbot,0.00297,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),named_block:omgilibot,0.00283,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),named_block:perplexitybot,0.00266,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),named_block:claude-web,0.00263,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),named_block:oai-searchbot,0.00243,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),named_block:youbot,0.00239,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),named_block:ai2bot,0.00224,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),named_block:timpibot,0.00195,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),named_block:cohere-training-data-crawler,0.00183,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),named_block:velenpublicwebcrawler,0.00145,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),named_block:duckassistbot,0.0012,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),named_block:meta-externalfetcher,0.00113,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),named_block:claude-searchbot,0.00101,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),named_block:google-cloudvertexbot,0.00075,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),named_block:claude-user,0.00071,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),named_block:perplexity-user,0.00068,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),named_block:panscient,0.00064,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),named_block:mistralai-user,0.00042,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),named_block:gemini-deep-research,0.00035,2672187
+2026-09-27,CC-MAIN-2026-39 5% sample (hosts with robots.txt),named_block:novellum,1e-05,2672187
+2026-09-30,Tranco top 1000 (V349N),named_block:gptbot,0.16805,482
+2026-09-30,Tranco top 1000 (V349N),blocked:gptbot,0.20747,482
+2026-09-30,Tranco top 1000 (V349N),partial:gptbot,0.6556,482
+2026-09-30,Tranco top 1000 (V349N),named_block:oai-searchbot,0.06432,482
+2026-09-30,Tranco top 1000 (V349N),blocked:oai-searchbot,0.10788,482
+2026-09-30,Tranco top 1000 (V349N),partial:oai-searchbot,0.75311,482
+2026-09-30,Tranco top 1000 (V349N),named_block:chatgpt-user,0.08506,482
+2026-09-30,Tranco top 1000 (V349N),blocked:chatgpt-user,0.12863,482
+2026-09-30,Tranco top 1000 (V349N),partial:chatgpt-user,0.73237,482
+2026-09-30,Tranco top 1000 (V349N),named_block:claudebot,0.1639,482
+2026-09-30,Tranco top 1000 (V349N),blocked:claudebot,0.20747,482
+2026-09-30,Tranco top 1000 (V349N),partial:claudebot,0.6556,482
+2026-09-30,Tranco top 1000 (V349N),named_block:claude-searchbot,0.07054,482
+2026-09-30,Tranco top 1000 (V349N),blocked:claude-searchbot,0.12241,482
+2026-09-30,Tranco top 1000 (V349N),partial:claude-searchbot,0.74689,482
+2026-09-30,Tranco top 1000 (V349N),named_block:claude-user,0.07884,482
+2026-09-30,Tranco top 1000 (V349N),blocked:claude-user,0.12863,482
+2026-09-30,Tranco top 1000 (V349N),partial:claude-user,0.73859,482
+2026-09-30,Tranco top 1000 (V349N),named_block:anthropic-ai,0.09336,482
+2026-09-30,Tranco top 1000 (V349N),blocked:anthropic-ai,0.1556,482
+2026-09-30,Tranco top 1000 (V349N),partial:anthropic-ai,0.71162,482
+2026-09-30,Tranco top 1000 (V349N),named_block:google-extended,0.14315,482
+2026-09-30,Tranco top 1000 (V349N),blocked:google-extended,0.18257,482
+2026-09-30,Tranco top 1000 (V349N),partial:google-extended,0.67842,482
+2026-09-30,Tranco top 1000 (V349N),named_block:google-cloudvertexbot,0.06846,482
+2026-09-30,Tranco top 1000 (V349N),blocked:google-cloudvertexbot,0.13071,482
+2026-09-30,Tranco top 1000 (V349N),partial:google-cloudvertexbot,0.74481,482
+2026-09-30,Tranco top 1000 (V349N),named_block:applebot-extended,0.12033,482
+2026-09-30,Tranco top 1000 (V349N),blocked:applebot-extended,0.16598,482
+2026-09-30,Tranco top 1000 (V349N),partial:applebot-extended,0.70332,482
+2026-09-30,Tranco top 1000 (V349N),named_block:perplexitybot,0.12448,482
+2026-09-30,Tranco top 1000 (V349N),blocked:perplexitybot,0.1639,482
+2026-09-30,Tranco top 1000 (V349N),partial:perplexitybot,0.6971,482
+2026-09-30,Tranco top 1000 (V349N),named_block:perplexity-user,0.07469,482
+2026-09-30,Tranco top 1000 (V349N),blocked:perplexity-user,0.13485,482
+2026-09-30,Tranco top 1000 (V349N),partial:perplexity-user,0.72822,482
+2026-09-30,Tranco top 1000 (V349N),named_block:meta-externalagent,0.13693,482
+2026-09-30,Tranco top 1000 (V349N),blocked:meta-externalagent,0.1888,482
+2026-09-30,Tranco top 1000 (V349N),partial:meta-externalagent,0.68672,482
+2026-09-30,Tranco top 1000 (V349N),named_block:meta-externalfetcher,0.07261,482
+2026-09-30,Tranco top 1000 (V349N),blocked:meta-externalfetcher,0.12448,482
+2026-09-30,Tranco top 1000 (V349N),partial:meta-externalfetcher,0.75311,482
+2026-09-30,Tranco top 1000 (V349N),named_block:ccbot,0.18672,482
+2026-09-30,Tranco top 1000 (V349N),blocked:ccbot,0.24274,482
+2026-09-30,Tranco top 1000 (V349N),partial:ccbot,0.62863,482
+2026-09-30,Tranco top 1000 (V349N),named_block:bytespider,0.17842,482
+2026-09-30,Tranco top 1000 (V349N),blocked:bytespider,0.23651,482
+2026-09-30,Tranco top 1000 (V349N),partial:bytespider,0.64108,482
+2026-09-30,Tranco top 1000 (V349N),named_block:amazonbot,0.09751,482
+2026-09-30,Tranco top 1000 (V349N),blocked:amazonbot,0.1473,482
+2026-09-30,Tranco top 1000 (V349N),partial:amazonbot,0.71992,482
+2026-09-30,Tranco top 1000 (V349N),named_block:cohere-ai,0.11203,482
+2026-09-30,Tranco top 1000 (V349N),blocked:cohere-ai,0.17427,482
+2026-09-30,Tranco top 1000 (V349N),partial:cohere-ai,0.69917,482
+2026-09-30,Tranco top 1000 (V349N),named_block:cohere-training-data-crawler,0.06639,482
+2026-09-30,Tranco top 1000 (V349N),blocked:cohere-training-data-crawler,0.13485,482
+2026-09-30,Tranco top 1000 (V349N),partial:cohere-training-data-crawler,0.74066,482
+2026-09-30,Tranco top 1000 (V349N),named_block:mistralai-user,0.06224,482
+2026-09-30,Tranco top 1000 (V349N),blocked:mistralai-user,0.12448,482
+2026-09-30,Tranco top 1000 (V349N),partial:mistralai-user,0.74689,482
+2026-09-30,Tranco top 1000 (V349N),named_block:duckassistbot,0.06846,482
+2026-09-30,Tranco top 1000 (V349N),blocked:duckassistbot,0.12448,482
+2026-09-30,Tranco top 1000 (V349N),partial:duckassistbot,0.75104,482
+2026-09-30,Tranco top 1000 (V349N),named_block:ai2bot,0.07469,482
+2026-09-30,Tranco top 1000 (V349N),blocked:ai2bot,0.14108,482
+2026-09-30,Tranco top 1000 (V349N),partial:ai2bot,0.73444,482
+2026-09-30,Tranco top 1000 (V349N),named_block:diffbot,0.12448,482
+2026-09-30,Tranco top 1000 (V349N),blocked:diffbot,0.18672,482
+2026-09-30,Tranco top 1000 (V349N),partial:diffbot,0.68672,482
+2026-09-30,Tranco top 1000 (V349N),named_block:youbot,0.09751,482
+2026-09-30,Tranco top 1000 (V349N),blocked:youbot,0.1556,482
+2026-09-30,Tranco top 1000 (V349N),partial:youbot,0.71784,482
+2026-09-30,Tranco top 1000 (V349N),named_block:timpibot,0.08714,482
+2026-09-30,Tranco top 1000 (V349N),blocked:timpibot,0.15145,482
+2026-09-30,Tranco top 1000 (V349N),partial:timpibot,0.72407,482
+2026-09-30,Tranco top 1000 (V349N),robots_found,0.70365,685
+2026-09-30,Tranco top 1000 (V349N),any_ai_bot_blocked,0.25934,482
+2026-09-30,Tranco top 1000 (V349N),all_training_bots_blocked,0.09544,482
+2026-09-30,Tranco top 1000 (V349N),content_signal,0.02044,685
+2026-09-30,Tranco top 1000 (V349N),rsl,0.00438,685
+2026-09-30,Tranco top 1000 (V349N),tdmrep,0.01314,685
+2026-09-30,Tranco top 1000 (V349N),llms_txt,0.14745,685
+2026-09-30,Tranco top 1000 (V349N),http_402,0.00146,685
+2026-09-30,Tranco top 1000 (V349N),machine_readable_price,0.00146,685

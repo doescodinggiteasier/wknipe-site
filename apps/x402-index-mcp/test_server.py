@@ -8,7 +8,8 @@ from mcp.client.stdio import StdioServerParameters, stdio_client
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 CALLS = [('latest_week', {}), ('weekly_series', {'stage': 'clean', 'category': 'all'}),
-         ('top_sellers', {'category': 'all', 'n': 3}), ('price_stats', {'category': 'data'}), ('method', {})]
+         ('top_sellers', {'category': 'all', 'n': 3}), ('price_stats', {'category': 'data'}), ('method', {}),
+         ('market_series', {'metric': 'waterfall', 'week': '2026-09-21'})]
 
 
 async def main():

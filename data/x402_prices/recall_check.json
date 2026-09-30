@@ -1,0 +1,10 @@
+{
+  "date": "2026-09-30",
+  "method": "20 queries, top 10 results each from scripts/x402_prices/recall_check.mjs (same MiniSearch settings as the Price comps page), judged relevant or not by ClCo reading the normalised 'what it does' + host.",
+  "judged_relevant_of_top10": {"token price lookup": 10, "wallet balance": 10, "scrape web page": 10, "web search results": 10, "news article": 10, "image generation": 10,
+    "llm chat completion": 10, "weather forecast": 10, "company enrichment": 10, "pdf to text": 9, "text to speech": 9, "translate text": 10, "stock quote": 10,
+    "dex swap quote": 10, "email verification": 10, "sports scores": 6, "academic paper search": 10, "youtube transcript": 10, "screenshot of website": 9, "domain whois lookup": 10},
+  "precision_at_10": 0.965,
+  "decision": "Keyword + category retrieval is good enough; no embeddings. Weak spot: ambiguous words ('scores' matched financial scores). Fix shipped: at most 3 comparables per seller, because single hosts listed 8 of the top 10 for some queries and would dominate the price distribution.",
+  "caveat": "This measures precision of the top 10, not true recall (we cannot enumerate every relevant listing by hand)."
+}

@@ -1,5 +1,69 @@
 # The Index: everything wknipe.com publishes. One entry per thing; the Index page, the home teaser, the permalink
 # pages (/index/<slug>) and /index.json are all built from this file. `link` is where the thing itself lives.
+- slug: x402-market
+  name: x402 market dashboard
+  category: Data
+  date: 2026-09-30
+  featured: true
+  description: Raw-to-clean waterfall, category mix, concentration, buyers, ticket sizes, facilitator share, tripwire and movers for x402 on Base.
+  link: /x402/
+  related: [x402-clean-index, x402-buyers, x402-prices, x402-api]
+- slug: x402-buyers
+  name: x402 buyers
+  category: Data
+  date: 2026-09-30
+  featured: false
+  description: "Genuine buyers per week: new vs returning, retention cohorts, spend tiers and what each tier buys. Aggregates only."
+  link: /x402/buyers/
+  related: [x402-market, x402-sellers]
+- slug: x402-prices
+  name: x402 prices
+  category: Data
+  date: 2026-09-30
+  featured: false
+  description: Posted vs paid prices per call by category, posted price ranges, a chain-linked price index and daily price changes.
+  link: /x402/prices/
+  related: [price-comps, x402-market]
+- slug: price-comps
+  name: Price comps
+  category: Tool
+  date: 2026-09-30
+  featured: true
+  description: Describe an API and see what comparable x402 listings charge and whether comparable sellers get genuine buyers.
+  link: /x402/prices/comps
+  related: [x402-prices, x402-sellers]
+- slug: x402-status
+  name: x402 endpoint status
+  category: Tool
+  date: 2026-09-30
+  featured: true
+  description: "Daily, unpaid check of listed x402 endpoints: valid 402, posted price and payTo match, latency, per-seller badges."
+  link: /x402/status/
+  related: [x402-sellers, badges]
+- slug: ai-access
+  name: State of AI access
+  category: Data
+  date: 2026-09-30
+  featured: true
+  description: "Weekly census of the Tranco top 1,000: share blocking each AI crawler, llms.txt, Content-Signal, RSL, TDMRep and HTTP 402."
+  link: /access/
+  related: [ai-policy-checker]
+- slug: this-week-in-x402
+  name: This week in x402
+  category: Data
+  date: 2026-09-30
+  featured: false
+  description: A numbers-only weekly report generated from the index, with RSS.
+  link: /weekly/
+  related: [x402-market]
+- slug: badges
+  name: Badges
+  category: Tool
+  date: 2026-09-30
+  featured: false
+  description: Embeddable SVG badges for seller clean volume, endpoint 402 status and publisher AI policy.
+  link: /badges/
+  related: [x402-status, ai-policy-checker]
 - slug: x402-clean-index
   name: x402 Clean Index
   category: Data

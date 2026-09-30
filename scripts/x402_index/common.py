@@ -37,18 +37,22 @@ def first(*paths):
 
 
 def compact_listing(items):
-    """Keep only what the index reads from a Bazaar/x402scan listing: text fields and Base payment offers.
-    Items with no Base offer are dropped. Output reads identically through item_text() and base_usdc_price()."""
+    """Keep only what the pipelines read from a Bazaar/x402scan listing: text fields, the HTTP method, and payment offers.
+    Base offers keep every field the index uses; offers on other networks keep network/asset/scheme/amount/payTo, so the
+    Price comps and listing counts see every listing (ORDER_013). Reads identically through item_text() and
+    base_usdc_price(), which only ever use Base offers. Items with no offer at all are dropped."""
     out = []
     for it in items:
         acc = [{k: a[k] for k in ('network', 'asset', 'scheme', 'amount', 'maxAmountRequired', 'payTo') if k in a}
-               for a in it.get('accepts') or [] if a.get('network') in BASE_NETS]
+               for a in it.get('accepts') or [] if isinstance(a, dict)]
         if not acc: continue
         bz = (it.get('extensions') or {}).get('bazaar') or {}
         info = bz.get('info') or {}
         c = {k: it[k] for k in ('resource', 'serviceName', 'description', 'tags') if it.get(k)}
         b = {k: bz[k] for k in ('category',) if bz.get(k)}
         i = {k: info[k] for k in ('name', 'description') if info.get(k)}
+        m = (info.get('input') or {}).get('method') if isinstance(info.get('input'), dict) else None
+        if m: i['input'] = {'method': m}
         if i: b['info'] = i
         if b: c['extensions'] = {'bazaar': b}
         c['accepts'] = acc

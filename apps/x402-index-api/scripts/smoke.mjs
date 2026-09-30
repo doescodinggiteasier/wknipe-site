@@ -5,7 +5,7 @@ const USDC = "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913";
 const PAY_TO = "0x6ac87b6a48e329e2557c7f6054ed1518be76fbf9";
 let fail = 0;
 const check = (ok, msg) => { console.log(`${ok ? "PASS" : "FAIL"} ${msg}`); if (!ok) fail++; };
-for (const p of ["/v1/latest", "/v1/method"]) {
+for (const p of ["/v1/latest", "/v1/method", "/v1/metrics", "/v1/series?metric=waterfall", "/v1/series?metric=posted_vs_paid"]) {
   const r = await fetch(BASE + p);
   check(r.status === 200, `${p} -> ${r.status}`);
 }

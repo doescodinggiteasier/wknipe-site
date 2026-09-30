@@ -1,0 +1,9 @@
+---
+title: "Design system"
+description: "wknipe.com tokens, type, components and charts in light and dark mode."
+body-classes: wide
+include-in-header:
+  text: '<meta name="robots" content="noindex">'
+---
+
+{{< include ../_gen/design.md >}}

@@ -1,0 +1,86 @@
+# Daily (ORDER_013 Phase 4): CDP Bazaar snapshot -> listing churn + posted-price changes, then the x402 endpoint status
+# monitor (unpaid, one request per endpoint, <= 60 requests per host and <= 4,000 in total per day), then re-render and
+# deploy so /x402/status/ and /x402/prices/ stay current. No keys needed except the deploy token.
+# The previous day's price map is kept in the Actions cache (not git); if the cache is gone the newest weekly snapshot
+# is the baseline and the diff records the longer interval in its `since` column.
+name: daily
+
+on:
+  schedule:
+    - cron: "30 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily
+  cancel-in-progress: false
+
+jobs:
+  daily:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      X402_STATE: state
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Restore yesterday's price map
+        uses: actions/cache/restore@v4
+        with:
+          path: state/bazaar_daily
+          key: bazaar-daily-${{ github.run_id }}
+          restore-keys: bazaar-daily-
+
+      - name: Snapshot, diff, monitor
+        run: python3 scripts/x402_daily/daily.py --cap 4000
+
+      - name: Save today's price map
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: state/bazaar_daily
+          key: bazaar-daily-${{ github.run_id }}
+
+      - name: Commit data
+        run: |
+          git config user.name "wknipe-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/bazaar_daily data/x402_status state/x402_status
+          if git diff --cached --quiet; then echo "no data changes"; else
+            git commit -m "data: daily Bazaar diff + endpoint status $(date -u +%F) (run ${{ github.run_id }})"
+            git pull --rebase && git push
+          fi
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: apps/x402-index-api/package-lock.json
+
+      - name: Install Wrangler
+        working-directory: apps/x402-index-api
+        run: npm ci
+
+      - uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: 1.10.18
+
+      - name: Render site
+        working-directory: site
+        run: quarto render
+
+      # Until the Cloudflare token has Workers Scripts: Edit, the deploy fails; the data above is committed either way.
+      - name: Deploy site and API
+        continue-on-error: true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          (cd site && ../apps/x402-index-api/node_modules/.bin/wrangler deploy) || echo "::warning::site deploy failed (token permission?)"
+          (cd apps/x402-index-api && npm run deploy) || echo "::warning::API deploy failed (token permission?)"

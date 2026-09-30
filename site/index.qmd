@@ -1,39 +1,15 @@
 ---
 title: "Wes Knipe"
-pagetitle: "Wes Knipe"
-listing:
-  - id: recent
-    contents:
-      - "writing/*.qmd"
-      - "!writing/index.qmd"
-    sort: "date desc"
-    max-items: 5
-    template: _templates/recent-writing.ejs
-    date-format: iso
-    sort-ui: false
-    filter-ui: false
-  - id: idx
-    contents: "index/entries.yml"
-    template: _templates/home-index.ejs
-    date-format: iso
-    page-size: 1000
-    sort-ui: false
-    filter-ui: false
+pagetitle: "Wes Knipe · agent payments, measured"
+description: "Independent data on what AI agents actually buy and pay for: the demand-cleaned x402 index, seller and buyer statistics, price comps and AI-access tools."
+body-classes: wide
+image: /og/home.png
 ---
 
 ```{=html}
 <style>#title-block-header { display: none; }</style>
 ```
 
-<!-- TODO(Wes): replace with one sentence in your own voice: who you are and what you write about. -->
-[Notes and measurements on how AI agents find, judge and pay for information.]{.lede}
+<!-- TODO(Wes): the lede below is generated from the data; add one sentence in your own voice above it if you want. -->
 
-## Writing
-
-::: {#recent}
-:::
-
-## Index
-
-::: {#idx}
-:::
+{{< include _gen/home.md >}}

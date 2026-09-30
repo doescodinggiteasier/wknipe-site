@@ -1,20 +1,3 @@
 /*-- scss:defaults --*/
-// wknipe.com design spec (2026-09-30): warm off-white, one muted accent. Tokens live in CSS variables (theme-base.scss).
-$body-bg: #F7F5F1;
-$body-color: #1C1B19;
-$primary: #2F4A3C;
-$link-color: #1C1B19;
-$navbar-bg: #F7F5F1;
-$navbar-fg: #6E6A64;
-$navbar-hl: #1C1B19;
-$border-color: #E3DFD8;
-$table-border-color: #E3DFD8;
-$font-family-sans-serif: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-$font-family-monospace: "JetBrains Mono", ui-monospace, Menlo, monospace;
-$headings-font-weight: 500;
-$font-weight-bold: 500;
-$code-color: #1C1B19;
-$code-bg: transparent;
-
-/*-- scss:rules --*/
-:root { --bg: #F7F5F1; --ink: #1C1B19; --muted: #6E6A64; --line: #E3DFD8; --accent: #2F4A3C; }
+// Light mode. Every colour comes from the palette in theme-base.scss; change shades there, not here.
+@include wk-set(light);

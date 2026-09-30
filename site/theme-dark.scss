@@ -1,19 +1,3 @@
 /*-- scss:defaults --*/
-$body-bg: #151514;
-$body-color: #ECEAE6;
-$primary: #9DBCA8;
-$link-color: #ECEAE6;
-$navbar-bg: #151514;
-$navbar-fg: #9C9891;
-$navbar-hl: #ECEAE6;
-$border-color: #2A2927;
-$table-border-color: #2A2927;
-$font-family-sans-serif: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-$font-family-monospace: "JetBrains Mono", ui-monospace, Menlo, monospace;
-$headings-font-weight: 500;
-$font-weight-bold: 500;
-$code-color: #ECEAE6;
-$code-bg: transparent;
-
-/*-- scss:rules --*/
-:root { --bg: #151514; --ink: #ECEAE6; --muted: #9C9891; --line: #2A2927; --accent: #9DBCA8; }
+// Dark mode. Every colour comes from the palette in theme-base.scss; change shades there, not here.
+@include wk-set(dark);
