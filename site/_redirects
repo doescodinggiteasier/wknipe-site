@@ -1,0 +1,6 @@
+/index        /index/                301
+/feed.xml     /writing/index.xml     302
+/essays/*     /writing/:splat        301
+/essays       /writing/              301
+/notes/*      /writing/              301
+/notes        /writing/              301

@@ -1,0 +1,8 @@
+<% const last = items.map(i => String(i.date || '')).sort().pop() || ''; const feat = items.filter(i => i.featured); %>
+<p>Everything this site publishes: data, tools and benchmarks. <span class="meta"><%= items.length %> entries · updated <%= last %></span></p>
+<ul class="rows">
+<% for (const item of feat.slice(0, 5)) { %>
+<li><a href="/index/<%= item.slug %>"><span class="d"><%= item.category %></span><span class="t"><%= item.name %></span><span class="x">→</span><span class="desc"><%= item.description %></span></a></li>
+<% } %>
+</ul>
+<p class="more"><a href="/index/">Open the Index →</a></p>

@@ -4,3 +4,6 @@
 /agents/data/
 /predictions/data/
 /paper/files/
+/index/*.qmd
+!/index/index.qmd
+/index.json

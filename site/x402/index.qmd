@@ -1,6 +1,7 @@
 ---
 title: "x402 Clean Index"
 subtitle: "What AI agents actually pay for on x402 (Base), after removing manufactured and single-buyer volume."
+body-classes: wide
 ---
 
 ```{ojs}

@@ -1,0 +1,60 @@
+"""Pre-render step (the Index): one permalink page per entry in index/entries.yml, and /index.json for people and agents.
+Generated files (index/<slug>.qmd, index.json) are not committed; every render regenerates them."""
+import datetime as dt, glob, json, os, re
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+SRC = os.path.join(HERE, 'index', 'entries.yml')
+SITE = 'https://wknipe.com'
+
+
+def load():
+    """Minimal reader for entries.yml (a list of flat maps; `related` is an inline [a, b] list). Stdlib only."""
+    out, cur = [], None
+    for line in open(SRC, encoding='utf-8'):
+        if not line.strip() or line.lstrip().startswith('#'): continue
+        m = re.match(r'^(-\s+|\s+)([a-z_]+):\s*(.*)$', line.rstrip('\n'))
+        if not m: raise SystemExit(f'entries.yml: cannot read line: {line!r}')
+        if m.group(1).startswith('-'):
+            cur = {}; out.append(cur)
+        k, v = m.group(2), m.group(3).strip()
+        if v.startswith('[') and v.endswith(']'):
+            v = [x.strip() for x in v[1:-1].split(',') if x.strip()]
+        elif v in ('true', 'false'):
+            v = v == 'true'
+        cur[k] = v
+    return out
+
+
+def esc(s):
+    return str(s).replace('"', "'")
+
+
+def build():
+    entries = load()
+    by = {e['slug']: e for e in entries}
+    for p in glob.glob(os.path.join(HERE, 'index', '*.qmd')):
+        if os.path.basename(p) != 'index.qmd': os.remove(p)
+    for e in entries:
+        ext = e['link'].startswith('http')
+        rel = [by[r] for r in e.get('related', []) if r in by]
+        rows = ''.join(f'<li><a href="/index/{r["slug"]}"><span class="d">{r["category"]}</span><span class="t">{r["name"]}</span>'
+                       f'<span class="x">→</span></a></li>' for r in rel)
+        open(os.path.join(HERE, 'index', e['slug'] + '.qmd'), 'w', encoding='utf-8').write(f'''---
+title: "{esc(e['name'])}"
+description: "{esc(e['description'])}"
+---
+
+```{{=html}}
+<p class="meta">{e['category']} · added {e['date']}</p>
+<p class="lede"><a href="{e['link']}">Open {e['name']} {'↗' if ext else '→'}</a></p>
+{f'<h2>Related</h2><ul class="rows">{rows}</ul>' if rows else ''}
+<p class="more"><a href="/index/">← The Index</a></p>
+```
+''')
+    doc = {'name': 'wknipe.com Index', 'url': f'{SITE}/index/', 'updated': max(e['date'] for e in entries),
+           'generated': dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%MZ'), 'license': 'CC BY 4.0',
+           'entries': [{**{k: e[k] for k in ('slug', 'name', 'category', 'description', 'date')},
+                        'link': e['link'] if e['link'].startswith('http') else SITE + e['link'],
+                        'permalink': f"{SITE}/index/{e['slug']}", 'related': e.get('related', [])} for e in entries]}
+    json.dump(doc, open(os.path.join(HERE, 'index.json'), 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
+    return len(entries)

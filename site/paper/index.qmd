@@ -1,7 +1,6 @@
 ---
 title: "The x402 economy, measured: what AI agents actually buy"
 description: "Working paper (draft). A weekly, reproducible, demand-cleaned measurement of x402 agent payments on Base: what survives cleaning, what sellers sell, how concentrated it is, and what a call costs."
-page-layout: article
 draft: true   # publish (false) once the TODO(Wes) sections are written; see docs/WES_SETUP_012.md
 ---
 

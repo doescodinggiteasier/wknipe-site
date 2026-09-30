@@ -73,7 +73,6 @@ def page(s, doc):
 title: "{name.replace('"', "'")}"
 subtitle: "x402 seller · {LABEL.get(s['category'], s['category'])}"
 description: "{desc.replace('"', "'")}"
-page-layout: article
 ---
 
 {status}

@@ -9,3 +9,5 @@ This site is built with [Quarto](https://quarto.org) from a public repository. T
 **Our own payments are excluded.** We run a paid API for the index at `api.wknipe.com`. Payments to it, and payments from our test wallet, are tagged as ours and never counted as demand.
 
 **Privacy.** Visits are counted with Cloudflare Web Analytics: no cookies, no personal data, no cross-site tracking. The [AI-policy checker](check/index.qmd) keeps each domain's result for 24 hours and logs nothing about who asked.
+
+Contact: [wes@wknipe.com](mailto:wes@wknipe.com) · [GitHub](https://github.com/doescodinggiteasier) · [RSS](/feed.xml)

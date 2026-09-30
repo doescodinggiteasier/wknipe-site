@@ -1,0 +1,7 @@
+<% if (items.length === 0) { %><p class="meta">Nothing published yet.</p><% } %>
+<% let year = null; for (const item of items) { const d = String(item.date || ''); const y = d.slice(0, 4); if (y !== year) { if (year !== null) { %></ul><% } year = y; %>
+<h2 class="year"><%= y %></h2>
+<ul class="rows">
+<% } %>
+<li <%= metadataAttrs(item) %>><a href="<%- item.path %>"><span class="d"><%= d.slice(5, 7) %>.<%= d.slice(8, 10) %></span><span class="t"><%= item.title %></span><span class="x"></span><% if (item.description) { %><span class="desc"><%= item.description %></span><% } %></a></li>
+<% } if (year !== null) { %></ul><% } %>

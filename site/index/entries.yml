@@ -1,0 +1,83 @@
+# The Index: everything wknipe.com publishes. One entry per thing; the Index page, the home teaser, the permalink
+# pages (/index/<slug>) and /index.json are all built from this file. `link` is where the thing itself lives.
+- slug: x402-clean-index
+  name: x402 Clean Index
+  category: Data
+  date: 2026-09-30
+  featured: true
+  description: What AI agents actually pay for on x402 (Base), weekly, after removing manufactured and single-buyer volume.
+  link: /x402/
+  related: [x402-sellers, x402-api, x402-method, x402-data]
+- slug: x402-sellers
+  name: x402 seller leaderboard
+  category: Data
+  date: 2026-09-30
+  featured: true
+  description: Every x402 seller with at least five genuine buyers last week, with clean payments, prices and a page per seller.
+  link: /x402/sellers/
+  related: [x402-clean-index, x402-data]
+- slug: ai-policy-checker
+  name: AI-policy checker
+  category: Tool
+  date: 2026-09-30
+  featured: true
+  description: What any website tells AI crawlers - robots.txt for 25 named bots, Content-Signal, RSL licence and price, TDMRep, llms.txt, HTTP 402.
+  link: /check/
+  related: [check-api]
+- slug: which-models-buy-well
+  name: Which models buy well
+  category: Benchmark
+  date: 2026-09-30
+  featured: true
+  description: Exact-payoff purchase decisions scored against the computed optimum, for 10 frontier and budget models.
+  link: /agents/
+  related: [which-models-buy-well-method]
+- slug: prediction-ledger
+  name: Prediction ledger
+  category: Ledger
+  date: 2026-09-30
+  description: Predictions sealed before the fact - every fingerprint public and time-stamped on Bitcoin, texts revealed and scored later.
+  link: /predictions/
+  related: []
+- slug: x402-api
+  name: x402 Clean Index API
+  category: API
+  date: 2026-09-30
+  description: Free headline numbers; the weekly series and seller data at $0.001 a call, paid over x402.
+  link: https://api.wknipe.com/
+  related: [x402-clean-index, x402-mcp]
+- slug: check-api
+  name: AI-policy check API
+  category: API
+  date: 2026-09-30
+  description: The AI-policy checker as JSON, free and cached for 24 hours - /v1/check?domain=example.com.
+  link: https://api.wknipe.com/v1/check?domain=example.com
+  related: [ai-policy-checker]
+- slug: x402-mcp
+  name: x402 Clean Index MCP server
+  category: Tool
+  date: 2026-09-30
+  description: Ask Claude about the index - an MCP server with tools for the latest week, series, top sellers and prices.
+  link: https://github.com/doescodinggiteasier/wknipe-site/tree/main/apps/x402-index-mcp
+  related: [x402-clean-index, x402-api]
+- slug: x402-method
+  name: x402 Clean Index method
+  category: Method
+  date: 2026-09-30
+  description: Every filter, category rule and known bias behind the index, with the numbers each filter removes.
+  link: https://github.com/doescodinggiteasier/wknipe-site/blob/main/docs/X402_INDEX_METHOD.md
+  related: [x402-clean-index]
+- slug: x402-data
+  name: x402 Clean Index data
+  category: Data
+  date: 2026-09-30
+  description: The weekly CSVs and the compact state that rebuilds every published number offline. CC BY 4.0.
+  link: https://github.com/doescodinggiteasier/wknipe-site/tree/main/data/x402_index
+  related: [x402-clean-index, x402-method]
+- slug: which-models-buy-well-method
+  name: Which models buy well - method
+  category: Method
+  date: 2026-09-30
+  description: What the purchase benchmark measures, its limits, and the seeds and scenario-bank hash to replicate it.
+  link: /agents/method
+  related: [which-models-buy-well]

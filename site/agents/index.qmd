@@ -1,7 +1,7 @@
 ---
 title: "Which models buy well"
 description: "When an AI agent can spend money on information, does it buy the right thing? Exact-payoff purchase decisions, scored against the computed optimum, for frontier and cheap models."
-page-layout: full
+body-classes: wide
 ---
 
 ```{ojs}

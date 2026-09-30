@@ -1,0 +1,16 @@
+---
+title: "Writing"
+listing:
+  contents: "*.qmd"
+  sort: "date desc"
+  template: ../_templates/writing-archive.ejs
+  date-format: iso
+  page-size: 1000
+  sort-ui: false
+  filter-ui: false
+  feed:
+    title: "Wes Knipe: writing"
+---
+
+::: {#listing-listing}
+:::

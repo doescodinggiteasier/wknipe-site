@@ -1,7 +1,7 @@
 ---
 title: "Prediction ledger"
 description: "Predictions sealed before the fact: every fingerprint is public and time-stamped on Bitcoin, so none can be quietly dropped or edited. Texts are revealed and scored later."
-page-layout: article
+body-classes: wide
 ---
 
 ```{ojs}

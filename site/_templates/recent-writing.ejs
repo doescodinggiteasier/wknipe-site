@@ -1,0 +1,7 @@
+<% if (items.length === 0) { %><p class="meta">Nothing published yet.</p><% } else { %>
+<ul class="rows">
+<% for (const item of items) { const d = String(item.date || ''); %>
+<li <%= metadataAttrs(item) %>><a href="<%- item.path %>"><span class="d"><%= d %></span><span class="t"><%= item.title %></span><span class="x"></span></a></li>
+<% } %>
+</ul><% } %>
+<p class="more"><a href="/writing/">All writing →</a></p>

@@ -1,0 +1,59 @@
+---
+title: "Index"
+description: "Everything wknipe.com publishes: data, tools, benchmarks, APIs and methods."
+body-classes: wide
+listing:
+  id: ix
+  contents: entries.yml
+  template: ../_templates/index-rows.ejs
+  date-format: iso
+  page-size: 1000
+  sort-ui: false
+  filter-ui: false
+---
+
+::: {#ix}
+:::
+
+```{=html}
+<style>
+  .ix-tools { display: grid; gap: 16px; margin: 24px 0 16px; }
+  .ix-tabs { display: flex; flex-wrap: wrap; gap: 4px 16px; align-items: baseline; font-size: 15px; }
+  .ix-tab, .ix-s { background: none; border: 0; padding: 0 0 2px; color: var(--muted); font: inherit; cursor: pointer; border-bottom: 1px solid transparent; transition: color 150ms ease-out; }
+  .ix-tab:hover, .ix-s:hover { color: var(--ink); }
+  .ix-tab[aria-pressed="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+  .ix-s[aria-pressed="true"] { color: var(--ink); }
+  .ix-sort { margin-left: auto; }
+  .ix-rows a { grid-template-columns: 96px 1fr auto; }
+  @media (max-width: 560px) { .ix-sort { margin-left: 0; width: 100%; } .ix-rows a { grid-template-columns: 1fr auto; } .ix-rows .d { grid-column: 1 / -1; } .ix-rows .desc { grid-column: 1 / -1; margin-top: 0; } }
+</style>
+<script>
+(() => {
+  const list = document.getElementById("ix-rows"); if (!list) return;
+  const rows = [...list.children], q = document.getElementById("ix-q");
+  const p = new URLSearchParams(location.search);
+  let cat = p.get("category") || "all", sort = p.get("sort") || "new";
+  q.value = p.get("q") || "";
+  function apply() {
+    const words = q.value.toLowerCase().split(/\s+/).filter(Boolean); let n = 0;
+    const sorted = rows.slice().sort((a, b) => sort === "az" ? a.dataset.name.localeCompare(b.dataset.name)
+      : (b.dataset.date.localeCompare(a.dataset.date) || (+a.dataset.n) - (+b.dataset.n)));
+    for (const r of sorted) {
+      const ok = (cat === "all" || r.dataset.cat === cat) && words.every((w) => r.dataset.text.includes(w));
+      r.hidden = !ok; if (ok) n++; list.append(r);
+    }
+    document.getElementById("ix-count").textContent = n;
+    document.getElementById("ix-none").hidden = n > 0;
+    document.querySelectorAll(".ix-tab").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.cat === cat)));
+    document.querySelectorAll(".ix-s").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.sort === sort)));
+    const u = new URLSearchParams(); if (q.value) u.set("q", q.value); if (cat !== "all") u.set("category", cat); if (sort !== "new") u.set("sort", sort);
+    history.replaceState(null, "", location.pathname + (u.toString() ? "?" + u : ""));
+  }
+  document.querySelectorAll(".ix-tab").forEach((b) => b.addEventListener("click", () => { cat = b.dataset.cat; apply(); }));
+  document.querySelectorAll(".ix-s").forEach((b) => b.addEventListener("click", () => { sort = b.dataset.sort; apply(); }));
+  q.addEventListener("input", apply);
+  document.addEventListener("keydown", (e) => { if (e.key === "/" && document.activeElement !== q && !/input|textarea/i.test(document.activeElement.tagName)) { e.preventDefault(); q.focus(); } });
+  apply();
+})();
+</script>
+```

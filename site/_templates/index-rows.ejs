@@ -1,0 +1,16 @@
+<% const cats = [...new Set(items.map(i => i.category))]; const last = items.map(i => String(i.date || '')).sort().pop() || ''; %>
+<p class="meta ix-head"><span id="ix-count"><%= items.length %></span> entries · updated <%= last %> · <a href="/index.json">index.json</a></p>
+<div class="ix-tools">
+<input id="ix-q" type="search" placeholder="Search the index" aria-label="Search the index" autocomplete="off">
+<div class="ix-tabs" role="tablist" aria-label="Filter by category">
+<button type="button" class="ix-tab" data-cat="all" aria-pressed="true">All</button>
+<% for (const c of cats) { %><button type="button" class="ix-tab" data-cat="<%= c %>" aria-pressed="false"><%= c %></button><% } %>
+<span class="ix-sort meta">Sort: <button type="button" class="ix-s" data-sort="new" aria-pressed="true">newest</button> · <button type="button" class="ix-s" data-sort="az" aria-pressed="false">A–Z</button></span>
+</div>
+</div>
+<ul class="rows ix-rows" id="ix-rows">
+<% items.forEach((item, n) => { %>
+<li data-cat="<%= item.category %>" data-date="<%= item.date %>" data-name="<%= item.name %>" data-n="<%= n %>" data-text="<%= (item.name + ' ' + item.category + ' ' + item.description).toLowerCase() %>"><a href="/index/<%= item.slug %>"><span class="d"><%= item.category %></span><span class="t"><%= item.name %></span><span class="x">→</span><span class="desc"><%= item.description %></span></a></li>
+<% }) %>
+</ul>
+<p class="meta" id="ix-none" hidden>No entries match.</p>

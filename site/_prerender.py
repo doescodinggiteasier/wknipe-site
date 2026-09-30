@@ -37,3 +37,5 @@ if os.path.exists(os.path.join(paper, 'x402_measured.pdf')) and '\ndraft: true' 
     os.makedirs(os.path.join(here, 'paper', 'files'), exist_ok=True)
     for f in ('x402_measured.pdf', 'x402_measured.html'):
         shutil.copy(os.path.join(paper, f), os.path.join(here, 'paper', 'files'))
+import _index_pages
+print('index entries:', _index_pages.build())

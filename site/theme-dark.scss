@@ -1,20 +1,19 @@
 /*-- scss:defaults --*/
-$primary: #4fc39a;
-$body-bg: #121614;
-$body-color: #eef1ee;
-$navbar-bg: #1a1f1c;
-$navbar-fg: #eef1ee;
+$body-bg: #151514;
+$body-color: #ECEAE6;
+$primary: #9DBCA8;
+$link-color: #ECEAE6;
+$navbar-bg: #151514;
+$navbar-fg: #9C9891;
+$navbar-hl: #ECEAE6;
+$border-color: #2A2927;
+$table-border-color: #2A2927;
+$font-family-sans-serif: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+$font-family-monospace: "JetBrains Mono", ui-monospace, Menlo, monospace;
+$headings-font-weight: 500;
+$font-weight-bold: 500;
+$code-color: #ECEAE6;
+$code-bg: transparent;
+
 /*-- scss:rules --*/
-.stat-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
-.stat-strip .stat { border-top: 2px solid $primary; padding-top: .5rem; }
-.stat .k { font: 500 .72rem/1.3 "IBM Plex Mono", monospace; letter-spacing: .06em; text-transform: uppercase; opacity: .7; }
-.stat .v { font: 600 1.6rem/1.2 "IBM Plex Mono", monospace; font-variant-numeric: tabular-nums; }
-table { font-variant-numeric: tabular-nums; }
-/* ORDER_012: long hosts, addresses and URLs wrap instead of widening the page on phones */
-#quarto-document-content li, #quarto-document-content p, #quarto-document-content code { overflow-wrap: anywhere; }
-.seller-spark { display: flex; flex-direction: column; gap: .25rem; margin: 1rem 0 1.5rem; color: $primary; }
-.seller-spark span { font: 500 .72rem/1.3 "IBM Plex Mono", monospace; letter-spacing: .06em; text-transform: uppercase; color: $body-color; opacity: .7; }
-.seller-spark svg { max-width: 100%; height: auto; }
-#quarto-document-content li code, #quarto-document-content p code { white-space: normal; word-break: break-all; }
-.seller-table { overflow-x: auto; }
-.seller-table th, .seller-table td { white-space: nowrap; }
+:root { --bg: #151514; --ink: #ECEAE6; --muted: #9C9891; --line: #2A2927; --accent: #9DBCA8; }

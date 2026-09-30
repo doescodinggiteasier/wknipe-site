@@ -3,6 +3,9 @@ project:
   output-dir: _site
   pre-render: _prerender.py
   resources:
+    - "_redirects"
+    - "index.json"
+    - "fonts/*"
     - "x402/data/*"
     - "agents/data/*"
     - "predictions/data/*"
@@ -18,42 +21,28 @@ website:
   draft-mode: gone   # drafts (the essay stub) are not published; `quarto preview` still shows them
   repo-url: "https://github.com/doescodinggiteasier/wknipe-site"
   navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - text: x402
-        menu:
-          - href: x402/index.qmd
-            text: Clean Index
-          - href: x402/sellers/index.qmd
-            text: Seller leaderboard
-      - href: check/index.qmd
-        text: AI-policy checker
-      - text: Research
-        menu:
-          - href: agents/index.qmd
-            text: Which models buy well
-          - href: predictions/index.qmd
-            text: Prediction ledger
-      - href: essays/index.qmd
-        text: Essays
+    title: "Wes Knipe"
+    collapse: false
+    search: false
+    right:
+      - href: writing/index.qmd
+        text: Writing
+      - href: index/index.qmd
+        text: Index
       - href: about.qmd
         text: About
   page-footer:
-    center: |
-      Data: public Base chain (Blockscout) and the Coinbase Bazaar listing. Method: [X402_INDEX_METHOD.md](https://github.com/doescodinggiteasier/wknipe-site/blob/main/docs/X402_INDEX_METHOD.md)<br>
-      [Code MIT](https://github.com/doescodinggiteasier/wknipe-site/blob/main/LICENSE) · [Data & writing CC BY 4.0](https://github.com/doescodinggiteasier/wknipe-site/blob/main/LICENSE-CONTENT.md) · [Source](https://github.com/doescodinggiteasier/wknipe-site)
+    left: |
+      [wes@wknipe.com](mailto:wes@wknipe.com) · [RSS](/feed.xml) · [GitHub](https://github.com/doescodinggiteasier/wknipe-site) · Code MIT · Data & writing CC BY 4.0
 
 format:
   html:
     theme:
-      light: [cosmo, theme.scss]
-      dark: [darkly, theme-dark.scss]
+      light: [default, theme.scss, theme-base.scss]
+      dark: [darkly, theme-dark.scss, theme-base.scss]
     respect-user-color-scheme: true
     toc: false
-    mainfont: "Schibsted Grotesk, Helvetica Neue, Arial, sans-serif"
-    monofont: "IBM Plex Mono, SF Mono, Menlo, monospace"
-    include-in-header:
-      text: |
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+    page-layout: full
+    title-block-banner: false
+    smooth-scroll: false
+    anchor-sections: false
