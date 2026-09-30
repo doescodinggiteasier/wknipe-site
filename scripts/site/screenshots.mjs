@@ -13,7 +13,7 @@ const PAGES = (arg("--pages", "home=/,market=/x402/,prices=/x402/prices/,seller=
 const MODES = ["light", "dark"], WIDTHS = [1280, 390];
 mkdirSync(OUT, { recursive: true });
 const port = 9333, prof = mkdtempSync(join(tmpdir(), "wkshot-"));
-const chrome = spawn(CHROME, ["--headless=new", `--remote-debugging-port=${port}`, `--user-data-dir=${prof}`, "--hide-scrollbars", "--no-first-run", "about:blank"], { stdio: "ignore" });
+const chrome = spawn(CHROME, ["--headless=new", `--remote-debugging-port=${port}`, `--user-data-dir=${prof}`, "--hide-scrollbars", "--no-first-run", ...(process.getuid?.() === 0 ? ["--no-sandbox"] : []), "about:blank"], { stdio: "ignore" });
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 let list;
 for (let i = 0; i < 50 && !list; i++) { try { list = await (await fetch(`http://127.0.0.1:${port}/json/list`)).json(); } catch { await sleep(200); } }

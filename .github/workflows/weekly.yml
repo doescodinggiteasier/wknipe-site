@@ -145,7 +145,8 @@ jobs:
       - name: Render site
         if: steps.wk.outputs.skip != 'true' && steps.pipe.outputs.pending != 'true'
         working-directory: site
-        run: quarto render
+        # Quarto resolves {{< include _gen/*.md >}} before its own pre-render hook runs, so generate them first.
+        run: python3 _prerender.py && quarto render
 
       - name: Deploy site (Worker wknipe, static assets)
         if: steps.wk.outputs.skip != 'true' && steps.pipe.outputs.pending != 'true'

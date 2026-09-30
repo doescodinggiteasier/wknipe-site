@@ -74,7 +74,8 @@ jobs:
 
       - name: Render site
         working-directory: site
-        run: quarto render
+        # Quarto resolves {{< include _gen/*.md >}} before its own pre-render hook runs, so generate them first.
+        run: python3 _prerender.py && quarto render
 
       # Until the Cloudflare token has Workers Scripts: Edit, the deploy fails; the data above is committed either way.
       - name: Deploy site and API
