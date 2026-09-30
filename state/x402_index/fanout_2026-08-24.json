@@ -1,0 +1,91 @@
+{
+ "0xcf19bafccbf27369ceea7ff0f60c891dec1a0830": {
+  "buyers": 28,
+  "usd": 57.62,
+  "sampled": 12,
+  "shared_funders": {},
+  "buyers_with_shared_funder": 0,
+  "isolated_buyers": 12,
+  "circular": null,
+  "flagged": false
+ },
+ "0xbe10313ad04bd9f72f027f6ebbac5df7a0a11445": {
+  "buyers": 30,
+  "usd": 16.7,
+  "sampled": 12,
+  "shared_funders": {},
+  "buyers_with_shared_funder": 0,
+  "isolated_buyers": 11,
+  "circular": null,
+  "flagged": false
+ },
+ "0x4f4beb658084d7bd7ea0b6f74dbf6e99f93d422d": {
+  "buyers": 694,
+  "usd": 6.62,
+  "sampled": 12,
+  "shared_funders": {},
+  "buyers_with_shared_funder": 0,
+  "isolated_buyers": 12,
+  "circular": null,
+  "flagged": false
+ },
+ "0x3dcbef58b30fac60a897cd4ed1daed5de33b32e1": {
+  "buyers": 60,
+  "usd": 0.23,
+  "sampled": 12,
+  "shared_funders": {},
+  "buyers_with_shared_funder": 0,
+  "isolated_buyers": 7,
+  "circular": null,
+  "flagged": false
+ },
+ "0x6a4921474848d3fa168ee7fa87222547acc4712f": {
+  "buyers": 40,
+  "usd": 0.06,
+  "sampled": 12,
+  "shared_funders": {
+   "0x95dd8db1c0c066eba8c37cd1c6b4c895500b20f2": 12,
+   "0x57b9a8b42beea0db2553949e0ba428bc5e32b49c": 4
+  },
+  "buyers_with_shared_funder": 16,
+  "isolated_buyers": 0,
+  "circular": false,
+  "flagged": false
+ },
+ "0x2af91df69bd04ccf82d6477adc046c815b7ae129": {
+  "buyers": 32,
+  "usd": 0.06,
+  "sampled": 12,
+  "shared_funders": {
+   "0x95dd8db1c0c066eba8c37cd1c6b4c895500b20f2": 11,
+   "0x57b9a8b42beea0db2553949e0ba428bc5e32b49c": 3
+  },
+  "buyers_with_shared_funder": 14,
+  "isolated_buyers": 0,
+  "circular": false,
+  "flagged": false
+ },
+ "0xba667287b8ef89565f8fd7acd4d22ce98e0f39cd": {
+  "buyers": 31,
+  "usd": 0.04,
+  "sampled": 12,
+  "shared_funders": {
+   "0x95dd8db1c0c066eba8c37cd1c6b4c895500b20f2": 12,
+   "0x57b9a8b42beea0db2553949e0ba428bc5e32b49c": 3
+  },
+  "buyers_with_shared_funder": 15,
+  "isolated_buyers": 0,
+  "circular": false,
+  "flagged": false
+ },
+ "0x8553670d4b9302a6c6499707e1ad742bd941f930": {
+  "buyers": 21,
+  "usd": 0.0,
+  "sampled": 12,
+  "shared_funders": {},
+  "buyers_with_shared_funder": 0,
+  "isolated_buyers": 0,
+  "circular": null,
+  "flagged": false
+ }
+}

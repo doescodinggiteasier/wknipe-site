@@ -1,0 +1,116 @@
+---
+title: "x402 Clean Index"
+subtitle: "What AI agents actually pay for on x402 (Base), after removing manufactured and single-buyer volume."
+---
+
+```{ojs}
+//| echo: false
+head = FileAttachment("data/headline.json").json()
+weekly = FileAttachment("data/weekly.csv").csv({typed: true})
+prices = FileAttachment("data/prices_weekly.csv").csv({typed: true})
+usd = (x) => x == null ? "–" : "$" + (Math.abs(x) >= 100 ? Math.round(x).toLocaleString("en-US") : x.toFixed(2))
+pct = (x) => x == null ? "needs 5 weeks of history" : (x >= 0 ? "+" : "") + (x * 100).toFixed(0) + "% over 4 weeks"
+cats = ["content", "data", "search", "compute", "other", "large_ticket", "unclassed"]
+labels = ({content: "Content", data: "Data", search: "Search", compute: "Compute & tools", other: "Other", large_ticket: "Large ticket (unidentified)", unclassed: "Unclassed"})
+colors = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#9aa19c"]
+stageLabels = ({raw: "Raw settlements", d05: "After manufacture filter", clean: "Demand-cleaned"})
+```
+
+```{ojs}
+//| echo: false
+html`<p class="text-muted">Latest week: <strong>${head.latest_week}</strong> · ${head.weeks_available.length} weeks of history</p>
+<div class="stat-strip">
+  <div class="stat"><div class="k">Raw settlements</div><div class="v">${usd(head.raw_usd)}</div></div>
+  <div class="stat"><div class="k">Demand-cleaned</div><div class="v">${usd(head.clean_usd)}</div><div>${head.clean_payments.toLocaleString("en-US")} payments to ${head.clean_payees.toLocaleString("en-US")} sellers</div></div>
+  <div class="stat"><div class="k">Content + data, cleaned</div><div class="v">${usd(head.tripwire_content_plus_data_clean_usd)}</div><div>${pct(head.tripwire_4week_growth)}</div></div>
+  <div class="stat"><div class="k">Content, cleaned</div><div class="v">${usd(head.clean_by_category_usd.content)}</div></div>
+</div>`
+```
+
+## Most raw volume doesn't survive cleaning
+
+```{ojs}
+//| echo: false
+Plot.plot({
+  height: 280, marginLeft: 60, color: {domain: ["raw", "d05", "clean"], range: ["#9aa19c", "#eb6834", "#2a78d6"], legend: true, tickFormat: (d) => stageLabels[d]},
+  x: {type: "utc", label: null}, y: {label: "USD per week", grid: true, tickFormat: (d) => "$" + d3.format("~s")(d)},
+  marks: [
+    Plot.lineY(weekly.filter((d) => d.category === "all"), {x: "week_start", y: "usd", stroke: "stage", strokeWidth: 2, tip: true}),
+    Plot.dot(weekly.filter((d) => d.category === "all"), {x: "week_start", y: "usd", fill: "stage", r: 4}),
+    Plot.ruleY([0])
+  ]
+})
+```
+
+## Cleaned spend by category
+
+```{ojs}
+//| echo: false
+Plot.plot({
+  height: 300, marginLeft: 60, color: {domain: cats, range: colors, legend: true, tickFormat: (d) => labels[d]},
+  x: {type: "band", label: null, tickFormat: (d) => d3.utcFormat("%-d %b")(new Date(d))},
+  y: {label: "USD per week", grid: true, tickFormat: (d) => "$" + d3.format("~s")(d)},
+  marks: [
+    Plot.barY(weekly.filter((d) => d.stage === "clean" && d.category !== "all"),
+      {x: (d) => d.week_start.toISOString(), y: "usd", fill: "category", order: cats, tip: true, inset: 1}),
+    Plot.ruleY([0])
+  ]
+})
+```
+
+"Large ticket (unidentified)" are sellers with no listing whose typical payment is above what 99% of listed API calls cost. It's a label from price alone, not an identification. See the method note.
+
+## Content and data (the growth tripwire)
+
+```{ojs}
+//| echo: false
+Plot.plot({
+  height: 240, marginLeft: 60, color: {domain: ["content", "data"], range: ["#2a78d6", "#eb6834"], legend: true, tickFormat: (d) => labels[d]},
+  x: {type: "band", label: null, tickFormat: (d) => d3.utcFormat("%-d %b")(new Date(d))},
+  y: {label: "USD per week", grid: true},
+  marks: [
+    Plot.barY(weekly.filter((d) => d.stage === "clean" && (d.category === "content" || d.category === "data")),
+      {x: (d) => d.week_start.toISOString(), y: "usd", fill: "category", tip: true, inset: 1}),
+    Plot.ruleY([0])
+  ]
+})
+```
+
+The marketplace question reopens if cleaned content + data grows more than 20% a month for three months running.
+
+## Price per call (chain-linked, first week = 100)
+
+```{ojs}
+//| echo: false
+Plot.plot({
+  height: 240, marginLeft: 50, color: {domain: ["transacted", "posted"], range: ["#2a78d6", "#eb6834"], legend: true},
+  x: {type: "utc", label: null}, y: {label: "Index", grid: true},
+  marks: [
+    Plot.lineY(prices.filter((d) => d.category === "all" && d.index_jevons != null), {x: "week_start", y: "index_jevons", stroke: "measure", strokeWidth: 2, tip: true}),
+    Plot.dot(prices.filter((d) => d.category === "all" && d.index_jevons != null), {x: "week_start", y: "index_jevons", fill: "measure", r: 4})
+  ]
+})
+```
+
+**Transacted** uses each cleaned seller's median payment. **Posted** uses exact-price Base USDC offers in the Coinbase Bazaar listing. Both are the geometric mean of week-on-week changes over items present in both weeks.
+
+## Every week
+
+```{ojs}
+//| echo: false
+Inputs.table(
+  d3.groups(weekly.filter((d) => d.category === "all" || d.category === "content" || d.category === "data"), (d) => +d.week_start)
+    .map(([w, rs]) => {
+      const g = (st, c) => (rs.find((r) => r.stage === st && r.category === c) ?? {}).usd;
+      return {"Week of": new Date(w), "Raw USD": g("raw", "all"), "After manufacture filter": g("d05", "all"), "Demand-cleaned": g("clean", "all"), "Content + data": g("clean", "content") + g("clean", "data")};
+    }).sort((a, b) => b["Week of"] - a["Week of"]),
+  {format: {"Week of": d3.utcFormat("%-d %b %Y"), "Raw USD": usd, "After manufacture filter": usd, "Demand-cleaned": usd, "Content + data": usd}}
+)
+```
+
+**Method:** the [method note](https://github.com/doescodinggiteasier/wknipe-site/blob/main/docs/X402_INDEX_METHOD.md) has definitions, filters and known biases. **Data:** [weekly.csv](data/weekly.csv) · [prices_weekly.csv](data/prices_weekly.csv) · [payees_weekly.csv](data/payees_weekly.csv). **API:** `https://api.wknipe.com/v1/latest` (free); series and sellers cost $0.001 per call over x402.
+
+```{ojs}
+//| echo: false
+html`<p class="text-muted small">Last updated: data for week ${head.latest_week}; page built ${new Date(document.lastModified).toISOString().slice(0, 10)}.</p>`
+```

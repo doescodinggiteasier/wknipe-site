@@ -1,0 +1,158 @@
+# Weekly rebuild of wknipe.com: x402 Clean Index -> seller leaderboard -> site + API deploy.
+#
+# Monday 14:00 UTC collects the previous Mon-Sun week from Blockscout (2.5-4 h inside published rate limits).
+# If collection is not finished after 4.5 h, progress goes to the Actions cache and the Tuesday/Wednesday runs resume it.
+# Any failure in the filters, the classifier or the builds turns the run red and nothing is deployed.
+# OpenRouter is used only to classify sellers never seen before (cached labels), hard-capped at $0.50 per run.
+name: weekly
+
+on:
+  schedule:
+    - cron: "0 14 * * 1"   # Monday: collect, build, deploy
+    - cron: "0 14 * * 2"   # Tuesday: resume an unfinished collection (no-op otherwise)
+    - cron: "0 14 * * 3"   # Wednesday: second resume (no-op otherwise)
+  workflow_dispatch:
+    inputs:
+      deploy_only:
+        description: "Skip the pipeline; just render and deploy what is committed"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weekly
+  cancel-in-progress: false
+
+jobs:
+  weekly:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    env:
+      X402_STATE: state
+      X402_STRICT: "1"
+      OR_CAP: "0.50"
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Target week
+        id: wk
+        run: |
+          WEEK=$(python3 -c "import sys; sys.path.insert(0, 'scripts/x402_index'); import collect; print(collect.latest_complete())")
+          echo "week=$WEEK" >> "$GITHUB_OUTPUT"
+          if [ -f "state/x402_index/week_$WEEK.json.gz" ] || [ -f "state/x402_index/week_$WEEK.json" ]; then BUILT=true; else BUILT=false; fi
+          echo "built=$BUILT" >> "$GITHUB_OUTPUT"
+          # Tuesday/Wednesday runs only exist to resume; if Monday finished, there is nothing to do.
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "${{ github.event.schedule }}" != "0 14 * * 1" ] && [ "$BUILT" = true ]; then SKIP=true; else SKIP=false; fi
+          echo "skip=$SKIP" >> "$GITHUB_OUTPUT"
+          echo "Week $WEEK; already built: $BUILT; skip: $SKIP"
+
+      - name: Restore unfinished collection
+        if: steps.wk.outputs.skip != 'true' && steps.wk.outputs.built != 'true' && inputs.deploy_only != true
+        uses: actions/cache/restore@v4
+        with:
+          path: state/x402_week_${{ steps.wk.outputs.week }}
+          key: raw-${{ steps.wk.outputs.week }}-${{ github.run_id }}
+          restore-keys: raw-${{ steps.wk.outputs.week }}-
+
+      - name: x402 Clean Index pipeline
+        id: pipe
+        if: steps.wk.outputs.skip != 'true' && inputs.deploy_only != true
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_TOKEN }}
+          OR_LEDGER: ${{ runner.temp }}/openrouter_ledger.jsonl
+        run: |
+          set +e
+          python3 scripts/x402_index/run.py --weekly --deadline 16200
+          rc=$?
+          set -e
+          SPENT=$(python3 -c "import json,os; p=os.environ['OR_LEDGER']; print(round(sum(json.loads(l).get('cost') or 0 for l in open(p)), 4) if os.path.exists(p) else 0)")
+          echo "OpenRouter spend this run: \$$SPENT (cap \$$OR_CAP)" >> "$GITHUB_STEP_SUMMARY"
+          if [ $rc -eq 75 ]; then
+            echo "pending=true" >> "$GITHUB_OUTPUT"
+            echo "::notice::Collection for ${{ steps.wk.outputs.week }} unfinished; progress cached, next scheduled run resumes. Nothing deployed."
+            echo "Collection unfinished; resumes next run. Nothing deployed." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          exit $rc
+
+      - name: Save unfinished collection
+        if: always() && steps.pipe.outputs.pending == 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: state/x402_week_${{ steps.wk.outputs.week }}
+          key: raw-${{ steps.wk.outputs.week }}-${{ github.run_id }}
+
+      - name: Seller leaderboard data
+        if: steps.wk.outputs.skip != 'true' && steps.pipe.outputs.pending != 'true' && inputs.deploy_only != true
+        run: if [ -f scripts/sellers/build.py ]; then python3 scripts/sellers/build.py; fi
+
+      - name: Commit data
+        if: steps.wk.outputs.skip != 'true' && steps.pipe.outputs.pending != 'true' && inputs.deploy_only != true
+        run: |
+          git config user.name "wknipe-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data state
+          if git diff --cached --quiet; then echo "no data changes"; else
+            git commit -m "data: x402 index week ${{ steps.wk.outputs.week }} (weekly run ${{ github.run_id }})"
+            git push
+          fi
+
+      - uses: actions/setup-node@v4
+        if: steps.wk.outputs.skip != 'true' && steps.pipe.outputs.pending != 'true'
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: apps/x402-index-api/package-lock.json
+
+      - name: Install Wrangler and API deps
+        if: steps.wk.outputs.skip != 'true' && steps.pipe.outputs.pending != 'true'
+        working-directory: apps/x402-index-api
+        run: npm ci
+
+      - uses: quarto-dev/quarto-actions/setup@v2
+        if: steps.wk.outputs.skip != 'true' && steps.pipe.outputs.pending != 'true'
+        with:
+          version: 1.10.18
+
+      - name: Render site
+        if: steps.wk.outputs.skip != 'true' && steps.pipe.outputs.pending != 'true'
+        working-directory: site
+        run: quarto render
+
+      - name: Deploy site (Worker wknipe, static assets)
+        if: steps.wk.outputs.skip != 'true' && steps.pipe.outputs.pending != 'true'
+        working-directory: site
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: ../apps/x402-index-api/node_modules/.bin/wrangler deploy
+
+      - name: Deploy API (Worker x402-index-api, bundled data)
+        if: steps.wk.outputs.skip != 'true' && steps.pipe.outputs.pending != 'true'
+        working-directory: apps/x402-index-api
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: npm run deploy
+
+      - name: Smoke test live site and API
+        if: steps.wk.outputs.skip != 'true' && steps.pipe.outputs.pending != 'true'
+        run: |
+          curl -fsS -o /dev/null -w "wknipe.com/x402/ %{http_code}\n" https://wknipe.com/x402/
+          curl -fsS https://api.wknipe.com/v1/latest | python3 -c "import json,sys; d=json.load(sys.stdin); print('API latest week', d['latest_week'])"
+
+      - name: Refresh AI-policy checker examples
+        if: steps.wk.outputs.skip != 'true' && steps.pipe.outputs.pending != 'true'
+        run: |
+          if [ -f scripts/check/examples.txt ]; then
+            while read -r d; do
+              [ -z "$d" ] && continue
+              curl -fsS -o /dev/null -w "check $d %{http_code}\n" "https://api.wknipe.com/v1/check?domain=$d&refresh=weekly" || true
+              sleep 3
+            done < scripts/check/examples.txt
+          fi

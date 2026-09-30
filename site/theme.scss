@@ -1,0 +1,12 @@
+/*-- scss:defaults --*/
+$primary: #0f6b4f;
+$body-bg: #f6f7f5;
+$body-color: #121614;
+$navbar-bg: #0f6b4f;
+$navbar-fg: #ffffff;
+/*-- scss:rules --*/
+.stat-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.stat-strip .stat { border-top: 2px solid $primary; padding-top: .5rem; }
+.stat .k { font: 500 .72rem/1.3 "IBM Plex Mono", monospace; letter-spacing: .06em; text-transform: uppercase; opacity: .7; }
+.stat .v { font: 600 1.6rem/1.2 "IBM Plex Mono", monospace; font-variant-numeric: tabular-nums; }
+table { font-variant-numeric: tabular-nums; }

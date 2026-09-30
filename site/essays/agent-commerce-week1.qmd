@@ -1,0 +1,78 @@
+---
+title: "593k payments, $46 of content: what agent commerce actually buys"
+author: "Wes Knipe"
+date: 2026-09-30
+draft: true
+categories: [x402, agents, data]
+description: "TODO(Wes): one-sentence dek."
+---
+
+<!-- STUB. Structure, figures and verified numbers from ClCo (ORDER_011). The argument and the prose are Wes's.
+     Every number below is computed from data/x402_index at render time, so the text never drifts from the data.
+     The title uses the ORDER_005 P2 / ORDER_010 week 2026-09-21 figures: 593,454 raw payments, and content in the
+     cleaned set of about $46 ($45.75 in the ORDER_010 build). Re-check the title against the numbers box before publishing. -->
+
+```{ojs}
+//| echo: false
+head = FileAttachment("../x402/data/headline.json").json()
+weekly = FileAttachment("../x402/data/weekly.csv").csv({typed: true})
+wk = "2026-09-21"
+row = (st, c) => weekly.find((r) => r.week_start.toISOString().slice(0, 10) === wk && r.stage === st && r.category === c)
+usd = (x) => "$" + (Math.abs(x) >= 100 ? Math.round(x).toLocaleString("en-US") : x.toFixed(2))
+```
+
+**TODO(Wes): opening.** What you expected agent commerce to look like, and why you went and measured it.
+
+## The numbers (week of 21 Sep 2026)
+
+```{ojs}
+//| echo: false
+html`<table class="table">
+<tr><th>Raw x402 settlements on Base</th><td>${row("raw","all").payments.toLocaleString("en-US")} payments, ${usd(row("raw","all").usd)}</td></tr>
+<tr><th>After removing provably manufactured flows</th><td>${row("d05","all").payments.toLocaleString("en-US")} payments, ${usd(row("d05","all").usd)}</td></tr>
+<tr><th>After also removing single-buyer sellers</th><td>${row("clean","all").payments.toLocaleString("en-US")} payments, ${usd(row("clean","all").usd)}</td></tr>
+<tr><th>Of which content</th><td>${usd(row("clean","content").usd)} across ${row("clean","content").payees} sellers</td></tr>
+<tr><th>Of which data</th><td>${usd(row("clean","data").usd)} across ${row("clean","data").payees} sellers</td></tr>
+<tr><th>Of which compute and tools</th><td>${usd(row("clean","compute").usd)}</td></tr>
+<tr><th>Large ticket (unidentified) + unclassed</th><td>${usd(row("clean","large_ticket").usd + row("clean","unclassed").usd)}</td></tr>
+</table>`
+```
+
+**TODO(Wes): what this says.** Your reading of the gap between raw and cleaned volume, and of content's share.
+
+## What is being bought
+
+```{ojs}
+//| echo: false
+Plot.plot({
+  height: 260, marginLeft: 130, x: {label: "Cleaned USD, week of 21 Sep", grid: true, tickFormat: (d) => "$" + d3.format("~s")(d)}, y: {label: null},
+  marks: [Plot.barX(weekly.filter((r) => r.week_start.toISOString().slice(0, 10) === wk && r.stage === "clean" && r.category !== "all"),
+    {y: "category", x: "usd", sort: {y: "-x"}, fill: "currentColor", tip: true}), Plot.ruleX([0])]
+})
+```
+
+**TODO(Wes): interpretation.** Suggested beats, all yours to accept or drop:
+
+- where compute sits relative to content and data;
+- what the unidentified large-ticket payments might be (the method note records the evidence: B2B-sized transfers, consumer-app purchases);
+- what would have to change for content to matter.
+
+## Why the raw number misleads
+
+**TODO(Wes).** Facts you can use, all sourced:
+
+- D05 (arXiv 2607.12575) finds about 85% of Base x402 settlements are operator-internal.
+- Our lower-bound filter removes much less; see the method box.
+- One seller in week 21 Sep had 874 one-time buyers, 10 of 12 sampled funded by the same three wallets (ORDER_010 dig).
+
+::: {.callout-note collapse="true"}
+## Method box
+- **Settlements:** USDC `transferWithAuthorization` calls sent by 128 known x402 facilitators on Base (Blockscout).
+- **Manufacture filter:** drops self-payments, closed loops, funding-linked payer–seller pairs, and fan-out funding. It only removes what it can prove, so cleaned numbers are an upper bound on genuine demand.
+- **Dust filter:** drops sellers with a single buyer in the week.
+- **Categories:** a small model reads each seller's own listing. It agreed with 80% of 30 blind hand labels on content / data / neither.
+- **Coverage:** Base only.
+- **Full method:** [X402_INDEX_METHOD.md](https://github.com/doescodinggiteasier/wknipe-site/blob/main/docs/X402_INDEX_METHOD.md).
+:::
+
+**TODO(Wes): close.** What you're watching next (the tripwire on the [index page](../x402/index.qmd)).

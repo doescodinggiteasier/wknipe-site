@@ -1,0 +1,72 @@
+{
+ "0x95ec5b9eb80cb275ab6e6015b624f86fbeb573eb": {
+  "buyers": 33,
+  "usd": 63.7,
+  "sampled": 12,
+  "shared_funders": {},
+  "buyers_with_shared_funder": 0,
+  "isolated_buyers": 12,
+  "circular": null,
+  "flagged": false
+ },
+ "0x88e672725256986a599afb6f1f56304d84b4d572": {
+  "buyers": 23,
+  "usd": 45.08,
+  "sampled": 12,
+  "shared_funders": {},
+  "buyers_with_shared_funder": 0,
+  "isolated_buyers": 12,
+  "circular": null,
+  "flagged": false
+ },
+ "0x49245ae5cfbf5b751f83ba66e8502b33551fa9c4": {
+  "buyers": 43,
+  "usd": 4.02,
+  "sampled": 12,
+  "shared_funders": {},
+  "buyers_with_shared_funder": 0,
+  "isolated_buyers": 12,
+  "circular": null,
+  "flagged": false
+ },
+ "0x3dcbef58b30fac60a897cd4ed1daed5de33b32e1": {
+  "buyers": 86,
+  "usd": 0.4,
+  "sampled": 12,
+  "shared_funders": {},
+  "buyers_with_shared_funder": 0,
+  "isolated_buyers": 8,
+  "circular": null,
+  "flagged": false
+ },
+ "0x8553670d4b9302a6c6499707e1ad742bd941f930": {
+  "buyers": 26,
+  "usd": 0.0,
+  "sampled": 12,
+  "shared_funders": {},
+  "buyers_with_shared_funder": 0,
+  "isolated_buyers": 0,
+  "circular": null,
+  "flagged": false
+ },
+ "0x3fc3bfe0e28824cdc964b8ba3ba97ac3c8d8ffb0": {
+  "buyers": 22,
+  "usd": 0.0,
+  "sampled": 12,
+  "shared_funders": {},
+  "buyers_with_shared_funder": 0,
+  "isolated_buyers": 0,
+  "circular": null,
+  "flagged": false
+ },
+ "0x7e5af504234a9a992009b4de3f5ca9c4fe0db5be": {
+  "buyers": 21,
+  "usd": 0.0,
+  "sampled": 12,
+  "shared_funders": {},
+  "buyers_with_shared_funder": 0,
+  "isolated_buyers": 0,
+  "circular": null,
+  "flagged": false
+ }
+}

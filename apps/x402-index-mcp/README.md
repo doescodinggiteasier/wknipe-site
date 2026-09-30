@@ -1,0 +1,29 @@
+# x402-index-mcp
+
+A stdio MCP server for the x402 Clean Index (ORDER_011 Module A).
+- **SDK:** official MCP Python SDK `mcp==2.2.0`, where FastMCP is now `MCPServer`.
+- **Why Python:** the index pipeline is Python and writes CSV/JSON, so the server reads them directly.
+
+| Tool | Returns |
+|---|---|
+| `latest_week()` | headline numbers and the content+data tripwire |
+| `weekly_series(stage, category)` | weekly payments/USD/sellers/buyers; stage raw, d05 or clean; category content, data, search, compute, other, large_ticket, unclassed or all |
+| `top_sellers(category, n)` | top cleaned sellers by USD in the latest week |
+| `price_stats(category)` | posted and transacted price per call, with chain-linked index |
+| `method()` | key definitions from docs/X402_INDEX_METHOD.md |
+
+## Install
+```
+cd apps/x402-index-mcp && python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+.venv/bin/python test_server.py        # spawns the server over stdio and calls every tool; exit 0 = pass
+```
+- **Claude Code:** `claude mcp add x402-index -- $PWD/.venv/bin/python $PWD/server.py`
+- **Claude Desktop:** see docs/WES_SETUP_011.md §5.
+
+## Configuration
+| Variable | Meaning | Default |
+|---|---|---|
+| `X402_INDEX_DATA` | folder with weekly.csv, prices_weekly.csv, payees_weekly.csv, headline.json | `../../data/x402_index` |
+| `X402_INDEX_API` | remote mode, e.g. `https://api.wknipe.com` | unset |
+
+In remote mode, `latest_week()` and `method()` use the public API's free routes. The other tools stay local: their API routes cost $0.001 per call over x402, and this server holds no wallet.

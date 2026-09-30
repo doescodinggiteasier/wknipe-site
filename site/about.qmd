@@ -1,0 +1,11 @@
+---
+title: "About"
+---
+
+<!-- TODO(Wes): bio in your voice. -->
+
+This site is built with [Quarto](https://quarto.org) from a public repository. The x402 Clean Index uses only public data: Base chain transactions via Blockscout, and the Coinbase CDP Bazaar listing. Its [method note](https://github.com/doescodinggiteasier/wknipe-site/blob/main/docs/X402_INDEX_METHOD.md) lists every filter and known bias.
+
+**Our own payments are excluded.** We run a paid API for the index at `api.wknipe.com`. Payments to it, and payments from our test wallet, are tagged as ours and never counted as demand.
+
+**Privacy.** Visits are counted with Cloudflare Web Analytics: no cookies, no personal data, no cross-site tracking. The [AI-policy checker](check/index.qmd) keeps each domain's result for 24 hours and logs nothing about who asked.

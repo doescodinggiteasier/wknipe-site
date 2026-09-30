@@ -1,0 +1,124 @@
+{
+ "latest_week": "2026-09-21..2026-09-27",
+ "weeks_available": [
+  "2026-08-24",
+  "2026-08-31",
+  "2026-09-07",
+  "2026-09-14",
+  "2026-09-21"
+ ],
+ "raw_usd": 134479.25,
+ "raw_payments": 593454,
+ "d05_usd": 133427.33,
+ "clean_usd": 73345.07,
+ "clean_payments": 537333,
+ "clean_payees": 637,
+ "clean_by_category_usd": {
+  "content": 44.66,
+  "data": 1868.94,
+  "search": 63.3,
+  "compute": 19305.15,
+  "other": 3151.37,
+  "large_ticket": 37707.46,
+  "unclassed": 11204.19
+ },
+ "tripwire_content_plus_data_clean_usd": 1913.6,
+ "tripwire_4week_growth": -0.197,
+ "tripwire_4week_base_week": "2026-08-24",
+ "tripwire_loglinear_monthly_growth_last_5_weeks": -0.5062,
+ "content_plus_data_clean_usd_by_week": {
+  "2026-08-24": 2383.16,
+  "2026-08-31": 4904.81,
+  "2026-09-07": 4081.41,
+  "2026-09-14": 1501.56,
+  "2026-09-21": 1913.6
+ },
+ "category_sources": {
+  "model": 2169,
+  "hand_o2+model": 113,
+  "hand_o2": 224,
+  "hand_o10": 75,
+  "unlisted_review": 20
+ },
+ "hand_o2_model_conflicts_set_to_other": 25,
+ "fanout_flagged": {
+  "2026-08-24": {},
+  "2026-08-31": {},
+  "2026-09-07": {},
+  "2026-09-14": {},
+  "2026-09-21": {
+   "0x8a12157b27c22fb239e558dc3cb43c7d1a8c0881": {
+    "buyers": 872,
+    "usd": 1453.26,
+    "sampled": 12,
+    "shared_funders": {
+     "0x1a7f88d2242412f119fbb050b81f5856032a8db3": 5,
+     "0xe3a0a528f25eb462d075b9ff5afcc5f9e5c9c860": 4,
+     "0xa468f882943e7f137b022f96817cac9796fc0a4c": 2
+    },
+    "buyers_with_shared_funder": 11,
+    "isolated_buyers": 12,
+    "circular": false,
+    "flagged": true
+   }
+  }
+ },
+ "fanout_checked": {
+  "2026-08-24": 8,
+  "2026-08-31": 7,
+  "2026-09-07": 10,
+  "2026-09-14": 10,
+  "2026-09-21": 6
+ },
+ "excluded_own_addresses": [
+  "0x5917dcea021336e5b13d228f7ed784732c57c013",
+  "0x6ac87b6a48e329e2557c7f6054ed1518be76fbf9"
+ ],
+ "filter": {
+  "2026-08-24": {
+   "settlements": 388367,
+   "funding_lookups": 266,
+   "new_lookups": 101,
+   "lookup_failures": 0,
+   "endpoint_coverage": 0.9001,
+   "c1_payments": 3817,
+   "c2_payments": 22916
+  },
+  "2026-08-31": {
+   "settlements": 516582,
+   "funding_lookups": 127,
+   "new_lookups": 44,
+   "lookup_failures": 0,
+   "endpoint_coverage": 0.9001,
+   "c1_payments": 3068,
+   "c2_payments": 25339
+  },
+  "2026-09-07": {
+   "settlements": 286378,
+   "funding_lookups": 300,
+   "new_lookups": 153,
+   "lookup_failures": 0,
+   "endpoint_coverage": 0.8551,
+   "c1_payments": 3289,
+   "c2_payments": 22006
+  },
+  "2026-09-14": {
+   "settlements": 393027,
+   "funding_lookups": 300,
+   "new_lookups": 0,
+   "lookup_failures": 0,
+   "endpoint_coverage": 0.7864,
+   "c1_payments": 2898,
+   "c2_payments": 22963
+  },
+  "2026-09-21": {
+   "settlements": 593454,
+   "funding_lookups": 300,
+   "new_lookups": 1,
+   "lookup_failures": 1,
+   "endpoint_coverage": 0.8433,
+   "c1_payments": 2768,
+   "c2_payments": 20285
+  }
+ }
+}

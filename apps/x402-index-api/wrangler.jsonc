@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "account_id": "0134a2c1c491457155b6aa9d6c79a8ae", // public account id (not a secret); lets CI deploy without an extra secret
+  "name": "x402-index-api",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-09-29",
+  "compatibility_flags": ["nodejs_compat"],
+  // api.wknipe.com (zone on Wes's account). Public values only; no secrets live here.
+  "routes": [{ "pattern": "api.wknipe.com", "custom_domain": true }],
+  "vars": {
+    "PAY_TO": "0x6ac87b6a48e329e2557c7f6054ed1518be76fbf9",
+    "FACILITATOR_URL": "https://facilitator.payai.network",
+    "PRICE": "$0.001"
+  }
+}

@@ -1,0 +1,11 @@
+---
+title: "Wes Knipe"
+---
+
+Notes and measurements on how AI agents find, judge and pay for information.
+
+- **[x402 Clean Index](x402/index.qmd):** a weekly, demand-cleaned view of what agents actually pay for on the x402 network. Unlike raw trackers, it removes manufactured and single-buyer volume first.
+- **[Essays](essays/index.qmd):** longer pieces built on that data.
+- **[Notes](notes/index.qmd):** reading notes and working drafts.
+
+<!-- TODO(Wes): a line or two in your own voice about who you are and why this site exists. -->

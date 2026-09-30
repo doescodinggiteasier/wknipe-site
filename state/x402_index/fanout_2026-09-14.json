@@ -1,0 +1,106 @@
+{
+ "0x159be9e316bc5fac8ce05aec4eaae46e8f8a4908": {
+  "buyers": 274,
+  "usd": 27.4,
+  "sampled": 12,
+  "shared_funders": {
+   "0xc1b38b5cb584dd94f7f3e9859fa1ac8565baaa1e": 4,
+   "0x47b9575ff2d98e5b99d4edd05b9b243f33221d95": 3,
+   "0xe694fb4c8275aeb6e2874d45b43079ec532ce437": 2
+  },
+  "buyers_with_shared_funder": 9,
+  "isolated_buyers": 0,
+  "circular": false,
+  "flagged": false
+ },
+ "0x4f4beb658084d7bd7ea0b6f74dbf6e99f93d422d": {
+  "buyers": 589,
+  "usd": 5.5,
+  "sampled": 12,
+  "shared_funders": {},
+  "buyers_with_shared_funder": 0,
+  "isolated_buyers": 12,
+  "circular": null,
+  "flagged": false
+ },
+ "0x90e8c7956a9e42f3154fd01a5a6d5722add10d6d": {
+  "buyers": 31,
+  "usd": 4.51,
+  "sampled": 12,
+  "shared_funders": {},
+  "buyers_with_shared_funder": 0,
+  "isolated_buyers": 5,
+  "circular": null,
+  "flagged": false
+ },
+ "0xfa45c1c9e6e21bfc7fc6ca21efefae60627ce3d7": {
+  "buyers": 31,
+  "usd": 4.4,
+  "sampled": 12,
+  "shared_funders": {},
+  "buyers_with_shared_funder": 0,
+  "isolated_buyers": 12,
+  "circular": null,
+  "flagged": false
+ },
+ "0x8cf48d837b6a8fcf2c3ba495d1aaa2f0da49fd18": {
+  "buyers": 28,
+  "usd": 2.66,
+  "sampled": 12,
+  "shared_funders": {},
+  "buyers_with_shared_funder": 0,
+  "isolated_buyers": 12,
+  "circular": null,
+  "flagged": false
+ },
+ "0xf1453b5498760508765c29f090492ac1714bced1": {
+  "buyers": 21,
+  "usd": 1.73,
+  "sampled": 12,
+  "shared_funders": {},
+  "buyers_with_shared_funder": 0,
+  "isolated_buyers": 0,
+  "circular": null,
+  "flagged": false
+ },
+ "0x3dcbef58b30fac60a897cd4ed1daed5de33b32e1": {
+  "buyers": 88,
+  "usd": 0.45,
+  "sampled": 12,
+  "shared_funders": {},
+  "buyers_with_shared_funder": 0,
+  "isolated_buyers": 8,
+  "circular": null,
+  "flagged": false
+ },
+ "0xd07bb762a322029df4f4fb728af1c805591fc7d0": {
+  "buyers": 26,
+  "usd": 0.0,
+  "sampled": 12,
+  "shared_funders": {},
+  "buyers_with_shared_funder": 0,
+  "isolated_buyers": 0,
+  "circular": null,
+  "flagged": false
+ },
+ "0x59dc4e72ff68bd2fdcf904f7dea50ba34369c9dd": {
+  "buyers": 22,
+  "usd": 0.0,
+  "sampled": 12,
+  "shared_funders": {},
+  "buyers_with_shared_funder": 0,
+  "isolated_buyers": 0,
+  "circular": null,
+  "flagged": false
+ },
+ "0x1035e11e861aab9fa443491bfeeb0b3152c7a9f3": {
+  "buyers": 23,
+  "usd": 0.0,
+  "sampled": 12,
+  "shared_funders": {},
+  "buyers_with_shared_funder": 0,
+  "isolated_buyers": 0,
+  "circular": null,
+  "flagged": false
+ }
+}

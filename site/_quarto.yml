@@ -1,0 +1,45 @@
+project:
+  type: website
+  output-dir: _site
+  pre-render: _prerender.py
+  resources:
+    - "x402/data/*"
+  render:
+    - "*.qmd"
+    - "!x402_index/"
+
+website:
+  title: "Wes Knipe"
+  site-url: "https://wknipe.com"
+  draft-mode: gone   # drafts (the essay stub) are not published; `quarto preview` still shows them
+  repo-url: "https://github.com/doescodinggiteasier/wknipe-site"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: x402/index.qmd
+        text: x402 Clean Index
+      - href: essays/index.qmd
+        text: Essays
+      - href: notes/index.qmd
+        text: Notes
+      - href: about.qmd
+        text: About
+  page-footer:
+    center: |
+      Data: public Base chain (Blockscout) and the Coinbase Bazaar listing. Method: [X402_INDEX_METHOD.md](https://github.com/doescodinggiteasier/wknipe-site/blob/main/docs/X402_INDEX_METHOD.md)<br>
+      [Code MIT](https://github.com/doescodinggiteasier/wknipe-site/blob/main/LICENSE) · [Data & writing CC BY 4.0](https://github.com/doescodinggiteasier/wknipe-site/blob/main/LICENSE-CONTENT.md) · [Source](https://github.com/doescodinggiteasier/wknipe-site)
+
+format:
+  html:
+    theme:
+      light: [cosmo, theme.scss]
+      dark: [darkly, theme-dark.scss]
+    respect-user-color-scheme: true
+    toc: false
+    mainfont: "Schibsted Grotesk, Helvetica Neue, Arial, sans-serif"
+    monofont: "IBM Plex Mono, SF Mono, Menlo, monospace"
+    include-in-header:
+      text: |
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500&display=swap">

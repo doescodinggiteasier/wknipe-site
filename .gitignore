@@ -1,0 +1,19 @@
+# Build output and dependencies
+node_modules/
+.wrangler/
+site/_site/
+site/.quarto/
+site/x402/data/
+site/x402_index/
+apps/x402-index-api/src/data.json
+__pycache__/
+.venv/
+*_files/
+# Raw collected weeks (hundreds of MB); CI keeps an unfinished one in the Actions cache only
+state/x402_week_*/
+# Never commit secrets or private working files
+.env
+.env.*
+local/
+predictions/private/
+.DS_Store
