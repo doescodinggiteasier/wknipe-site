@@ -268,18 +268,23 @@ i.addEventListener("input",r);r();}})();
 def og_images(d):
     """1200x630 PNG per main page with its headline number, rendered by headless Chrome from an SVG. Skipped quietly
     when no Chrome is available (the committed PNGs stay)."""
-    chrome = next((c for c in ('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', shutil.which('google-chrome') or '', shutil.which('chromium') or '', shutil.which('chrome') or '') if c and os.path.exists(c)), None)
+    chrome = next((c for c in (os.environ.get('CHROME', ''), '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', shutil.which('google-chrome') or '', shutil.which('chromium') or '', shutil.which('chrome') or '') if c and os.path.exists(c)), None)
     og = os.path.join(HERE, 'og'); os.makedirs(og, exist_ok=True)
     M = d.market; lw = d.latest
     clean = d.w(lw, 'clean', 'all'); raw = d.w(lw, 'raw', 'all'); bw = M['buyers_weekly'][-1]
     P = d.prices; S = d.status; A = d.access
     pa = next((r for r in P.get('posted_vs_paid', []) if r['category'] == 'all'), {}) if P else {}
+    LS = (rjson(D('x402_prices', 'listings.json')) or {}).get('sellers') or []
+    conv = sum(1 for s in LS if s[1] >= 5) / len(LS) if LS else None
     cards = {
         'home': ('Agent payments, measured', usd(clean) + ' / week', f'demand-cleaned x402 spend of {usd(raw)} settled · {num(int(bw["active_buyers"]))} genuine buyers'),
         'market': ('x402 market', pct(clean / raw) + ' survives', f'of {usd(raw)} settled in the week of {week_label(lw)} after removing manufactured and single-buyer volume'),
         'sellers': ('x402 sellers', f'{sum(1 for s in d.sellers["sellers"] if s["qualifies_latest"])} sellers', 'with 5+ genuine buyers last week, ranked by demand-cleaned USD'),
         'buyers': ('x402 buyers', num(int(bw['active_buyers'])), f'genuine buyers in the week of {week_label(lw)} · {pct(int(bw["new_buyers"]) / int(bw["active_buyers"]))} new'),
         'prices': ('x402 prices', f'{pa.get("ratio", 0):.1f}× posted' if pa.get('ratio') else 'Posted vs paid', f'median paid {usd(pa.get("paid_median_usd"), True)} vs posted {usd(pa.get("posted_median_usd"), True)} per call'),
+        'buy': ('Best execution', 'Cheapest verified', 'x402 endpoint for any task an agent needs done · ranked by price, 402 health and real buyers'),
+        'gaps': ('Where to build', f'{pct(conv)} convert', 'of listed x402 sellers get 5+ genuine buyers · which topics beat that'),
+        'brief': ('State of x402', usd(clean * 52) + ' / yr', 'demand-cleaned x402 spend, latest week × 52 · one printable page'),
         'comps': ('Price comps', f'{num(P.get("listings"))} listings', 'compare your API price and see whether comparables get genuine buyers'),
     }
     if S:
@@ -294,7 +299,7 @@ def og_images(d):
     for k, (eyebrow, big, sub) in cards.items():
         html_s = f'''<!doctype html><html><head><meta charset="utf-8"><style>@font-face{{font-family:Inter;src:url("{font}") format("woff2");font-weight:100 900}}
 html,body{{margin:0;width:1200px;height:630px;background:#F8F6F2;font-family:Inter,sans-serif;color:#1C1830}}
-.w{{position:absolute;inset:0;padding:72px 80px;box-sizing:border-box;display:flex;flex-direction:column}}
+.w{{position:absolute;top:0;left:0;width:1200px;height:630px;padding:72px 80px;box-sizing:border-box;display:flex;flex-direction:column}}
 .e{{font:600 26px Inter;color:#7A5E00;letter-spacing:.06em;text-transform:uppercase}}.b{{font:700 124px/1.05 Inter;letter-spacing:-.04em;margin:40px 0 18px;color:#4B2E83}}
 .r{{width:120px;height:8px;background:#C9A227;border-radius:4px;margin-bottom:28px}}.s{{font:500 34px/1.35 Inter;color:#5E5873;max-width:1000px}}
 .f{{margin-top:auto;display:flex;justify-content:space-between;font:600 28px Inter}}.f span:last-child{{color:#5E5873;font-weight:500}}</style></head>
@@ -302,7 +307,7 @@ html,body{{margin:0;width:1200px;height:630px;background:#F8F6F2;font-family:Int
         hp = os.path.join(tmp, f'{k}.html'); open(hp, 'w').write(html_s)
         if chrome:
             try:
-                subprocess.run([chrome, '--headless=new', '--disable-gpu', '--hide-scrollbars', '--force-device-scale-factor=1', '--window-size=1200,630',
+                subprocess.run([chrome, '--headless=new', '--disable-gpu', *(['--no-sandbox'] if os.geteuid() == 0 else []), '--hide-scrollbars', '--force-device-scale-factor=1', '--window-size=1200,630',
                                 f'--screenshot={os.path.join(og, k + ".png")}', 'file://' + hp], capture_output=True, timeout=60)
                 made += 1
             except Exception as e:

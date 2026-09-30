@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         seller: s ? s[0] : null, buyers: s ? s[1] : 0, paid: s ? s[2] : null, page: s ? s[3] : false };
     });
     ms = new MiniSearch({ fields: ["what", "name", "desc", "host"], storeFields: [], searchOptions: { boost: { what: 3, name: 2, host: 1.2 }, prefix: true, fuzzy: 0.2 } });
-    await ms.addAllAsync(rows);
+    await ms.addAllAsync(rows, { chunkSize: 1000 });
     status.textContent = `${rows.length.toLocaleString("en-US")} listings from the Bazaar snapshot ${meta.snapshot}`;
     const u = new URLSearchParams(location.search);
     if (u.get("find")) q.value = u.get("find"); if (u.get("cat")) cat.value = u.get("cat");

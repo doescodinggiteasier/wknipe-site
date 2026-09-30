@@ -332,3 +332,57 @@ dialog.wk-k .ft { border-top: 1px solid var(--line); padding: 8px 16px; font: 40
   .wk-search-btn { padding: 4px 7px; margin-left: 0; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* ---- Code blocks never widen the page (badges, API) ---- */
+#quarto-document-content pre { max-width: 100%; overflow-x: auto; white-space: pre; }
+#quarto-document-content pre code { white-space: pre; word-break: normal; }
+.card-wk { min-width: 0; max-width: 100%; }
+
+/* ---- Best execution (/x402/buy/) ---- */
+.buy-opts { display: flex; gap: 10px 14px; flex-wrap: wrap; align-items: center; }
+.buy-chk { display: inline-flex; gap: 6px; align-items: center; font-size: 14px; color: var(--ink); cursor: pointer; }
+.buy-chk input { accent-color: var(--purple); width: 16px; height: 16px; }
+.picks { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 4px 0 18px; }
+.pick { background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--purple); border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.pick.value { border-top-color: var(--gold); }
+.pick.none { opacity: .8; }
+.pick .pk { font: 500 11px/1.3 "JetBrains Mono", monospace; text-transform: uppercase; letter-spacing: .07em; color: var(--gold-text); }
+.pick .pn { font: 600 17px/1.3 "Inter", sans-serif; overflow-wrap: anywhere; }
+.pick .pp { font: 650 26px/1.1 "Inter", sans-serif; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+.pick .pp small { font: 400 13px "Inter", sans-serif; color: var(--muted); }
+.pick .pw { color: var(--muted); font-size: 14px; }
+.pick .pm { display: flex; gap: 6px; flex-wrap: wrap; }
+.pick .pu { font-size: 11.5px; color: var(--muted); overflow-wrap: anywhere; word-break: break-all; white-space: normal; background: none; padding: 0; }
+.pick .why { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 8px; margin-top: auto; }
+.buy-spread { font-size: 15px; max-width: 860px; }
+.buy-json { margin: 18px 0 8px; }
+.buy-json summary { cursor: pointer; font-weight: 600; }
+.buy-json pre { margin: 10px 0; max-height: 360px; }
+.wk-table .rank { display: inline-block; min-width: 22px; font: 500 12px "JetBrains Mono", monospace; color: var(--gold-text); }
+.meta-list { color: var(--muted); font-size: 15px; padding-left: 20px; }
+.meta-list li { margin: 4px 0; }
+.meta-list b { color: var(--ink); font-weight: 600; }
+
+/* ---- One-page brief (/x402/brief/) ---- */
+.brief-eyebrow { font: 500 12px/1.4 "JetBrains Mono", monospace; text-transform: uppercase; letter-spacing: .07em; color: var(--gold-text); margin: 0 0 8px; }
+.brief-lede { max-width: 820px; }
+.brief { border-top: 2px solid var(--gold); margin: 24px 0; max-width: 900px; }
+.brief-row { display: grid; grid-template-columns: 150px 1fr; gap: 18px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.brief-row .bk { font: 600 13px/1.6 "JetBrains Mono", monospace; color: var(--purple); text-transform: uppercase; letter-spacing: .04em; }
+.brief-row .bv { font-size: 16px; line-height: 1.6; font-variant-numeric: tabular-nums; }
+.brief-foot { max-width: 900px; font-size: 14px; color: var(--muted); }
+.brief-foot b { color: var(--ink); }
+.brief-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+@media (max-width: 640px) { .brief-row { grid-template-columns: 1fr; gap: 4px; } }
+@media print {
+  .navbar, #quarto-header, .nav-footer, .brief-actions, .chip, #quarto-margin-sidebar, .quarto-title-meta { display: none !important; }
+  body { background: #fff !important; color: #000 !important; font-size: 11pt; }
+  .brief-row { padding: 8px 0; break-inside: avoid; }
+  a { color: inherit !important; text-decoration: none; }
+}
+
+/* ---- Long URLs and code never push the page sideways on phones ---- */
+.wk-table td .sub { overflow-wrap: anywhere; word-break: break-word; }
+.wk-table td { min-width: 0; }
+form.card-wk, div.card-wk { grid-template-columns: minmax(0, 1fr); }
+.card-wk > * { min-width: 0; }

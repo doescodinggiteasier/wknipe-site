@@ -48,10 +48,16 @@ website:
             text: Prices
           - href: access/index.qmd
             text: State of AI access
+          - href: x402/gaps/index.qmd
+            text: Where to build
           - href: weekly/index.qmd
             text: This week in x402
+          - href: x402/brief/index.qmd
+            text: One-page brief
       - text: Tools
         menu:
+          - href: x402/buy/index.qmd
+            text: Best execution
           - href: x402/prices/comps.qmd
             text: Price comps
           - href: x402/status/index.qmd
@@ -89,4 +95,4 @@ format:
     include-in-header:
       text: '<link rel="preload" href="/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>'
     include-after-body:
-      text: '<script defer src="/assets/wk.js?v=14"></script>' 
+      text: '<script defer src="/assets/wk.js?v=17"></script>' 

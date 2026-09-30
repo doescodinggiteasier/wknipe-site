@@ -108,6 +108,9 @@ def build_assets(d):
         ('Buyers', 'Genuine buyers per week, retention, spend tiers', '/x402/buyers/'),
         ('Prices', 'Posted vs paid prices per call, price index', '/x402/prices/'),
         ('Price comps', 'Compare your API price with comparable x402 listings and whether they get buyers', '/x402/prices/comps'),
+        ('Best execution', 'Cheapest verified x402 endpoint for a task; buy-side router for agents', '/x402/buy/'),
+        ('Where to build', 'x402 supply vs demand by listing topic: which kinds of API get genuine buyers', '/x402/gaps/'),
+        ('State of x402, one page', 'One-page printable brief: genuine volume, buyers, sellers, prices', '/x402/brief/'),
         ('Endpoint status', 'Do x402 endpoints answer a valid 402? Daily monitor', '/x402/status/'),
         ('AI-policy checker', 'Check any website\'s robots.txt, AI crawler rules, content signals and 402', '/check/'),
         ('State of AI access', 'Share of top websites blocking each AI crawler', '/access/'),
@@ -148,12 +151,15 @@ TOOLS = [
     ('Data', 'Sellers', 'Every seller with 5+ genuine buyers, with repeat-buyer rate and top-buyer share.', '/x402/sellers/'),
     ('Data', 'Buyers', 'How many genuine buyers pay each week, whether they come back, and how much they spend.', '/x402/buyers/'),
     ('Data', 'Prices', 'What listings ask versus what buyers actually pay, by category, with a price index.', '/x402/prices/'),
+    ('Tool', 'Best execution', 'Tell it what your agent needs: the cheapest x402 endpoint that verifiably answers, and the one buyers use.', '/x402/buy/'),
     ('Tool', 'Price comps', 'Describe your API: see comparable listings, their price range, and whether they get buyers.', '/x402/prices/comps'),
+    ('Data', 'Where to build', 'Which kinds of paid API have sellers real buyers use, and which are crowded with listings nobody pays for.', '/x402/gaps/'),
     ('Tool', 'Endpoint status', 'Which x402 endpoints answer a valid 402 with the price they list. Checked daily.', '/x402/status/'),
     ('Tool', 'AI-policy checker', 'What a website tells AI crawlers: robots.txt rules per bot, content signals, licences and 402.', '/check/'),
     ('Data', 'State of AI access', 'Share of the top websites blocking each AI crawler, and who answers 402.', '/access/'),
     ('Benchmark', 'Agent benchmark', 'Which AI models make good purchase decisions, and at what cost per 1,000 decisions.', '/agents/'),
     ('API', 'API & data', 'Free JSON for every chart, CSV downloads, paid x402 endpoints and an MCP server.', '/api/'),
+    ('Brief', 'State of x402, one page', 'The numbers investors and journalists ask for first, on one printable, citable page.', '/x402/brief/'),
 ]
 
 
@@ -189,7 +195,14 @@ def home(d):
         stat_card('Bazaar listings', num(lst), daily if len(daily) >= 2 else None, growth(daily[-8], daily[-1]) if len(daily) >= 8 else None, delta_note='vs 7 days ago',
                   tip=f'Paid API listings in the Coinbase CDP Bazaar discovery index, snapshot {d.prices.get("snapshot")}. {num(d.prices.get("priced"))} have a single posted USDC price.'),
     ]
-    tools = ''.join(tool_card(k, n, ds, h) for k, n, ds, h in TOOLS if page_exists(h) or h.startswith('http'))
+    st = next((r for r in (d.status or {}).get('latest', []) if r['scope'] == 'all'), None)
+    if st:
+        cards.append(stat_card('Endpoints answering 402', pct(f(st['valid_402'])), foot=f'of {num(st["checked"])} checked daily',
+                               tip='Share of listed x402 endpoints our unpaid daily check found answering a valid 402 with a parseable payment offer. <a href="/x402/status/">Endpoint status →</a>'))
+    live = [t for t in TOOLS if page_exists(t[3]) or t[3].startswith('http')]
+    grid = lambda kinds: '<div class="tool-grid">' + ''.join(tool_card(k, n, ds, h) for k, n, ds, h in live if k in kinds) + '</div>'
+    tools = ('<h2>Data</h2><p class="meta">Weekly numbers on who buys, who sells and at what price, with manufactured volume removed.</p>' + grid(('Data', 'Brief'))
+             + '<h2>Tools</h2><p class="meta">Answer one question for your own API, agent or website.</p>' + grid(('Tool', 'Benchmark', 'API')))
     posts = writing_posts()
     wr = ''
     if posts:
@@ -198,7 +211,7 @@ def home(d):
     out = (f'<p class="eyebrow">Agent payments, measured</p>'
            f'<p class="lede">Independent numbers on what AI agents actually buy and pay for. Of {usd(d.head["raw_usd"])} settled over x402 on Base in the week of {week_label(d.latest)}, '
            f'<b>{pct(share)} survives</b> removing manufactured, single-buyer and test payments.</p>'
-           + freshness(d.through) + kpis(cards) + '<h2>Data and tools</h2>' + f'<div class="tool-grid">{tools}</div>' + wr)
+           + freshness(d.through) + kpis(cards) + tools + wr)
     write('home.md', md(out))
 
 
@@ -556,6 +569,8 @@ def build():
         _pages4.build(d)
     except ImportError:
         pass
+    import _pages5
+    _pages5.build(d)
     return 'ok'
 
 

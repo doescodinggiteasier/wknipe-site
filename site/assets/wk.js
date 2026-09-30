@@ -65,7 +65,7 @@
   // ---------- lazy script loading ----------
   const loaded = {};
   WK.load = (src) => (loaded[src] ||= new Promise((res, rej) => { const s = document.createElement("script"); s.src = src; s.onload = res; s.onerror = rej; document.head.appendChild(s); }));
-  WK.plotReady = () => WK.load("/assets/vendor/d3-7.min.js").then(() => WK.load("/assets/vendor/plot-0.6.17.min.js")).then(() => WK.load("/assets/wk-charts.js?v=14"));
+  WK.plotReady = () => WK.load("/assets/vendor/d3-7.min.js").then(() => WK.load("/assets/vendor/plot-0.6.17.min.js")).then(() => WK.load("/assets/wk-charts.js?v=17"));
   const jsonCache = {};
   WK.json = (url) => (jsonCache[url] ||= fetch(url).then((r) => { if (!r.ok) throw new Error(url + " " + r.status); return r.json(); }));
 
@@ -178,7 +178,7 @@
       const ms = new MiniSearch({ fields: ["t", "s", "x"], storeFields: ["t", "s", "u", "ty"], searchOptions: { boost: { t: 3, x: 1.5 }, prefix: true, fuzzy: 0.15, combineWith: "AND" } });
       ms.addAll(core.map((d, i) => ({ id: "c" + i, ...d })));
       mini = ms;
-      WK.json("/assets/search-listings.json").then((ls) => ms.addAllAsync(ls.map((d, i) => ({ id: "l" + i, ty: "listing", ...d })))).catch(() => {});
+      WK.json("/assets/search-listings.json").then((ls) => ms.addAllAsync(ls.map((d, i) => ({ id: "l" + i, ty: "listing", ...d })), { chunkSize: 500 })).catch(() => {});
       return ms;
     })();
     return loadingIdx;
