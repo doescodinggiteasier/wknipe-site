@@ -1,2 +1,6 @@
 /.quarto/
 **/*.quarto_ipynb
+/x402/sellers/0x*.qmd
+/agents/data/
+/predictions/data/
+/paper/files/

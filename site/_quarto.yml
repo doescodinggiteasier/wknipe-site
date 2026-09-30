@@ -4,6 +4,10 @@ project:
   pre-render: _prerender.py
   resources:
     - "x402/data/*"
+    - "agents/data/*"
+    - "predictions/data/*"
+    - "predictions/data/ots/*"
+    - "paper/files/*"
   render:
     - "*.qmd"
     - "!x402_index/"
@@ -17,12 +21,22 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: x402/index.qmd
-        text: x402 Clean Index
+      - text: x402
+        menu:
+          - href: x402/index.qmd
+            text: Clean Index
+          - href: x402/sellers/index.qmd
+            text: Seller leaderboard
+      - href: check/index.qmd
+        text: AI-policy checker
+      - text: Research
+        menu:
+          - href: agents/index.qmd
+            text: Which models buy well
+          - href: predictions/index.qmd
+            text: Prediction ledger
       - href: essays/index.qmd
         text: Essays
-      - href: notes/index.qmd
-        text: Notes
       - href: about.qmd
         text: About
   page-footer:

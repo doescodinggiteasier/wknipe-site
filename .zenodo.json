@@ -1,0 +1,15 @@
+{
+  "title": "x402 Clean Index: weekly demand-cleaned x402 agent payments on Base (data, code and working paper)",
+  "upload_type": "dataset",
+  "description": "<p>A weekly index of what buyers, mostly AI agents, pay for on the x402 HTTP-payment protocol on Base, after removing provably manufactured volume (self-payments, closed payment loops, funding-linked payer&ndash;seller pairs, fan-out manufacture) and single-buyer dust, with every seller classified as content, data, search, compute or other. Includes the weekly series (<code>data/x402_index/weekly.csv</code>), posted and paid prices per call (<code>prices_weekly.csv</code>), per-seller weekly figures (<code>payees_weekly.csv</code>), the seller leaderboard (<code>data/x402_sellers/</code>), the compact pipeline state that rebuilds every number offline (<code>state/</code>), the method note (<code>docs/X402_INDEX_METHOD.md</code>), the working paper (<code>paper/</code>), and the agent purchase-decision benchmark (<code>data/agentbuy/</code>).</p><p>Sources: public Base chain data via Blockscout; the Coinbase CDP Bazaar discovery listing. Updated every Monday at https://wknipe.com/x402/. Data and text: CC BY 4.0. Code: MIT (see LICENSE in the archive).</p>",
+  "creators": [{ "name": "Knipe, Wes" }],
+  "license": "cc-by-4.0",
+  "access_right": "open",
+  "keywords": ["x402", "agentic commerce", "AI agents", "stablecoin payments", "USDC", "Base", "micropayments", "measurement", "index"],
+  "related_identifiers": [
+    { "identifier": "https://wknipe.com/x402/", "relation": "isDocumentedBy", "resource_type": "other" },
+    { "identifier": "https://github.com/doescodinggiteasier/wknipe-site", "relation": "isSupplementTo", "resource_type": "software" },
+    { "identifier": "10.48550/arXiv.2607.12575", "relation": "references", "resource_type": "publication-preprint" }
+  ],
+  "notes": "Cleaned figures are an upper bound on genuine demand: the manufacture filters remove only what they can prove. See docs/X402_INDEX_METHOD.md for every filter and known bias."
+}

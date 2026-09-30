@@ -327,7 +327,7 @@ def main():
         'tripwire_4week_base_week': str(four) if four else None,
         'tripwire_loglinear_monthly_growth_last_5_weeks': round(math.exp(slope * 30.44) - 1, 4) if slope is not None else None,
         'content_plus_data_clean_usd_by_week': {str(w): round(v, 2) for w, v in cd.items()},
-        'category_sources': dict(collections.Counter(src.values())), 'hand_o2_model_conflicts_set_to_other': conflicts,
+        'category_sources': dict(sorted(collections.Counter(src.values()).items())), 'hand_o2_model_conflicts_set_to_other': conflicts,
         'fanout_flagged': {str(w): {q: f for q, f in FAN[w].items() if f['flagged']} for w in weeks},
         'fanout_checked': {str(w): len(FAN[w]) for w in weeks},
         'excluded_own_addresses': sorted(common.OURS),

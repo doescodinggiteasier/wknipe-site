@@ -1,0 +1,7 @@
+# Working paper (ORDER_012 Build 5). `quarto render` recomputes every number and figure from data/x402_index first.
+project:
+  type: default
+  output-dir: _output
+  pre-render: compute_numbers.py
+  render:
+    - x402_measured.qmd

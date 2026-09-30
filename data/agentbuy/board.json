@@ -1,0 +1,1203 @@
+{
+ "built": "2026-09-30T17:29Z",
+ "instrument": {
+  "bank_seed": 8008,
+  "n_scenarios": 48,
+  "reps": 3,
+  "bank_sha256": "593c83171420839092447467ea42be7d32e2cb90f99499e9b98dd483c74edc8b",
+  "task_py_sha256": "531ede1b89a2313395e3f92787b2084f95311d061469f6d05471a38cdcbcf566",
+  "optimum_strata": {
+   "certificate": 12,
+   "buy_all": 12,
+   "skip": 12,
+   "teaser": 12
+  },
+  "family": "I",
+  "condition": "C0",
+  "bootstrap": "2000 scenario resamples, seed 12"
+ },
+ "models": [
+  {
+   "model": "openai/gpt-6.1-sol",
+   "small_open": false,
+   "source": [
+    "ORDER_008 main run"
+   ],
+   "dates": [
+    "2026-09-29"
+   ],
+   "settings": {
+    "provider_order": [
+     "openai/flex"
+    ],
+    "reasoning": "low",
+    "max_tokens": 8000,
+    "temperature": "provider default",
+    "response_format": "json_schema (strict)",
+    "condition": "C0",
+    "family": "I"
+   },
+   "providers_served": {
+    "OpenAI": 575,
+    "Azure": 1
+   },
+   "models_served": [
+    "openai/gpt-6.1-sol"
+   ],
+   "n": {
+    "A": 144,
+    "B": 144,
+    "D": 144,
+    "None": 144
+   },
+   "complete": true,
+   "no_choice_pct": 0.0,
+   "usd_per_decision": 0.001359,
+   "usd_total_run": 0.794,
+   "reasoning_tokens_per_decision": 94.0,
+   "secs_per_decision": 4.9,
+   "metrics": {
+    "optimal_pct": {
+     "value": 100.0,
+     "ci95": [
+      100.0,
+      100.0
+     ]
+    },
+    "regret_pct_V": {
+     "value": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "flip_rate": {
+     "value": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "discrimination": {
+     "value": 1.0,
+     "ci95": [
+      1.0,
+      1.0
+     ]
+    },
+    "badge_effect": {
+     "value": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "verified_minus_badge": {
+     "value": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "bond_shift": {
+     "value": 0.146,
+     "ci95": [
+      0.062,
+      0.25
+     ]
+    },
+    "bond_rational": {
+     "value": 0.146,
+     "ci95": [
+      0.062,
+      0.25
+     ]
+    },
+    "bond_responsiveness": {
+     "value": 1.0,
+     "ci95": [
+      1.0,
+      1.0
+     ]
+    },
+    "bond_regret_pct_V": {
+     "value": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    }
+   },
+   "choice_mix": {
+    "certificate": 36,
+    "buy_all": 36,
+    "skip": 36,
+    "teaser": 36
+   }
+  },
+  {
+   "model": "google/gemini-3.8-flash",
+   "small_open": false,
+   "source": [
+    "ORDER_008 main run"
+   ],
+   "dates": [
+    "2026-09-29"
+   ],
+   "settings": {
+    "provider_order": [
+     "google-ai-studio/flex",
+     "google-vertex/global/flex"
+    ],
+    "reasoning": "low",
+    "max_tokens": 8000,
+    "temperature": "provider default",
+    "response_format": "json_schema (strict)",
+    "condition": "C0",
+    "family": "I"
+   },
+   "providers_served": {
+    "Google AI Studio": 576
+   },
+   "models_served": [
+    "google/gemini-3.8-flash"
+   ],
+   "n": {
+    "A": 144,
+    "B": 144,
+    "D": 144,
+    "None": 144
+   },
+   "complete": true,
+   "no_choice_pct": 0.0,
+   "usd_per_decision": 0.001772,
+   "usd_total_run": 1.0708,
+   "reasoning_tokens_per_decision": 759.8,
+   "secs_per_decision": 4.0,
+   "metrics": {
+    "optimal_pct": {
+     "value": 91.667,
+     "ci95": [
+      84.028,
+      97.917
+     ]
+    },
+    "regret_pct_V": {
+     "value": 0.596,
+     "ci95": [
+      0.102,
+      1.267
+     ]
+    },
+    "flip_rate": {
+     "value": 0.042,
+     "ci95": [
+      0.0,
+      0.097
+     ]
+    },
+    "discrimination": {
+     "value": 0.991,
+     "ci95": [
+      0.97,
+      1.0
+     ]
+    },
+    "badge_effect": {
+     "value": 0.028,
+     "ci95": [
+      -0.042,
+      0.097
+     ]
+    },
+    "verified_minus_badge": {
+     "value": -0.035,
+     "ci95": [
+      -0.09,
+      0.007
+     ]
+    },
+    "bond_shift": {
+     "value": 0.201,
+     "ci95": [
+      0.09,
+      0.319
+     ]
+    },
+    "bond_rational": {
+     "value": 0.146,
+     "ci95": [
+      0.062,
+      0.25
+     ]
+    },
+    "bond_responsiveness": {
+     "value": 1.381,
+     "ci95": [
+      0.848,
+      2.75
+     ]
+    },
+    "bond_regret_pct_V": {
+     "value": 0.556,
+     "ci95": [
+      0.19,
+      1.027
+     ]
+    }
+   },
+   "choice_mix": {
+    "certificate": 38,
+    "buy_all": 31,
+    "skip": 37,
+    "teaser": 38
+   }
+  },
+  {
+   "model": "deepseek/deepseek-v4-pro",
+   "small_open": false,
+   "source": [
+    "ORDER_008 main run"
+   ],
+   "dates": [
+    "2026-09-29"
+   ],
+   "settings": {
+    "provider_order": [
+     "baidu/fp8",
+     "gmicloud/fp8"
+    ],
+    "reasoning": "low",
+    "max_tokens": 8000,
+    "temperature": "provider default",
+    "response_format": "json_schema (strict)",
+    "condition": "C0",
+    "family": "I"
+   },
+   "providers_served": {
+    "Baidu": 556,
+    "Cloudflare": 20
+   },
+   "models_served": [
+    "deepseek/deepseek-v4-pro"
+   ],
+   "n": {
+    "A": 144,
+    "B": 144,
+    "D": 144,
+    "None": 144
+   },
+   "complete": true,
+   "no_choice_pct": 2.78,
+   "usd_per_decision": 0.003812,
+   "usd_total_run": 2.7041,
+   "reasoning_tokens_per_decision": 1805.4,
+   "secs_per_decision": 50.0,
+   "metrics": {
+    "optimal_pct": {
+     "value": 87.5,
+     "ci95": [
+      80.556,
+      93.75
+     ]
+    },
+    "regret_pct_V": {
+     "value": 1.214,
+     "ci95": [
+      0.476,
+      2.091
+     ]
+    },
+    "flip_rate": {
+     "value": 0.181,
+     "ci95": [
+      0.09,
+      0.271
+     ]
+    },
+    "discrimination": {
+     "value": 0.935,
+     "ci95": [
+      0.868,
+      0.989
+     ]
+    },
+    "badge_effect": {
+     "value": 0.035,
+     "ci95": [
+      -0.028,
+      0.097
+     ]
+    },
+    "verified_minus_badge": {
+     "value": -0.062,
+     "ci95": [
+      -0.139,
+      0.007
+     ]
+    },
+    "bond_shift": {
+     "value": 0.153,
+     "ci95": [
+      0.062,
+      0.243
+     ]
+    },
+    "bond_rational": {
+     "value": 0.146,
+     "ci95": [
+      0.062,
+      0.25
+     ]
+    },
+    "bond_responsiveness": {
+     "value": 1.048,
+     "ci95": [
+      0.476,
+      2.5
+     ]
+    },
+    "bond_regret_pct_V": {
+     "value": 2.591,
+     "ci95": [
+      1.385,
+      4.065
+     ]
+    }
+   },
+   "choice_mix": {
+    "certificate": 44,
+    "buy_all": 38,
+    "skip": 35,
+    "NO_CHOICE": 4,
+    "teaser": 23
+   }
+  },
+  {
+   "model": "openai/gpt-6-luna",
+   "small_open": false,
+   "source": [
+    "agentbuy"
+   ],
+   "dates": [
+    "2026-09-30"
+   ],
+   "settings": {
+    "reasoning": "low",
+    "provider_order": "price-sorted",
+    "max_tokens": 8000,
+    "temperature": "provider default",
+    "response_format": "json_schema (strict)",
+    "condition": "C0",
+    "family": "I"
+   },
+   "providers_served": {
+    "OpenAI": 545,
+    "Azure": 31
+   },
+   "models_served": [
+    "openai/gpt-6-luna"
+   ],
+   "n": {
+    "None": 144,
+    "A": 144,
+    "D": 144,
+    "B": 144
+   },
+   "complete": true,
+   "no_choice_pct": 0.0,
+   "usd_per_decision": 0.000237,
+   "usd_total_run": 0.148,
+   "reasoning_tokens_per_decision": 302.4,
+   "secs_per_decision": 6.7,
+   "metrics": {
+    "optimal_pct": {
+     "value": 84.722,
+     "ci95": [
+      77.083,
+      91.667
+     ]
+    },
+    "regret_pct_V": {
+     "value": 2.038,
+     "ci95": [
+      0.669,
+      4.439
+     ]
+    },
+    "flip_rate": {
+     "value": 0.215,
+     "ci95": [
+      0.125,
+      0.313
+     ]
+    },
+    "discrimination": {
+     "value": 0.713,
+     "ci95": [
+      0.519,
+      0.872
+     ]
+    },
+    "badge_effect": {
+     "value": -0.014,
+     "ci95": [
+      -0.076,
+      0.042
+     ]
+    },
+    "verified_minus_badge": {
+     "value": 0.0,
+     "ci95": [
+      -0.062,
+      0.069
+     ]
+    },
+    "bond_shift": {
+     "value": 0.132,
+     "ci95": [
+      0.014,
+      0.25
+     ]
+    },
+    "bond_rational": {
+     "value": 0.146,
+     "ci95": [
+      0.062,
+      0.25
+     ]
+    },
+    "bond_responsiveness": {
+     "value": 0.905,
+     "ci95": [
+      0.143,
+      1.733
+     ]
+    },
+    "bond_regret_pct_V": {
+     "value": 2.25,
+     "ci95": [
+      0.85,
+      3.929
+     ]
+    }
+   },
+   "choice_mix": {
+    "certificate": 49,
+    "buy_all": 41,
+    "skip": 27,
+    "teaser": 27
+   }
+  },
+  {
+   "model": "anthropic/claude-sonnet-5.5",
+   "small_open": false,
+   "source": [
+    "ORDER_008 main run"
+   ],
+   "dates": [
+    "2026-09-29"
+   ],
+   "settings": {
+    "provider_order": "OpenRouter default",
+    "reasoning": "low",
+    "max_tokens": 8000,
+    "temperature": "provider default",
+    "response_format": "json_schema (strict)",
+    "condition": "C0",
+    "family": "I"
+   },
+   "providers_served": {
+    "Azure": 576
+   },
+   "models_served": [
+    "anthropic/claude-sonnet-5.5"
+   ],
+   "n": {
+    "A": 144,
+    "B": 144,
+    "D": 144,
+    "None": 144
+   },
+   "complete": true,
+   "no_choice_pct": 2.78,
+   "usd_per_decision": 0.01102,
+   "usd_total_run": 5.7788,
+   "reasoning_tokens_per_decision": 742.5,
+   "secs_per_decision": 8.2,
+   "metrics": {
+    "optimal_pct": {
+     "value": 75.0,
+     "ci95": [
+      64.583,
+      84.028
+     ]
+    },
+    "regret_pct_V": {
+     "value": 5.462,
+     "ci95": [
+      2.734,
+      8.431
+     ]
+    },
+    "flip_rate": {
+     "value": 0.243,
+     "ci95": [
+      0.153,
+      0.34
+     ]
+    },
+    "discrimination": {
+     "value": 0.796,
+     "ci95": [
+      0.667,
+      0.908
+     ]
+    },
+    "badge_effect": {
+     "value": 0.028,
+     "ci95": [
+      -0.035,
+      0.104
+     ]
+    },
+    "verified_minus_badge": {
+     "value": 0.049,
+     "ci95": [
+      -0.042,
+      0.146
+     ]
+    },
+    "bond_shift": {
+     "value": 0.139,
+     "ci95": [
+      0.042,
+      0.25
+     ]
+    },
+    "bond_rational": {
+     "value": 0.146,
+     "ci95": [
+      0.062,
+      0.25
+     ]
+    },
+    "bond_responsiveness": {
+     "value": 0.952,
+     "ci95": [
+      0.333,
+      2.167
+     ]
+    },
+    "bond_regret_pct_V": {
+     "value": 3.892,
+     "ci95": [
+      2.268,
+      5.744
+     ]
+    }
+   },
+   "choice_mix": {
+    "teaser": 39,
+    "NO_CHOICE": 4,
+    "certificate": 32,
+    "skip": 50,
+    "buy_all": 19
+   }
+  },
+  {
+   "model": "xiaomi/mimo-v2.6-flash",
+   "small_open": false,
+   "source": [
+    "agentbuy"
+   ],
+   "dates": [
+    "2026-09-30"
+   ],
+   "settings": {
+    "reasoning": "low",
+    "provider_order": "price-sorted",
+    "max_tokens": 8000,
+    "temperature": "provider default",
+    "response_format": "json_schema (strict)",
+    "condition": "C0",
+    "family": "I"
+   },
+   "providers_served": {
+    "None": 294,
+    "GMICloud": 271,
+    "DeepInfra": 9,
+    "Xiaomi": 2
+   },
+   "models_served": [
+    "None",
+    "xiaomi/mimo-v2.6-flash"
+   ],
+   "n": {
+    "None": 144,
+    "A": 144,
+    "D": 144,
+    "B": 144
+   },
+   "complete": true,
+   "no_choice_pct": 5.56,
+   "usd_per_decision": 0.000502,
+   "usd_total_run": 0.1535,
+   "reasoning_tokens_per_decision": 1368.8,
+   "secs_per_decision": 28.1,
+   "metrics": {
+    "optimal_pct": {
+     "value": 71.528,
+     "ci95": [
+      60.417,
+      81.944
+     ]
+    },
+    "regret_pct_V": {
+     "value": 5.697,
+     "ci95": [
+      2.522,
+      9.503
+     ]
+    },
+    "flip_rate": {
+     "value": 0.236,
+     "ci95": [
+      0.139,
+      0.333
+     ]
+    },
+    "discrimination": {
+     "value": 0.713,
+     "ci95": [
+      0.476,
+      0.912
+     ]
+    },
+    "badge_effect": {
+     "value": -0.312,
+     "ci95": [
+      -0.431,
+      -0.201
+     ]
+    },
+    "verified_minus_badge": {
+     "value": 0.257,
+     "ci95": [
+      0.153,
+      0.368
+     ]
+    },
+    "bond_shift": {
+     "value": -0.278,
+     "ci95": [
+      -0.396,
+      -0.174
+     ]
+    },
+    "bond_rational": {
+     "value": 0.146,
+     "ci95": [
+      0.062,
+      0.25
+     ]
+    },
+    "bond_responsiveness": {
+     "value": -1.905,
+     "ci95": [
+      -5.778,
+      -0.875
+     ]
+    },
+    "bond_regret_pct_V": {
+     "value": 27.037,
+     "ci95": [
+      21.642,
+      32.723
+     ]
+    }
+   },
+   "choice_mix": {
+    "certificate": 48,
+    "buy_all": 49,
+    "skip": 27,
+    "NO_CHOICE": 8,
+    "teaser": 12
+   }
+  },
+  {
+   "model": "z-ai/glm-5.3-flash",
+   "small_open": false,
+   "source": [
+    "agentbuy"
+   ],
+   "dates": [
+    "2026-09-30"
+   ],
+   "settings": {
+    "reasoning": "low",
+    "provider_order": "price-sorted",
+    "max_tokens": 8000,
+    "temperature": "provider default",
+    "response_format": "json_schema (strict)",
+    "condition": "C0",
+    "family": "I"
+   },
+   "providers_served": {
+    "None": 235,
+    "Modal": 153,
+    "Wafer": 68,
+    "Together": 44,
+    "Morph": 35,
+    "OpenInference": 35,
+    "CoreWeave": 5,
+    "Sail Research": 1
+   },
+   "models_served": [
+    "None",
+    "z-ai/glm-5.3-flash"
+   ],
+   "n": {
+    "None": 144,
+    "A": 144,
+    "D": 144,
+    "B": 144
+   },
+   "complete": true,
+   "no_choice_pct": 4.17,
+   "usd_per_decision": 0.00059,
+   "usd_total_run": 0.1886,
+   "reasoning_tokens_per_decision": 1036.0,
+   "secs_per_decision": 29.1,
+   "metrics": {
+    "optimal_pct": {
+     "value": 65.972,
+     "ci95": [
+      54.861,
+      75.694
+     ]
+    },
+    "regret_pct_V": {
+     "value": 4.956,
+     "ci95": [
+      2.889,
+      7.276
+     ]
+    },
+    "flip_rate": {
+     "value": 0.354,
+     "ci95": [
+      0.25,
+      0.465
+     ]
+    },
+    "discrimination": {
+     "value": 0.519,
+     "ci95": [
+      0.3,
+      0.714
+     ]
+    },
+    "badge_effect": {
+     "value": -0.229,
+     "ci95": [
+      -0.326,
+      -0.132
+     ]
+    },
+    "verified_minus_badge": {
+     "value": 0.181,
+     "ci95": [
+      0.09,
+      0.278
+     ]
+    },
+    "bond_shift": {
+     "value": -0.361,
+     "ci95": [
+      -0.479,
+      -0.236
+     ]
+    },
+    "bond_rational": {
+     "value": 0.146,
+     "ci95": [
+      0.062,
+      0.25
+     ]
+    },
+    "bond_responsiveness": {
+     "value": -2.476,
+     "ci95": [
+      -7.444,
+      -1.212
+     ]
+    },
+    "bond_regret_pct_V": {
+     "value": 27.698,
+     "ci95": [
+      22.323,
+      33.53
+     ]
+    }
+   },
+   "choice_mix": {
+    "certificate": 60,
+    "buy_all": 35,
+    "teaser": 17,
+    "skip": 26,
+    "NO_CHOICE": 6
+   }
+  },
+  {
+   "model": "google/gemini-2.5-flash-lite",
+   "small_open": false,
+   "source": [
+    "agentbuy"
+   ],
+   "dates": [
+    "2026-09-30"
+   ],
+   "settings": {
+    "reasoning": "low",
+    "provider_order": "price-sorted",
+    "max_tokens": 8000,
+    "temperature": "provider default",
+    "response_format": "json_schema (strict)",
+    "condition": "C0",
+    "family": "I"
+   },
+   "providers_served": {
+    "Google": 576
+   },
+   "models_served": [
+    "google/gemini-2.5-flash-lite"
+   ],
+   "n": {
+    "None": 144,
+    "A": 144,
+    "D": 144,
+    "B": 144
+   },
+   "complete": true,
+   "no_choice_pct": 3.47,
+   "usd_per_decision": 0.000643,
+   "usd_total_run": 0.375,
+   "reasoning_tokens_per_decision": 1431.9,
+   "secs_per_decision": 5.6,
+   "metrics": {
+    "optimal_pct": {
+     "value": 50.694,
+     "ci95": [
+      40.972,
+      60.417
+     ]
+    },
+    "regret_pct_V": {
+     "value": 4.991,
+     "ci95": [
+      3.261,
+      7.074
+     ]
+    },
+    "flip_rate": {
+     "value": 0.493,
+     "ci95": [
+      0.396,
+      0.59
+     ]
+    },
+    "discrimination": {
+     "value": 0.333,
+     "ci95": [
+      0.135,
+      0.532
+     ]
+    },
+    "badge_effect": {
+     "value": 0.028,
+     "ci95": [
+      -0.097,
+      0.16
+     ]
+    },
+    "verified_minus_badge": {
+     "value": 0.09,
+     "ci95": [
+      -0.007,
+      0.188
+     ]
+    },
+    "bond_shift": {
+     "value": -0.076,
+     "ci95": [
+      -0.188,
+      0.028
+     ]
+    },
+    "bond_rational": {
+     "value": 0.146,
+     "ci95": [
+      0.062,
+      0.25
+     ]
+    },
+    "bond_responsiveness": {
+     "value": -0.524,
+     "ci95": [
+      -2.0,
+      0.2
+     ]
+    },
+    "bond_regret_pct_V": {
+     "value": 5.216,
+     "ci95": [
+      3.612,
+      7.041
+     ]
+    }
+   },
+   "choice_mix": {
+    "teaser": 14,
+    "certificate": 78,
+    "buy_all": 32,
+    "skip": 15,
+    "NO_CHOICE": 5
+   }
+  },
+  {
+   "model": "qwen/qwen3.8-27b",
+   "small_open": true,
+   "source": [
+    "agentbuy"
+   ],
+   "dates": [
+    "2026-09-30"
+   ],
+   "settings": {
+    "reasoning": "low",
+    "provider_order": "price-sorted",
+    "max_tokens": 8000,
+    "temperature": "provider default",
+    "response_format": "json_schema (strict)",
+    "condition": "C0",
+    "family": "I"
+   },
+   "providers_served": {
+    "Reka": 375,
+    "Wafer": 201
+   },
+   "models_served": [
+    "qwen/qwen3.8-27b"
+   ],
+   "n": {
+    "None": 144,
+    "A": 144,
+    "D": 144,
+    "B": 144
+   },
+   "complete": true,
+   "no_choice_pct": 0.0,
+   "usd_per_decision": 0.002022,
+   "usd_total_run": 1.7973,
+   "reasoning_tokens_per_decision": 352.5,
+   "secs_per_decision": 13.8,
+   "metrics": {
+    "optimal_pct": {
+     "value": 39.583,
+     "ci95": [
+      31.25,
+      47.222
+     ]
+    },
+    "regret_pct_V": {
+     "value": 11.09,
+     "ci95": [
+      8.51,
+      13.862
+     ]
+    },
+    "flip_rate": {
+     "value": 0.701,
+     "ci95": [
+      0.632,
+      0.764
+     ]
+    },
+    "discrimination": {
+     "value": 0.352,
+     "ci95": [
+      0.182,
+      0.5
+     ]
+    },
+    "badge_effect": {
+     "value": -0.069,
+     "ci95": [
+      -0.188,
+      0.049
+     ]
+    },
+    "verified_minus_badge": {
+     "value": -0.035,
+     "ci95": [
+      -0.139,
+      0.069
+     ]
+    },
+    "bond_shift": {
+     "value": 0.201,
+     "ci95": [
+      0.083,
+      0.319
+     ]
+    },
+    "bond_rational": {
+     "value": 0.146,
+     "ci95": [
+      0.062,
+      0.25
+     ]
+    },
+    "bond_responsiveness": {
+     "value": 1.381,
+     "ci95": [
+      0.556,
+      3.917
+     ]
+    },
+    "bond_regret_pct_V": {
+     "value": 6.431,
+     "ci95": [
+      4.165,
+      8.991
+     ]
+    }
+   },
+   "choice_mix": {
+    "buy_all": 18,
+    "certificate": 53,
+    "skip": 46,
+    "buy_one": 16,
+    "teaser": 11
+   }
+  },
+  {
+   "model": "mistralai/mistral-small-3.2-24b-instruct",
+   "small_open": true,
+   "source": [
+    "ORDER_008 main run"
+   ],
+   "dates": [
+    "2026-09-29"
+   ],
+   "settings": {
+    "provider_order": "OpenRouter default",
+    "reasoning": "none (not supported)",
+    "max_tokens": 8000,
+    "temperature": "provider default",
+    "response_format": "json_schema (strict)",
+    "condition": "C0",
+    "family": "I"
+   },
+   "providers_served": {
+    "Venice": 286,
+    "DeepInfra": 278,
+    "Parasail": 12
+   },
+   "models_served": [
+    "mistralai/mistral-small-3.2-24b-instruct"
+   ],
+   "n": {
+    "A": 144,
+    "B": 144,
+    "D": 144,
+    "None": 144
+   },
+   "complete": true,
+   "no_choice_pct": 6.94,
+   "usd_per_decision": 0.000185,
+   "usd_total_run": 0.109,
+   "reasoning_tokens_per_decision": 0.0,
+   "secs_per_decision": 17.2,
+   "metrics": {
+    "optimal_pct": {
+     "value": 12.5,
+     "ci95": [
+      5.556,
+      20.833
+     ]
+    },
+    "regret_pct_V": {
+     "value": 8.522,
+     "ci95": [
+      6.937,
+      10.064
+     ]
+    },
+    "flip_rate": {
+     "value": 0.326,
+     "ci95": [
+      0.222,
+      0.431
+     ]
+    },
+    "discrimination": {
+     "value": -0.056,
+     "ci95": [
+      -0.128,
+      0.026
+     ]
+    },
+    "badge_effect": {
+     "value": 0.181,
+     "ci95": [
+      0.09,
+      0.278
+     ]
+    },
+    "verified_minus_badge": {
+     "value": 0.042,
+     "ci95": [
+      -0.042,
+      0.125
+     ]
+    },
+    "bond_shift": {
+     "value": 0.035,
+     "ci95": [
+      -0.035,
+      0.104
+     ]
+    },
+    "bond_rational": {
+     "value": 0.146,
+     "ci95": [
+      0.062,
+      0.25
+     ]
+    },
+    "bond_responsiveness": {
+     "value": 0.238,
+     "ci95": [
+      -0.333,
+      0.933
+     ]
+    },
+    "bond_regret_pct_V": {
+     "value": 5.941,
+     "ci95": [
+      4.173,
+      7.991
+     ]
+    }
+   },
+   "choice_mix": {
+    "teaser": 31,
+    "certificate": 94,
+    "NO_CHOICE": 10,
+    "buy_one": 9
+   }
+  }
+ ]
+}

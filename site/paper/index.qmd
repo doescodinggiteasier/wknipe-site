@@ -1,0 +1,24 @@
+---
+title: "The x402 economy, measured: what AI agents actually buy"
+description: "Working paper (draft). A weekly, reproducible, demand-cleaned measurement of x402 agent payments on Base: what survives cleaning, what sellers sell, how concentrated it is, and what a call costs."
+page-layout: article
+draft: true   # publish (false) once the TODO(Wes) sections are written; see docs/WES_SETUP_012.md
+---
+
+**Working paper, draft of 30 September 2026.** Wes Knipe.
+
+[Read the PDF](files/x402_measured.pdf){.btn .btn-primary} [Read online](files/x402_measured.html){.btn .btn-outline-primary}
+
+x402 lets software pay for an HTTP resource in stablecoins within the request. Raw trackers report its volume as
+settled, but earlier work shows most of that is manufactured. This paper builds a weekly, reproducible, demand-cleaned
+index of x402 payments on Base: settlements from 128 known facilitators, minus self-payments, closed loops,
+funding-linked pairs and single-buyer dust, with every seller classified by what it sells. It reports what survives
+cleaning, the split between content, data and compute, how concentrated spending is, and what a call costs, for the
+weeks of late August to late September 2026.
+
+Every number in the paper is computed from the published data at render time, and the code and data are public under
+MIT and CC BY 4.0: [`paper/`](https://github.com/doescodinggiteasier/wknipe-site/tree/main/paper) in the repository.
+The live, weekly-updated figures are on the [x402 Clean Index](../x402/index.qmd) page.
+
+**Status:** draft for comment; the introduction, interpretation and conclusion are still to be written. Please cite as:
+Knipe, W. (2026). *The x402 economy, measured: what AI agents actually buy.* Working paper. https://wknipe.com/paper/

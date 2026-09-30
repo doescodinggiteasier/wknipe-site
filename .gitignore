@@ -9,6 +9,9 @@ apps/x402-index-api/src/data.json
 __pycache__/
 .venv/
 *_files/
+# Paper build output (`cd paper && quarto render`); its generated inputs (_numbers.yml, tables, fig/) are committed because
+# Quarto resolves includes before the pre-render step. They are pinned to the paper's weeks, so they don't churn.
+paper/_output/
 # Raw collected weeks (hundreds of MB); CI keeps an unfinished one in the Actions cache only
 state/x402_week_*/
 # Never commit secrets or private working files

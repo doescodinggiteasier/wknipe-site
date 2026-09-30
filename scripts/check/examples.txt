@@ -1,0 +1,10 @@
+nytimes.com
+theguardian.com
+bbc.co.uk
+reuters.com
+wsj.com
+washingtonpost.com
+economist.com
+ft.com
+medium.com
+wikipedia.org

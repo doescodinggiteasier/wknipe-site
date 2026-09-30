@@ -34,10 +34,10 @@
   "2026-09-21": 1913.6
  },
  "category_sources": {
-  "model": 2169,
-  "hand_o2+model": 113,
-  "hand_o2": 224,
   "hand_o10": 75,
+  "hand_o2": 224,
+  "hand_o2+model": 113,
+  "model": 2169,
   "unlisted_review": 20
  },
  "hand_o2_model_conflicts_set_to_other": 25,

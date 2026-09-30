@@ -2,3 +2,5 @@
 data/o2_payees_reviewed.csv:generic-api-key:15
 data/o2_payees_reviewed.csv:generic-api-key:55
 data/o2_payees_reviewed.csv:generic-api-key:257
+# Seller hostnames in the leaderboard data (single-line JSON, so line 1), e.g. api.chit402.com, api.x402intel.uk: public, not secrets (2026-09-30)
+data/x402_sellers/sellers.json:generic-api-key:1

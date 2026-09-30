@@ -1,0 +1,64 @@
+---
+title: "Which models buy well: method"
+description: "What the purchase-decision benchmark measures, why it matters for agents that spend money, its limits, and how to replicate it."
+---
+
+```{ojs}
+//| echo: false
+doc = FileAttachment("data/board.json").json()
+```
+
+## What is measured
+
+Each scenario puts the model in the role of a purchasing agent with authority to spend a client's money on information. The client faces a decision worth **V** dollars if made correctly. The client already has a free answer that is right with a stated track record. Three documents are for sale, each useful with a stated probability. The agent must choose exactly one option:
+
+| Option | What happens |
+|---|---|
+| skip | buy nothing; the client relies on the free answer |
+| buy one | buy one document without looking |
+| buy all | buy all three |
+| teaser | read free teasers, buy the best-looking document |
+| certificate | pay an independent evaluator for a sealed report, then buy its top pick |
+
+Every probability is an exact fraction (shown as a track record, e.g. "41 of 50 past picks were useful") and every price is exact. In most scenarios the price is quoted in the seller's own unit (per 1,000 tokens, credits, per page) with the conversion stated, as prices appear in the wild. So each option's expected value can be computed exactly, and **the benchmark is not graded by a model**: a decision is right or wrong by arithmetic. Every scenario has a gap of at least 2% of V between the best and second-best option, so near-ties don't count as mistakes.
+
+The scenarios are balanced across which option is optimal: ${Object.entries(doc.instrument.optimum_strata).map(([k, v]) => `${k} ${v}`).join(", ")} of ${doc.instrument.n_scenarios}. The same scenarios are repeated three times per model and cell, and also shown with three labels on the evaluator: an independently verified record, a meaningless "Popular" badge, and a bond that refunds the document if the evaluator's pick fails. Each model makes 576 decisions.
+
+**Settings.** One API call per decision, no tools, reasoning on at effort "low" where the model supports it, provider-default temperature, structured JSON output (`{"choice", "reason"}`). A reply that names no valid option is scored as *skip*, so it costs the model the value of whatever it should have bought.
+
+## Why it matters
+
+Agents are starting to hold budgets: paying per call for data and content (see the [x402 Clean Index](../x402/index.qmd)), and deciding whether a source is worth its price. Today's agent-payment products control spending with caps, allowlists and human approvals, not with any check that a purchase is worth it. How well the model itself weighs value is therefore the whole policy. This board shows which models can be trusted with that judgement, what each costs per decision, and how noisy each one is on identical inputs.
+
+## What we found so far (board of 30 September 2026)
+
+- **Most frontier models do the arithmetic.** GPT-6.1 Sol was perfect on all 144 decisions; Gemini 3.8 Flash and DeepSeek V4 Pro were close. Claude Sonnet 5.5 was the frontier exception: it under-bought and flipped on identical prompts about a quarter of the time.
+- **Cheap models vary widely.** Among small and budget models, the share of optimal choices ranges from about 13% to 85%. GPT-6 Luna was the only budget model near the frontier group, at about a quarter of a dollar per 1,000 decisions.
+- **Price and quality don't line up.** With the cheapest routing, a perfect frontier model cost less per decision than several weaker ones, because weaker models often reason longer. Check the $ / 1k column rather than assuming small means cheap.
+- **Noise is the hidden cost.** Budget models changed their answer between identical runs 20–70% of the time. An agent that flips can't be audited, even when its average is acceptable.
+- **Labels can derail small models.** Frontier models ignored the decorative badge (effects within a few points of zero). Two budget models (MiMo V2.6 Flash, GLM 5.3 Flash) bought the certificate 23–31 points *less* often whenever any label appeared, and moved the wrong way when a bond made it more valuable. Mistral Small bought more when the badge appeared.
+
+## Limits
+
+- **Stylised tasks.** Real purchases don't come with exact probabilities. This tests whether a model can act on value when the numbers are given, a *necessary* condition, not a sufficient one.
+- **One prompt family, one wording, English only.** Other phrasings could move results. Scores are for this instrument, not general "shopping ability".
+- **Reasoning effort "low".** Higher effort may help, at more cost. Models without reasoning run without it (marked in the settings).
+- **Provider routing.** Results are for the provider and routing shown; quantised or different endpoints of the same model can behave differently.
+- **Point in time.** Model ids behind a name can change; each row shows its run date.
+
+## Replicate it
+
+Everything needed is in the public repository [`wknipe-site`](https://github.com/doescodinggiteasier/wknipe-site): the frozen instrument `scripts/agentbuy/task.py`, the runner `scripts/agentbuy/run.py`, the analysis `scripts/agentbuy/analyze.py`, and every decision of every model in `data/agentbuy/runs/` (CC BY 4.0).
+
+- Scenario bank: seed ${doc.instrument.bank_seed}, ${doc.instrument.n_scenarios} scenarios; `sha256` of the bank: <code>${doc.instrument.bank_sha256}</code>
+- `task.py` sha256: <code>${doc.instrument.task_py_sha256}</code> (the ORDER_008 file after its documented pilot fix, which changed only a condition this board doesn't use)
+- CIs: ${doc.instrument.bootstrap}.
+
+```bash
+export OPENROUTER_API_KEY=...
+python3 scripts/agentbuy/run.py --info                          # prints the bank sha and an example prompt
+python3 scripts/agentbuy/run.py --model <openrouter-id> --pilot # 16 decisions: checks the model answers validly, estimates cost
+make agents MODEL=<openrouter-id>                               # the full 576 decisions, then rebuilds the board
+```
+
+A full run costs between about $0.10 (small models) and $6 (the priciest frontier model tested) at the time of writing.

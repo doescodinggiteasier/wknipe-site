@@ -1,0 +1,4 @@
+{
+ "about": "Sealed predictions by Wes Knipe. Each entry is the SHA-256 of a prediction written before its date, time-stamped on Bitcoin with OpenTimestamps. Every sealed fingerprint is listed, so none can be quietly dropped; the text is published when revealed.",
+ "predictions": []
+}

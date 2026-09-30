@@ -1,0 +1,195 @@
+---
+title: "AI-policy checker"
+description: "What does a website tell AI crawlers? robots.txt rules for 25 named AI bots, Content-Signal, RSL licence and price, TDMRep, llms.txt, and whether it charges crawlers (HTTP 402 / pay per crawl)."
+page-layout: article
+---
+
+```{=html}
+<style>
+  .ck-form { display: flex; gap: .5rem; flex-wrap: wrap; margin: 1.25rem 0 .5rem; }
+  .ck-form input { flex: 1 1 16rem; min-width: 0; font: 500 1rem "IBM Plex Mono", monospace; padding: .55rem .75rem;
+    border: 1px solid var(--bs-border-color); border-radius: .375rem; background: var(--bs-body-bg); color: var(--bs-body-color); }
+  .ck-form button { padding: .55rem 1.1rem; border: 0; border-radius: .375rem; background: var(--bs-primary); color: #fff; font-weight: 600; }
+  body.quarto-dark .ck-form button { color: #0d1210; }
+  .ck-hint { font-size: .85rem; opacity: .75; margin: 0 0 1.5rem; }
+  .ck-card { border: 1px solid var(--bs-border-color); border-radius: .5rem; padding: 1.1rem 1.2rem; margin: 1rem 0 2rem; }
+  .ck-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+  .ck-head h2 { margin: 0; font-size: 1.5rem; border: 0; overflow-wrap: anywhere; }
+  .ck-meta { font: .75rem/1.4 "IBM Plex Mono", monospace; opacity: .7; }
+  .ck-verdict { font-size: 1.05rem; margin: .75rem 0 1rem; }
+  .ck-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .6rem; margin-bottom: 1rem; }
+  .ck-tile { border-top: 2px solid var(--bs-border-color); padding-top: .4rem; }
+  .ck-tile .k { font: 500 .68rem/1.3 "IBM Plex Mono", monospace; letter-spacing: .06em; text-transform: uppercase; opacity: .7; }
+  .ck-tile .v { font-weight: 600; overflow-wrap: anywhere; }
+  .ck-tile.yes { border-top-color: var(--bs-primary); }
+  .chip { display: inline-block; font: 500 .72rem/1 "IBM Plex Mono", monospace; padding: .28rem .45rem; border-radius: .25rem; white-space: nowrap; }
+  .chip.blocked { background: #f6d5d0; color: #7a1f12; } .chip.partial { background: #f7e7c4; color: #6b4a00; } .chip.allowed { background: #d3eee3; color: #0b5238; }
+  body.quarto-dark .chip.blocked { background: #5a221b; color: #ffd9d2; } body.quarto-dark .chip.partial { background: #4d3b12; color: #ffe7b0; }
+  body.quarto-dark .chip.allowed { background: #173f31; color: #c9f2e1; }
+  .ck-bots { width: 100%; border-collapse: collapse; font-size: .9rem; }
+  .ck-bots th, .ck-bots td { padding: .4rem .5rem; border-bottom: 1px solid var(--bs-border-color); text-align: left; vertical-align: top; }
+  .ck-bots th { font: 500 .68rem/1.3 "IBM Plex Mono", monospace; letter-spacing: .05em; text-transform: uppercase; opacity: .7; }
+  .ck-bots td.tok { font-family: "IBM Plex Mono", monospace; font-size: .82rem; overflow-wrap: anywhere; }
+  .ck-bots .via { font-size: .75rem; opacity: .7; }
+  .ck-scroll { overflow-x: auto; }
+  .ck-card h3 { font-size: 1rem; margin: 1.4rem 0 .4rem; }
+  .ck-card ul { margin: 0; padding-left: 1.2rem; } .ck-card li { overflow-wrap: anywhere; }
+  .ck-card code { white-space: normal; word-break: break-all; }
+  .ck-examples { display: grid; grid-template-columns: repeat(auto-fill, minmax(145px, 1fr)); gap: .6rem; margin: .75rem 0 2rem; }
+  .ck-ex { text-align: left; border: 1px solid var(--bs-border-color); border-radius: .5rem; padding: .6rem .7rem; background: transparent; color: inherit; }
+  .ck-ex:hover { border-color: var(--bs-primary); }
+  .ck-ex .d { font-weight: 600; display: block; overflow-wrap: anywhere; } .ck-ex .s { font-size: .8rem; opacity: .8; }
+  .ck-bar { display: flex; height: 6px; border-radius: 3px; overflow: hidden; margin: .4rem 0 .3rem; background: var(--bs-border-color); }
+  .ck-bar span.b { background: #c8553d; } .ck-bar span.p { background: #d9a322; } .ck-bar span.a { background: #2e9a70; }
+  .ck-err { border-left: 3px solid #c8553d; padding: .5rem .8rem; margin: 1rem 0; }
+  .ck-share { font-size: .85rem; }
+</style>
+
+<form class="ck-form" id="ck-form" role="search">
+  <label for="ck-in" class="visually-hidden">Domain</label>
+  <input id="ck-in" name="d" type="text" inputmode="url" autocomplete="off" spellcheck="false" placeholder="example.com" required>
+  <button type="submit">Check</button>
+</form>
+<p class="ck-hint">Free. Results are kept for 24 hours; nothing about you is logged. Share a result with its link: <code>wknipe.com/check/?d=example.com</code></p>
+<div id="ck-out" aria-live="polite"></div>
+
+<h2 id="examples">Well-known publishers</h2>
+<p>Checked live (each result is at most a day old). Click one for the full report.</p>
+<div class="ck-examples" id="ck-examples"><p class="ck-meta">Loading…</p></div>
+
+<script>
+(() => {
+  const API = location.hostname === "localhost" || location.hostname === "127.0.0.1" ? "http://localhost:8788" : "https://api.wknipe.com";
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
+  const safeUrl = (u) => { try { const x = new URL(u); return /^https?:$/.test(x.protocol) ? x.toString() : null; } catch { return null; } };
+  const link = (u) => { const s = safeUrl(u); return s ? `<a href="${esc(s)}" rel="nofollow noopener" target="_blank">${esc(u)}</a>` : `<code>${esc(u)}</code>`; };
+  const PURPOSE = {training: "Model training", search: "AI search", user: "Fetches for a user", dataset: "Public datasets", mixed: "Mixed"};
+  const STATUS = {blocked: "Blocked", partial: "Allowed, some paths blocked", allowed: "Allowed"};
+  const out = document.getElementById("ck-out"), form = document.getElementById("ck-form"), input = document.getElementById("ck-in");
+
+  function verdict(r) {
+    const s = r.summary, n = s.ai_bots_checked;
+    const bits = [];
+    if (r.robots.state === "none") bits.push("No robots.txt rules, so every AI crawler may crawl the whole site.");
+    else if (r.robots.state === "unreachable") bits.push("robots.txt could not be fetched; well-behaved crawlers then assume the whole site is off limits.");
+    else bits.push(s.blocked === 0 ? `None of the ${n} named AI crawlers is blocked from the homepage.` :
+      s.blocked === n ? `All ${n} named AI crawlers are blocked.` : `Blocks ${s.blocked} of ${n} named AI crawlers from the whole site${s.partial ? `; ${s.partial} more are kept out of some paths` : ""}.`);
+    bits.push(s.machine_readable_price ? "It states a machine-readable price or payment term." : "It states no machine-readable price for AI access.");
+    return bits.join(" ");
+  }
+
+  function tile(k, v, yes) { return `<div class="ck-tile ${yes ? "yes" : ""}"><div class="k">${esc(k)}</div><div class="v">${v}</div></div>`; }
+
+  function render(r) {
+    const s = r.summary, h = r.homepage;
+    const rslPay = (r.rsl.fetched?.payments || []).map((p) => p.amount ? `${esc(p.type)} ${esc(p.amount)} ${esc(p.currency || "")}` : esc(p.type)).join(", ");
+    const sig = r.content_signal.lines.map((l) => esc(l.value)).join(" · ");
+    const charge = h.http_402 ? "HTTP 402" : h.crawler_price ? `pay per crawl: ${esc(h.crawler_price)}` : h.x402_accepts ? "x402 offer" : "No";
+    const byPurpose = {};
+    for (const b of r.robots.bots) (byPurpose[b.purpose] ||= []).push(b);
+    const rows = Object.keys(PURPOSE).filter((p) => byPurpose[p]).map((p) => byPurpose[p].map((b, i) => `<tr>
+        ${i === 0 ? `<th scope="rowgroup" rowspan="${byPurpose[p].length}">${PURPOSE[p]}</th>` : ""}
+        <td>${esc(b.operator)}</td><td class="tok">${esc(b.token)}</td>
+        <td><span class="chip ${b.status}">${STATUS[b.status]}</span>
+          <div class="via">${b.via === "named" ? "named in robots.txt" : b.via === "*" ? "default rules (User-agent: *)" : b.via === "unreachable" ? "robots.txt unreachable" : "no rules apply"}${b.rule ? ` · <code>${esc(b.rule)}</code>` : ""}</div></td></tr>`).join("")).join("");
+    const permalink = `${location.origin}${location.pathname}?d=${encodeURIComponent(r.domain)}`;
+    out.innerHTML = `<article class="ck-card">
+      <div class="ck-head"><h2>${esc(r.domain)}</h2>
+        <span class="ck-meta">checked ${esc(new Date(r.checked_at).toISOString().slice(0, 16).replace("T", " "))} UTC${r.cached ? " (cached)" : ""}</span></div>
+      <p class="ck-verdict">${verdict(r)}</p>
+      <div class="ck-grid">
+        ${tile("AI crawlers blocked", `${s.blocked} of ${s.ai_bots_checked}`, s.blocked > 0)}
+        ${tile("Content-Signal", s.content_signal ? sig : "None", s.content_signal)}
+        ${tile("RSL licence", s.rsl ? (rslPay ? `Yes: ${rslPay}` : "Yes") : "None", s.rsl)}
+        ${tile("TDMRep", s.tdmrep ? "Yes" : "None", s.tdmrep)}
+        ${tile("llms.txt", s.llms_txt ? `Yes (${Math.round(r.llms_txt.bytes / 1024)} KB)` : "None", s.llms_txt)}
+        ${tile("Charges crawlers", charge, charge !== "No")}
+      </div>
+      <p class="ck-share"><a href="${esc(permalink)}">Permalink to this result</a> · <a href="${API}/v1/check?domain=${encodeURIComponent(r.domain)}">JSON</a></p>
+
+      <h3>robots.txt, per AI crawler</h3>
+      <p class="ck-meta">${r.robots.state === "found" ? `${link(r.robots.url)} · ${r.robots.groups} groups · ${Math.round(r.robots.bytes / 1024 * 10) / 10} KB` :
+        `${esc(r.robots.url)}: ${r.robots.status ? "HTTP " + r.robots.status : esc(r.robots.error || "no response")}${r.robots.error && r.robots.status ? " · " + esc(r.robots.error) : ""}`}.
+        Checked for the homepage (<code>/</code>) under RFC 9309: the most specific matching rule wins.</p>
+      <div class="ck-scroll"><table class="ck-bots"><thead><tr><th>Purpose</th><th>Operator</th><th>Crawler</th><th>Homepage</th></tr></thead><tbody>${rows}</tbody></table></div>
+
+      <h3>Content-Signal</h3>
+      ${r.content_signal.found ? `<ul>${r.content_signal.lines.map((l) => `<li><code>${esc(l.value)}</code> for ${l.agents.map(esc).join(", ")}</li>`).join("")}</ul>` :
+        "<p>No <code>Content-Signal</code> line in robots.txt (Cloudflare's way to say whether content may be used for search, AI answers or training).</p>"}
+
+      <h3>RSL licence</h3>
+      ${r.rsl.found ? `<ul>${r.rsl.links.map((u) => `<li>${link(u)}</li>`).join("")}</ul>
+        ${r.rsl.fetched ? `<p>${r.rsl.fetched.is_rsl ? "Valid RSL document." : `Fetched (HTTP ${esc(r.rsl.fetched.status)}${r.rsl.fetched.error ? ", " + esc(r.rsl.fetched.error) : ""}) but not an RSL document.`}
+          ${(r.rsl.fetched.payments || []).length ? `Payment terms: ${rslPay}.` : ""}
+          ${(r.rsl.fetched.permits || []).length ? `Permits: <code>${r.rsl.fetched.permits.map(esc).join("; ")}</code>.` : ""}
+          ${(r.rsl.fetched.prohibits || []).length ? `Prohibits: <code>${r.rsl.fetched.prohibits.map(esc).join("; ")}</code>.` : ""}</p>` : ""}` :
+        "<p>No RSL (Really Simple Licensing) <code>License:</code> link in robots.txt or the homepage.</p>"}
+
+      <h3>TDMRep</h3>
+      ${r.tdmrep.found ? `<ul>${r.tdmrep.rules.map((t) => `<li><code>${esc(t.location)}</code>: reservation ${esc(t.reservation)}${t.policy ? `, policy ${link(t.policy)}` : ""}</li>`).join("")}</ul>` :
+        `<p>No <code>/.well-known/tdmrep.json</code> (the W3C TDM Reservation Protocol used in the EU)${h.meta?.tdm_reservation ? `; the homepage has <code>tdm-reservation: ${esc(h.meta.tdm_reservation)}</code>` : ""}.</p>`}
+
+      <h3>llms.txt</h3>
+      <p>${r.llms_txt.found ? `Present${r.llms_txt.title ? `: “${esc(r.llms_txt.title)}”` : ""}, ${Math.round(r.llms_txt.bytes / 1024)} KB.` : "None."}</p>
+
+      <h3>Homepage response to an identified crawler</h3>
+      <p>HTTP ${esc(h.status || "none")}${h.error ? ` (${esc(h.error)}${h.redirected_to ? ": " + link(h.redirected_to) : ""})` : ""}.
+        ${h.http_402 ? "The site asks for payment (HTTP 402)." : h.status === 403 ? "The site refuses unknown bots outright." : ""}
+        ${h.crawler_price ? `Pay-per-crawl price: <code>${esc(h.crawler_price)}</code>.` : ""}
+        ${h.x402_accepts ? `x402 offer: ${h.x402_accepts.map((a) => `<code>${esc(a.amount)} on ${esc(a.network)}</code>`).join(", ")}.` : ""}
+        ${h.meta?.robots ? `Meta robots: <code>${esc(h.meta.robots)}</code>.` : ""} ${h.x_robots_tag ? `X-Robots-Tag: <code>${esc(h.x_robots_tag)}</code>.` : ""}</p>
+    </article>`;
+  }
+
+  async function check(d, push = true) {
+    d = d.trim(); if (!d) return;
+    input.value = d;
+    if (push) history.replaceState(null, "", `?d=${encodeURIComponent(d)}`);
+    out.innerHTML = `<p class="ck-meta">Checking ${esc(d)}… (up to ~10 seconds)</p>`;
+    try {
+      const res = await fetch(`${API}/v1/check?domain=${encodeURIComponent(d)}`);
+      const r = await res.json();
+      if (!res.ok) { out.innerHTML = `<div class="ck-err">${esc(r.error || "Something went wrong.")}</div>`; return; }
+      render(r);
+      document.title = `${r.domain}: AI-policy check – Wes Knipe`;
+    } catch (e) {
+      out.innerHTML = `<div class="ck-err">Couldn't reach the checker. Try again in a moment.</div>`;
+    }
+  }
+
+  form.addEventListener("submit", (e) => { e.preventDefault(); check(input.value); });
+  const q = new URLSearchParams(location.search).get("d");
+  if (q) check(q, false);
+
+  // Examples strip: computed live by the API (cached per domain for 24 h, warmed weekly).
+  (async () => {
+    const box = document.getElementById("ck-examples");
+    try {
+      const { examples } = await (await fetch(`${API}/v1/check/examples`)).json();
+      box.innerHTML = examples.map((r) => {
+        if (r.pending || !r.summary) return `<button class="ck-ex" data-d="${esc(r.domain)}"><span class="d">${esc(r.domain)}</span><span class="s">Click to check</span></button>`;
+        const s = r.summary, n = s.ai_bots_checked, w = (x) => (100 * x / n).toFixed(1);
+        const flags = [s.rsl && "RSL", s.content_signal && "Content-Signal", s.tdmrep && "TDMRep", s.llms_txt && "llms.txt", s.machine_readable_price && "price"].filter(Boolean);
+        return `<button class="ck-ex" data-d="${esc(r.domain)}"><span class="d">${esc(r.domain)}</span>
+          <div class="ck-bar" aria-hidden="true"><span class="b" style="width:${w(s.blocked)}%"></span><span class="p" style="width:${w(s.partial)}%"></span><span class="a" style="width:${w(s.allowed)}%"></span></div>
+          <span class="s">Blocks ${s.blocked} of ${n}${flags.length ? " · " + flags.map(esc).join(", ") : ""}</span></button>`;
+      }).join("");
+      box.querySelectorAll(".ck-ex").forEach((b) => b.addEventListener("click", () => { check(b.dataset.d); window.scrollTo({top: 0, behavior: "smooth"}); }));
+    } catch { box.innerHTML = `<p class="ck-meta">Examples unavailable right now.</p>`; }
+  })();
+})();
+</script>
+```
+
+## What it checks, and how
+
+- **robots.txt**, evaluated for 25 named AI crawlers under [RFC 9309](https://www.rfc-editor.org/rfc/rfc9309): the group naming the crawler (or `User-agent: *` if none does), most specific rule wins, ties go to allow. *Blocked* means the crawler may not fetch the homepage; *some paths blocked* means it may, but parts of the site are off limits. robots.txt that can't be fetched (server error) counts as blocked, as the standard says; a missing one means allowed.
+- **Content-Signal** lines in robots.txt ([contentsignals.org](https://contentsignals.org)): search, ai-input, ai-train yes/no.
+- **RSL**: `License:` links in robots.txt or a `<link type="application/rsl+xml">` on the homepage ([rslstandard.org](https://rslstandard.org)). We read the first licence file to report its payment terms and permissions.
+- **TDMRep**: `/.well-known/tdmrep.json` and the `tdm-reservation` meta tag ([W3C TDMRep](https://www.w3.org/community/reports/tdmrep/CG-FINAL-tdmrep-20240202/)).
+- **llms.txt** at the site root ([llmstxt.org](https://llmstxt.org)).
+- **Charging crawlers**: one GET of the homepage as an identified crawler, looking for HTTP 402, a Cloudflare pay-per-crawl `crawler-price` header, or an x402 payment offer. Most sites that charge only do so for verified, signed crawlers, so *No* here doesn't rule out a paid deal.
+
+**Polite by design.** The checker identifies itself as `wknipe-policy-check/1.0 (+https://wknipe.com/check/)`, fetches only the five files above (plus redirects within the same site), waits at most 6 seconds for each, follows redirects only within the same site, and fetches each domain at most once a day. It stores the result for 24 hours and nothing about who asked. It's also available as a free API: `https://api.wknipe.com/v1/check?domain=example.com`.
+
+**Why this exists.** Publishers are starting to state terms for AI use in machine-readable ways, and AI agents are starting to pay for content. This page shows, for any site, what it currently tells machines. The [x402 Clean Index](../x402/index.qmd) measures what agents actually pay for.

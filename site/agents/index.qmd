@@ -1,0 +1,95 @@
+---
+title: "Which models buy well"
+description: "When an AI agent can spend money on information, does it buy the right thing? Exact-payoff purchase decisions, scored against the computed optimum, for frontier and cheap models."
+page-layout: full
+---
+
+```{ojs}
+//| echo: false
+doc = FileAttachment("data/board.json").json()
+models = doc.models
+short = (id) => id.split("/")[1].replace(":batch", "")
+pct = (x, d = 0) => x == null ? "–" : x.toFixed(d) + "%"
+ci = (m, k, f) => { const c = m.metrics[k]?.ci95; return c && c[0] != null ? `${f(c[0])}–${f(c[1])}` : ""; }
+money = (x) => x == null ? "–" : x < 0.01 ? "$" + (x * 1000).toFixed(2) + " per 1k" : "$" + x.toFixed(3)
+best = models[0]
+cheapGood = models.filter((m) => m.metrics.optimal_pct.value >= 85).sort((a, b) => a.usd_per_decision - b.usd_per_decision)[0]
+```
+
+An agent with a budget has to decide, again and again, whether a piece of information is worth its price. This benchmark gives a model that job in ${doc.instrument.n_scenarios} stylised purchase situations, each ${doc.instrument.reps} times, where every probability and price is stated exactly, so the best choice can be **computed rather than judged**. A model scores by how often it picks the best option and how much value it leaves on the table when it doesn't.
+
+```{ojs}
+//| echo: false
+html`<div class="stat-strip">
+  <div class="stat"><div class="k">Models tested</div><div class="v">${models.length}</div></div>
+  <div class="stat"><div class="k">Best</div><div class="v">${pct(best.metrics.optimal_pct.value)}</div><div>${short(best.model)} picks the optimum</div></div>
+  <div class="stat"><div class="k">Cheapest model ≥ 85% optimal</div><div class="v">${cheapGood ? "$" + (cheapGood.usd_per_decision * 1000).toFixed(2) : "–"}</div><div>${cheapGood ? short(cheapGood.model) + ", per 1,000 decisions" : ""}</div></div>
+  <div class="stat"><div class="k">Decisions scored</div><div class="v">${d3.sum(models, (m) => Object.values(m.n).reduce((a, b) => a + b, 0)).toLocaleString("en-US")}</div></div>
+</div>`
+```
+
+## How often each model picks the best option
+
+```{ojs}
+//| echo: false
+Plot.plot({
+  height: 60 + 34 * models.length, marginLeft: 210, marginRight: 30,
+  x: {domain: [0, 100], label: "Picks the exact optimum (%), with 95% CI", grid: true},
+  y: {domain: models.map((m) => m.model), label: null, tickFormat: short},
+  marks: [
+    Plot.ruleY(models, {y: "model", x1: (m) => m.metrics.optimal_pct.ci95[0], x2: (m) => m.metrics.optimal_pct.ci95[1], stroke: "currentColor", strokeOpacity: 0.45, strokeWidth: 2}),
+    Plot.dot(models, {y: "model", x: (m) => m.metrics.optimal_pct.value, r: 5, fill: (m) => m.small_open ? "#eb6834" : "#2a78d6",
+      title: (m) => `${m.model}\n${pct(m.metrics.optimal_pct.value, 1)} optimal (${ci(m, "optimal_pct", (x) => x.toFixed(0))}%)\nregret ${m.metrics.regret_pct_V.value.toFixed(2)}% of V`, tip: true}),
+    Plot.ruleX([0])
+  ]
+})
+```
+
+<p class="small text-muted">Orange: small open-weights models (≤ ~30B parameters). Blue: others.</p>
+
+## The board
+
+```{ojs}
+//| echo: false
+Inputs.table(models.map((m) => ({
+    model: m.model, optimal: m.metrics.optimal_pct.value, regret: m.metrics.regret_pct_V.value, flip: m.metrics.flip_rate.value,
+    disc: m.metrics.discrimination.value, badge: m.metrics.badge_effect?.value, bond: m.metrics.bond_responsiveness?.value,
+    cost: m.usd_per_decision * 1000, m
+  })), {
+  columns: ["model", "optimal", "regret", "flip", "disc", "badge", "bond", "cost"],
+  header: {model: "Model (exact OpenRouter id)", optimal: "Optimal", regret: "Regret, % of V", flip: "Flip rate", disc: "Discrimination",
+           badge: "Badge effect", bond: "Bond response", cost: "$ / 1k decisions"},
+  format: {
+    model: (x) => htl.html`<code>${x}</code>`,
+    optimal: (x, i, d) => htl.html`${pct(x, 1)} <span class="text-muted small">${ci(d[i].m, "optimal_pct", (v) => v.toFixed(0))}</span>`,
+    regret: (x, i, d) => htl.html`${x.toFixed(2)} <span class="text-muted small">${ci(d[i].m, "regret_pct_V", (v) => v.toFixed(1))}</span>`,
+    flip: (x) => x == null ? "–" : x.toFixed(2), disc: (x) => x == null ? "–" : x.toFixed(2),
+    badge: (x) => x == null ? "–" : (x >= 0 ? "+" : "") + (100 * x).toFixed(0) + " pp",
+    bond: (x) => x == null ? "–" : x.toFixed(2), cost: (x) => "$" + x.toFixed(2)
+  },
+  sort: "optimal", reverse: true, rows: 20, layout: "auto", select: false
+})
+```
+
+```{ojs}
+//| echo: false
+html`<details><summary>Exact settings, providers and run dates</summary>
+<table class="table table-sm small"><thead><tr><th>Model</th><th>Run date</th><th>Reasoning</th><th>Routing</th><th>Served by</th><th>Decisions</th><th>Run cost</th><th>Source</th></tr></thead><tbody>
+${models.map((m) => html`<tr><td><code>${m.model}</code></td><td>${m.dates.join(", ")}</td><td>${m.settings.reasoning}</td>
+<td>${Array.isArray(m.settings.provider_order) ? m.settings.provider_order.join(" → ") : m.settings.provider_order}</td>
+<td>${Object.entries(m.providers_served).map(([p, n]) => `${p} (${n})`).join(", ")}</td><td>${Object.values(m.n).reduce((a, b) => a + b, 0)}</td>
+<td>$${m.usd_total_run.toFixed(2)}</td><td>${m.source.join(", ")}</td></tr>`)}
+</tbody></table></details>`
+```
+
+## What the columns mean
+
+- **Optimal:** share of the 144 unlabelled decisions (48 scenarios × 3 repeats) where the model picked the option with the highest expected value. 95% CI from resampling scenarios.
+- **Regret:** the value the model leaves on the table: expected value of the best option minus that of its choice, as a share of what the client's decision is worth (V), averaged over all decisions. 0 is perfect.
+- **Flip rate:** the chance that two runs of the *identical* prompt pick different options. A model that flips is hard to audit, whatever its average.
+- **Discrimination:** P(buys | buying is optimal) − P(buys | not buying is optimal). 1 means it buys exactly when it should; 0 means its buying has nothing to do with value.
+- **Badge effect:** how much a meaningless "Popular" badge on the evaluator raises the share of decisions that buy its certificate, in percentage points. The badge changes nothing about value, so a rational buyer shows 0.
+- **Bond response:** a bond that refunds the document if the evaluator's pick fails makes the certificate genuinely more valuable. This is the model's shift towards buying the certificate divided by the shift the exact optimum calls for: 1 is right, 0 ignores the bond, above 1 overreacts.
+- **$ / 1k decisions:** what 1,000 such decisions cost on OpenRouter on the run date, with the routing shown.
+
+[Method, limits and how to replicate →](method.qmd)

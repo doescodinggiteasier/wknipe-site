@@ -5,7 +5,10 @@ title: "Wes Knipe"
 Notes and measurements on how AI agents find, judge and pay for information.
 
 - **[x402 Clean Index](x402/index.qmd):** a weekly, demand-cleaned view of what agents actually pay for on the x402 network. Unlike raw trackers, it removes manufactured and single-buyer volume first.
+- **[x402 seller leaderboard](x402/sellers/index.qmd):** who agents actually pay, week by week, with a page per seller.
+- **[AI-policy checker](check/index.qmd):** what any website tells AI crawlers: robots.txt rules for 25 AI bots, Content-Signal, RSL licence and price, TDMRep, llms.txt, and whether it charges.
+- **[Which models buy well](agents/index.qmd):** a benchmark of whether AI models make value-maximising purchase decisions, scored against the exact optimum.
+- **[Prediction ledger](predictions/index.qmd):** predictions sealed before the fact, time-stamped on Bitcoin.
 - **[Essays](essays/index.qmd):** longer pieces built on that data.
-- **[Notes](notes/index.qmd):** reading notes and working drafts.
 
 <!-- TODO(Wes): a line or two in your own voice about who you are and why this site exists. -->

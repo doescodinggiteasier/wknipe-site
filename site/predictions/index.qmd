@@ -1,0 +1,68 @@
+---
+title: "Prediction ledger"
+description: "Predictions sealed before the fact: every fingerprint is public and time-stamped on Bitcoin, so none can be quietly dropped or edited. Texts are revealed and scored later."
+page-layout: article
+---
+
+```{ojs}
+//| echo: false
+doc = FileAttachment("data/ledger.json").json()
+P = doc.predictions
+revealed = P.filter((p) => p.status === "revealed")
+resolved = revealed.filter((p) => p.resolved)
+score = resolved.length ? d3.sum(resolved, (p) => ({true: 1, partial: 0.5, false: 0})[p.resolved]) / resolved.length : null
+fmt = (d) => d ? d3.utcFormat("%-d %b %Y")(new Date(d)) : "–"
+```
+
+```{ojs}
+//| echo: false
+html`<div class="stat-strip">
+  <div class="stat"><div class="k">Sealed</div><div class="v">${P.length}</div></div>
+  <div class="stat"><div class="k">Revealed</div><div class="v">${revealed.length}</div></div>
+  <div class="stat"><div class="k">Resolved</div><div class="v">${resolved.length}</div></div>
+  <div class="stat"><div class="k">Hit rate</div><div class="v">${score == null ? "–" : (100 * score).toFixed(0) + "%"}</div><div>${score == null ? "nothing resolved yet" : "right = 1, partly = ½, wrong = 0"}</div></div>
+</div>`
+```
+
+```{ojs}
+//| echo: false
+P.length === 0 ? html`<p><em>Nothing sealed yet.</em> The first predictions will appear here as fingerprints the day they are written; their text follows when they are revealed.</p>` :
+html`<div class="table-responsive"><table class="table table-sm">
+<thead><tr><th>ID</th><th>Sealed</th><th>SHA-256 fingerprint</th><th>Proof</th><th>Status</th></tr></thead>
+<tbody>${P.map((p) => html`<tr>
+  <td>${p.id}${p.title ? html`<div class="small text-muted">${p.title}</div>` : ""}</td>
+  <td>${fmt(p.date)}${p.resolves_by ? html`<div class="small text-muted">resolves by ${fmt(p.resolves_by)}</div>` : ""}</td>
+  <td><code style="word-break: break-all">${p.sha256}</code></td>
+  <td><a href="data/ots/${p.id}.ots" download>${p.id}.ots</a>${p.ots_complete ? "" : html`<div class="small text-muted">awaiting Bitcoin</div>`}</td>
+  <td>${p.status === "sealed" ? (p.resolves_by && new Date(p.resolves_by) < new Date() ? html`<strong>overdue</strong>` : "sealed") : p.resolved ? html`<strong>${({true: "right", false: "wrong", partial: "partly right"})[p.resolved]}</strong>` : "revealed"}</td>
+</tr>`)}</tbody></table></div>`
+```
+
+```{ojs}
+//| echo: false
+revealed.length ? html`<h2>Revealed</h2>${revealed.map((p) => html`<section class="mb-4">
+  <h3 class="h5">${p.id}${p.title ? ": " + p.title : ""}</h3>
+  <p class="small text-muted">Sealed ${fmt(p.date)} · revealed ${fmt(p.revealed_date)} · <a href="data/${p.id}${p.ext}">original file</a></p>
+  <blockquote class="blockquote" style="white-space: pre-wrap; font-size: 1rem">${p.text}</blockquote>
+  ${p.resolved ? html`<p><strong>Resolved ${fmt(p.resolved_date)}: ${({true: "right", false: "wrong", partial: "partly right"})[p.resolved]}.</strong> ${p.note}</p>` : ""}
+</section>`)}` : html``
+```
+
+## How to verify a prediction
+
+Anyone can check that a revealed text is exactly what was sealed on the date shown, without trusting this site:
+
+1. Download the revealed file and its `.ots` proof from the table.
+2. Check the fingerprint: `shasum -a 256 P-….md` must print the SHA-256 in the ledger.
+3. Check the date: drop both files on [opentimestamps.org](https://opentimestamps.org), or run
+
+```bash
+pip install opentimestamps-client
+ots verify -f P-2026-10-01-01.md P-2026-10-01-01.ots
+```
+
+`ots verify` reports the Bitcoin block that commits to the fingerprint, which proves the text existed no later than that block's time. (Full local verification needs a Bitcoin node; the website verifier doesn't.)
+
+**Why every fingerprint is listed.** Publishing only the predictions that came true would make any forecaster look good. Here every sealed fingerprint appears the day it's made, so a prediction can be revealed late but never hidden. Predictions still unrevealed after their resolution date are flagged as overdue.
+
+The ledger is [`predictions/ledger.json`](https://github.com/doescodinggiteasier/wknipe-site/blob/main/predictions/ledger.json) in the public repository; the scripts are `scripts/predict/seal.py` and `reveal.py`.

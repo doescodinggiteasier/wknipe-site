@@ -91,7 +91,7 @@ jobs:
 
       - name: Seller leaderboard data
         if: steps.wk.outputs.skip != 'true' && steps.pipe.outputs.pending != 'true' && inputs.deploy_only != true
-        run: if [ -f scripts/sellers/build.py ]; then python3 scripts/sellers/build.py; fi
+        run: python3 scripts/sellers/build.py
 
       - name: Commit data
         if: steps.wk.outputs.skip != 'true' && steps.pipe.outputs.pending != 'true' && inputs.deploy_only != true
@@ -116,10 +116,19 @@ jobs:
         working-directory: apps/x402-index-api
         run: npm ci
 
+      - name: Unit tests (AI-policy checker)
+        if: steps.wk.outputs.skip != 'true' && steps.pipe.outputs.pending != 'true'
+        run: node --experimental-strip-types apps/x402-index-api/scripts/check.test.mjs
+
       - uses: quarto-dev/quarto-actions/setup@v2
         if: steps.wk.outputs.skip != 'true' && steps.pipe.outputs.pending != 'true'
         with:
           version: 1.10.18
+
+      - name: Render working paper (PDF + HTML; numbers pinned to its own weeks)
+        if: steps.wk.outputs.skip != 'true' && steps.pipe.outputs.pending != 'true'
+        working-directory: paper
+        run: quarto render
 
       - name: Render site
         if: steps.wk.outputs.skip != 'true' && steps.pipe.outputs.pending != 'true'
