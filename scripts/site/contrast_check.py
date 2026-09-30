@@ -48,6 +48,9 @@ PAIRS = [
     ('c-unclassed', 'surface', None, 'unclassed (neutral, always labelled)'), ('series-raw', 'surface', None, 'raw series (recessive, labelled)'),
     ('gold', 'bg', None, 'gold rules / KPI underline (decorative)'), ('gold', 'surface', None, 'gold rules on cards (decorative)'),
     ('line', 'surface', None, 'hairlines (decorative)'),
+    ('nav-fg', 'nav-bg', 4.5, 'header links'), ('nav-hl', 'nav-bg', 4.5, 'header wordmark, active link'),
+    ('green', 'surface', 4.5, 'green accent text (OK pills, positive deltas)'), ('green', 'green-tint', 4.5, 'OK pill text'),
+    ('gold', 'nav-bg', None, 'header gold rule (decorative)'),
 ]
 
 

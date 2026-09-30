@@ -13,7 +13,7 @@ from _pages import D, rcsv, rjson, write, f, GLOSSARY  # noqa: E402
 def status_page(d):
     S = d.status
     if not S:
-        write('status.md', md(decide('whether an x402 endpoint you plan to buy from actually answers.') + '<p>The first daily check has not run yet.</p>')); return
+        write('status.md', md(decide('checking whether an x402 endpoint you plan to buy from actually answers.') + '<p>The first daily check has not run yet.</p>')); return
     daily = rcsv(D('x402_status', 'status_daily.csv'))
     last = {r['scope']: r for r in daily if r['date'] == S['latest_day']}
     a, p = last.get('all', {}), last.get('priority', {})
@@ -46,7 +46,7 @@ def status_page(d):
              stat_card('…of sellers with genuine buyers', pct(f(p.get('valid_402'))), foot=f'{num(int(p.get("checked", 0)))} endpoints', tip='Endpoints whose Base payTo had at least one genuine buyer in the latest index week.'),
              stat_card('Posted price matches the listing', pct(f(a.get('price_match_of_valid'))), foot='of valid 402s with a Base USDC price', tip='The Base USDC exact amount in the live 402 equals the amount in the Bazaar listing.'),
              stat_card('payTo matches the listing', pct(f(a.get('payto_match_of_valid'))), foot='of valid 402s', tip='The live 402 asks to be paid to the same address the listing names.'),
-             stat_card('Median latency', f'{num(f(a.get("median_latency_ms")))} ms', foot=f'p90 {num(f(a.get("p90_latency_ms")))} ms', tip='Time to response headers from GitHub-hosted runners (or our Mac for the first run).')]
+             stat_card('Median latency', f'{num(f(a.get("median_latency_ms")))} ms', foot=f'p90 {num(f(a.get("p90_latency_ms")))} ms', tip='Time to response headers from GitHub-hosted runners (or my Mac for the first run).')]
     top_fail = fails[0] if fails else None
     selfcheck = f'''<form id="probe-form" class="card-wk" style="display:grid;gap:10px;margin:0 0 28px" onsubmit="return false">
 <label for="probe-url" style="font-weight:600">Check an endpoint now <span class="meta">(unpaid, one request, same test as the daily monitor)</span></label>
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {{
   }});
 }});
 </script>'''
-    out = [decide('whether an x402 endpoint you plan to buy from (or compete with) actually answers, and whether it charges what its listing says.'),
+    out = [decide('checking whether an x402 endpoint you plan to buy from (or compete with) actually answers, and whether it charges what its listing says. A surprising number don\'t.'),
            freshness(S['latest_day'], 'checked daily', stale_days=3), selfcheck, kpis(cards),
            chart_frame('failures', f'{pct(1 - f(a.get("valid_402") or 0))} of checked listings do not answer a valid 402' + (f'; the most common failure is {esc(top_fail[0])}' if top_fail else ''),
                        f'Endpoints checked in the last 7 days whose latest check failed, by reason. Denominator: {num(S["endpoints_7d"])} endpoints checked.',
@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {{
            (chart_frame('trend', 'Share of checked listings answering a valid 402, per day', 'All endpoints checked that day (sellers with buyers daily + one seventh of the rest).', 'line', '/x402/data/status_charts.json',
                         {'path': 'daily', 'x': 'date', 'y': 'valid_402', 'pct': True, 'label': 'Valid 402'}, csv='/x402/data/status_daily.csv', metric='status_daily', page='/x402/status/')
             if len({r['date'] for r in daily}) >= 2 else ''),
-           '<h2 id="sellers">By seller</h2><p>Sellers with endpoints checked in the last 7 days. Each has an embeddable status badge (see <a href="/badges/">badges</a>).</p>',
+           '<h2 id="sellers">By seller</h2><p>Sellers with endpoints checked in the last 7 days. Each gets an embeddable status badge (see <a href="/badges/">badges</a>), which is a nice thing to have when it is green.</p>',
            data_table('uptime-table', [{'k': 'seller', 'label': 'Seller', 't': 'html'}, {'k': 'buyers', 'label': 'Genuine buyers', 't': 'int', 'r': 1}, {'k': 'endpoints', 'label': 'Endpoints checked', 't': 'int', 'r': 1},
                                        {'k': 'valid', 'label': 'Valid 402', 't': 'pct', 'r': 1}, {'k': 'state', 'label': 'State'}, {'k': 'badge', 'label': 'Badge', 't': 'html'}],
                       urows, facets=[{'k': 'state', 'labels': {'answers': 'Answers (≥90%)', 'partly': 'Partly', 'fails': 'Fails'}, 'order': ['answers', 'partly', 'fails']}], sort='buyers', page_size=25,
@@ -103,11 +103,11 @@ document.addEventListener("DOMContentLoaded", function () {{
                       src='/x402/data/status_endpoints.json', facets=[{'k': 'priority', 'labels': {'seller has buyers': 'Seller has buyers', 'weekly rotation': 'Weekly rotation'}, 'order': ['seller has buyers', 'weekly rotation']}, {'k': 'price', 'order': ['match', 'differs', '–']}],
                       sort=None, page_size=25, placeholder='Search host or URL', csv_name='endpoint_status.csv', search=['endpoint_t', 'result_t']),
            f'''<h2 id="method">How it checks</h2><ul>
-<li><b>Unpaid, one request per endpoint.</b> No payment is ever sent. User agent: <code>{esc(S["user_agent"])}</code>. The listing's HTTP method (POST gets an empty JSON body), 10 s timeout, 64 KB read, ≤3 redirects.</li>
+<li><b>Unpaid, one request per endpoint.</b> I never send a payment; I just ask the price. User agent: <code>{esc(S["user_agent"])}</code>. The listing's HTTP method (POST gets an empty JSON body), 10 s timeout, 64 KB read, ≤3 redirects.</li>
 <li><b>Scope.</b> Sellers whose Base payTo had a genuine buyer in the latest index week: up to {sc.get("caps", {}).get("per_seller_daily", 5)} of their endpoints every day, rotating. Every other listing: once a week (one seventh a day).</li>
 <li><b>Caps.</b> ≤{sc.get("caps", {}).get("per_host_daily", 60)} requests per host per day, one at a time with ≥1 s between them; ≤{num(sc.get("caps", {}).get("per_day", 4000))} requests per day in total. Latest run: {num(sc.get("priority_checked_today"))} priority + {num(sc.get("rotating_checked_today"))} rotating requests, of {num(sc.get("endpoints_listed"))} listed endpoints.</li>
-<li><b>Valid 402</b> = HTTP 402 with a parseable <code>accepts</code> list whose entries name a scheme, network, payTo and amount. A listing that answers 200 without payment, 404, 405 or times out counts as not answering. Some endpoints need specific query parameters before they quote a price; they show as failures here, which the per-seller rate smooths.</li></ul>
-<p class="meta">Data: <a href="/x402/data/status_daily.csv">status_daily.csv</a> · <a href="/x402/data/status_latest.csv">status_latest.csv</a> · <a href="/api/">API</a>. Sellers can ask for their endpoints to be excluded: wes@wknipe.com.</p>''']
+<li><b>Valid 402</b> = HTTP 402 with a parseable <code>accepts</code> list whose entries name a scheme, network, payTo and amount. A listing that answers 200 without payment, 404, 405 or times out counts as not answering. Some endpoints need specific query parameters before they will quote a price; they show as failures here, which the per-seller rate smooths out.</li></ul>
+<p class="meta">Data: <a href="/x402/data/status_daily.csv">status_daily.csv</a> · <a href="/x402/data/status_latest.csv">status_latest.csv</a> · <a href="/api/">API</a>. Sellers who would rather not be checked can say so: wes@wknipe.com.</p>''']
     write('status.md', md('\n'.join(x for x in out if x)))
 
 
@@ -126,24 +126,24 @@ def access_page(d):
     cards = [stat_card('Block ≥1 AI crawler by name', pct(anyb['share']), foot=f'{anyb["k"]} of {anyb["n"]} sites with a robots.txt', tip='A robots.txt group naming the crawler disallows the whole site.'),
              stat_card('Block all 7 training crawlers', pct(allt['share']), foot=f'{allt["k"]} of {allt["n"]}', tip='GPTBot, ClaudeBot, Google-Extended, Applebot-Extended, Meta-ExternalAgent, CCBot and Bytespider all fully disallowed (by name or by *).'),
              stat_card('Publish /llms.txt', pct(llms['share']), foot=f'{llms["k"]} of {llms["n"]} sites', tip='A non-HTML /llms.txt file answering 200.'),
-             stat_card('Answer an AI crawler with 402', f'{p402["k"]}', foot=', '.join(names402) or 'none', tip='Our identified crawler got HTTP 402 Payment Required on the homepage.'),
+             stat_card('Answer an AI crawler with 402', f'{p402["k"]}', foot=', '.join(names402) or 'none', tip='My identified crawler got HTTP 402 Payment Required on the homepage.'),
              stat_card('State a machine-readable price', f'{price["k"]}', foot=f'of {price["n"]} sites', tip='A 402, a crawler-price header, an x402 accepts list, or a priced RSL licence.')]
     rows = [{'domain': f'<a href="/check/?domain={esc(r["domain"])}">{esc(r["domain"])}</a>', 'domain_t': r['domain'], 'domain_s': r['domain'], 'rank': int(r['rank']),
              'robots': r['robots'], 'named': int(r['ai_bots_blocked_by_name']), 'blocked': int(r['ai_bots_blocked']) if r['robots'] == 'found' else None,
              'signals': ' '.join(k for k in ('content_signal', 'rsl', 'tdmrep', 'llms_txt', 'http_402') if r[k] == 'True').replace('_', '-') or '–',
              'bots_t': r['blocked_bots']} for r in lat]
-    out = [decide('how much of the top web lets AI crawlers in, which crawlers get blocked most, and whether any site is pricing access yet — the demand side of agent payments.'),
+    out = [decide('seeing how much of the top web lets AI crawlers in, which crawlers get shown the door most, and whether anyone is charging for access yet. This is the other half of agent payments: the sites agents would pay.'),
            freshness(L['date'], 'updates weekly'), kpis(cards),
            chart_frame('bots', f'{b0["bot"]} is the most blocked AI crawler: {pct(b0["named_block"])} of top sites with a robots.txt block it by name',
                        f'Share of the Tranco top {num(L["checked"])} domains with a robots.txt ({num(L["robots_found"])}) whose rules name the crawler and disallow the whole site. {num(L["robots_unreachable"])} list entries are CDN, API or infrastructure hostnames with no reachable robots.txt; they are excluded.',
                        'bars', '/x402/data/access_charts.json', {'path': 'bots', 'label': 'bot', 'value': 'named_block', 'pct': True, 'labelName': 'Crawler', 'valueName': 'Blocked by name', 'top': 25, 'dp': 0},
                        csv='/x402/data/access_latest.csv', metric='access_weekly', through=L['date'], page='/access/'),
-           chart_frame('signals', f'Pricing is almost absent: {price["k"]} of {price["n"]} top sites states a machine-readable price; {pct(llms["share"])} publish llms.txt',
+           chart_frame('signals', f'Pricing is almost absent: {price["k"]} of {price["n"]} top sites state a machine-readable price; {pct(llms["share"])} publish llms.txt',
                        'Adoption of machine-readable access signals among top sites that serve a website. Block rows use sites with a robots.txt as the denominator.',
                        'bars', '/x402/data/access_charts.json', {'path': 'signals', 'label': 'signal', 'value': 'share', 'pct': True, 'labelName': 'Signal', 'valueName': 'Share', 'dp': 1},
                        csv='/x402/data/access_weekly.csv', metric='access_weekly', through=L['date'], page='/access/'),
            '<h2 id="compare">Top sites vs the whole crawl</h2>',
-           f'<p>Our earlier Common Crawl census (CC-MAIN-2026-39, a 5% sample of robots.txt files, 2.67M hosts) measured the same rules across the whole web. <b>Method break:</b> that population is every crawled host, this one is the top 1,000 registrable domains; compare levels with care, and read the weekly series from {L["date"]} on as the consistent one.</p>',
+           f'<p>My earlier Common Crawl census (CC-MAIN-2026-39, a 5% sample of robots.txt files, 2.67M hosts) measured the same rules across the whole web. <b>Method break:</b> that population is every crawled host, this one is the top 1,000 registrable domains; compare levels with care, and read the weekly series from {L["date"]} on as the consistent one.</p>',
            data_table('compare-table', [{'k': 'bot', 'label': 'Crawler'}, {'k': 'operator', 'label': 'Operator'}, {'k': 'purpose', 'label': 'Purpose'}, {'k': 'named_block', 'label': f'Top {num(L["checked"])}: blocked by name', 't': 'pct1', 'r': 1},
                                        {'k': 'cc_sample', 'label': 'Whole crawl (CC 5% sample)', 't': 'pct1', 'r': 1}], A['bots'], sort='named_block', page_size=30, csv_name='ai_crawler_blocks.csv',
                       facets=[{'k': 'purpose', 'labels': {'training': 'Training', 'search': 'Search', 'user': 'User-initiated', 'dataset': 'Dataset', 'mixed': 'Mixed'}, 'order': ['training', 'search', 'user', 'dataset', 'mixed']}]),
@@ -232,14 +232,14 @@ def badges(d):
     for s in d.sellers['sellers']:
         L = s['latest']
         val = f"{usd(L['usd'])}/wk · {L['buyers']} buyers" if L else 'no clean volume this week'
-        open(os.path.join(bd, 'seller', s['address'] + '.svg'), 'w').write(badge_svg('x402 clean volume', val, '#7A5E00' if L and L['buyers'] >= 5 else '#5E5873'))
+        open(os.path.join(bd, 'seller', s['address'] + '.svg'), 'w').write(badge_svg('x402 clean volume', val, '#7A5E00' if L and L['buyers'] >= 5 else '#4F5160'))
     for r in rcsv(D('x402_status', 'seller_uptime.csv')):
         v = f(r['valid_402_share'])
         open(os.path.join(bd, 'status', r['pay_to'] + '.svg'), 'w').write(badge_svg('x402 status', f'402 OK {pct(v)} · 7d', '#1E6B45' if v >= 0.9 else '#7A5E00' if v > 0 else '#A3261E'))
     ex = next((s for s in d.sellers['sellers'] if s['qualifies_latest'] and s['label']), d.sellers['sellers'][0])
     q = ex['address']
-    out = f'''{decide('whether to show buyers and agents independent, checkable evidence of your demand, your endpoint health or your AI-access policy.')}
-<p>Badges are plain SVG files. Seller and status badges are rebuilt every week or day from the public data; the AI-policy badge is computed live by the API (cached 24 h).</p>
+    out = f'''{decide('showing buyers and agents independent, checkable evidence of your demand, your uptime or your AI-access policy. Anyone can claim traction; a badge that updates itself is harder to fake.')}
+<p>Badges are plain SVG files, no scripts, no tracking. Seller and status badges are rebuilt from the public data every week and every day; the AI-policy badge is computed live by the API (cached 24 h).</p>
 <div class="card-wk" style="display:grid;gap:12px;margin:16px 0 28px">
 <label for="badge-q" style="font-weight:600">Seller address (0x…) or website domain</label>
 <input id="badge-q" type="search" value="{q}" autocomplete="off">
@@ -294,16 +294,16 @@ def og_images(d):
         s = {x['signal']: x for x in A['signals']}
         cards['access'] = ('State of AI access', pct(s['Blocks at least one AI crawler by name']['share']), f'of top sites block an AI crawler by name · {s["States a machine-readable price"]["k"]} state a price')
     tmp = os.path.join(og, '_tmp'); os.makedirs(tmp, exist_ok=True)
-    font = 'file://' + os.path.join(HERE, 'fonts', 'inter-latin-var.woff2')
+    font = 'file://' + os.path.join(HERE, 'fonts', 'plex-sans-latin-var.woff2')
     made = 0
     for k, (eyebrow, big, sub) in cards.items():
-        html_s = f'''<!doctype html><html><head><meta charset="utf-8"><style>@font-face{{font-family:Inter;src:url("{font}") format("woff2");font-weight:100 900}}
-html,body{{margin:0;width:1200px;height:630px;background:#F8F6F2;font-family:Inter,sans-serif;color:#1C1830}}
+        html_s = f'''<!doctype html><html><head><meta charset="utf-8"><style>@font-face{{font-family:Plex;src:url("{font}") format("woff2");font-weight:100 700}}
+html,body{{margin:0;width:1200px;height:630px;background:#F1F2F4;font-family:Plex,sans-serif;color:#111114}}
 .w{{position:absolute;top:0;left:0;width:1200px;height:630px;padding:72px 80px;box-sizing:border-box;display:flex;flex-direction:column}}
-.e{{font:600 26px Inter;color:#7A5E00;letter-spacing:.06em;text-transform:uppercase}}.b{{font:700 124px/1.05 Inter;letter-spacing:-.04em;margin:40px 0 18px;color:#4B2E83}}
-.r{{width:120px;height:8px;background:#C9A227;border-radius:4px;margin-bottom:28px}}.s{{font:500 34px/1.35 Inter;color:#5E5873;max-width:1000px}}
-.f{{margin-top:auto;display:flex;justify-content:space-between;font:600 28px Inter}}.f span:last-child{{color:#5E5873;font-weight:500}}</style></head>
-<body><div class="w"><div class="e">{esc(eyebrow)}</div><div class="b">{esc(big)}</div><div class="r"></div><div class="s">{esc(sub)}</div><div class="f"><span>wknipe.com<span style="color:#C9A227">•</span></span><span>Data through {esc(d.through)}</span></div></div></body></html>'''
+.e{{font:600 26px Plex;color:#7A5E00;letter-spacing:.06em;text-transform:uppercase}}.b{{font:600 124px/1.05 Plex;letter-spacing:-.02em;margin:40px 0 18px;color:#4B2E83}}
+.r{{width:120px;height:4px;background:#C9A227;margin-bottom:28px}}.s{{font:500 34px/1.35 Plex;color:#4F5160;max-width:1000px}}
+.f{{margin-top:auto;display:flex;justify-content:space-between;font:600 28px Plex}}.f span:last-child{{color:#4F5160;font-weight:500}}</style></head>
+<body><div style="position:absolute;top:0;left:0;width:1200px;height:18px;background:#33205F;border-bottom:4px solid #C9A227"></div><div class="w"><div class="e">{esc(eyebrow)}</div><div class="b">{esc(big)}</div><div class="r"></div><div class="s">{esc(sub)}</div><div class="f"><span>wknipe.com</span><span>Data through {esc(d.through)}</span></div></div></body></html>'''
         hp = os.path.join(tmp, f'{k}.html'); open(hp, 'w').write(html_s)
         if chrome:
             try:

@@ -1,18 +1,58 @@
 ---
 title: "About"
+description: "Wes Knipe: economist by training, builder by habit. Independent, reproducible data on what AI agents actually buy and pay for."
 ---
 
-<!-- TODO(Wes): two sentences in your own voice: who you are and why you measure agent payments. Replace the bracketed line below. -->
-[TODO(Wes): two-sentence bio.]{.lede}
+```{=html}
+<style>
+  #title-block-header .description { display: none; }
+  .bio { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; max-width: 680px; }
+  .resume h3 { font-size: 15px; font: 500 12px/1.4 "IBM Plex Mono", monospace; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 32px 0 10px; }
+  .cv-row { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; margin: 16px 0 4px; }
+  .cv-d { font: 400 13px/1.4 "IBM Plex Mono", monospace; color: var(--muted); white-space: nowrap; }
+  .resume ul { margin: 0 0 6px; padding-left: 20px; } .resume li { margin: 2px 0; }
+  @media (max-width: 560px) { .cv-row { flex-direction: column; gap: 0; } }
+  @media print { .no-print { display: none !important; } }
+</style>
+```
 
-**What this site is.** Independent, reproducible data on what AI agents actually buy and pay for: the demand-cleaned x402 index and its [market dashboard](/x402/), [seller](/x402/sellers/), [buyer](/x402/buyers/) and [price](/x402/prices/) statistics, a daily [endpoint monitor](/x402/status/), a weekly [census of AI-crawler access](/access/), and tools such as [Price comps](/x402/prices/comps) and the [AI-policy checker](/check/). [x402scan](https://www.x402scan.com) is the raw explorer; this site publishes what survives cleaning, what buyers actually pay, and who comes back.
+::: {.lede}
+I'm Wes Knipe, an economist by training and a builder by habit. AI agents have started paying for things on their own, and nobody seemed to be checking the receipts, so I started checking them.
+:::
 
-This site is built with [Quarto](https://quarto.org) from a public repository. The x402 Clean Index uses only public data: Base chain transactions via Blockscout, and the Coinbase CDP Bazaar listing. Its [method note](https://github.com/doescodinggiteasier/wknipe-site/blob/main/docs/X402_INDEX_METHOD.md) lists every filter and known bias.
+::: {.bio}
+I studied quantitative economics at Cal Poly, with a minor in statistics, and spent the years since in early-stage software: customer interviews, go-to-market, a churn model, a product relaunch, and one very memorable first sale. Before that I was a financial advisor, long enough to pass three licensing exams in two months, and short enough to leave for startups and see how products and companies actually get built. These days I consult on analytics projects and build research tools, including Opportunity Atlas, a pipeline whose whole job is catching AI when it is confidently wrong.
 
-**Our own payments are excluded.** We run a paid API for the index at `api.wknipe.com`. Payments to it, and payments from our test wallet, are tagged as ours and never counted as demand.
+I do my best work on long, ambiguous problems, and agent payments is one. Most of what gets said about it is volume, and most of the volume turns out to be agents paying themselves. So this site counts what's left after the loops, the self-dealing and the tests come out (about half, as of this week), and every number says what it's out of. A percentage without a denominator is just a mood.
 
-**Our crawlers.** The endpoint monitor (`wknipe-x402-status/1.0`) sends one unpaid request per listed endpoint per day at most, ≤60 per host; the access census (`wknipe-policy-check/1.0`) reads four small files per domain once a week. Ask to be excluded: wes@wknipe.com.
+I live in Santa Cruz. I also hold an FAA drone license, which has come up less often than you'd think.
+:::
+
+## What this site is
+
+Independent, reproducible data on what AI agents actually buy and pay for:
+
+- the demand-cleaned x402 index and its [market dashboard](/x402/);
+- [seller](/x402/sellers/), [buyer](/x402/buyers/) and [price](/x402/prices/) statistics;
+- a daily [endpoint monitor](/x402/status/) and a weekly [census of AI-crawler access](/access/);
+- tools such as [Best execution](/x402/buy/), [Price comps](/x402/prices/comps) and the [AI-policy checker](/check/).
+
+[x402scan](https://www.x402scan.com) is the raw explorer. This site is the part after cleaning: what survives, what buyers actually pay, and who comes back for more.
+
+It's built with [Quarto](https://quarto.org) from a [public repository](https://github.com/doescodinggiteasier/wknipe-site), using only public data: Base chain transactions via Blockscout and the Coinbase CDP Bazaar listing. The [method note](https://github.com/doescodinggiteasier/wknipe-site/blob/main/docs/X402_INDEX_METHOD.md) lists every filter and every bias I know about. If you find one I don't, I'd like to hear it.
+
+**My own payments are excluded.** I run a paid API for the index at `api.wknipe.com`. Payments to it, and from my test wallet, are tagged and never counted as demand. Grading my own homework seemed like a bad look.
+
+**My crawlers.** The endpoint monitor (`wknipe-x402-status/1.0`) sends at most one unpaid request per listed endpoint per day, and no more than 60 per host. The access census (`wknipe-policy-check/1.0`) reads four small files per domain once a week. Both say who they are. To be left out, email wes@wknipe.com.
 
 **Privacy.** Visits are counted with Cloudflare Web Analytics: no cookies, no personal data, no cross-site tracking. The [AI-policy checker](check/index.qmd) keeps each domain's result for 24 hours and logs nothing about who asked.
 
-Contact: [wes@wknipe.com](mailto:wes@wknipe.com) · [GitHub](https://github.com/doescodinggiteasier) · [RSS](/feed.xml)
+## Résumé
+
+[Download PDF](/files/wes-knipe-resume.pdf){.wk-btn .ghost .sm .no-print}
+
+{{< include _resume.md >}}
+
+## Contact
+
+[wes@wknipe.com](mailto:wes@wknipe.com) · [GitHub](https://github.com/doescodinggiteasier) · [RSS](/feed.xml)

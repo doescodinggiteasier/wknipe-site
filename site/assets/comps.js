@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
     await WK.plotReady();
     const t = WK.theme($("#comps-dist")), body = $("#comps-dist .plot"), width = Math.max(280, body.clientWidth);
     const bins = d3.bin().thresholds(d3.range(-4, 4.01, 0.25)).value((h) => Math.log10(h.price))(hits.filter((h) => h.price > 0));
-    body.replaceChildren(Plot.plot({ width, height: 220, marginLeft: 40, style: { fontFamily: "Inter, system-ui, sans-serif", fontSize: "12px", color: t.muted, background: "transparent" },
+    body.replaceChildren(Plot.plot({ width, height: 220, marginLeft: 40, style: { fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: "12px", color: t.muted, background: "transparent" },
       x: { type: "log", label: "Posted USD per call (log scale)", labelAnchor: "center", labelArrow: false, tickFormat: fmt.usd, grid: true }, y: { label: null, grid: true, tickFormat: "d" },
       marks: [Plot.rectY(bins.filter((b) => b.length), { x1: (b) => 10 ** b.x0, x2: (b) => 10 ** b.x1, y: (b) => b.length, fill: t.primary, inset: 1, tip: { fill: t.surface, stroke: t.line }, title: (b) => `${fmt.usdFull(10 ** b.x0)}–${fmt.usdFull(10 ** b.x1)}: ${b.length} listings\n${b.filter((h) => h.buyers >= MIN).length} with a ${MIN}+ buyer seller` }),
         rp ? Plot.ruleX([rp], { stroke: t.clean, strokeWidth: 2.5 }) : null, rp ? Plot.text([rp], { x: (d) => d, frameAnchor: "top", dy: -2, text: () => "realised " + fmt.usdFull(rp), fill: t.ink, textAnchor: "start", dx: 5 }) : null, Plot.ruleY([0], { stroke: t.line })] }));

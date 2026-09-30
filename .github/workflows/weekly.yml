@@ -168,6 +168,15 @@ jobs:
           curl -fsS -o /dev/null -w "wknipe.com/x402/ %{http_code}\n" https://wknipe.com/x402/
           curl -fsS https://api.wknipe.com/v1/latest | python3 -c "import json,sys; d=json.load(sys.stdin); print('API latest week', d['latest_week'])"
 
+      - name: Mirror weekly CSVs to Hugging Face
+        if: steps.wk.outputs.skip != 'true' && steps.pipe.outputs.pending != 'true'
+        continue-on-error: true
+        env:
+          HF_DATASET_MIRROR_TOKEN: ${{ secrets.HF_DATASET_MIRROR_TOKEN }}
+        run: |
+          pip install -q huggingface_hub
+          python3 scripts/publish/hf_dataset.py --push
+
       - name: Refresh AI-policy checker examples
         if: steps.wk.outputs.skip != 'true' && steps.pipe.outputs.pending != 'true'
         run: |

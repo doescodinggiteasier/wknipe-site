@@ -1,6 +1,6 @@
 ---
 title: "This week in x402"
-subtitle: "A numbers-only weekly report generated from the index every Monday. RSS below."
+subtitle: "A numbers-only report, written by the index every Monday. RSS below, for the three of you who still use it."
 description: "Weekly x402 numbers: demand-cleaned spend, genuine buyers, active sellers, content + data, concentration and movers."
 listing:
   contents: "20*.qmd"

@@ -53,7 +53,7 @@ def term(key, text=None):
 
 def decide(text):
     """The first line of every data page: what an operator / seller / investor can decide with it."""
-    return f'<p class="decide"><b>Use it to decide:</b> {text}</p>'
+    return f'<p class="decide"><b>What it\'s for:</b> {text}</p>'
 
 
 def freshness(through, cadence='updates Mondays', stale_days=10):

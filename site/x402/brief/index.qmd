@@ -1,6 +1,6 @@
 ---
 title: "State of x402, on one page"
-subtitle: "The numbers an investor, journalist or operator asks for first, recomputed every week from the Clean Index."
+subtitle: "The numbers people ask for first, recomputed every Monday. Prints on one page, which is more than most briefs manage."
 description: "A printable one-page brief on x402: genuine volume, buyers, sellers, prices, infrastructure and publishers."
 body-classes: brief-page
 image: /og/brief.png

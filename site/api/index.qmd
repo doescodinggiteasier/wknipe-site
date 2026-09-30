@@ -1,6 +1,6 @@
 ---
 title: "API and data"
-subtitle: "Free JSON for every chart, CSV downloads, two paid x402 endpoints, and an MCP server."
+subtitle: "Free JSON behind every chart, CSV downloads, two paid x402 endpoints, and an MCP server for the agents themselves."
 description: "x402 Clean Index API: free chart series (/v1/series?metric=), paid series and sellers over x402, MCP server, bulk CSVs."
 ---
 

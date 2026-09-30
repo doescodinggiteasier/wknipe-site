@@ -7,7 +7,7 @@ body-classes: wide
 ```{=html}
 <style>
   .ck-form { display: flex; gap: .5rem; flex-wrap: wrap; margin: 1.25rem 0 .5rem; }
-  .ck-form input { flex: 1 1 16rem; min-width: 0; font: 400 17px "JetBrains Mono", monospace; padding: 8px 0;
+  .ck-form input { flex: 1 1 16rem; min-width: 0; font: 400 17px "IBM Plex Mono", monospace; padding: 8px 0;
     border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background: transparent; color: var(--ink); }
   .ck-form input:focus { outline: none; border-bottom-color: var(--accent); }
   .ck-form button { padding: 8px 16px; border: 1px solid var(--ink); border-radius: 0; background: var(--ink); color: var(--bg); font-weight: 500; }
@@ -15,21 +15,21 @@ body-classes: wide
   .ck-card { border-top: 1px solid var(--line); padding: 24px 0 0; margin: 24px 0 48px; }
   .ck-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
   .ck-head h2 { margin: 0; font-size: 1.5rem; border: 0; overflow-wrap: anywhere; }
-  .ck-meta { font: .75rem/1.4 "JetBrains Mono", monospace; opacity: .7; }
+  .ck-meta { font: .75rem/1.4 "IBM Plex Mono", monospace; opacity: .7; }
   .ck-verdict { font-size: 1.05rem; margin: .75rem 0 1rem; }
   .ck-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .6rem; margin-bottom: 1rem; }
   .ck-tile { border-top: 1px solid var(--line); padding-top: .4rem; }
-  .ck-tile .k { font: 400 13px/1.4 "JetBrains Mono", monospace; color: var(--muted); }
+  .ck-tile .k { font: 400 13px/1.4 "IBM Plex Mono", monospace; color: var(--muted); }
   .ck-tile .v { font-weight: 500; overflow-wrap: anywhere; }
   .ck-tile.yes { border-top-color: var(--accent); }
-  .chip { display: inline-block; font: 500 .72rem/1 "JetBrains Mono", monospace; padding: .28rem .45rem; border-radius: .25rem; white-space: nowrap; }
+  .chip { display: inline-block; font: 500 .72rem/1 "IBM Plex Mono", monospace; padding: .28rem .45rem; border-radius: .25rem; white-space: nowrap; }
   .chip.blocked { background: #f6d5d0; color: #7a1f12; } .chip.partial { background: #f7e7c4; color: #6b4a00; } .chip.allowed { background: #d3eee3; color: #0b5238; }
   body.quarto-dark .chip.blocked { background: #5a221b; color: #ffd9d2; } body.quarto-dark .chip.partial { background: #4d3b12; color: #ffe7b0; }
   body.quarto-dark .chip.allowed { background: #173f31; color: #c9f2e1; }
   .ck-bots { width: 100%; border-collapse: collapse; font-size: .9rem; }
   .ck-bots th, .ck-bots td { padding: .4rem .5rem; border-bottom: 1px solid var(--bs-border-color); text-align: left; vertical-align: top; }
-  .ck-bots th { font: 400 13px/1.4 "JetBrains Mono", monospace; color: var(--muted); }
-  .ck-bots td.tok { font-family: "JetBrains Mono", monospace; font-size: .82rem; overflow-wrap: anywhere; }
+  .ck-bots th { font: 400 13px/1.4 "IBM Plex Mono", monospace; color: var(--muted); }
+  .ck-bots td.tok { font-family: "IBM Plex Mono", monospace; font-size: .82rem; overflow-wrap: anywhere; }
   .ck-bots .via { font-size: .75rem; opacity: .7; }
   .ck-scroll { overflow-x: auto; }
   .ck-card h3 { font-size: 1rem; margin: 1.4rem 0 .4rem; }
@@ -50,11 +50,11 @@ body-classes: wide
   <input id="ck-in" name="d" type="text" inputmode="url" autocomplete="off" spellcheck="false" placeholder="example.com" required>
   <button type="submit">Check</button>
 </form>
-<p class="ck-hint">Free. Results are kept for 24 hours; nothing about you is logged. Share a result with its link: <code>wknipe.com/check/?d=example.com</code></p>
+<p class="ck-hint">Free. Results are kept for 24 hours; nothing about you is logged, which is more than most of these sites can say. Share a result with its link: <code>wknipe.com/check/?d=example.com</code></p>
 <div id="ck-out" aria-live="polite"></div>
 
 <h2 id="examples">Well-known publishers</h2>
-<p>Checked live (each result is at most a day old). Click one for the full report.</p>
+<p>Checked live, so each result is at most a day old. Click one for the full report, and the occasional surprise.</p>
 <div class="ck-examples" id="ck-examples"><p class="ck-meta">Loading…</p></div>
 
 <script>
@@ -185,11 +185,11 @@ body-classes: wide
 
 - **robots.txt**, evaluated for 25 named AI crawlers under [RFC 9309](https://www.rfc-editor.org/rfc/rfc9309): the group naming the crawler (or `User-agent: *` if none does), most specific rule wins, ties go to allow. *Blocked* means the crawler may not fetch the homepage; *some paths blocked* means it may, but parts of the site are off limits. robots.txt that can't be fetched (server error) counts as blocked, as the standard says; a missing one means allowed.
 - **Content-Signal** lines in robots.txt ([contentsignals.org](https://contentsignals.org)): search, ai-input, ai-train yes/no.
-- **RSL**: `License:` links in robots.txt or a `<link type="application/rsl+xml">` on the homepage ([rslstandard.org](https://rslstandard.org)). We read the first licence file to report its payment terms and permissions.
+- **RSL**: `License:` links in robots.txt or a `<link type="application/rsl+xml">` on the homepage ([rslstandard.org](https://rslstandard.org)). I read the first licence file to report its payment terms and permissions.
 - **TDMRep**: `/.well-known/tdmrep.json` and the `tdm-reservation` meta tag ([W3C TDMRep](https://www.w3.org/community/reports/tdmrep/CG-FINAL-tdmrep-20240202/)).
 - **llms.txt** at the site root ([llmstxt.org](https://llmstxt.org)).
 - **Charging crawlers**: one GET of the homepage as an identified crawler, looking for HTTP 402, a Cloudflare pay-per-crawl `crawler-price` header, or an x402 payment offer. Most sites that charge only do so for verified, signed crawlers, so *No* here doesn't rule out a paid deal.
 
 **Polite by design.** The checker identifies itself as `wknipe-policy-check/1.0 (+https://wknipe.com/check/)`, fetches only the five files above (plus redirects within the same site), waits at most 6 seconds for each, follows redirects only within the same site, and fetches each domain at most once a day. It stores the result for 24 hours and nothing about who asked. It's also available as a free API: `https://api.wknipe.com/v1/check?domain=example.com`.
 
-**Why this exists.** Publishers are starting to state terms for AI use in machine-readable ways, and AI agents are starting to pay for content. This page shows, for any site, what it currently tells machines. The [x402 Clean Index](../x402/index.qmd) measures what agents actually pay for.
+**Why this exists.** Publishers are starting to write down, in ways a machine can read, what AI may do with their work, and agents are starting to pay for content. Most of those terms are buried in files nobody opens. This page opens them for any site. The [x402 Clean Index](../x402/index.qmd) covers the other side: what agents actually pay for.

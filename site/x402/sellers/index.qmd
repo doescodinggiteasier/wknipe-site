@@ -1,6 +1,6 @@
 ---
 title: "x402 sellers"
-subtitle: "Every seller with at least five genuine buyers last week, ranked by demand-cleaned USD, with repeat-buyer rate and top-buyer share."
+subtitle: "Every seller with at least five genuine buyers last week, ranked by demand-cleaned USD. Five is a low bar, and most sellers still miss it."
 description: "Who AI agents actually pay on x402 (Base): sellers with at least five genuine buyers, demand-cleaned USD, repeat buyers, top-buyer share, posted and paid prices."
 body-classes: wide
 image: /og/sellers.png

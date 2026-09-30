@@ -1,6 +1,6 @@
 ---
 title: "Price comps"
-subtitle: "Describe your API. See what comparable x402 listings charge, and whether comparable sellers actually get genuine buyers."
+subtitle: "Describe your API. See what comparable x402 listings charge, and whether the sellers behind them actually get paid."
 description: "Price comparables for x402 APIs: posted price range of similar listings and how many of them have genuine buyers."
 body-classes: wide
 image: /og/comps.png

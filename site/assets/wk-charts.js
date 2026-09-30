@@ -4,7 +4,7 @@
   "use strict";
   const WK = window.WK, C = (WK.charts = WK.charts || {}), fmt = WK.fmt, esc = WK.esc, CATS = WK.CATS, L = WK.CAT_LABEL;
   const utc = (w) => new Date(w + "T00:00:00Z");
-  const base = (t, width, o = {}) => ({ width, style: { fontFamily: "Inter, system-ui, sans-serif", fontSize: "12px", color: t.muted, background: "transparent", overflow: "visible" }, ...o });
+  const base = (t, width, o = {}) => ({ width, style: { fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: "12px", color: t.muted, background: "transparent", overflow: "visible" }, ...o });
   const legend = (items) => items.map(([lab, col, dash]) => `<span><i style="background:${col}${dash ? ";height:2px;border-radius:0" : ""}"></i>${esc(lab)}</span>`).join("");
   const wkTicks = (weeks) => ({ type: "utc", ticks: weeks.map(utc), tickFormat: (d) => d3.utcFormat("%-d %b")(d), label: null });
   const pct0 = (x) => fmt.pct(x, 0);

@@ -117,13 +117,13 @@ def gaps_page(d, G):
             {'k': 'listings', 'label': 'Listings', 't': 'int', 'r': 1}, {'k': 'ex', 'label': 'Typical listings', 't': 'html'}]
     trows = [{**r, 'ex': '<span class="sub">' + esc(' · '.join(r['examples'][:3])) + '</span>', 'ex_t': ' · '.join(r['examples']), 'ex_s': r['label'],
               'hit_rate': r['hit_rate']} for r in G['topics']]
-    out = [decide('what to build or list next: which kinds of paid API already have sellers that real buyers use, and which are crowded with listings nobody pays for.'),
+    out = [decide('choosing what to build or list next. Some kinds of paid API have sellers real buyers use; others are crowded with listings nobody pays for. Better to find out here than after launch.'),
            freshness(d.through, f'listings snapshot {G["snapshot"]} · buyers week of {week_label(G["week"])}'), kpis(cards),
            chart_frame('gap-map', title,
                        f'Each dot is a listing topic. Across: sellers whose main topic it is (competition, log scale). Up: share of them with {MIN}+ genuine buyers in the week of {week_label(G["week"])} (demand that reaches sellers). '
                        f'Dot size: genuine buyers summed over those sellers. Dashed line: the {pct(base)} base rate. Topics with fewer than 10 sellers are left off the chart.',
                        'gapmap', '/x402/data/gaps.json', csv='/x402/data/gaps.csv', through=d.through, page='/x402/gaps/',
-                       note='Upper left = few sellers and most of them get buyers: room for one more. Lower right = crowded with sellers nobody pays.'),
+                       note='Upper left: few sellers, and most of them get buyers, so there may be room for one more. Lower right: a crowded room where nobody is buying.'),
            (f'<p>Above the base rate with fewer sellers than the median topic: {uline}. ' if under else '<p>')
            + f'Lowest conversion: {esc(worst["label"].lower())}, where {pct(worst["hit_rate"])} of {worst["sellers"]} sellers get {MIN}+ buyers.</p>',
            '<h2 id="topics">Every topic</h2>',
@@ -139,7 +139,7 @@ def gaps_page(d, G):
 def buy_page(d, hday, hn):
     P = d.prices
     EX = ['web search', 'scrape web page to markdown', 'token price', 'weather forecast', 'llm chat completion', 'company enrichment', 'sec filings', 'twitter search', 'image generation', 'news headlines']
-    ui = f'''{decide('which x402 endpoint your agent should call for a task: the cheapest one that verifiably answers at its listed price, and which one real buyers already use.')}
+    ui = f'''{decide('picking which x402 endpoint your agent should call: the cheapest one that verifiably answers at its listed price, and the one real buyers already use. Think of it as comparison shopping for robots.')}
 {freshness(d.through, f"listings {P['snapshot']} · endpoint checks {hday or '–'} · buyers week of {week_label(P['week'])}")}
 <form id="buy-form" class="card-wk" role="search" style="display:grid;gap:12px;margin-bottom:20px" onsubmit="return false">
 <label for="buy-q" style="font-weight:600">What does your agent need done?</label>
@@ -153,15 +153,15 @@ def buy_page(d, hday, hn):
 <div class="picks" id="buy-picks"></div>
 <p id="buy-spread" class="buy-spread"></p>
 <div id="buy-table"></div>
-<details class="card-wk buy-json"><summary>Agent-ready JSON (top 5 by our ranking)</summary><pre><code id="buy-json"></code></pre><button type="button" class="wk-btn ghost" id="buy-copy">Copy JSON</button></details>
+<details class="card-wk buy-json"><summary>Agent-ready JSON (top 5 by this ranking)</summary><pre><code id="buy-json"></code></pre><button type="button" class="wk-btn ghost" id="buy-copy">Copy JSON</button></details>
 </div>
 <h2 id="how">How the ranking works</h2>
 <ul class="meta-list">
 <li><b>Relevance first.</b> The 40 best text matches for your task among {num(P['listings'])} Bazaar listings, at most 3 per seller.</li>
-<li><b>Verified</b> = our unpaid daily check found a valid 402 whose price and payTo match the listing ({num(hn)} endpoints checked on {hday or '–'}; the rest are "not checked yet", not failed).</li>
+<li><b>Verified</b> = my unpaid daily check found a valid 402 whose price and payTo match the listing ({num(hn)} endpoints checked on {hday or '–'}; the rest are "not checked yet", not failed).</li>
 <li><b>Used by buyers</b> = the listing's seller had {MIN}+ genuine (demand-cleaned) buyers in the week of {week_label(P['week'])}, across all its endpoints.</li>
 <li><b>Score</b> = relevance, then +verified, +used by buyers, and a price term (cheaper is better, on a log scale). Failed checks sink to the bottom.</li>
-<li>Nothing here is paid placement, and we never call a paid endpoint. Posted prices can change at any time: the live 402 is the price you pay.</li>
+<li>Nothing here is paid placement, and I never call a paid endpoint. Posted prices can change at any time; the live 402 is the price you actually pay.</li>
 </ul>
 <p class="meta">Selling instead of buying? <a href="/x402/prices/comps">Price comps</a> shows what comparable listings charge; <a href="/x402/gaps/">Where to build</a> shows which topics convert.</p>
 <script defer src="/assets/buy.js?v={int(dt.datetime.now().timestamp())}"></script>'''
@@ -205,7 +205,7 @@ def brief_page(d):
                    + (f'Content + data, the categories an AI-content market would need, is {usd(cd)} ({pct(cd / clean, 1)}), {signed_pct(g4)} over four weeks.' if cd is not None else '')),
         ('Prices', f'The median listing asks {usd(pv.get("posted_median_usd"), True)} per call; the median clean payment is {usd(pv.get("paid_median_usd"), True)}: buyers pay about {pv.get("ratio", 0):.1f}× the asking median.' if pv else ''),
         ('Infrastructure', (f'{esc(ftop[0].title())} settles {pct(ftop[1] / clean)} of clean dollars. ' if ftop else '')
-                   + (f'{pct(f(st["valid_402"]))} of {num(st["checked"])} listed endpoints we checked on {st["date"]} answer a valid 402; {pct(f(st["price_match_of_valid"]))} of those at their listed price.' if st else '')),
+                   + (f'{pct(f(st["valid_402"]))} of {num(st["checked"])} listed endpoints checked on {st["date"]} answer a valid 402; {pct(f(st["price_match_of_valid"]))} of those at their listed price.' if st else '')),
         ('Publishers', f'{pct(anyb["share"])} of top-1,000 sites with a robots.txt block at least one AI crawler by name; {price["k"]} of {price["n"]} state a machine-readable price.' if anyb and price else ''),
     ]
     body = ''.join(f'<div class="brief-row"><div class="bk">{k}</div><div class="bv">{v}</div></div>' for k, v in rows if v)
@@ -213,7 +213,7 @@ def brief_page(d):
     out = f'''<p class="brief-eyebrow">x402 Clean Index · one page · week of {week_label(lw, True)}</p>
 <p class="lede brief-lede">Of every dollar that moved through x402 on Base last week, {pct(clean / raw)} survives removing manufactured, single-buyer and test payments: {usd(clean)} a week, or {usd(clean * 52)} a year at this rate.</p>
 <div class="brief">{body}</div>
-<div class="brief-foot"><p><b>Method.</b> Every USDC settlement sent by 128 known x402 facilitators on Base, minus our own payments, closed loops, funding-linked pairs, fan-out manufacture and single-buyer sellers. The manufacture filters are lower bounds, so clean volume is an upper bound on genuine demand. <a href="{METHOD}">Method note</a> · <a href="/x402/">Market dashboard</a> · <a href="/api/">API</a></p>
+<div class="brief-foot"><p><b>Method.</b> Every USDC settlement sent by 128 known x402 facilitators on Base, minus my own payments, closed loops, funding-linked pairs, fan-out manufacture and single-buyer sellers. The filters are conservative, so clean volume is a ceiling on genuine demand, not a floor. <a href="{METHOD}">Method note</a> · <a href="/x402/">Market dashboard</a> · <a href="/api/">API</a></p>
 <p><b>Cite.</b> {esc(cite)} <button type="button" class="chip" data-copy="{esc(cite)}">Copy</button></p>
 <p class="brief-actions"><button type="button" class="wk-btn" onclick="window.print()">Print or save as PDF</button> <a class="wk-btn ghost" href="/weekly/">Weekly report + RSS</a></p></div>
 <script>document.addEventListener("click",(e)=>{{const b=e.target.closest("[data-copy]");if(b){{navigator.clipboard.writeText(b.dataset.copy);b.textContent="Copied";}}}});</script>'''

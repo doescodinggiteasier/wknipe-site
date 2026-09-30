@@ -74,28 +74,28 @@ def copy_data(d):
 
 # ------------------------------------------------------------------ glossary + search
 GLOSSARY = {
-    'clean': ('Demand-cleaned', 'What survives every filter: our own payments, closed payment loops, funding-linked payer–seller pairs, fan-out manufacture and single-buyer sellers are removed. An upper bound on genuine demand, because the manufacture filters are lower bounds.', METHOD + '#2-filters-in-this-order'),
-    'demand-cleaned': ('Demand-cleaned', 'Same as "clean": what survives every filter. An upper bound on genuine demand.', METHOD + '#2-filters-in-this-order'),
+    'clean': ('Demand-cleaned', 'What survives every filter: my own payments, closed payment loops, funding-linked payer–seller pairs, fan-out manufacture and single-buyer sellers are removed. The filters are conservative, so treat it as a ceiling on genuine demand, not a floor.', METHOD + '#2-filters-in-this-order'),
+    'demand-cleaned': ('Demand-cleaned', 'Same as "clean": what survives every filter. A ceiling on genuine demand.', METHOD + '#2-filters-in-this-order'),
     'manufactured': ('Manufactured volume', 'Payments where buyer and seller are provably the same operator: self-payments and closed loops (C1), payer and seller funded from the same wallets (C2), and fan-out from shared funders to throwaway buyers.', METHOD + '#2-filters-in-this-order'),
-    'single-buyer': ('Single-buyer seller', 'A seller paid by exactly one distinct buyer in the week. Its payments are dropped as dust: usually a test, or one operator paying itself with two wallets.', METHOD + '#2-filters-in-this-order'),
+    'single-buyer': ('Single-buyer seller', 'A seller paid by exactly one distinct buyer in the week. Its payments are dropped: it is usually a test, or one operator paying itself with a second wallet. A market of one is not a market.', METHOD + '#2-filters-in-this-order'),
     'd05': ('D05 filter', 'The manufacture filter from arXiv 2607.12575 ("D05"), approximated with public Blockscout data: C1 fictitious (loops) and C2 internal (shared funding). It found 85% of Base x402 settlements operator-internal; our approximation removes less, so it is a lower bound.', METHOD + '#2-filters-in-this-order'),
     'posted vs paid': ('Posted vs paid', 'Posted = the price a listing asks for one call in the Coinbase CDP Bazaar. Paid = what demand-cleaned payments actually settled on chain. Posted medians weight each listing equally; paid medians weight each payment.', METHOD + '#4-prices'),
     'posted': ('Posted price', 'The exact-scheme USDC amount a Bazaar listing asks for one call.', METHOD + '#4-prices'),
     'paid': ('Paid price', 'The amount of a demand-cleaned payment on chain (USDC on Base).', METHOD + '#4-prices'),
-    'genuine buyer': ('Genuine buyer', 'A payer address with at least one demand-cleaned payment in the week. One operator can run many wallets, so this counts wallets, not companies.', METHOD + '#1-units-and-definitions'),
+    'genuine buyer': ('Genuine buyer', 'A payer address with at least one demand-cleaned payment in the week. One operator can run many wallets, so this counts wallets, not companies (and some operators run a lot of wallets).', METHOD + '#1-units-and-definitions'),
     'genuine buyers': ('Genuine buyers', 'Payer addresses with at least one demand-cleaned payment in the week. Wallets, not companies.', METHOD + '#1-units-and-definitions'),
     'fan-out': ('Fan-out manufacture', 'Many one-time buyers funded by the same few wallets, paying one seller and nobody else. Flagged only when the funding is shared AND circular or isolated.', METHOD + '#2-filters-in-this-order'),
-    'facilitator': ('Facilitator', 'The service that submits an x402 payment on chain for the buyer. We count settlements sent by 128 known facilitator addresses on Base.', METHOD + '#1-units-and-definitions'),
+    'facilitator': ('Facilitator', 'The service that submits an x402 payment on chain for the buyer. I count settlements sent by 128 known facilitator addresses on Base.', METHOD + '#1-units-and-definitions'),
     'hhi': ('HHI', 'Herfindahl–Hirschman index: the sum of squared seller shares (in %), from 0 to 10,000. Above 2,500 is "highly concentrated" under US merger guidelines.', None),
     'effective sellers': ('Effective sellers', '1 ÷ Σ share²: the number of equal-sized sellers that would give the same concentration.', None),
     'jevons': ('Jevons index', 'A chain-linked geometric mean of week-on-week price changes over items present in both weeks; first week = 100.', METHOD + '#4-prices'),
-    'tripwire': ('Growth tripwire', 'Our pre-committed rule: the marketplace question reopens if demand-cleaned content + data spend grows more than 20% a month for three months running.', METHOD + '#3a-reading-the-tripwire-analysis-2026-09-30-datax402_indexanalysisjson'),
-    'large ticket': ('Large ticket (unidentified)', 'An unlisted seller whose median clean payment is above the 99th percentile of posted per-call prices. A label from price alone, not an identification.', METHOD + '#3-categories'),
+    'tripwire': ('Growth tripwire', 'A rule I wrote down in advance so I can\'t move the goalposts later: the marketplace question reopens if demand-cleaned content + data spend grows more than 20% a month for three months running.', METHOD + '#3a-reading-the-tripwire-analysis-2026-09-30-datax402_indexanalysisjson'),
+    'large ticket': ('Large ticket (unidentified)', 'An unlisted seller whose median clean payment is above the 99th percentile of posted per-call prices. A label from price alone, not an identification. I don\'t know who they are either.', METHOD + '#3-categories'),
     'repeat-buyer rate': ('Repeat-buyer rate', 'Share of a seller\'s genuine buyers who paid it at least twice in the week.', None),
-    'top-buyer share': ('Top-buyer share', 'Share of a seller\'s demand-cleaned USD that came from its single largest buyer. High values mean the revenue depends on one wallet; it is a risk signal, not an accusation.', None),
+    'top-buyer share': ('Top-buyer share', 'Share of a seller\'s demand-cleaned USD that came from its single largest buyer. High values mean the revenue depends on one wallet. It is a risk signal, not an accusation.', None),
     'multi-homing': ('Multi-homing', 'A buyer paying two or more different sellers in the same week.', None),
     'retention': ('Retention', 'Share of a week\'s new genuine buyers who make another demand-cleaned payment k weeks later.', None),
-    'wow': ('WoW', 'Week on week: the change from the previous week.', None),
+    'wow': ('WoW', 'Week on week: the change from the previous week. Five weeks of history, so read the trend with some humility.', None),
 }
 
 
@@ -147,19 +147,19 @@ def build_assets(d):
 
 # ------------------------------------------------------------------ home
 TOOLS = [
-    ('Data', 'Market', 'Demand-cleaned x402 volume, the raw→clean waterfall, buyers, concentration, ticket sizes and facilitators.', '/x402/'),
-    ('Data', 'Sellers', 'Every seller with 5+ genuine buyers, with repeat-buyer rate and top-buyer share.', '/x402/sellers/'),
-    ('Data', 'Buyers', 'How many genuine buyers pay each week, whether they come back, and how much they spend.', '/x402/buyers/'),
-    ('Data', 'Prices', 'What listings ask versus what buyers actually pay, by category, with a price index.', '/x402/prices/'),
-    ('Tool', 'Best execution', 'Tell it what your agent needs: the cheapest x402 endpoint that verifiably answers, and the one buyers use.', '/x402/buy/'),
-    ('Tool', 'Price comps', 'Describe your API: see comparable listings, their price range, and whether they get buyers.', '/x402/prices/comps'),
-    ('Data', 'Where to build', 'Which kinds of paid API have sellers real buyers use, and which are crowded with listings nobody pays for.', '/x402/gaps/'),
-    ('Tool', 'Endpoint status', 'Which x402 endpoints answer a valid 402 with the price they list. Checked daily.', '/x402/status/'),
-    ('Tool', 'AI-policy checker', 'What a website tells AI crawlers: robots.txt rules per bot, content signals, licences and 402.', '/check/'),
-    ('Data', 'State of AI access', 'Share of the top websites blocking each AI crawler, and who answers 402.', '/access/'),
-    ('Benchmark', 'Agent benchmark', 'Which AI models make good purchase decisions, and at what cost per 1,000 decisions.', '/agents/'),
-    ('API', 'API & data', 'Free JSON for every chart, CSV downloads, paid x402 endpoints and an MCP server.', '/api/'),
-    ('Brief', 'State of x402, one page', 'The numbers investors and journalists ask for first, on one printable, citable page.', '/x402/brief/'),
+    ('Data', 'Market', 'How much x402 volume is real, where it goes, and who carries it. Start here.', '/x402/'),
+    ('Data', 'Sellers', 'Every seller with 5+ genuine buyers, whether those buyers come back, and how much rides on the biggest one.', '/x402/sellers/'),
+    ('Data', 'Buyers', 'How many real buyers pay each week, how many come back, and how little most of them spend.', '/x402/buyers/'),
+    ('Data', 'Prices', 'What listings ask versus what buyers actually pay. Spoiler: less.', '/x402/prices/'),
+    ('Tool', 'Best execution', 'Say what your agent needs. Get the cheapest endpoint that actually answers, and the one other buyers trust.', '/x402/buy/'),
+    ('Tool', 'Price comps', 'Describe your API and see what comparable listings charge, and whether anyone pays them.', '/x402/prices/comps'),
+    ('Data', 'Where to build', 'Which kinds of paid API have real buyers, and which are crowded with listings nobody pays for.', '/x402/gaps/'),
+    ('Tool', 'Endpoint status', 'Does the endpoint answer, and does it charge what it says? Checked every day, politely.', '/x402/status/'),
+    ('Tool', 'AI-policy checker', 'Paste a domain and see what it tells AI crawlers: robots.txt per bot, content signals, licences, 402.', '/check/'),
+    ('Data', 'State of AI access', 'How much of the top 1,000 websites is closed to AI crawlers, and who is trying to charge instead.', '/access/'),
+    ('Benchmark', 'Agent benchmark', 'Which AI models spend money sensibly, and what 1,000 of their decisions cost.', '/agents/'),
+    ('API', 'API & data', 'Free JSON behind every chart, CSVs, two paid x402 endpoints and an MCP server.', '/api/'),
+    ('Brief', 'State of x402, one page', 'The numbers people ask for first, on one printable page you can cite.', '/x402/brief/'),
 ]
 
 
@@ -188,8 +188,8 @@ def home(d):
     lst = d.prices.get('listings')
     daily = [int(r['listings']) for r in d.daily][-35:] if d.daily else []
     cards = [
-        stat_card('Demand-cleaned $ / week', usd(clean[-1]), clean, g(clean), tip=f'USD paid through x402 on Base in the week of {week_label(d.latest)}, after removing manufactured, single-buyer and our own payments. <a href="/x402/#waterfall">See the waterfall →</a>', weeks=W),
-        stat_card('Content + data $ / week', usd(cd[-1]), cd, g(cd), tip='Demand-cleaned USD paid to sellers of content (articles, reports, media) and data (prices, records, enrichment): the categories our growth tripwire watches.', weeks=W),
+        stat_card('Demand-cleaned $ / week', usd(clean[-1]), clean, g(clean), tip=f'USD paid through x402 on Base in the week of {week_label(d.latest)}, after removing manufactured, single-buyer and my own payments. <a href="/x402/#waterfall">See the waterfall →</a>', weeks=W),
+        stat_card('Content + data $ / week', usd(cd[-1]), cd, g(cd), tip='Demand-cleaned USD paid to sellers of content (articles, reports, media) and data (prices, records, enrichment): the categories my growth tripwire watches.', weeks=W),
         stat_card('Genuine buyers / week', num(buyers[-1]), buyers, g(buyers), tip='Payer wallets with at least one demand-cleaned payment in the week. Wallets, not companies.', weeks=W),
         stat_card('Active sellers / week', num(sellers[-1]), sellers, g(sellers), tip='Seller addresses with demand-cleaned payments from at least two distinct buyers in the week.', weeks=W),
         stat_card('Bazaar listings', num(lst), daily if len(daily) >= 2 else None, growth(daily[-8], daily[-1]) if len(daily) >= 8 else None, delta_note='vs 7 days ago',
@@ -198,19 +198,19 @@ def home(d):
     st = next((r for r in (d.status or {}).get('latest', []) if r['scope'] == 'all'), None)
     if st:
         cards.append(stat_card('Endpoints answering 402', pct(f(st['valid_402'])), foot=f'of {num(st["checked"])} checked daily',
-                               tip='Share of listed x402 endpoints our unpaid daily check found answering a valid 402 with a parseable payment offer. <a href="/x402/status/">Endpoint status →</a>'))
+                               tip='Share of listed x402 endpoints my unpaid daily check found answering a valid 402 with a parseable payment offer. <a href="/x402/status/">Endpoint status →</a>'))
     live = [t for t in TOOLS if page_exists(t[3]) or t[3].startswith('http')]
     grid = lambda kinds: '<div class="tool-grid">' + ''.join(tool_card(k, n, ds, h) for k, n, ds, h in live if k in kinds) + '</div>'
-    tools = ('<h2>Data</h2><p class="meta">Weekly numbers on who buys, who sells and at what price, with manufactured volume removed.</p>' + grid(('Data', 'Brief'))
-             + '<h2>Tools</h2><p class="meta">Answer one question for your own API, agent or website.</p>' + grid(('Tool', 'Benchmark', 'API')))
+    tools = ('<h2>Data</h2><p class="meta">Weekly numbers on who buys, who sells and at what price, after the wash trading is taken out.</p>' + grid(('Data', 'Brief'))
+             + '<h2>Tools</h2><p class="meta">Each one answers a single question about your own API, agent or website.</p>' + grid(('Tool', 'Benchmark', 'API')))
     posts = writing_posts()
     wr = ''
     if posts:
         wr = '<h2>Writing</h2><ul class="rows">' + ''.join(f'<li><a href="{esc(u)}"><span class="d">{esc(dd)}</span><span class="t">{esc(t)}</span><span class="x">→</span></a></li>' for dd, t, u in posts[:5]) + '</ul><p class="more"><a href="/writing/">All writing →</a></p>'
     share = clean[-1] / d.head['raw_usd'] if d.head.get('raw_usd') else None
     out = (f'<p class="eyebrow">Agent payments, measured</p>'
-           f'<p class="lede">Independent numbers on what AI agents actually buy and pay for. Of {usd(d.head["raw_usd"])} settled over x402 on Base in the week of {week_label(d.latest)}, '
-           f'<b>{pct(share)} survives</b> removing manufactured, single-buyer and test payments.</p>'
+           f'<p class="lede">AI agents have started paying for things on their own, so I count what they actually buy. Of {usd(d.head["raw_usd"])} settled over x402 on Base in the week of {week_label(d.latest)}, '
+           f'<b>{pct(share)} survives</b> once you take out the agents paying themselves, the single-customer shops and the tests.</p>'
            + freshness(d.through) + kpis(cards) + tools + wr)
     write('home.md', md(out))
 
@@ -258,12 +258,12 @@ def market(d):
     ]
     through = d.through
     csvp = '/x402/data/'
-    parts = [decide('whether x402 demand is real enough to build on, which categories and facilitators carry it, and how concentrated it is — with manufactured and single-buyer volume already removed.'),
+    parts = [decide('judging whether x402 demand is real enough to build on, who carries it, and how few sellers it depends on. The wash trading is already removed, so you don\'t have to squint.'),
              freshness(through), kpis(cards)]
     parts.append(chart_frame('waterfall', f'{pct(clean / raw_all)} of settled x402 dollars survive cleaning; {big["label"].lower()} remove the most ({usd(big["usd"])})' if big else 'Raw to clean',
         f'USD settled on Base in the week of {week_label(lw, True)} ({num(sum(r["payments"] for r in wf))} payments), and what each filter removes, in the order the index applies them. Manufactured volume (loops, shared funding, fan-out) is {usd(manuf)} ({pct(manuf / raw_all, 1)}).',
         'waterfall', '/x402/data/market.json', {'week': lw}, chips('week', week_opts, lw), csv=csvp + 'waterfall.csv', metric='waterfall', through=through,
-        note=f'Filters are lower bounds on manufacture, so "demand-cleaned" is an upper bound on genuine demand. Our own payments: {usd(next(r["usd"] for r in wf if r["step"] == "ours"))} this week. {term("d05", "What is D05?")}'))
+        note=f'The filters are conservative, so "demand-cleaned" is a ceiling on genuine demand. My own payments: {usd(next(r["usd"] for r in wf if r["step"] == "ours"))} this week. {term("d05", "What is D05?")}'))
     parts.append(chart_frame('mix', f'{CAT_LABEL[top_cat["category"]]} is {pct(float(top_cat["usd"]) / tot)} of demand-cleaned spend; publisher-style content is {usd(content)} ({pct(content / tot, 2)})',
         f'Demand-cleaned USD (or payments) per week by what the seller sells, {week_label(W[0])} – {week_label(lw)} ({len(W)} weeks). Categories come from sellers\' own listings; "unclassed" sellers have none.',
         'mix', '/x402/data/market.json', {'metric': 'usd'}, chips('metric', [('usd', 'USD'), ('payments', 'Payments')], 'usd'), csv=csvp + 'category_mix.csv', metric='category_mix', through=through))
@@ -291,7 +291,7 @@ def market(d):
     parts.append(chart_frame('tripwire', f'Content + data: {usd(tw[-1]["content_plus_data_usd"])} this week, {signed_pct(g4)} over 4 weeks — {"below" if below else "above"} the reopen threshold',
         f'Demand-cleaned USD to content and data sellers per week vs the path of +20% a month from the first week. Log-linear trend over the last 5 weeks: {signed_pct(gm)} a month. The {term("tripwire")} needs +20%/month for 3 months running.',
         'tripwire', '/x402/data/market.json', csv=csvp + 'tripwire.csv', metric='tripwire', through=through,
-        note='One data reseller was 64% of content + data in the week of 7 Sep; single-seller swings move this line more than market growth does.'))
+        note='One data reseller was 64% of content + data in the week of 7 Sep. In a market this small, one seller having a good week moves the line more than the market does.'))
     # movers
     def mrow(m):
         a = m['payee']
@@ -305,10 +305,10 @@ def market(d):
             {'k': 'usd_change', 'label': 'Change', 't': 'usd', 'r': 1}, {'k': 'buyers_now', 'label': 'Buyers', 't': 'int', 'r': 1}]
     parts.append(f'<h2 id="movers">Movers</h2><p>{len(entered)} sellers crossed {M["min_buyers"]} genuine buyers in the week of {week_label(lw)} and {len(exited)} dropped below it. '
                  f'Biggest gain: {esc(names.get(gain[0]["payee"]) or gain[0]["payee"][:10] + "…")} ({usd(gain[0]["usd_change"])}); biggest loss: {esc(names.get(loss[0]["payee"]) or loss[0]["payee"][:10] + "…")} ({usd(loss[0]["usd_change"])}). '
-                 f'Only sellers with at least {M["min_buyers"]} genuine buyers in either week are listed.</p>' if gain and loss else '<h2 id="movers">Movers</h2>')
+                 f'Only sellers with at least {M["min_buyers"]} genuine buyers in either week are listed, so a seller whose only customer is itself does not count.</p>' if gain and loss else '<h2 id="movers">Movers</h2>')
     parts.append(data_table('movers-table', cols, [mrow(m) for m in mv], facets=[{'k': 'kind', 'labels': {'entered': 'Entered', 'exited': 'Exited', 'continuing': 'Continuing'}, 'order': ['entered', 'exited', 'continuing']}, {'k': 'category', 'dot': 1, 'order': CATS}],
                              sort='usd_change', page_size=15, placeholder='Filter sellers', csv_name='movers.csv', search=['seller_t', 'address', 'category']))
-    parts.append(f'<p class="meta">Everything above is also free as JSON: <a href="/api/">API docs</a> · all CSVs in <a href="https://github.com/doescodinggiteasier/wknipe-site/tree/main/data">the public repo</a> (CC BY 4.0) · method: <a href="{METHOD}">X402_INDEX_METHOD.md</a>.</p>')
+    parts.append(f'<p class="meta">Everything above is free as JSON, because data you can\'t check is just a rumour: <a href="/api/">API docs</a> · all CSVs in <a href="https://github.com/doescodinggiteasier/wknipe-site/tree/main/data">the public repo</a> (CC BY 4.0) · method: <a href="{METHOD}">X402_INDEX_METHOD.md</a>.</p>')
     write('market.md', md('\n'.join(parts)))
 
 
@@ -341,13 +341,13 @@ def sellers_page(d):
              stat_card('Their demand-cleaned USD', usd(tot), tip='Sum of the listed sellers\' demand-cleaned USD for the week.'),
              stat_card('Median repeat-buyer rate', pct(statistics.median(rep)) if rep else '–', tip=GLOSSARY['repeat-buyer rate'][1]),
              stat_card('Depend on one buyer for half+', f'{hi_top} of {n}', tip=GLOSSARY['top-buyer share'][1]),
-             stat_card('Named in a listing', f'{named} of {n}', tip='Names are what the seller wrote in its Bazaar listing. We never infer who owns an address.')]
-    out = [decide('who actually gets paid by genuine buyers, whether those buyers come back, and how dependent each seller is on its single largest buyer.'),
+             stat_card('Named in a listing', f'{named} of {n}', tip='Names are what the seller wrote in its Bazaar listing. I never guess who owns an address.')]
+    out = [decide('seeing who actually gets paid by real buyers, whether those buyers come back, and how much each seller leans on its single biggest customer.'),
            freshness(d.through), kpis(cards),
            data_table('sellers-table', cols, rows, facets=[{'k': 'category', 'dot': 1, 'order': CATS}], sort='usd', page_size=50,
                       placeholder='Search name, host or address', csv_name=f'x402_sellers_{lw}.csv', search=['seller_t', 'address', 'hosts', 'category']),
-           f'<p class="meta">{term("repeat-buyer rate", "Repeat buyers")}: share of its buyers who paid it twice or more in the week. {term("top-buyer share", "Top-buyer share")}: share of its clean USD from the single largest buyer — a concentration risk, stated neutrally. '
-           f'Posted = median listed price per call; paid = median clean payment. Names are self-declared; we never speculate on ownership. Data: <a href="/x402/data/sellers.json">sellers.json</a> · <a href="/x402/data/sellers_latest.csv">CSV</a> · <a href="/api/">API</a>.</p>']
+           f'<p class="meta">{term("repeat-buyer rate", "Repeat buyers")}: share of its buyers who paid it twice or more in the week. {term("top-buyer share", "Top-buyer share")}: share of its clean USD from the single largest buyer, a concentration risk stated neutrally. '
+           f'Posted = median listed price per call; paid = median clean payment. Names are self-declared; I do not speculate on ownership. Data: <a href="/x402/data/sellers.json">sellers.json</a> · <a href="/x402/data/sellers_latest.csv">CSV</a> · <a href="/api/">API</a>.</p>']
     write('sellers.md', md('\n'.join(out)))
 
 
@@ -390,7 +390,7 @@ def buyers_page(d):
              {'k': 'usd', 'label': 'USD', 't': 'usd', 'r': 1}, {'k': 'ushare', 'label': 'Share of USD', 't': 'pct', 'r': 1}, {'k': 'payments', 'label': 'Payments', 't': 'int', 'r': 1},
              {'k': 'cats', 'label': 'What they buy (share of tier USD)', 't': 'html'}]
     csvp = '/x402/data/'
-    out = [decide('how big the paying customer base really is, whether buyers stick, and whether spend comes from many small agents or a few large wallets.'),
+    out = [decide('sizing the paying customer base, seeing whether buyers stick, and telling many small agents apart from a few big wallets.'),
            freshness(d.through), kpis(cards),
            chart_frame('buyers', f'{num(b["active_buyers"])} genuine buyers in the week of {week_label(lw)}: {num(b["returning_buyers"])} returning, {num(b["new_buyers"])} new',
                        'Distinct payer wallets with at least one demand-cleaned payment, by whether they also paid the previous week. The first week of history cannot tell new from returning.',
@@ -405,8 +405,8 @@ def buyers_page(d):
                        'hist', '/x402/data/market.json', {'week': lw, 'src': 'buyer_spend_histogram', 'y': 'buyers', 'xlabel': 'USD spent in the week (log bins)'}, csv=csvp + 'buyer_spend_histogram.csv', metric='buyer_spend_histogram', through=d.through)
            + chart_frame('multihoming', f'{pct(b["multi_homing_share"], 1)} of buyers pay two or more sellers', f'Buyers by distinct sellers paid in the week. Denominator: {num(nb)} buyers.',
                        'spb', '/x402/data/market.json', {'week': lw}, csv=csvp + 'sellers_per_buyer.csv', metric='sellers_per_buyer', through=d.through) + '</div>',
-           '<div class="callout callout-note" style="padding:12px 16px"><b>Privacy.</b> This page shows aggregates only; no buyer address is listed anywhere on the site. '
-           'Buyer wallets are public on-chain, but one person or company can run many wallets and one wallet can serve many users, so "buyers" counts wallets, not customers.</div>']
+           '<div class="callout callout-note" style="padding:12px 16px"><b>Privacy.</b> This page shows aggregates only. No buyer address is listed anywhere on the site. '
+           'Buyer wallets are public on-chain, but one person or company can run many wallets and one wallet can serve many users, so "buyers" counts wallets, not customers. Treat it as a count of pockets, not people.</div>']
     write('buyers.md', md('\n'.join(out)))
 
 
@@ -428,10 +428,10 @@ def prices_page(d):
     ranges = {'week_start': P['week'], 'latest_week': P['week'], 'tickets': [{'week_start': P['week'], 'category': r['category'], 'payments': r['priced'], 'p10_usd': r['p10_usd'], 'median_usd': r['median_usd'], 'p90_usd': r['p90_usd']} for r in P['posted_by_category'] if r['priced']]}
     json.dump(ranges, open(os.path.join(HERE, 'x402', 'data', 'posted_ranges.json'), 'w'))
     csvp = '/x402/data/'
-    out = [decide('what to charge per call, whether posted prices are what buyers actually pay, and which kinds of listings attract genuine buyers at all.'),
+    out = [decide('pricing a call, checking whether posted prices are what buyers actually pay, and seeing which kinds of listing attract real buyers at all.'),
            freshness(d.through, f'listings snapshot {P["snapshot"]} · updates daily'), kpis(cards),
-           f'<p><a class="wk-btn" href="/x402/prices/comps">Open Price comps →</a> <span class="meta">&nbsp;Describe your API and see comparable listings, their price range, and whether they get buyers.</span></p>',
-           chart_frame('posted-vs-paid', f'Buyers pay less than listings ask: the median clean payment is {a["ratio"]:.1f}× the median posted price; {CAT_LABEL[lowest["category"]].lower()} is lowest at {lowest["ratio"]:.1f}×',
+           f'<p><a class="wk-btn" href="/x402/prices/comps">Open Price comps →</a> <span class="meta">&nbsp;Describe your API and see what the neighbours charge.</span></p>',
+           chart_frame('posted-vs-paid', f'Buyers pay less than listings ask (sticker price is a suggestion): the median clean payment is {a["ratio"]:.1f}× the median posted price; {CAT_LABEL[lowest["category"]].lower()} is lowest at {lowest["ratio"]:.1f}×',
                        f'Median posted price per listing (Bazaar {P["snapshot"]}) vs median demand-cleaned payment (week of {week_label(P["week"])}), by category. Posted weights each listing equally; paid weights each payment, so cheap high-volume calls pull it down. {term("posted vs paid", "Posted vs paid")}.',
                        'postedPaid', '/x402/data/prices.json', csv=csvp + 'posted_vs_paid.csv', metric='posted_vs_paid', through=d.through,
                        note='Listing categories come from each listing\'s own text; paid categories from the seller\'s. They use the same five definitions.'),
@@ -445,7 +445,7 @@ def prices_page(d):
         cols = [{'k': 'date', 'label': 'Date'}, {'k': 'host', 'label': 'Host'}, {'k': 'what', 'label': 'What it does'}, {'k': 'old_usd', 'label': 'Was', 't': 'price', 'r': 1}, {'k': 'new_usd', 'label': 'Now', 't': 'price', 'r': 1}, {'k': 'change', 'label': 'Change', 't': 'pct', 'r': 1}]
         rows = [{**r, 'old_usd': f(r['old_usd']), 'new_usd': f(r['new_usd']), 'change': f(r['change'])} for r in changes][-500:]
         up = sum(1 for r in rows if (r['change'] or 0) > 0); dn = sum(1 for r in rows if (r['change'] or 0) < 0)
-        out.append(f'<h2 id="price-changes">Price changes</h2><p>{num(len(rows))} listings changed their posted price since daily snapshots began ({up} up, {dn} down). From the daily Bazaar diff. <a href="/x402/prices/changes.xml">RSS feed of price changes</a>.</p>'
+        out.append(f'<h2 id="price-changes">Price changes</h2><p>{num(len(rows))} listings changed their posted price since daily snapshots began ({up} up, {dn} down). From the daily Bazaar diff. There is an <a href="/x402/prices/changes.xml">RSS feed</a>, for the very specific kind of person who wants one.</p>'
                    + data_table('changes-table', cols, rows, sort='date', page_size=15, csv_name='price_changes.csv'))
     else:
         out.append('<h2 id="price-changes">Price changes</h2><p class="meta">Daily Bazaar snapshots started on 2026-09-30; the first price changes appear after the second daily snapshot.</p>')
@@ -455,7 +455,7 @@ def prices_page(d):
 def comps_page(d):
     P = d.prices
     opts = ''.join(f'<option value="{c}">{CAT_LABEL[c]}</option>' for c in CATS[:5])
-    ui = f'''{decide('what to charge for a new API: what comparable listings ask, and whether comparable sellers actually get genuine buyers at that price.')}
+    ui = f'''{decide('pricing a new API. See what comparable listings ask and whether their sellers get real buyers at that price, before you pick a number out of the air.')}
 {freshness(d.through, f"listings snapshot {P['snapshot']} · buyers week of {week_label(P['week'])}")}
 <form id="comps-form" class="card-wk" role="search" style="display:grid;gap:10px;margin-bottom:20px" onsubmit="return false">
 <label for="comps-q" style="font-weight:600">Describe what one paid call returns</label>
@@ -468,7 +468,7 @@ def comps_page(d):
 <figure class="chart-frame" id="comps-dist"><h2 class="t" id="comps-title"></h2><p class="s" id="comps-sub"></p><div class="plot"></div>
 <figcaption class="foot"><button type="button" id="comps-csv">Download CSV</button> · <button type="button" data-act="link">Permalink</button><span class="note">Comparables = the 60 best text matches, at most 3 per seller. Buyers = distinct genuine buyers of the listing's seller (all its endpoints) in the week of {week_label(P['week'])}; realised price = that seller's median clean payment.</span></figcaption></figure>
 <div id="comps-table"></div></div>
-<p class="meta">Posted prices are public in the Coinbase CDP Bazaar; buyer counts and realised prices are public on-chain aggregates per seller from the <a href="/x402/">Clean Index</a>. This tool is a public, lite version of a seller price benchmark: it never shows non-public data. <a href="/x402/data/listings_latest.csv.gz">All listings (CSV.gz)</a>.</p>
+<p class="meta">Posted prices are public in the Coinbase CDP Bazaar; buyer counts and realised prices are public on-chain aggregates per seller from the <a href="/x402/">Clean Index</a>. It only ever shows public data. <a href="/x402/data/listings_latest.csv.gz">All listings (CSV.gz)</a>.</p>
 <script defer src="/assets/comps.js?v={int(dt.datetime.now().timestamp())}"></script>'''
     write('comps.md', md(ui))
 
@@ -478,7 +478,7 @@ def api_page(d):
     data = rjson(os.path.join(ROOT, 'apps', 'x402-index-api', 'src', 'data.json'), {})
     mets = data.get('metrics') or {}
     rows = ''.join(f'<tr><td><code>{esc(k)}</code></td><td>{esc(v["about"])}</td><td class="r">{num(len(v["rows"]))}</td><td><a href="{API}/v1/series?metric={esc(k)}">JSON</a></td></tr>' for k, v in mets.items())
-    out = f'''{decide('whether to pull this data into your own dashboards, models or agents. Every chart on this site has a free JSON series and a CSV.')}
+    out = f'''{decide('pulling this data into your own dashboards, models or agents. Every chart has a free JSON series and a CSV. Help yourself.')}
 <h2>Free: every chart series</h2>
 <p>One call per metric, no key, CORS open, cached for an hour, CC BY 4.0 (cite wknipe.com). Optional filters: <code>&amp;week=YYYY-MM-DD</code>, <code>&amp;category=data</code>.</p>
 <pre><code>curl -s "{API}/v1/metrics"                       # list every metric
@@ -490,7 +490,7 @@ curl -s "{API}/v1/probe?url=https://api.wknipe.com/v1/sellers"  # unpaid x402 en
 curl -s "{API}/v1/badge/policy?domain=theguardian.com"          # AI-policy badge (SVG)</code></pre>
 <div class="seller-table"><table class="table"><thead><tr><th>metric</th><th>What it is</th><th class="r">Rows</th><th></th></tr></thead><tbody>{rows}</tbody></table></div>
 <h2>Paid over x402: full series and sellers</h2>
-<p>Two endpoints cost <b>$0.001 per call</b> in USDC on Base, paid with the x402 protocol (any x402 client or agent wallet). Our own payments are excluded from the index.</p>
+<p>Two endpoints cost <b>$0.001 per call</b> in USDC on Base, paid with the x402 protocol (any x402 client or agent wallet). It seemed only fair to sell the data the way it measures. My own test payments are excluded from the index.</p>
 <pre><code>GET {API}/v1/series?stage=clean&amp;category=all   # stage x category weekly series + price index
 GET {API}/v1/sellers?category=data&amp;n=50         # top demand-cleaned sellers, latest week
 # without payment both return HTTP 402 with the payment requirements:
@@ -528,8 +528,8 @@ def design_page(d):
 
     def panel(mode):
         return f'''<div class="wk-{mode}"><p class="eyebrow">{mode} mode</p>
-<h3 style="margin-top:0">Type: Inter 650 / 400, JetBrains Mono for data labels</h3>
-<p style="font:650 34px/1.15 Inter;letter-spacing:-.025em;margin:0">Headline 34</p><p style="font:650 22px/1.3 Inter;margin:6px 0">Section 22</p><p style="margin:0">Body 16 with a <a href="#">purple link</a> and a {term("clean", "glossary term")}.</p>
+<h3 style="margin-top:0">Type: IBM Plex Sans 600 / 400, IBM Plex Mono for data labels</h3>
+<p style="font:600 34px/1.15 'IBM Plex Sans';letter-spacing:-.015em;margin:0">Headline 34</p><p style="font:600 21px/1.3 'IBM Plex Sans';margin:6px 0">Section 22</p><p style="margin:0">Body 16 with a <a href="#">purple link</a> and a {term("clean", "glossary term")}.</p>
 <p class="meta">Mono 12–13 · tabular figures 1,234,567.89</p>
 <div class="kpis" style="grid-template-columns:1fr 1fr">{sample_card}{sample_card2}</div>
 <p>{freshness(d.through)}</p>
@@ -545,11 +545,11 @@ def design_page(d):
     ia = '''<ul><li><b>Data</b>: Market (/x402/) · Sellers (/x402/sellers/) · Buyers (/x402/buyers/) · Prices (/x402/prices/) · State of AI access (/access/) · This week (/weekly/)</li>
 <li><b>Tools</b>: Price comps (/x402/prices/comps) · Endpoint status (/x402/status/) · AI-policy checker (/check/) · Agent benchmark (/agents/) · API (/api/) · Badges (/badges/)</li>
 <li><b>Writing</b> (/writing/) · <b>About</b> (/about) · ⌘K search everywhere</li></ul>'''
-    out = f'''<p class="lede">The wknipe.com design system: purple for action, gold for emphasis, one palette file. Both modes are shown side by side; the page itself follows your system setting.</p>
+    out = f'''<p class="lede">The wknipe.com design system: cool grey and deep purple carry the page, black text on white and light grey, green and gold as accents. IBM Plex Sans and Plex Mono, square-ish corners, one palette file. Both modes are shown side by side; the page itself follows your system setting.</p>
 <p class="meta">Tokens live in <code>site/theme-base.scss</code> (<code>$wk-palette</code>): a shade change is one edit. Charts read the same tokens at render time. This page is not linked from the navigation and is marked noindex.</p>
 <h2>Palette, type and components</h2><div class="design-panels">{panel("light")}{panel("dark")}</div>
 <h2>Data table</h2><p>Sticky header, click-to-sort, text filter, facet chips, pagination, CSV export; collapses to cards under 640px.</p>{table_demo}
-<h2>Chart palette</h2><p>Categories keep one colour on every page. Validated with the dataviz palette validator (light surface #FFFFFF and dark surface #1D1928): lightness band, chroma floor, colour-blind separation ΔE ≥ 20 (target 8), normal-vision ΔE ≥ 20, every slot ≥ 3:1 on its surface. Unclassed uses a neutral grey on purpose (it has no identity) and is always labelled. Gold as a chart colour is darkened to #B08A12 in light mode so the "clean" series passes 3:1; brand gold #C9A227 is kept for rules and underlines, where it is decorative.</p>
+<h2>Chart palette</h2><p>Categories keep one colour on every page. Validated with the dataviz palette validator (light surface #FFFFFF and dark surface #1A1B20): lightness band, chroma floor, colour-blind separation ΔE ≥ 20 (target 8), normal-vision ΔE ≥ 20, every slot ≥ 3:1 on its surface. Unclassed uses a neutral grey on purpose (it has no identity) and is always labelled. Gold as a chart colour is darkened to #B08A12 in light mode so the "clean" series passes 3:1; brand gold #C9A227 is kept for rules and underlines, where it is decorative.</p>
 <h2>WCAG contrast</h2><p>{esc(summary)}. Command: <code>python3 scripts/site/contrast_check.py</code> (exit 1 on any failing pair).</p>{ctab}
 <h2>Information architecture</h2>{ia}'''
     write('design.md', md(out))

@@ -83,14 +83,14 @@ def page(s, doc, extra, listings):
     listing = []
     if s['label']:
         listing.append(f"- **Listed as:** {html.escape(s['label'])} ({s['label_source']}). Names are what the seller wrote in "
-                       "its listing; we don't verify who operates an address.")
+                       "its listing; I don't verify who operates an address.")
     if s['hosts']: listing.append('- **Hosts:** ' + ', '.join(f'`{h}`' for h in s['hosts']))
     if s['posted_usd']:
         p = s['posted_usd']
         listing.append(f"- **Posted price per call:** {price(p['median'])} median across {p['n']:,} Base USDC offers "
                        f"(range {price(p['min'])}–{price(p['max'])}), {s['listed_resources']:,} listed resources.")
     if not listing:
-        listing.append('- No listing found in any Bazaar or x402scan snapshot we hold, so what it sells is unknown.')
+        listing.append("- No listing found in any Bazaar or x402scan snapshot I hold, so what it sells is anyone's guess.")
     status = (f"**#{s['rank']}** of {sum(1 for x in doc['sellers'] if x['qualifies_latest'])} sellers with at least "
               f"{doc['min_buyers']} genuine buyers in the week of {wk(lw)}." if s['qualifies_latest'] else
               f"Not on this week's leaderboard (fewer than {doc['min_buyers']} genuine buyers in the week of {wk(lw)}).")

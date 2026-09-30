@@ -1,6 +1,6 @@
 ---
 title: "State of AI access"
-subtitle: "What the top 1,000 websites tell AI crawlers: who gets blocked, who publishes llms.txt, and who asks to be paid."
+subtitle: "What the top 1,000 websites tell AI crawlers: who gets blocked, who publishes llms.txt, and who has worked out how to ask for money."
 description: "Weekly census of the Tranco top 1,000: share blocking each AI crawler by name, Content-Signal, RSL, TDMRep, llms.txt adoption and HTTP 402."
 body-classes: wide
 image: /og/access.png

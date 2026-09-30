@@ -1,6 +1,6 @@
 ---
 title: "x402 buyers"
-subtitle: "How many genuine buyers pay on x402 each week, whether they come back, and how much they spend. Aggregates only."
+subtitle: "How many real buyers pay on x402 each week, whether they come back, and how much they spend. Aggregates only; nobody gets named."
 description: "Genuine x402 buyers per week: new vs returning, retention cohorts, spend tiers and what each tier buys."
 body-classes: wide
 image: /og/buyers.png
