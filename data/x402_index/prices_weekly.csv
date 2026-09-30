@@ -1,20 +1,20 @@
 week_start,measure,source,category,items,median_usd,p25_usd,p75_usd,index_jevons,basket_items,entered,exited
 2026-09-21,posted,CDP Bazaar snapshot 2026-09-27,content,260,0.02,0.008,0.03,100.0,260,260,0
-2026-09-28,posted,CDP Bazaar snapshot 2026-09-30,content,289,0.02,0.01,0.03,99.545,250,39,10
+2026-09-28,posted,CDP Bazaar snapshot 2026-09-30,content,291,0.02,0.01,0.03,99.543,249,42,11
 2026-09-21,posted,CDP Bazaar snapshot 2026-09-27,data,10804,0.01,0.002,0.02,100.0,10804,10804,0
-2026-09-28,posted,CDP Bazaar snapshot 2026-09-30,data,11044,0.01,0.002,0.02,99.949,10538,506,266
+2026-09-28,posted,CDP Bazaar snapshot 2026-09-30,data,11144,0.01,0.002,0.02,99.969,10471,673,333
 2026-09-21,posted,CDP Bazaar snapshot 2026-09-27,search,441,0.005,0.005,0.015,100.0,441,441,0
-2026-09-28,posted,CDP Bazaar snapshot 2026-09-30,search,460,0.005,0.005,0.02,100.0,423,37,18
+2026-09-28,posted,CDP Bazaar snapshot 2026-09-30,search,469,0.005,0.005,0.02,100.0,417,52,24
 2026-09-21,posted,CDP Bazaar snapshot 2026-09-27,compute,3149,0.01,0.004,0.015,100.0,3149,3149,0
-2026-09-28,posted,CDP Bazaar snapshot 2026-09-30,compute,4136,0.006,0.005,0.01,100.986,2991,1145,158
+2026-09-28,posted,CDP Bazaar snapshot 2026-09-30,compute,4654,0.008,0.005,0.01,101.58,2978,1676,171
 2026-09-21,posted,CDP Bazaar snapshot 2026-09-27,other,2796,0.01,0.004,0.01,100.0,2796,2796,0
-2026-09-28,posted,CDP Bazaar snapshot 2026-09-30,other,2828,0.01,0.004,0.01,99.748,2696,132,100
+2026-09-28,posted,CDP Bazaar snapshot 2026-09-30,other,2823,0.01,0.004,0.01,99.745,2668,155,128
 2026-09-21,posted,CDP Bazaar snapshot 2026-09-27,large_ticket,0,,,,100.0,0,0,0
 2026-09-28,posted,CDP Bazaar snapshot 2026-09-30,large_ticket,0,,,,,0,0,0
 2026-09-21,posted,CDP Bazaar snapshot 2026-09-27,unclassed,0,,,,100.0,0,0,0
 2026-09-28,posted,CDP Bazaar snapshot 2026-09-30,unclassed,0,,,,,0,0,0
 2026-09-21,posted,CDP Bazaar snapshot 2026-09-27,all,17450,0.01,0.003,0.02,100.0,17450,17450,0
-2026-09-28,posted,CDP Bazaar snapshot 2026-09-30,all,18757,0.01,0.003,0.02,100.095,16898,1859,552
+2026-09-28,posted,CDP Bazaar snapshot 2026-09-30,all,19381,0.01,0.003,0.02,100.212,16783,2598,667
 2026-08-24,transacted,"Base chain, clean payments, payee median",content,24,0.01,0.004125,0.02,100.0,24,24,0
 2026-08-31,transacted,"Base chain, clean payments, payee median",content,23,0.01,0.00175,0.0175,99.708,18,5,6
 2026-09-07,transacted,"Base chain, clean payments, payee median",content,21,0.01,0.0025,0.02,103.623,18,3,5
@@ -24,7 +24,7 @@ week_start,measure,source,category,items,median_usd,p25_usd,p75_usd,index_jevons
 2026-08-31,transacted,"Base chain, clean payments, payee median",data,320,0.01,0.003,0.02,105.278,252,68,62
 2026-09-07,transacted,"Base chain, clean payments, payee median",data,334,0.0092,0.003,0.02,99.974,260,74,60
 2026-09-14,transacted,"Base chain, clean payments, payee median",data,388,0.01,0.003,0.02,102.541,288,100,46
-2026-09-21,transacted,"Base chain, clean payments, payee median",data,296,0.01,0.002,0.02,100.907,241,55,147
+2026-09-21,transacted,"Base chain, clean payments, payee median",data,297,0.01,0.002,0.02,100.907,241,56,147
 2026-08-24,transacted,"Base chain, clean payments, payee median",search,31,0.0075,0.00425,0.015,100.0,31,31,0
 2026-08-31,transacted,"Base chain, clean payments, payee median",search,35,0.01,0.0045,0.01625,104.753,24,11,7
 2026-09-07,transacted,"Base chain, clean payments, payee median",search,35,0.005,0.0035,0.01,112.238,27,8,8
@@ -49,7 +49,7 @@ week_start,measure,source,category,items,median_usd,p25_usd,p75_usd,index_jevons
 2026-08-31,transacted,"Base chain, clean payments, payee median",unclassed,183,0.1,0.01,0.95,85.451,74,109,79
 2026-09-07,transacted,"Base chain, clean payments, payee median",unclassed,167,0.09,0.01,0.3415,72.111,74,93,109
 2026-09-14,transacted,"Base chain, clean payments, payee median",unclassed,152,0.1075,0.01,0.3745,83.928,61,91,106
-2026-09-21,transacted,"Base chain, clean payments, payee median",unclassed,98,0.09975,0.005,0.286375,72.152,40,58,112
+2026-09-21,transacted,"Base chain, clean payments, payee median",unclassed,97,0.1,0.005,0.2885,72.152,40,57,112
 2026-08-24,transacted,"Base chain, clean payments, payee median",all,753,0.01,0.003,0.02,100.0,753,753,0
 2026-08-31,transacted,"Base chain, clean payments, payee median",all,772,0.01,0.003,0.05,101.262,533,239,220
 2026-09-07,transacted,"Base chain, clean payments, payee median",all,783,0.01,0.003,0.05,97.705,523,260,249

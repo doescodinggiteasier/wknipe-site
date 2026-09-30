@@ -3701,7 +3701,7 @@ week_start,payee,category,category_source,payments,usd,payers,median_payment_usd
 2026-09-21,0xf058d8a375343daa6967adf3ac6d425f3c9c8dfc,other,model,2,0.04,2,0.02
 2026-09-21,0x0ff5a6ecef783bba35463ec2f8403b9b5e9e7c86,other,model,2,0.04,2,0.02
 2026-09-21,0xb708af3bce13517357e498f8ffd277de93db9ef5,compute,hand_o10,5,0.03,2,0.005
-2026-09-21,0x9a4a53e4f4345bce286cd47d9c3b3ef3b7992f69,unclassed,none,27,0.03,2,0.001
+2026-09-21,0x9a4a53e4f4345bce286cd47d9c3b3ef3b7992f69,data,model,27,0.03,2,0.001
 2026-09-21,0x74d68013530407300dc0e9f99f99eefec202a6c7,compute,hand_o2+model,14,0.03,2,0.001
 2026-09-21,0x3dcefd14f76fd76d36bec7c271ff28d1bdb9989d,data,model,3,0.03,3,0.01
 2026-09-21,0xc3426919d3c3e822fde601187ada28ef41c5f85d,other,hand_o10,8,0.03,2,0.003

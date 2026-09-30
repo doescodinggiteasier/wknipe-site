@@ -15,14 +15,14 @@
  "clean_payees": 637,
  "clean_by_category_usd": {
   "content": 44.66,
-  "data": 1868.94,
+  "data": 1868.97,
   "search": 63.3,
   "compute": 19305.15,
   "other": 3151.37,
   "large_ticket": 37707.46,
-  "unclassed": 11204.19
+  "unclassed": 11204.16
  },
- "tripwire_content_plus_data_clean_usd": 1913.6,
+ "tripwire_content_plus_data_clean_usd": 1913.63,
  "tripwire_4week_growth": -0.197,
  "tripwire_4week_base_week": "2026-08-24",
  "tripwire_loglinear_monthly_growth_last_5_weeks": -0.5062,
@@ -31,13 +31,13 @@
   "2026-08-31": 4904.81,
   "2026-09-07": 4081.41,
   "2026-09-14": 1501.56,
-  "2026-09-21": 1913.6
+  "2026-09-21": 1913.63
  },
  "category_sources": {
   "hand_o10": 75,
   "hand_o2": 224,
   "hand_o2+model": 113,
-  "model": 2169,
+  "model": 2180,
   "unlisted_review": 20
  },
  "hand_o2_model_conflicts_set_to_other": 25,

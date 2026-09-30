@@ -43,7 +43,7 @@ rank,address,listed_as,category,clean_usd,clean_payments,buyers,median_paid_usd,
 42,0xf121fbecec43e1b616d47285851c20d5fc64431b,api.locus.report,data,14.05,60,6,0.29,0.05,2026-08-24
 43,0x7c655d3d3944bd27994dd81a036c3afb19806c40,Vaaya,data,13.4,306,25,0.01,0.01,2026-08-24
 44,0xdd257723b86b4947483905cdacbbbc70facf2ec0,StableTravel,data,13.05,654,19,0.02,0.01,2026-08-24
-45,0x7dd5be069f2d2ead75ec7c3423b116ff043c2629,x402engine.app,compute,12.33,121,20,0.004775,0.012296,2026-08-24
+45,0x7dd5be069f2d2ead75ec7c3423b116ff043c2629,x402engine.app,compute,12.33,121,20,0.004775,0.012405,2026-08-24
 46,0xade02dff58b0316f04cd59806e3fdb4690fe89ab,Deepline GTM API,data,12.19,69,12,0.25,0.11,2026-08-24
 47,0x3c5cbe28eca3b96023c45d3f877da834f1c7d5fa,Locus x402 Services,data,11.89,75,8,0.073,0.005,2026-08-24
 48,0xa13d363aecccf878ec64f6eb687eb4a771fb0599,RobinX,data,10.49,215,7,0.05,0.02,2026-08-24
@@ -69,7 +69,7 @@ rank,address,listed_as,category,clean_usd,clean_payments,buyers,median_paid_usd,
 68,0xab6731a0bcdf511c2842c768a03448075ab654ca,Rubric Protocol,other,3.92,88,25,0.005,0.005,2026-08-24
 69,0x52ab53912d37759b2ad364f22dd06b16714b6c06,ComputePulse,data,3.63,54,11,0.05,0.05,2026-08-24
 70,0x9dba414637c611a16bea6f0796bfcbcbdc410df8,x402.twit.sh,data,3.63,560,20,0.006,0.01,2026-08-31
-71,0x0e84ddedaae6a779c462c22a59f301ec31b6b808,Otto AI,data,3.23,691,208,0.002,0.003,2026-08-24
+71,0x0e84ddedaae6a779c462c22a59f301ec31b6b808,Otto AI,data,3.23,691,208,0.002,0.0025,2026-08-24
 72,0xd494a454888a390b2b05df74ae2b5fd9c9902b71,Cult OS Developer Tools,compute,3.1,495,57,0.001,0.001,2026-09-07
 73,0xc3d01fd2f79d4c57ad106ab8ecc12a5de24f97cb,quotient-api-gateway.onrender.com,data,2.95,97,14,0.01,0.01,2026-08-24
 74,0x0550779cfbc832657a8bb46bac9f359a5ad038b8,Satellite & GeoRisk x402 API,data,2.74,120,8,0.025,0.002,2026-08-24
@@ -92,7 +92,7 @@ rank,address,listed_as,category,clean_usd,clean_payments,buyers,median_paid_usd,
 91,0xbfd71ea27ffc99747da2873372f84346d9a8b7ed,,unclassed,1.34,218,14,0.005,,2026-08-24
 92,0x525f6ddce9af7a7179d7696aabfcd5fcd15a21e6,Massive,data,1.33,133,11,0.01,0.01,2026-08-24
 93,0xc3b66d340390d5dd2ec8294168f185e811b6c06b,fetcher.sh,data,1.29,69,7,0.005,0.004,2026-08-24
-94,0x6c0752c09e7f6fa6526fcdf40e456a159ebb5621,AgentUtility.ai,compute,1.28,74,12,0.005,0.0105,2026-08-24
+94,0x6c0752c09e7f6fa6526fcdf40e456a159ebb5621,AgentUtility.ai,compute,1.28,74,12,0.005,0.01,2026-08-24
 95,0xb3f4de103f34b99f0da19b4f16d6b53a14c2194a,Spreadsheet References,data,1.24,128,16,0.01,0.003,2026-09-07
 96,0x058d0cc5cc97e61e8a9f38d6d6365bce525921b2,Onchain Query API,search,1.23,245,9,0.003,0.003,2026-08-24
 97,0x29322ea7ecb34aa6164cb2ddeb9ce650902e4f60,scout.hugen.tokyo,data,1.15,167,124,0.005,0.01,2026-08-24
@@ -104,7 +104,7 @@ rank,address,listed_as,category,clean_usd,clean_payments,buyers,median_paid_usd,
 103,0xf22e558a00d91ee12a1f50c52186fecb8ddff493,web-search,data,1.01,184,20,0.003,0.01,2026-08-24
 104,0xfdb4b511f6ae1f270776e500b3360217d5e7ed03,x402stock,data,1.0,80,12,0.01,0.02,2026-08-24
 105,0xfa45c1c9e6e21bfc7fc6ca21efefae60627ce3d7,,unclassed,0.98,6,5,0.1,,2026-08-31
-106,0xf752eeb75d3bea24aa867ad93bfd8ef5a2f431b9,"Web Search, News & Page Reader",search,0.95,70,15,0.01,0.01,2026-08-24
+106,0xf752eeb75d3bea24aa867ad93bfd8ef5a2f431b9,"Web Search, News & Page Reader",search,0.95,70,15,0.01,0.0175,2026-08-24
 107,0x2a462db85807f0ff497ddd15f5978317d079a3a1,,unclassed,0.91,54,42,0.02,,2026-09-14
 108,0x54d6c2c08e10f1a1d3da88df513bbe9bcf1a4afa,api.munition.io,search,0.9,27,9,0.05,0.0075,2026-08-24
 109,0x9fb365e4e9385e2a39febad70368267e6f571d9a,win.oneshotagent.com,data,0.9,79,14,0.002,0.01,2026-08-24
@@ -133,10 +133,10 @@ rank,address,listed_as,category,clean_usd,clean_payments,buyers,median_paid_usd,
 132,0xad62f03c7514bb8c51f1ea70c2b75c37404695c8,gateway.spraay.app,other,0.22,17,8,0.02,0.005,2026-08-24
 133,0x65e02cb7fee27630bb7d1a3add02ef7aa2d21701,ads.forgemesh.io,other,0.21,9,5,0.01,0.015,2026-08-24
 134,0xc2afb91833f4de19542a025872c6085cc29185eb,api.clawfetch.ai,data,0.21,126,13,0.001,0.004,2026-08-24
-135,0xce339395d7f2ea5a5009022ef1c392fb208a989e,Amazon Product Search,search,0.21,48,6,0.0035,0.00375,2026-08-24
+135,0xce339395d7f2ea5a5009022ef1c392fb208a989e,Crypto Price History (OHLC),search,0.21,48,6,0.0035,0.00375,2026-08-24
 136,0xbd17480bf6ff056f7b91d9adc9dfda001eb7283d,StableFinance,data,0.2,10,8,0.02,0.02,2026-08-24
 137,0xe9740820225b3918b4ddd1292c7ca4ca0e2c2f08,US CPI Data & Inflation Report,compute,0.2,19,6,0.01,0.01,2026-08-24
-138,0xe3738580ede5384bb8b8d1c8786b391c59d2668d,finance-api.kdlcfa.workers.dev,data,0.19,11,8,0.01,0.01,2026-08-24
+138,0xe3738580ede5384bb8b8d1c8786b391c59d2668d,finance-api.kdlcfa.workers.dev,data,0.19,11,8,0.01,0.02,2026-08-24
 139,0x3873d15cf3209c32aaa8d9aa542164e658567129,api.govparse.io,data,0.17,10,5,0.001,1.25,2026-08-24
 140,0xb3c2776ce3f99cb3366520c27b4ac5d436942ab6,GEDX402 Social,data,0.17,13,8,0.01,0.014,2026-08-24
 141,0xb810b599bc730aa85800babe7f5d160524322c86,x402 Heartbeat,data,0.16,58,16,0.003,0.0015,2026-08-24
@@ -163,7 +163,7 @@ rank,address,listed_as,category,clean_usd,clean_payments,buyers,median_paid_usd,
 162,0x5253666c40432f009ebd99908b9cd2a7fd1019cb,Quartermaster Gas Prices,other,0.06,23,16,0.001,0.002,2026-08-24
 163,0x53a05c0eed6cbf065f31aedbae7b0d8ce1a0f4db,Ozmium Agent API,data,0.06,30,7,0.001,0.001,2026-08-24
 164,0xa55b06462a2e48661badf22f5841f95ae654b716,Hyperliquid Prediction Markets,data,0.06,12,12,0.005,0.0075,2026-08-24
-165,0x552cc4a10878c7f20574489d47184249657ca3f6,Aye Scout,data,0.05,11,5,0.005,0.005,2026-08-24
+165,0x552cc4a10878c7f20574489d47184249657ca3f6,Aye Scout,data,0.05,11,5,0.005,0.0075,2026-08-24
 166,0x58bdad5e654691ac5ed4631758f3d8da00666b6c,ApiToll SEC Filings,data,0.05,17,17,0.003,0.003,2026-08-24
 167,0x850363a27f0ac6feb9c7a3ec4c1d295262df9432,x402.forgemesh.io,data,0.05,13,7,0.001,0.005,2026-08-24
 168,0xa0bfa4f07281c9b248dc3aed2217836bca24869b,API Acre,other,0.05,12,7,0.0015,0.01,2026-08-24
@@ -173,7 +173,7 @@ rank,address,listed_as,category,clean_usd,clean_payments,buyers,median_paid_usd,
 172,0x5c3db195a38f39074d8c891741a82f6d8f2a16cc,x402-seller-0ay3.onrender.com,data,0.04,7,7,0.005,0.005,2026-08-31
 173,0x6ab8efe305cce67daa48c97bde29c04402822dff,eu-verify,data,0.04,39,5,0.001,0.005,2026-08-24
 174,0x7971a809c18c918cad50cf004c190cbb6e1bf668,Meme Generator,compute,0.04,35,13,0.001,0.001,2026-08-24
-175,0xffff4b8da8c165b556326453446f6940c8afe0db,PayPerByte,data,0.04,6,5,0.003,0.0125,2026-08-24
+175,0xffff4b8da8c165b556326453446f6940c8afe0db,PayPerByte,data,0.04,6,5,0.003,0.005,2026-08-24
 176,0x5f5a631e975183d084f60d7121e967b30ec83cb8,767-2676.com,other,0.03,28,5,0.001,0.001,2026-08-24
 177,0x7b53524d5c5d29efb8c1d128c56f62fe38cd9476,Coil Crypto Gate,data,0.03,11,6,0.001,0.01,2026-08-24
 178,0x9200c98c8188ef50302ed3b8b0ffd5d39832090c,Navi Translate,compute,0.03,14,6,0.001,0.003,2026-08-24
