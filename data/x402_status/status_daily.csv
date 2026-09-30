@@ -1,3 +1,3 @@
 date,scope,checked,hosts,responds,valid_402,price_match_of_valid,payto_match_of_valid,median_latency_ms,p90_latency_ms
-2026-09-30,all,2798,946,0.9954,0.95,0.9629,0.9679,244,739
-2026-09-30,priority,1975,657,0.9954,0.9585,0.9667,0.9931,232,664
+2026-09-30,all,2798,947,0.9986,0.9514,0.9625,0.968,248,687
+2026-09-30,priority,1974,657,0.998,0.958,0.9661,0.9931,244,647

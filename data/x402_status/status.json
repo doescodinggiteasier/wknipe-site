@@ -4,11 +4,11 @@
  "days": 1,
  "user_agent": "wknipe-x402-status/1.0 (+https://wknipe.com/x402/status/; one unpaid request per endpoint per day)",
  "scope_latest": {
-  "endpoints_listed": 19728,
+  "endpoints_listed": 19730,
   "sellers_with_buyers_listed": 513,
-  "endpoints_of_sellers_with_buyers": 12202,
-  "priority_checked_today": 1975,
-  "rotating_checked_today": 823,
+  "endpoints_of_sellers_with_buyers": 12192,
+  "priority_checked_today": 1974,
+  "rotating_checked_today": 824,
   "caps": {
    "per_seller_daily": 5,
    "per_host_daily": 60,
@@ -20,25 +20,25 @@
    "date": "2026-09-30",
    "scope": "all",
    "checked": 2798,
-   "hosts": 946,
-   "responds": 0.9954,
-   "valid_402": 0.95,
-   "price_match_of_valid": 0.9629,
-   "payto_match_of_valid": 0.9679,
-   "median_latency_ms": 244,
-   "p90_latency_ms": 739
+   "hosts": 947,
+   "responds": 0.9986,
+   "valid_402": 0.9514,
+   "price_match_of_valid": 0.9625,
+   "payto_match_of_valid": 0.968,
+   "median_latency_ms": 248,
+   "p90_latency_ms": 687
   },
   {
    "date": "2026-09-30",
    "scope": "priority",
-   "checked": 1975,
+   "checked": 1974,
    "hosts": 657,
-   "responds": 0.9954,
-   "valid_402": 0.9585,
-   "price_match_of_valid": 0.9667,
+   "responds": 0.998,
+   "valid_402": 0.958,
+   "price_match_of_valid": 0.9661,
    "payto_match_of_valid": 0.9931,
-   "median_latency_ms": 232,
-   "p90_latency_ms": 664
+   "median_latency_ms": 244,
+   "p90_latency_ms": 647
   }
  ],
  "endpoints_7d": 2798,
@@ -56,12 +56,8 @@
    14
   ],
   [
-   "no response (TimeoutError)",
-   11
-  ],
-  [
    "HTTP 502",
-   5
+   8
   ],
   [
    "HTTP 503",
@@ -80,15 +76,19 @@
    2
   ],
   [
+   "no response (TimeoutError)",
+   2
+  ],
+  [
    "HTTP 401",
    1
   ],
   [
-   "HTTP 410",
+   "HTTP 429",
    1
   ],
   [
-   "HTTP 500",
+   "HTTP 410",
    1
   ]
  ]
