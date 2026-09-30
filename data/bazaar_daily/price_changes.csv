@@ -4,7 +4,6 @@ date,since,host,resource,pay_to,category,what,old_usd,new_usd,change
 2026-09-30,2026-09-27,x402.aispace.bot,https://x402.aispace.bot/api/v1/video/transcriptions,0xa7f3ad0e69f61864092fabba6cee00af6e584689,compute,youtube video transcription by url,0.003,0.01,2.3333
 2026-09-30,2026-09-27,x402.aispace.bot,https://x402.aispace.bot/api/v1/responses,0xa7f3ad0e69f61864092fabba6cee00af6e584689,compute,openai compatible agent response,0.004805,0.01,1.0812
 2026-09-30,2026-09-27,x402.aispace.bot,https://x402.aispace.bot/api/v1/crypto/rpc/base,0xa7f3ad0e69f61864092fabba6cee00af6e584689,data,evm rpc network data,0.001,0.01,9.0
-2026-09-30,2026-09-27,base.mapleai.shop,https://base.mapleai.shop/jev,0x63db6eaf635a31bbc6714fe37bdc85243864f611,compute,structured decisions via systemone,0.001004,0.001002,-0.002
 2026-09-30,2026-09-27,api.losbeto.xyz,https://api.losbeto.xyz/br-archive,0xd5ba9711a3d052846a3695c70e7fcb8b3168fe7d,data,brazil market data point in time,0.05,0.09,0.8
 2026-09-30,2026-09-27,api.losbeto.xyz,https://api.losbeto.xyz/br-doc,0xd5ba9711a3d052846a3695c70e7fcb8b3168fe7d,data,brazilian document validation,0.004,0.01,1.5
 2026-09-30,2026-09-27,api.losbeto.xyz,https://api.losbeto.xyz/br-bizdays,0xd5ba9711a3d052846a3695c70e7fcb8b3168fe7d,data,brazilian business days between dates,0.004,0.01,1.5
@@ -16,6 +15,7 @@ date,since,host,resource,pay_to,category,what,old_usd,new_usd,change
 2026-09-30,2026-09-27,api.losbeto.xyz,https://api.losbeto.xyz/agent-market,0xd5ba9711a3d052846a3695c70e7fcb8b3168fe7d,data,market catalog data,0.005,0.01,1.0
 2026-09-30,2026-09-27,api.losbeto.xyz,https://api.losbeto.xyz/trust-hash,0xd5ba9711a3d052846a3695c70e7fcb8b3168fe7d,other,proof of data hash for audit,0.003,0.01,2.3333
 2026-09-30,2026-09-27,api.losbeto.xyz,https://api.losbeto.xyz/pyth-price,0xd5ba9711a3d052846a3695c70e7fcb8b3168fe7d,data,crypto price and confidence,0.003,0.01,2.3333
+2026-09-30,2026-09-27,base.mapleai.shop,https://base.mapleai.shop/jev,0x63db6eaf635a31bbc6714fe37bdc85243864f611,compute,structured decisions via systemone,0.001004,0.001002,-0.002
 2026-09-30,2026-09-27,blockrun.ai,https://blockrun.ai/api/v1/search,0xe9030014f5dae217d0a152f02a043567b16c1abf,search,web and news search results,0.2635,0.081,-0.6926
 2026-09-30,2026-09-27,ari001.tailb4ac3a.ts.net,https://ari001.tailb4ac3a.ts.net/v1/context/compact,0xd94ce1924dedd6f3442380a4f075dc3796fb2875,compute,compact web page to token budget,0.03,0.01,-0.6667
 2026-09-30,2026-09-27,api.maxwellinternational.ai,https://api.maxwellinternational.ai/v1/food/near-resort,0x5976376b0c2125655e01d0a7758c744c43fb6d93,data,restaurants near ski resort,0.1,0.02,-0.8
