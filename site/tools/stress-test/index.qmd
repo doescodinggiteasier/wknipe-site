@@ -1,0 +1,141 @@
+---
+title: "Idea stress test"
+description: "Describe a business idea; get its business model, the three claims most likely to kill it, a hostile second opinion and a citation check. Backtested on 52 companies whose outcomes are known, including where it fails."
+body-classes: wide
+---
+
+```{=html}
+<style>
+  .st-lede { font-size: 1.1rem; max-width: 46rem; }
+  .st-form { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem 1.5rem; margin: 1.5rem 0 1rem; max-width: 52rem; }
+  .st-form .full { grid-column: 1 / -1; }
+  @media (max-width: 640px) { .st-form { grid-template-columns: 1fr; } }
+  .st-form label { display: block; font: 400 13px/1.4 "Geist Mono", monospace; color: var(--muted); margin-bottom: .25rem; }
+  .st-form label .opt { opacity: .7; }
+  .st-form input, .st-form textarea { width: 100%; min-width: 0; font: 400 16px/1.45 Geist, system-ui, sans-serif; padding: 8px 0; border: 0;
+    border-bottom: 1px solid var(--line); border-radius: 0; background: transparent; color: var(--ink); }
+  .st-form textarea { resize: vertical; min-height: 4.2rem; }
+  .st-form input:focus, .st-form textarea:focus { outline: none; border-bottom-color: var(--accent); }
+  .st-count { font: 400 12px "Geist Mono", monospace; color: var(--muted); float: right; }
+  .st-actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin: .5rem 0 .25rem; }
+  .st-actions button { padding: 9px 18px; border: 1px solid var(--ink); border-radius: 999px; background: var(--ink); color: var(--bg); font-weight: 500; }
+  .st-actions button[disabled] { opacity: .5; }
+  .st-actions button.ghost { background: transparent; color: var(--ink); }
+  .st-note { font-size: .85rem; color: var(--muted); margin: .25rem 0 0; }
+  .st-quota { font: 400 13px/1.5 "Geist Mono", monospace; color: var(--muted); }
+  .st-msg { border-left: 2px solid var(--accent); padding: .5rem .9rem; margin: 1rem 0; max-width: 46rem; }
+  .st-msg.err { border-left-color: #c8553d; }
+  .st-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 1rem 1.5rem; margin: 2rem 0; }
+  .st-facts div { border-top: 1px solid var(--line); padding-top: .6rem; }
+  .st-facts .k { font: 400 13px/1.4 "Geist Mono", monospace; color: var(--muted); }
+  .st-ex { font-size: .85rem; }
+  .st-ex button { border: 0; background: none; padding: 0; color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 3px; }
+</style>
+```
+
+::: {.st-lede}
+Describe a business idea. You get its business model, the three claims it depends on that are most likely to be false (each with a test under $500), a hostile second opinion from a different model, and a check of every source it cites. It never gives a score: no tool can pick winners, and this one doesn't pretend to.
+:::
+
+```{=html}
+<form class="st-form" id="st-form" novalidate>
+  <div class="full"><label for="f-product">Product: what one customer gets <span class="st-count" data-for="f-product"></span></label>
+    <textarea id="f-product" name="product" maxlength="600" required rows="2" placeholder="A web app that drafts and maintains GDPR records for small clinics from a 20-minute questionnaire"></textarea></div>
+  <div class="full"><label for="f-customer">Customer: who uses it, and who pays <span class="st-count" data-for="f-customer"></span></label>
+    <input id="f-customer" name="customer" maxlength="400" required placeholder="Practice managers at dental clinics with 3–30 staff; the owner pays"></div>
+  <div><label for="f-industry">Industry</label><input id="f-industry" name="industry" maxlength="120" required placeholder="Healthcare compliance software"></div>
+  <div><label for="f-geography">Geography</label><input id="f-geography" name="geography" maxlength="120" required placeholder="Denmark, then the Nordics"></div>
+  <div><label for="f-price_idea">Price idea <span class="opt">(optional)</span></label><input id="f-price_idea" name="price_idea" maxlength="120" placeholder="DKK 300 / month"></div>
+  <div><label for="f-stage">Stage <span class="opt">(optional)</span></label><input id="f-stage" name="stage" maxlength="120" placeholder="Idea, 5 customer interviews"></div>
+  <div class="full"><label for="f-anything_else">Anything else <span class="opt">(optional)</span> <span class="st-count" data-for="f-anything_else"></span></label>
+    <textarea id="f-anything_else" name="anything_else" maxlength="1000" rows="3" placeholder="Why now, how it works, what you already know"></textarea></div>
+  <div class="full" id="st-turnstile"></div>
+  <div class="full">
+    <div class="st-actions"><button type="submit" id="st-go">Run the stress test</button><span class="st-quota" id="st-quota">Checking your free report…</span></div>
+    <p class="st-note">Submissions are stored and may be read by the site owner. Don't submit anything confidential.</p>
+  </div>
+</form>
+<p class="st-ex">Or try an example: <button type="button" data-ex="0">GDPR records for clinics</button> · <button type="button" data-ex="1">Grocery delivery in 15 minutes</button></p>
+<div id="st-out" aria-live="polite"></div>
+```
+
+::: {.st-facts}
+::: {}
+[How good is it?]{.k}
+
+[BACKTEST_ONE_LINER]{#st-backtest}  [Method and results →](method/)
+:::
+::: {}
+[What you get]{.k}
+
+Business model (value metric against the buyer's alternative, channel, unit economics as ranges, incumbents' economics, moat copyability, capital), the compeller and how failure to act gets detected, three kill-shots, objections, and a verified-citation rate.
+:::
+::: {}
+[What it costs]{.k}
+
+One free report per 30 days per connection, then $4 per report. A report takes about three minutes and costs me roughly $0.07 in model and search fees.
+:::
+:::
+
+```{=html}
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
+<script>
+(() => {
+  const API = location.hostname === "localhost" || location.hostname === "127.0.0.1" ? "http://localhost:8790" : "https://tools.wknipe.com";
+  const $ = (s) => document.querySelector(s);
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
+  const form = $("#st-form"), out = $("#st-out"), go = $("#st-go"), quota = $("#st-quota");
+  const FIELDS = ["product", "customer", "industry", "geography", "price_idea", "stage", "anything_else"];
+  const EX = [
+    {product: "A web app that drafts the GDPR record of processing and DPIA documents for small clinics from a 20-minute questionnaire, and keeps them current.", customer: "Practice managers at private dental and physio clinics with 3–30 staff; the owner pays.", industry: "Healthcare compliance software", geography: "Denmark, then the Nordics", price_idea: "DKK 300 / month", stage: "Idea", anything_else: "The data protection authority has started spot checks of small health practices."},
+    {product: "Groceries delivered in 15 minutes from dark stores, ordered in an app.", customer: "Busy urban professionals; they pay per order.", industry: "Quick commerce", geography: "New York City", price_idea: "Supermarket prices plus a $1.99 delivery fee", stage: "Raised a seed round, 2 dark stores", anything_else: "Couriers on e-bikes; no minimum basket."},
+  ];
+  let widget = null, q = null;
+  const msg = (html, err) => { out.innerHTML = `<div class="st-msg ${err ? "err" : ""}">${html}</div>`; };
+  for (const el of document.querySelectorAll(".st-count")) {
+    const f = document.getElementById(el.dataset.for);
+    const upd = () => { el.textContent = `${f.value.length} / ${f.maxLength}`; };
+    f.addEventListener("input", upd); upd();
+  }
+  document.querySelectorAll("[data-ex]").forEach((b) => b.addEventListener("click", () => {
+    const ex = EX[+b.dataset.ex]; for (const k of FIELDS) form.elements[k].value = ex[k] || ""; form.querySelectorAll("textarea,input").forEach((e) => e.dispatchEvent(new Event("input")));
+  }));
+  if (new URLSearchParams(location.search).get("cancelled")) msg("Payment cancelled; nothing was charged.");
+
+  fetch(`${API}/api/quota`, {credentials: "omit"}).then((r) => r.json()).then((d) => {
+    q = d;
+    quota.textContent = d.killed ? "Switched off for now." : d.allPaused ? "This month's budget is used up; it reopens on the 1st." :
+      d.freeAvailable ? "Your first report is free." : d.freePaused ? `Today's free reports are used up; a report is $${d.price_usd}.` : `You've used your free report; a report is $${d.price_usd}.`;
+    const mount = () => window.turnstile ? (widget = window.turnstile.render("#st-turnstile", {sitekey: d.sitekey, theme: "auto", size: "flexible"})) : setTimeout(mount, 200);
+    mount();
+  }).catch(() => { quota.textContent = "The service is unreachable right now."; });
+
+  async function pay(sid) {
+    const r = await fetch(`${API}/api/checkout`, {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({submission_id: sid})});
+    const d = await r.json();
+    if (d.url) location.href = d.url; else msg(esc(d.error || "Checkout failed."), true);
+  }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const input = Object.fromEntries(FIELDS.map((k) => [k, form.elements[k].value.trim()]));
+    const missing = ["product", "customer", "industry", "geography"].filter((k) => !input[k]);
+    if (missing.length) return msg(`Please fill in: ${missing.map((k) => k.replace("_", " ")).join(", ")}.`, true);
+    const token = widget !== null && window.turnstile ? window.turnstile.getResponse(widget) : "";
+    if (!token) return msg("Please complete the human check above the button.", true);
+    go.disabled = true; msg("Submitting…");
+    try {
+      const r = await fetch(`${API}/api/submit`, {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({input, turnstile: token})});
+      const d = await r.json();
+      if (d.report_id) { location.href = `report/?id=${encodeURIComponent(d.report_id)}`; return; }
+      if (r.status === 402) {
+        out.innerHTML = `<div class="st-msg">${esc(d.reason)} This report is $${esc(d.price_usd)}, paid by card through Stripe; it starts the moment payment clears.
+          <div class="st-actions" style="margin-top:.75rem">${d.payments_enabled ? `<button type="button" id="st-pay">Pay $${esc(d.price_usd)} and run</button>` : "<span>Paid reports open soon.</span>"}</div></div>`;
+        const b = document.getElementById("st-pay"); if (b) b.addEventListener("click", () => { b.disabled = true; pay(d.submission_id); });
+      } else msg(esc(d.error || `Error ${r.status}`), true);
+    } catch { msg("The service is unreachable right now.", true); }
+    go.disabled = false; if (window.turnstile && widget !== null) window.turnstile.reset(widget);
+  });
+})();
+</script>
+```

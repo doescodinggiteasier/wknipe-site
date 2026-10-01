@@ -427,3 +427,8 @@ form.card-wk, div.card-wk { grid-template-columns: minmax(0, 1fr); }
 .explain-flow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 18px 0 22px; font-size: 14px; }
 .explain-flow span { border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; }
 .explain-flow i { font-style: normal; color: var(--muted); }
+.comps-top { font: 500 12px/1.4 "Geist Mono", monospace; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 24px 0 8px; }
+.comps-rows a { grid-template-columns: 1fr auto auto; }
+.comps-rows .sub { display: block; color: var(--muted); font-size: 13px; }
+.comps-rows .d2 { color: var(--muted); font-size: 14px; white-space: nowrap; }
+@media (max-width: 640px) { .comps-rows a { grid-template-columns: 1fr auto; } .comps-rows .d2 { grid-column: 1; } .comps-rows .x { grid-row: 1; grid-column: 2; } }

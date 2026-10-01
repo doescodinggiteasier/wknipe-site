@@ -1,0 +1,158 @@
+---
+title: "Stress-test report"
+description: "An idea stress-test report."
+body-classes: wide
+search: false
+include-in-header:
+  text: '<meta name="robots" content="noindex">'
+---
+
+```{=html}
+<style>
+  .rp-stages { list-style: none; padding: 0; margin: 1rem 0 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); gap: .5rem 1rem; }
+  .rp-stages li { border-top: 1px solid var(--line); padding-top: .4rem; font: 400 13px/1.4 "Geist Mono", monospace; color: var(--muted); }
+  .rp-stages li.done { color: var(--ink); } .rp-stages li.now { color: var(--ink); border-top-color: var(--accent); }
+  .rp-stages li.now::after { content: " …"; }
+  .rp h2 { font-size: 1.25rem; margin: 2.2rem 0 .6rem; border-bottom: 1px solid var(--line); padding-bottom: .3rem; }
+  .rp h3 { font-size: 1rem; margin: 1.2rem 0 .3rem; }
+  .rp .k { font: 400 13px/1.4 "Geist Mono", monospace; color: var(--muted); }
+  .rp .src { font: 400 12px/1.4 "Geist Mono", monospace; color: var(--muted); overflow-wrap: anywhere; }
+  .rp .src a { color: var(--muted); }
+  .rp .ks { border-top: 1px solid var(--line); padding: .8rem 0 1rem; }
+  .rp .ks .n { font: 500 13px "Geist Mono", monospace; color: var(--accent); }
+  .rp .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: .8rem 1.5rem; }
+  .rp .grid > div { border-top: 1px solid var(--line); padding-top: .4rem; }
+  .rp table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+  .rp td, .rp th { border-bottom: 1px solid var(--bs-border-color); padding: .35rem .4rem; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+  .rp .tag { font: 500 11px/1 "Geist Mono", monospace; padding: .2rem .4rem; border: 1px solid var(--line); border-radius: 999px; white-space: nowrap; }
+  .rp .tag.bad { border-color: #c8553d; } .rp .tag.good { border-color: var(--accent); }
+  .rp .scroll { overflow-x: auto; }
+  .rp-foot { margin-top: 2.5rem; border-top: 1px solid var(--line); padding-top: .8rem; font: 400 12px/1.6 "Geist Mono", monospace; color: var(--muted); }
+  .rp-tools { display: flex; gap: 1rem; margin: .5rem 0 0; font-size: .9rem; }
+  .rp-tools button { border: 0; background: none; padding: 0; color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 3px; }
+  @media print { .rp-tools, .rp-stages, nav, footer, #quarto-header { display: none !important; } .rp h2 { break-after: avoid; } .rp .ks { break-inside: avoid; } }
+</style>
+<div id="rp-status" aria-live="polite"><p class="k">Loading…</p></div>
+<div id="rp" class="rp"></div>
+<script>
+(() => {
+  const API = location.hostname === "localhost" || location.hostname === "127.0.0.1" ? "http://localhost:8790" : "https://tools.wknipe.com";
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
+  const safe = (u) => { try { const x = new URL(u); return /^https?:$/.test(x.protocol) ? x.toString() : null; } catch { return null; } };
+  const src = (s) => { if (!s) return ""; const u = safe(s); return `<div class="src">${u ? `source: <a href="${esc(u)}" rel="nofollow noopener" target="_blank">${esc(new URL(u).hostname)}</a>` : esc(s)}</div>`; };
+  const LABEL = {normalize: "Normalize", research: "Research", business_model: "Business model", kill_shots: "Kill-shots", adversary: "Adversary", citations: "Citation check", honesty: "Honesty brief"};
+  const params = new URLSearchParams(location.search);
+  const st = document.getElementById("rp-status"), rp = document.getElementById("rp");
+  let id = params.get("id");
+
+  async function bySession(s, tries = 0) {
+    const d = await fetch(`${API}/api/by-session?s=${encodeURIComponent(s)}`).then((r) => r.json());
+    if (d.report_id) { history.replaceState(null, "", `?id=${encodeURIComponent(d.report_id)}`); id = d.report_id; return poll(); }
+    st.innerHTML = `<p>Payment received; waiting for Stripe's confirmation… <span class="k">(${tries * 2}s)</span></p>`;
+    if (tries < 90) setTimeout(() => bySession(s, tries + 1), 2000); else st.innerHTML = "<p>Stripe hasn't confirmed the payment yet. Keep this page; it will work once it does, or write to me.</p>";
+  }
+
+  function stages(d) {
+    const order = d.stages.filter((s) => LABEL[s]);
+    const i = order.indexOf(d.stage);
+    return `<ol class="rp-stages">${order.map((s, j) => `<li class="${d.status === "done" || j < i ? "done" : j === i ? "now" : ""}">${j + 1}. ${LABEL[s]}</li>`).join("")}</ol>`;
+  }
+
+  async function poll() {
+    let d;
+    try { d = await fetch(`${API}/api/report/${encodeURIComponent(id)}`).then((r) => r.json()); } catch { st.innerHTML = "<p>The service is unreachable; retrying…</p>"; return setTimeout(poll, 4000); }
+    if (d.error && !d.status) { st.innerHTML = `<p>${esc(d.error)}</p>`; return; }
+    if (d.status === "queued" || d.status === "running") {
+      st.innerHTML = `<p>Running. This takes about three minutes; you can close this tab and come back to this link.</p>${stages(d)}`;
+      return setTimeout(poll, 2500);
+    }
+    if (d.status === "error") { st.innerHTML = `<p>${esc(d.error)}</p>`; return; }
+    if (d.status === "refused") { st.innerHTML = ""; rp.innerHTML = `<h2>Not analysed</h2><p>${esc(d.result?.refused)}</p>`; return; }
+    st.innerHTML = "";
+    render(d);
+  }
+
+  function li(xs, f) { return xs && xs.length ? `<ul>${xs.map((x) => `<li>${f(x)}</li>`).join("")}</ul>` : "<p class='k'>None.</p>"; }
+
+  function render(d) {
+    const r = d.result, n = r.normalize, bm = r.business_model, c = r.citations, h = r.honesty;
+    if (r.arm === "baseline") {
+      rp.innerHTML = `<h2>Business model</h2><p>${esc(r.baseline.business_model)}</p><h2>The three biggest risks</h2>${li(r.baseline.risks, esc)}
+        <div class="rp-foot">Single-prompt arm (see the method page for why). Model ${esc(r.models.main)} · ${esc(r.finished.slice(0, 10))}</div>`;
+      return;
+    }
+    const rate = c.rate === null ? "no citations" : `${c.supported}/${c.checked} citations verified (${Math.round(c.rate * 100)}%)`;
+    rp.innerHTML = `
+      <div class="rp-tools"><button onclick="window.print()">Print or save as PDF</button><button id="rp-copy">Copy link</button></div>
+      <h2>1. The idea</h2>
+      <p><strong>${esc(n.one_line)}</strong></p>
+      <div class="grid">
+        <div><div class="k">Product</div>${esc(n.product)}</div><div><div class="k">User</div>${esc(n.user)}</div>
+        <div><div class="k">Buyer</div>${esc(n.buyer)}</div><div><div class="k">Payer</div>${esc(n.payer)}</div>
+        <div><div class="k">Industry · geography</div>${esc(n.industry)} · ${esc(n.geography)}</div><div><div class="k">Price idea · stage</div>${esc(n.price_idea)} · ${esc(n.stage)}</div>
+      </div>
+      ${n.unclear?.length ? `<h3>Unclear in the description</h3>${li(n.unclear, esc)}` : ""}
+
+      <h2>2. Research</h2>
+      <p class="k">${r.research?.queries?.length || 0} searches. Every fact below comes from a search result; the citation check (section 6) says whether the page really says it.</p>
+      <h3>Incumbents</h3>
+      <div class="scroll"><table><thead><tr><th>Who</th><th>Sells</th><th>Pricing (as stated)</th><th>Makes money by</th></tr></thead><tbody>
+        ${(r.research?.incumbents || []).map((x) => `<tr><td>${safe(x.url) ? `<a href="${esc(safe(x.url))}" rel="nofollow noopener" target="_blank">${esc(x.name)}</a>` : esc(x.name)}</td><td>${esc(x.sells)}</td><td>${esc(x.pricing)}</td><td>${esc(x.how_they_make_money)}</td></tr>`).join("") || "<tr><td colspan=4>None found.</td></tr>"}
+      </tbody></table></div>
+      <h3>Substitutes (including doing nothing)</h3>${li(r.research?.substitutes, (x) => `${esc(x.name)}: ${esc(x.cost_to_buyer)}${src(x.source)}`)}
+      <h3>Regulation</h3>${li(r.research?.regulation, (x) => `${esc(x.rule)}: ${esc(x.requires)}${src(x.url)}`)}
+      <h3>Market facts</h3>${li(r.research?.market_facts, (x) => `${esc(x.claim)}${src(x.url)}`)}
+
+      <h2>3. Business model</h2>
+      <h3>Compeller</h3>
+      <p><span class="tag ${bm.compeller.status === "UNFOUNDED" ? "bad" : "good"}">${esc(bm.compeller.status)}</span> ${esc(bm.compeller.who_or_what)}</p>
+      <p><span class="k">How failure to act gets detected:</span> ${esc(bm.compeller.detection_mechanism)}</p><p>${esc(bm.compeller.note)}</p>${src(bm.compeller.source)}
+      <h3>Value metric and price</h3>
+      <p>${esc(bm.value_metric.metric)}; ${esc(bm.value_metric.price_range)}.</p>
+      <p><span class="k">Buyer's alternative:</span> ${esc(bm.value_metric.buyer_alternative)}</p><p><span class="k">What it costs them:</span> ${esc(bm.value_metric.alternative_cost_arithmetic)}</p>
+      <h3>Channel</h3><p>${esc(bm.channel.channel)}. ${esc(bm.channel.why_it_reaches_this_buyer)}</p>${src(bm.channel.source)}
+      <h3>Unit economics (ranges)</h3>
+      <div class="grid"><div><div class="k">Price / ACV</div>${esc(bm.unit_economics.price_or_acv)}</div><div><div class="k">Gross margin</div>${esc(bm.unit_economics.gross_margin)}</div>
+        <div><div class="k">CAC</div>${esc(bm.unit_economics.cac)}</div><div><div class="k">Payback</div>${esc(bm.unit_economics.payback_months)}</div></div>
+      <p class="k" style="margin-top:.6rem">Assumptions</p>${li(bm.unit_economics.assumptions, esc)}
+      <h3>Incumbents' economics</h3>${li(bm.incumbent_economics, (x) => `<strong>${esc(x.incumbent)}</strong> makes money by ${esc(x.how_they_make_money)} <span class="k">Their model forbids:</span> ${esc(x.what_their_model_forbids)}${src(x.source)}`)}
+      <h3>Moat</h3><p><span class="tag">${esc(bm.moat.verdict)}</span> ${esc(bm.moat.claimed)}</p><p><span class="k">Copyability test:</span> ${esc(bm.moat.copyability_test)} ${esc(bm.moat.reason)}</p>
+      <h3>Capital</h3><p><span class="k">To first proof:</span> ${esc(bm.capital.to_first_proof)} <span class="k">To scale:</span> ${esc(bm.capital.to_scale)} <span class="k">Raise path:</span> ${esc(bm.capital.raise_path)}</p>
+
+      <h2>4. Kill-shots</h2>
+      <p class="k">The three claims this idea depends on that are most likely false, each fatal on its own. ${esc(r.kill_shots_draft ? "" : "")}</p>
+      ${r.kill_shots.map((k, i) => `<div class="ks"><span class="n">${i + 1}</span> <strong>${esc(k.claim)}</strong>
+        <p><span class="k">Why it's fatal:</span> ${esc(k.why_fatal)}</p><p><span class="k">What settles it:</span> ${esc(k.resolving_source)}</p>
+        <p><span class="k">Cheapest test ($${esc(k.cheapest_test.cost_usd)}):</span> ${esc(k.cheapest_test.description)}</p><p><span class="k">Stop if:</span> ${esc(k.cheapest_test.stop_rule)}</p></div>`).join("")}
+
+      <h2>5. Adversary</h2>
+      <p class="k">A second model from a different family (${esc(r.models.adversary)}) was asked for objections only. Objections are treated as evidence; its suggestions are hypotheses, not advice.</p>
+      ${li(r.adversary.objections, (o) => `<strong>${esc(o.target)}:</strong> ${esc(o.objection)} <span class="k">${esc(o.evidence)}</span>`)}
+      <h3>What the kill-shots did with each objection</h3>${li(r.objection_log, (o) => `<span class="tag">${esc(o.action)}</span> ${esc(o.objection)} <span class="k">${esc(o.why)}</span>`)}
+      ${r.adversary.suggestions?.length ? `<h3>Suggestions (untested hypotheses)</h3>${li(r.adversary.suggestions, esc)}` : ""}
+
+      <h2>6. Citation check</h2>
+      <p><strong>${esc(rate)}.</strong> Every cited page was fetched and a model checked whether it says what the claim says.</p>
+      <div class="scroll"><table><thead><tr><th>Claim</th><th>Page</th><th>Check</th></tr></thead><tbody>
+        ${c.items.map((x) => `<tr><td>${esc(String(x.claim).slice(0, 220))}</td><td class="src">${safe(x.url) ? `<a href="${esc(safe(x.url))}" rel="nofollow noopener" target="_blank">${esc(new URL(x.url).hostname)}</a>` : ""}</td>
+          <td><span class="tag ${x.verdict.verdict === "supported" ? "good" : x.verdict.verdict === "not_supported" ? "bad" : ""}">${esc(x.verdict.verdict.replace("_", " "))}</span></td></tr>`).join("") || "<tr><td colspan=3>No citations.</td></tr>"}
+      </tbody></table></div>
+
+      <h2>7. Honesty brief</h2>
+      <h3>Known (verified citations)</h3>${li(h.known, esc)}
+      <h3>Assumed</h3>${li(h.assumed, esc)}
+      <h3>What would change this read</h3>${li(h.would_change_read, (x) => `${esc(x.evidence)} <span class="k">${esc(x.direction)}</span>`)}
+      <h3>What this report can't do</h3><p>${esc(h.cannot_do)} How well it names real causes of failure is measured on the <a href="../method/">method page</a>.</p>
+
+      <div class="rp-foot">${esc(rate)} · models: ${esc(r.models.main)} (stages 1–4, 6, 7), ${esc(r.models.adversary)} (adversary), search: ${esc(r.models.search)} · ${esc(r.finished.slice(0, 16).replace("T", " "))} UTC · model cost $${Number(r.cost).toFixed(3)}<br>
+        This is an unlisted page: anyone with the link can read it. wknipe.com/tools/stress-test</div>`;
+    const cp = document.getElementById("rp-copy");
+    if (cp) cp.addEventListener("click", () => navigator.clipboard.writeText(location.href).then(() => { cp.textContent = "Copied"; }));
+  }
+
+  if (!id && params.get("s")) bySession(params.get("s"));
+  else if (id) poll();
+  else st.innerHTML = "<p>No report id in the link.</p>";
+})();
+</script>
+```

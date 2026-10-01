@@ -14,7 +14,7 @@ OUT = os.path.join(ROOT, 'local', 'hf_dataset')
 FILES = {'x402_index': ['weekly.csv', 'prices_weekly.csv', 'payees_weekly.csv'],
          'x402_market': ['waterfall.csv', 'category_mix.csv', 'concentration.csv', 'buyers_weekly.csv', 'retention.csv', 'buyer_tiers.csv',
                          'tickets.csv', 'ticket_histogram.csv', 'facilitators.csv', 'tripwire.csv', 'movers.csv'],
-         'x402_prices': ['posted_by_category.csv', 'posted_vs_paid.csv'], 'x402_status': ['status_daily.csv'],
+         'x402_prices': ['posted_by_category.csv'], 'x402_status': ['status_daily.csv'],
          'ai_access': ['access_weekly.csv'], 'bazaar_daily': ['counts.csv', 'price_changes.csv']}
 
 

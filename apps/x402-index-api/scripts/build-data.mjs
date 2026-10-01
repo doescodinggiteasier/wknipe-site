@@ -90,7 +90,7 @@ try {
   Object.assign(route, { snapshot: L.snapshot, week: L.week, sellers: L.sellers.map((s) => [s[0], s[1], s[2], s[3] ? 1 : 0]) });
   route.rows = L.rows.map((r) => {
     const h = H[r[ci.host] + r[ci.path]];
-    return [r[ci.host], r[ci.path], r[ci.name] || "", r[ci.what] || "", (r[ci.desc] || "").slice(0, 240), r[ci.price_usd], r[ci.price_network], r[ci.method], r[ci.seller], h ? h[0] : "unchecked", h ? h[1] : null];
+    return [r[ci.host], r[ci.path], r[ci.name] || "", r[ci.what] || "", (r[ci.desc] || "").slice(0, 240), r[ci.price_usd], r[ci.price_network], r[ci.method], r[ci.seller], h ? h[0] : "unchecked", h ? h[1] : null, r[ci.category]];
   });
 } catch (e) { console.log("route table: skipped (" + e.message + ")"); }
 writeFileSync(join(dirname(fileURLToPath(import.meta.url)), "..", "src", "route.json"), JSON.stringify(route));

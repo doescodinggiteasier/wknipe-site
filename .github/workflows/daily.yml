@@ -72,6 +72,9 @@ jobs:
         with:
           version: 1.10.18
 
+      - name: Build the listings table (not committed; the API and the site build need it)
+        run: python3 scripts/x402_prices/build.py > /dev/null
+
       - name: Render site
         working-directory: site
         # Quarto resolves {{< include _gen/*.md >}} before its own pre-render hook runs, so generate them first.

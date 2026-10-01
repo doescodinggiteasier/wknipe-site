@@ -64,7 +64,7 @@ def copy_data(d):
     os.makedirs(dst, exist_ok=True)
     for p in glob.glob(D('x402_market', '*.csv')) + [D('x402_market', 'market.json')]:
         shutil.copy(p, dst)
-    for n in ('prices.json', 'posted_by_category.csv', 'listings.json', 'listings_latest.csv.gz'):
+    for n in ('prices.json', 'posted_by_category.csv'):  # ORDER_014: listings.json / listings_latest.csv.gz no longer served
         if os.path.exists(D('x402_prices', n)): shutil.copy(D('x402_prices', n), dst)
     for sub, names in (('x402_status', ('status.json', 'status_daily.csv', 'status_latest.csv')), ('ai_access', ('access.json', 'access_weekly.csv', 'access_latest.csv')),
                        ('bazaar_daily', ('counts.csv', 'price_changes.csv'))):
@@ -501,18 +501,18 @@ def comps_page(d):
     opts = ''.join(f'<option value="{c}">{CAT_LABEL[c]}</option>' for c in CATS[:5])
     ui = f'''{decide('Describe an API in a few words and this finds comparable x402 listings, their posted prices, and whether their sellers have genuine buyers.')}
 {freshness(d.through, f"listings snapshot {P['snapshot']} · buyers week of {week_label(P['week'])}")}
-<form id="comps-form" class="card-wk" role="search" style="display:grid;gap:10px;margin-bottom:20px" onsubmit="return false">
+<form id="comps-form" class="card-wk" role="search" data-api="{API}" style="display:grid;gap:10px;margin-bottom:20px" onsubmit="return false">
 <label for="comps-q" style="font-weight:600">Describe what one paid call returns</label>
 <input id="comps-q" type="search" placeholder='e.g. "token price lookup", "scrape a web page to markdown", "news article"' autocomplete="off">
 <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center"><label for="comps-cat" class="meta">Category</label><select id="comps-cat" class="wk-select"><option value="">Any</option>{opts}</select>
-<span class="meta" id="comps-status">Loading {num(P['listings'])} listings…</span></div>
+<span class="meta" id="comps-status">Searching {num(P['listings'])} listings.</span></div>
 <div class="ctrl" id="comps-examples"></div></form>
 <div id="comps-out" hidden>
 <div class="kpis" id="comps-kpis"></div>
 <figure class="chart-frame" id="comps-dist"><h2 class="t" id="comps-title"></h2><p class="s" id="comps-sub"></p><div class="plot"></div>
-<figcaption class="foot"><button type="button" id="comps-csv">Download CSV</button> · <button type="button" data-act="link">Permalink</button><span class="note">Comparables = the 60 best text matches, at most 3 per seller. Buyers = distinct genuine buyers of the listing's seller (all its endpoints) in the week of {week_label(P['week'])}; realised price = that seller's median clean payment.</span></figcaption></figure>
+<figcaption class="foot"><button type="button" data-act="link">Permalink</button><span class="note">Comparables = the 60 best text matches, at most 3 per seller. Buyers = distinct genuine buyers of the listing's seller (all its endpoints) in the week of {week_label(P['week'])}; realised price = that seller's median clean payment.</span></figcaption></figure>
 <div id="comps-table"></div></div>
-<p class="meta">Posted prices are public in the Coinbase CDP Bazaar; buyer counts and realised prices are public on-chain aggregates per seller from the <a href="/x402/">Clean Index</a>. It only ever shows public data. <a href="/x402/data/listings_latest.csv.gz">All listings (CSV.gz)</a>.</p>
+<p class="meta">Posted prices are public in the Coinbase CDP Bazaar; buyer counts and realised prices are public on-chain aggregates per seller from the <a href="/x402/">Clean Index</a>. This page shows the summary and the five closest matches. Every comparable, with its seller's buyers and realised price, is a paid x402 call: <code>GET {API}/v1/comps?find=…</code> ($0.001; see the <a href="/api/#comps">API page</a>).</p>
 <script defer src="/assets/comps.js?v={int(dt.datetime.now().timestamp())}"></script>'''
     write('comps.md', md(ui))
 
@@ -543,6 +543,7 @@ GET {API}/v1/seller?address=0x…                  # one seller's full weekly se
 # without payment each returns HTTP 402 with the payment requirements:
 curl -si "{API}/v1/sellers?n=5" | grep -i payment-required</code></pre>
 <h3 id="route">Best execution for agents</h3>
+<p id="comps"><b>Price comps:</b> <code>GET {API}/v1/comps?find=token+price&amp;category=data</code> returns every comparable listing (up to 200 when you give only a category) with posted price, its seller's genuine buyers and realised median payment, plus the summary and price histogram. The free <code>/v1/comps/demo</code> behind <a href="/x402/prices/comps">Price comps</a> returns the summary and the five closest matches.</p>
 <p><code>GET {API}/v1/route?need=web+search</code> ranks the x402 endpoints for a task by relevance, my daily unpaid 402 check, whether the seller has 5+ genuine buyers, and price. It returns up to 40 results (<code>&amp;n=</code>) and three picks (cheapest verified, best value, most used). Optional: <code>&amp;max_price=0.01</code>, <code>&amp;verified=1</code>. The free demo on <a href="/x402/buy/">Best execution</a> shows the three picks only (<code>/v1/route/demo</code>, same rate limit).</p>
 <h2>MCP server</h2>
 <p>An MCP server exposes the index to AI assistants: latest numbers, series, sellers, method, and <code>best_execution</code>. That tool calls the paid route, so it <b>needs a wallet</b> (set <code>X402_PAYER_PRIVATE_KEY</code> to a Base wallet holding a little USDC). Without one, it returns the free three picks. Source and setup: <a href="https://github.com/doescodinggiteasier/wknipe-site/tree/main/apps/x402-index-mcp">apps/x402-index-mcp</a>.</p>

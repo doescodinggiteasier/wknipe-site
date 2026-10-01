@@ -33,3 +33,6 @@ site/x402/sellers/0x*.qmd
 # daily price map baseline lives in the Actions cache
 state/bazaar_daily/
 site/x402/prices/changes.xml
+# ORDER_014: built in CI from state/ (Price comps and Best execution are served by the API)
+data/x402_prices/listings.json
+data/x402_prices/listings_latest.csv.gz

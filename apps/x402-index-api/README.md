@@ -10,6 +10,8 @@ The public JSON API for the x402 Clean Index (ORDER_011 Module C). It runs as a 
 | `GET /v1/series?stage=clean&category=all` | $0.001 per call |
 | `GET /v1/sellers?category=all&n=20` | $0.001 per call |
 | `GET /v1/seller?address=0x…` | $0.001 per call (one seller's full weekly series) |
+| `GET /v1/comps/demo?find=&category=` | free (summary, histogram, 5 closest; the Price comps page), 60/min |
+| `GET /v1/comps?find=&category=` | $0.001 per call (every comparable with seller buyers and realised price) |
 | `GET /v1/route?need=&max_price=&verified=1&n=20` | `ROUTE_PRICE` per call (wrangler.jsonc; $0.001) |
 
 Settled paid calls are counted per UTC day and route in the `CHECK_CACHE` KV namespace (`paid:v1:YYYY-MM-DD:route`); nothing about the payer is stored. Read them with `npx wrangler kv key list --binding CHECK_CACHE --prefix paid: --remote`.

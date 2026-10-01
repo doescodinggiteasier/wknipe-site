@@ -1,0 +1,49 @@
+---
+title: "Idea stress test: method and backtest"
+description: "How the stress test works, what it borrows, how it was backtested on companies whose outcomes are known, and where it fails."
+---
+
+<!-- RESULTS_BLOCK: filled from data/o15/backtest_results.json by scripts/o15/method_tables.py -->
+
+## What it does
+
+You describe an idea in seven fields. Seven stages run, each a separate model call that must return strict JSON (schema-checked, one retry):
+
+1. **Normalize.** Restate the idea; separate the user, the buyer and the payer.
+2. **Research.** Up to 8 web searches and 20 results: incumbents and substitutes (including doing nothing and spreadsheets), their pricing pages, regulation and market facts. A fact either cites one of those results or is labelled *unverified* or *assumption*. A URL the model wasn't given is stripped.
+3. **Business model.** The value metric and price against the buyer's current alternative, as a labour line; the channel and why it reaches this buyer; unit economics as ranges with every assumption listed; how incumbents make money and what their model forbids; whether the moat can be copied; the capital needed and the raise path; and the **compeller**.
+4. **Kill-shots.** The three claims most likely to be false, each fatal on its own. Each comes with the source that would settle it, the cheapest test (≤ $500) and a stop rule.
+5. **Adversary.** A model from a different family returns objections only. Objections are folded back in as evidence; its suggestions are shown as untested hypotheses.
+6. **Citation check.** Every cited page is fetched, and a model checks whether it says what the claim says. The report prints its verified-citation rate.
+7. **Honesty brief.** What is known (verified) and what is assumed, what evidence would change the read, and what the report can't do.
+
+There is **no score**. I know of no validated way to pick winners, and a number would suggest one.
+
+## What it borrows
+
+The doctrine comes from the vetting method I built for another project (Opportunity Atlas):
+
+- **The compeller test.** Who or what forces the buyer to act, and how failure to act gets *detected*. "A rule exists" is not a compeller unless someone notices non-compliance. Without a detection mechanism, the report says UNFOUNDED.
+- **Kill-shots named before the case is written**, each with the source that would resolve it.
+- **Check the compeller first** (the asymmetry rule): a missing reason to buy kills faster than a weak product.
+- **Incumbent economics:** how they make money and what their model forbids them from doing.
+- **Moat copyability:** could a funded incumbent copy it in 12 months?
+- **Capital as a fact, not a filter.**
+- **A second model's objections are evidence; its suggestions are hypotheses.**
+
+## How it was tested
+
+<!-- BACKTEST_BLOCK -->
+
+## Limits
+
+- **n is small.** There are at most 26 failed companies before contamination, and fewer after. One case moves recall by several points.
+- **The backtest runs without web research**, because a search would find the company. It tests the reasoning stages. Research quality on live reports shows only as the verified-citation rate.
+- **Hindsight leaks through general knowledge.** A model that knows quick commerce collapsed in 2022 will name that risk whether or not it recognizes the company. This affects both arms alike, so the *difference* between them is informative. The absolute recall is not a forecast.
+- **The key is balanced on purpose** (winners and failures in equal numbers). No accuracy or precision figure computed on it means anything about the real world, so none is reported.
+- **The judge is a model.** It scored 10/10 on hand-labelled clear-cut pairs, but borderline calls are not measured.
+- **Models drift.** The results are for the model ids printed on each report as of the date shown.
+
+## Pre-registration
+
+Prompts, schemas, the backtest protocol and the bars were written and hashed before any model call. <!-- PREREG_HASH -->

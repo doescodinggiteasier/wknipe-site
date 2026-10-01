@@ -12,7 +12,7 @@ import { ExactEvmScheme } from "@x402/evm/exact/server";
 import { HTTPFacilitatorClient } from "@x402/core/server";
 import data from "./data.json";
 import { EXAMPLES, normaliseDomain, runCheck } from "./check";
-import { rank, out as routeOut, routeMeta, routeReady } from "./route";
+import { rank, out as routeOut, routeMeta, routeReady, comps, compOut } from "./route";
 
 type Env = {
   PAY_TO: string; FACILITATOR_URL: string; PRICE: string; ROUTE_PRICE?: string;
@@ -49,6 +49,8 @@ function paywall(env: Env) {
       "GET /v1/method": { ...over, description: "x402 Clean Index method (over the free rate limit)" },
       "GET /v1/metrics": { ...over, description: "x402 Clean Index metric list (over the free rate limit)" },
       "GET /v1/route/demo": { ...over, description: "Best execution demo (over the free rate limit)" },
+      "GET /v1/comps": { accepts, description: "Price comps: every comparable x402 listing for a described API, with seller buyers and realised price", mimeType: "application/json" },
+      "GET /v1/comps/demo": { ...over, description: "Price comps summary (over the free rate limit)" },
     },
     server,
   );
@@ -78,15 +80,16 @@ app.use("/v1/series", (c, next) => (c.req.query("metric") ? freeOrPay("series_me
 app.use("/v1/sellers", pay("sellers"));
 app.use("/v1/seller", pay("seller"));
 app.use("/v1/route", pay("route"));
-for (const [p, r] of [["/v1/latest", "latest"], ["/v1/method", "method"], ["/v1/metrics", "metrics"], ["/v1/route/demo", "route_demo"]]) app.use(p, freeOrPay(r));
+app.use("/v1/comps", pay("comps"));
+for (const [p, r] of [["/v1/latest", "latest"], ["/v1/method", "method"], ["/v1/metrics", "metrics"], ["/v1/route/demo", "route_demo"], ["/v1/comps/demo", "comps_demo"]]) app.use(p, freeOrPay(r));
 
 app.get("/", (c) =>
   c.json({
     name: "x402 Clean Index API",
     docs: "https://wknipe.com/x402/",
-    free: ["/v1/latest", "/v1/method", "/v1/metrics", "/v1/series?metric=waterfall", "/v1/route/demo?need=web+search", "/v1/check?domain=example.com", "/v1/check/examples", "/v1/badge/policy?domain=example.com", "/v1/probe?url=https://api.example.com/paid"],
+    free: ["/v1/latest", "/v1/method", "/v1/metrics", "/v1/series?metric=waterfall", "/v1/route/demo?need=web+search", "/v1/comps/demo?find=token+price", "/v1/check?domain=example.com", "/v1/check/examples", "/v1/badge/policy?domain=example.com", "/v1/probe?url=https://api.example.com/paid"],
     free_limit: `${FREE_PER_MIN} calls a minute per client for the data routes (over it they answer 402 at the paid price); 30 a minute for check and probe`,
-    paid: { routes: ["/v1/series?stage=clean&category=all", "/v1/sellers?category=all&n=20", "/v1/seller?address=0x...", "/v1/route?need=web+search&n=20"], price: c.env.PRICE, route_price: c.env.ROUTE_PRICE ?? c.env.PRICE, network: NETWORK, asset: "USDC" },
+    paid: { routes: ["/v1/series?stage=clean&category=all", "/v1/sellers?category=all&n=20", "/v1/seller?address=0x...", "/v1/route?need=web+search&n=20", "/v1/comps?find=token+price"], price: c.env.PRICE, route_price: c.env.ROUTE_PRICE ?? c.env.PRICE, network: NETWORK, asset: "USDC" },
     data_built_at: data.built_at,
   }),
 );
@@ -271,6 +274,28 @@ app.get("/v1/route", (c) => {
     ranking: "relevance, then +verified 402 at the listed price, +seller has 5+ genuine buyers, +cheaper (log scale); failed checks sink",
     picks: { cheapest_verified: routeOut(r.picks.cheapest_verified), best_value: routeOut(r.picks.best_value), most_used: routeOut(r.picks.most_used) },
     spread: r.spread, results: r.hits.slice(0, n).map((h) => ({ ...routeOut(h), relevance: +h.rel.toFixed(3), score: +h.score.toFixed(3) })) });
+});
+
+// ORDER_014 follow-up: Price comps. Demo = summary, histogram and the 5 best matches; paid = every comparable.
+const CATS5 = ["content", "data", "search", "compute", "other"];
+function compsArgs(c: any) {
+  const find = (c.req.query("find") ?? "").trim().slice(0, 200), cat = c.req.query("category") ?? c.req.query("cat") ?? "";
+  return { find, category: CATS5.includes(cat) ? cat : null };
+}
+function compsBody(c: any, n: number) {
+  const a = compsArgs(c);
+  if (!a.find && !a.category) return [{ error: "give ?find=token+price and/or ?category=data" }, 400] as const;
+  if (!routeReady()) return [{ error: "listings table not built" }, 503] as const;
+  const r = comps(a.find, a.category);
+  return [{ find: a.find, category: a.category, ...routeMeta(), summary: r.summary, histogram: r.histogram, comparables: r.hits.slice(0, n).map(compOut) }, 200] as const;
+}
+app.get("/v1/comps/demo", (c) => {
+  const [body, st] = compsBody(c, 5);
+  return c.json({ ...body, ...(st === 200 ? { full_list: "GET https://api.wknipe.com/v1/comps?find=... (x402, " + c.env.PRICE + " per call)" } : {}) }, st, st === 200 ? { "Cache-Control": "public, max-age=600" } : {});
+});
+app.get("/v1/comps", (c) => {
+  const [body, st] = compsBody(c, 200);
+  return c.json({ ...body, licence: "CC BY 4.0, cite wknipe.com" }, st);
 });
 
 export default app;

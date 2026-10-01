@@ -1,31 +1,31 @@
-payee,in_clean_week_2026_09_21,model_category,model_confidence,hand_category,agree,hand_note,checker,example
-0x8e37022edcf0f21cf3c9f93fee9d4d32519f36f4,True,other,high,compute,False,cron scheduler + crawler-visibility audit tool,"ClCo (Claude Code), blind to model label",https://402cron.com/buy/starter | 402cron | cron scheduler webhook recurring reminder | Cron for AI agents: signed HTTP deliveries on a cron expression. BEST-RA
-0xa7f3ad0e69f61864092fabba6cee00af6e584689,True,compute,high,compute,True,"LLM chat, image, embeddings (Venice proxy)","ClCo (Claude Code), blind to model label",https://x402.aispace.bot/api/v1/crypto/rpc/base | AiSpace Venice | venice rpc evm crypto aispace | Pay-per-call JSON-RPC proxy to 20+ EVM and Starknet networks 
-0x455f20ec147477cafcd6d77c1604529f3c4ff665,True,search,high,other,False,verification verdicts (agent infra),"ClCo (Claude Code), blind to model label",https://scrapecheck.fly.dev/verify | ScrapeCheck | verification scraping data-quality trust web | Checks whether a value you did not fetch yourself is actually 
-0x07f067959297767c887dbfa3c72379c66e82a045,True,compute,high,compute,True,image/video generation,"ClCo (Claude Code), blind to model label",https://stablestudio.dev/api/upload | StableStudio | Upload | Get a client token for direct upload to Vercel Blob
-0x53a05c0eed6cbf065f31aedbae7b0d8ce1a0f4db,True,data,high,data,True,"token/stock prices, signals","ClCo (Claude Code), blind to model label",https://ozmium.org/v1/stocks | Ozmium Agent API | defi trading crypto cryptocurrency portfolio | Coinbase's tokenized U.S. stocks on Base (B20): each token's co
-0x4ce88238f669d04351937420c931988e464a975a,True,data,high,data,True,Facebook/TikTok ad-library records,"ClCo (Claude Code), blind to model label",https://ads.apitoll.cloud/v1/ads/facebook/search | facebook-ads ad-library ads keyword-search ad-creative | Facebook Ad Library search by keyword — every live a
-0x581ab190df2b2932175d987e787acd28a85eaa1c,True,data,high,data,True,"X1 token prices/volume, swap quotes","ClCo (Claude Code), blind to model label",https://app.fortiblox.com/api/tokens | FortiSwap | x1 dex swap solana defi | List every token FortiSwap routes on the X1 blockchain (XDEX + Degen launchpad): mi
-0x34d3ed2c5fc6d6a0f25d1aad77193a8aa88a52b5,True,compute,high,compute,True,email validation + file upload utility,"ClCo (Claude Code), blind to model label","https://verify.camelai.io/ | Verify if an email address is valid and likely deliverable. Send {""email"": ""user@example.com""}"
-0x71bc7ffb81825fa5b61bfb2b9527bfaf661ff42b,True,other,high,compute,False,website metadata/readiness check tool,"ClCo (Claude Code), blind to model label",https://gateway-wallet-payments.jerryrnapier.workers.dev/api/agent/v1/services/website-quick-check | One-page objective website metadata check; no AI analysis. 
-0xb6a6ba7f58fe92e77bce040cc0818c63ab9ac768,True,search,high,search,True,rendered page fetch/markdown of any URL,"ClCo (Claude Code), blind to model label",https://stableflare.dev/api/browser/content | Cloudflare API | Browser | Fetch the fully rendered HTML of any URL after JavaScript execution.
-0xb3cc1566b213dc97f6aac5984e849df2f2391772,True,other,high,other,True,merkle proof verification (agent infra),"ClCo (Claude Code), blind to model label",https://dokimo.augaster.com/paid/verify | Dokimo Verify API | verification proof merkle accounting audit | Dokimo Verify API (GET) - scheme demo: recomputes a s
-0xa136b6919a7b3c45c2c793b069ce6e3441aec32a,True,data,high,data,True,company/people enrichment,"ClCo (Claude Code), blind to model label","https://x402.orthogonal.com/company-enrich/companies/search | Search for companies matching specific criteria. Supports filters for country, industry, employee "
-0xb1df90631e2e27c2ea755f91c050732850739e1c,True,other,high,data,False,legal citation lookup against case law (ambiguous: data vs other),"ClCo (Claude Code), blind to model label",https://veridictum.legal/api/v1/agent/verify/bulk | Veridictum Legal | legal citations verification hallucination-detection bulk | Verify up to 50 citations in 
-0x3873d15cf3209c32aaa8d9aa542164e658567129,True,data,high,data,True,CMS/SEC public-record datasets,"ClCo (Claude Code), blind to model label",https://api.govparse.io/v1/pecos/provider-exodus/search | Which medical groups are losing clinicians? Windows two CMS reassignment snapshots (individual→group a
-0x10ff767043a1723e0bb5b9207bc37d3442cc9e4f,True,compute,high,compute,True,music/image/video generation,"ClCo (Claude Code), blind to model label",https://app.suedeai.ai/create-music | Suede AI | music song-generation text-to-music audio creative-ai | AI music generation from a text prompt. Creates a compl
-0x0bac88e8b47d9f2dc38e66db9da4b41032d24065,False,other,high,other,True,contract validate / brand presence (thin evidence),"ClCo (Claude Code), blind to model label",https://api.canuverify.com/v1/x402/services/api.contract.validate
-0xc3426919d3c3e822fde601187ada28ef41c5f85d,True,data,high,other,False,test endpoints,"ClCo (Claude Code), blind to model label",https://x402endpoint-924155002144.us-west2.run.app/get-image | Water-Saving Dual-Function Handle
-0x22e4907889693b10549e4bc88c36638d1951cb51,False,compute,high,compute,True,Stockfish best move,"ClCo (Claude Code), blind to model label","https://api.x402chess.com/api/bestmove | Request Stockfish's recommended move for a chess position. POST JSON { ""fen"": ""<valid FEN string>"", ""depth"": optional i"
-0xb3ad8e985a4d21b69c6013658199bdf78b0bc81b,False,compute,high,compute,True,ENS namehash computation,"ClCo (Claude Code), blind to model label",https://oraclepost.higgsfield.app/api/premium/ens | ens namehash basename name compute | ENS/basename name tools (pure computation): the namehash and labelhashe
-0x7f7a4b97dba8676ac583cc12a3944457183cfb00,False,search,high,data,False,trading-card search/prices,"ClCo (Claude Code), blind to model label",https://api.cardhedger.com/v1/agent/cards/card-search
-0x4053338c7cb38624c0bc23c900f78cf8470b4e38,False,content,high,other,False,x402 service watch/registry (thin),"ClCo (Claude Code), blind to model label",https://x402station.io/api/v1/watch
-0x58c36ede209c972570072dc64e77cc38b81072be,False,other,high,other,True,agent-readiness / repo trust scores,"ClCo (Claude Code), blind to model label",https://x402-revenue-mvp.onrender.com/v1/agent-readiness-score
-0xa4022f99f6490d98a8485b785dfa223d1c3c10dc,False,compute,high,compute,True,LLM text utilities,"ClCo (Claude Code), blind to model label","https://api.fastapi.online/bullet-points | {""description"": ""Convert prose into bullet points via self-hosted LLM""}"
-0xb07934a40d0cbee28015729b28987f292f250ee0,False,other,high,other,True,token mint,"ClCo (Claude Code), blind to model label",https://dev-api-x402.world.fun/api/mint/dynamic/0xB07934A40d0cbEE28015729B28987f292F250ee0 | Dynamic mint endpoint with tokenAddress as path parameter
-0x8469a3a136ae586356baa89c61191d8e2d84b92f,False,other,high,other,True,IoT device access demo,"ClCo (Claude Code), blind to model label",https://tse-x-backend.onrender.com/x402/TSE-bike-001/status | Smart Bike Lock 001 - Bike Lock
-0xf1e6050f7f7b6a26bbfc9c2884cdd5720d1bedfe,False,other,high,compute,False,email verification,"ClCo (Claude Code), blind to model label","https://x402-tollbooth.onrender.com/api/verify | Verify up to 25 email addresses per call: syntax, domain MX/A record, disposable-domain, and role-account check"
-0xa469bd1c013bf5bc7facf6cdabac78dc52bc0dd9,False,compute,high,compute,True,LLM code review,"ClCo (Claude Code), blind to model label","https://relight-balsamic-stratus.ngrok-free.dev/review | {""price"": ""0.150000 USD"", ""description"": ""Review source code and explain issues in Korean"", ""pricingMod"
-0x80aa1fa83f7b771bf2ab815da9ba1236b1b91e3f,False,data,high,data,True,"prediction-market pick, official RWA prints","ClCo (Claude Code), blind to model label",https://www.watchevelive.com/stamp | Eve’s current one-line paper pick on a live Polymarket market. $0.05 USDC. A stamp is a read; it does not sit a ticket. Omi
-0x313722afe5b161a850b5fc48d916cd91fb9dbb12,False,data,high,search,False,paid page fetch,"ClCo (Claude Code), blind to model label",https://fiatdock.com/s/svc_dc2994f4-7959-40d6-805a-deea66db5d41 | FiatDock Marketplace | mcp marketplace x402 data | Pay-per-call: x402 Web Extract — paid page/
-0x48b1f6c80db2386a53278c7b82b71a59d03acf6f,False,compute,high,data,False,token risk audit + data cleaning (mixed),"ClCo (Claude Code), blind to model label","https://voltron-x402.bonto.run/token-risk | {""price"": ""0.02 USD"", ""description"": ""On-chain token risk audit (DexScreener + Honeypot.is)"", ""pricingMode"": ""fixed"""
+payee,hand_category
+0x8e37022edcf0f21cf3c9f93fee9d4d32519f36f4,compute
+0xa7f3ad0e69f61864092fabba6cee00af6e584689,compute
+0x455f20ec147477cafcd6d77c1604529f3c4ff665,other
+0x07f067959297767c887dbfa3c72379c66e82a045,compute
+0x53a05c0eed6cbf065f31aedbae7b0d8ce1a0f4db,data
+0x4ce88238f669d04351937420c931988e464a975a,data
+0x581ab190df2b2932175d987e787acd28a85eaa1c,data
+0x34d3ed2c5fc6d6a0f25d1aad77193a8aa88a52b5,compute
+0x71bc7ffb81825fa5b61bfb2b9527bfaf661ff42b,compute
+0xb6a6ba7f58fe92e77bce040cc0818c63ab9ac768,search
+0xb3cc1566b213dc97f6aac5984e849df2f2391772,other
+0xa136b6919a7b3c45c2c793b069ce6e3441aec32a,data
+0xb1df90631e2e27c2ea755f91c050732850739e1c,data
+0x3873d15cf3209c32aaa8d9aa542164e658567129,data
+0x10ff767043a1723e0bb5b9207bc37d3442cc9e4f,compute
+0x0bac88e8b47d9f2dc38e66db9da4b41032d24065,other
+0xc3426919d3c3e822fde601187ada28ef41c5f85d,other
+0x22e4907889693b10549e4bc88c36638d1951cb51,compute
+0xb3ad8e985a4d21b69c6013658199bdf78b0bc81b,compute
+0x7f7a4b97dba8676ac583cc12a3944457183cfb00,data
+0x4053338c7cb38624c0bc23c900f78cf8470b4e38,other
+0x58c36ede209c972570072dc64e77cc38b81072be,other
+0xa4022f99f6490d98a8485b785dfa223d1c3c10dc,compute
+0xb07934a40d0cbee28015729b28987f292f250ee0,other
+0x8469a3a136ae586356baa89c61191d8e2d84b92f,other
+0xf1e6050f7f7b6a26bbfc9c2884cdd5720d1bedfe,compute
+0xa469bd1c013bf5bc7facf6cdabac78dc52bc0dd9,compute
+0x80aa1fa83f7b771bf2ab815da9ba1236b1b91e3f,data
+0x313722afe5b161a850b5fc48d916cd91fb9dbb12,search
+0x48b1f6c80db2386a53278c7b82b71a59d03acf6f,data
