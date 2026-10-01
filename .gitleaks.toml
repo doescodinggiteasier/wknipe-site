@@ -1,0 +1,6 @@
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Public token addresses, not secrets"
+regexes = ['''EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v''']
