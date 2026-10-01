@@ -1,7 +1,7 @@
 ---
 title: "API and data"
-subtitle: "All the data behind this site: a free JSON series for every chart, CSVs, two paid x402 endpoints, and an MCP server for the agents themselves."
-description: "x402 Clean Index API: free chart series (/v1/series?metric=), paid series and sellers over x402, MCP server, bulk CSVs."
+subtitle: "The data behind this site: a free JSON series for every chart, CSVs, paid x402 endpoints for bulk history and routing, and an MCP server."
+description: "x402 Clean Index API: free rate-limited chart series, paid bulk history, per-seller series and best-execution routing over x402, MCP server, CSVs."
 ---
 
 {{< include ../_gen/api.md >}}

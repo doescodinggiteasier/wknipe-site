@@ -65,7 +65,7 @@
   // ---------- lazy script loading ----------
   const loaded = {};
   WK.load = (src) => (loaded[src] ||= new Promise((res, rej) => { const s = document.createElement("script"); s.src = src; s.onload = res; s.onerror = rej; document.head.appendChild(s); }));
-  WK.plotReady = () => WK.load("/assets/vendor/d3-7.min.js").then(() => WK.load("/assets/vendor/plot-0.6.17.min.js")).then(() => WK.load("/assets/wk-charts.js?v=17"));
+  WK.plotReady = () => WK.load("/assets/vendor/d3-7.min.js").then(() => WK.load("/assets/vendor/plot-0.6.17.min.js")).then(() => WK.load("/assets/wk-charts.js?v=18"));
   const jsonCache = {};
   WK.json = (url) => (jsonCache[url] ||= fetch(url).then((r) => { if (!r.ok) throw new Error(url + " " + r.status); return r.json(); }));
 
@@ -113,7 +113,9 @@
     const charted = frames.filter((f) => f.dataset.chart);
     if (!charted.length) return;
     const io = "IntersectionObserver" in window ? new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { io.unobserve(e.target); renderFrame(e.target); } }), { rootMargin: "300px" }) : null;
-    charted.forEach((f) => (io ? io.observe(f) : renderFrame(f)));
+    // ORDER_014: chart libraries (~170 KB) and chart data are fetched only after the page has loaded
+    const start = () => charted.forEach((f) => (io ? io.observe(f) : renderFrame(f)));
+    document.readyState === "complete" ? start() : window.addEventListener("load", start, { once: true });
     let rw = 0; window.addEventListener("resize", () => { clearTimeout(rw); rw = setTimeout(() => charted.forEach((f) => f._draw && f._draw()), 200); });
     matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => setTimeout(() => charted.forEach((f) => f._draw && f._draw()), 50));
   }
@@ -166,7 +168,15 @@
     });
     box._wk = { st, draw };
   }
-  WK.initTables = (root = document) => $$(".wk-table", root).forEach((b) => b._wk || initTable(b));
+  // ORDER_014: tables whose rows come from a file (cfg.src) load when they scroll near the viewport
+  WK.initTables = (root = document) => $$(".wk-table", root).forEach((b) => {
+    if (b._wk || b._lazy) return;
+    const cfgText = ($('script[type="application/json"]', b) || {}).textContent || "";
+    if (!/"src":/.test(cfgText) || !("IntersectionObserver" in window)) return initTable(b);
+    b._lazy = true;
+    const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { io.disconnect(); initTable(b); } }, { rootMargin: "400px" });
+    io.observe(b);
+  });
 
   // ---------- ⌘K search ----------
   let dlg = null, mini = null, loadingIdx = null;

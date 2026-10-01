@@ -6,6 +6,7 @@ site/.quarto/
 site/x402/data/
 site/x402_index/
 apps/x402-index-api/src/data.json
+apps/x402-index-api/src/route.json
 __pycache__/
 .venv/
 *_files/

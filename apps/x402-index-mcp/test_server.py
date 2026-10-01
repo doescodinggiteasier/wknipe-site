@@ -10,6 +10,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 CALLS = [('latest_week', {}), ('weekly_series', {'stage': 'clean', 'category': 'all'}),
          ('top_sellers', {'category': 'all', 'n': 3}), ('price_stats', {'category': 'data'}), ('method', {}),
          ('market_series', {'metric': 'waterfall', 'week': '2026-09-21'})]
+if os.environ.get('X402_INDEX_API'):  # best_execution always calls the API; test it only when one is given
+    CALLS.append(('best_execution', {'need': 'web search'}))
 
 
 async def main():

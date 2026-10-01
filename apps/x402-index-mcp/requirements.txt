@@ -1,3 +1,5 @@
 anyio==4.15.1
 mcp==2.2.0
 pydantic==2.13.5
+# optional, only for best_execution() with a wallet:
+# x402[httpx,evm]==2.25.0

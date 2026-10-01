@@ -9,10 +9,14 @@
   "routes": [{ "pattern": "api.wknipe.com", "custom_domain": true }],
   // ORDER_012 Build 1: AI-policy checker cache (24 h per domain) and per-client rate limit (30 / min).
   "kv_namespaces": [{ "binding": "CHECK_CACHE", "id": "b469691e1e614468910eb8ee1b0bd1b0" }],
-  "ratelimits": [{ "name": "CHECK_LIMIT", "namespace_id": "1201", "simple": { "limit": 30, "period": 60 } }],
+  "ratelimits": [{ "name": "CHECK_LIMIT", "namespace_id": "1201", "simple": { "limit": 30, "period": 60 } },
+                 // ORDER_014: free data routes, 60 / min / client; over it they answer 402 (FREE_PER_MIN in src/index.ts)
+                 { "name": "FREE_LIMIT", "namespace_id": "1202", "simple": { "limit": 60, "period": 60 } }],
   "vars": {
     "PAY_TO": "0x6ac87b6a48e329e2557c7f6054ed1518be76fbf9",
     "FACILITATOR_URL": "https://facilitator.payai.network",
-    "PRICE": "$0.001"
+    "PRICE": "$0.001",
+    // ORDER_014: price of GET /v1/route (best execution); the one place to change it
+    "ROUTE_PRICE": "$0.001"
   }
 }

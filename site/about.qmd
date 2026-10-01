@@ -29,7 +29,7 @@ I'm drawn to long, ambiguous problems, and agent payments is one of them. Most o
 When software can pay for things on its own, what does it actually buy, and what is it worth? Three smaller questions follow from that one, and each part of the site answers one of them:
 
 1. **How much of the money is real?** Agent payments are easy to fake: a wallet can pay itself, or a hundred wallets can be funded from one. The [market](/x402/), [seller](/x402/sellers/) and [buyer](/x402/buyers/) pages count what remains after removing those.
-2. **What does a call cost?** Listings post a price; buyers pay what they pay. [Prices](/x402/prices/) compares the two, and the [endpoint monitor](/x402/status/) checks whether the posted price is the one actually charged.
+2. **What does a call cost?** Listings post a price per call. [Prices](/x402/prices/) tracks those prices and how they change, and the [endpoint monitor](/x402/status/) checks whether the posted price is the one actually charged.
 3. **Who lets machines in?** For agents to buy content, sites have to let them through. The [AI-access census](/access/) and the [AI-policy checker](/check/) record what the web's largest sites tell AI crawlers.
 
 ## What is here
@@ -39,7 +39,7 @@ Independent, reproducible data on what AI agents buy and pay for, and a few tool
 - the demand-cleaned x402 index and its [market dashboard](/x402/);
 - [seller](/x402/sellers/), [buyer](/x402/buyers/) and [price](/x402/prices/) statistics;
 - a daily [endpoint monitor](/x402/status/) and a weekly [census of AI-crawler access](/access/);
-- tools such as [Best execution](/x402/buy/), [Price comps](/x402/prices/comps), [Topics](/x402/gaps/) and the [AI-policy checker](/check/).
+- tools such as [Best execution](/x402/buy/), [Price comps](/x402/prices/comps) and the [AI-policy checker](/check/).
 
 [x402scan](https://www.x402scan.com) is the raw explorer. This site is the part after cleaning: what survives, what buyers actually pay, and who comes back for more.
 

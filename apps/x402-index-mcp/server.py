@@ -9,7 +9,12 @@ Data source (environment):
                    (default: ../../data/x402_index next to this file)
   X402_INDEX_API   optional base URL of the public API (e.g. https://api.wknipe.com). When set, latest_week()
                    and method() read the API's free routes. The other tools stay local: their API routes cost
-                   $0.001 per call over x402, and this server holds no wallet.
+                   $0.001 per call over x402.
+  best_execution() always calls the API (default https://api.wknipe.com). The full ranking is the paid route
+  GET /v1/route ($0.001 per call over x402) and needs a wallet:
+  X402_PAYER_PRIVATE_KEY  key of a Base wallet holding a little USDC (optional; needs `pip install "x402[httpx,evm]"`)
+  X402_MAX_PRICE_USD      refuse to pay more than this per call (default 0.01)
+  Without a wallet the tool returns the free three-pick demo (/v1/route/demo) and says so.
 """
 import csv, json, os, urllib.request
 
@@ -126,6 +131,59 @@ def method() -> dict:
         secs[title.strip()] = body.strip()
     want = [k for k in secs if k.split('.')[0] in ('1', '2', '3', '6')]
     return {'source': 'docs/X402_INDEX_METHOD.md', **{k: secs[k] for k in want}}
+
+
+ROUTE_API = API or 'https://api.wknipe.com'
+
+
+def _pay_get(url):
+    """GET a paid x402 route with the configured wallet. Checks the quoted price against X402_MAX_PRICE_USD first."""
+    import asyncio, base64
+    import httpx
+    from eth_account import Account
+    from x402 import x402Client
+    from x402.http.clients import wrapHttpxWithPayment
+    from x402.mechanisms.evm.exact import register_exact_evm_client
+    from x402.mechanisms.evm.signers import EthAccountSigner
+    cap = float(os.environ.get('X402_MAX_PRICE_USD') or 0.01)
+
+    async def go():
+        async with httpx.AsyncClient(timeout=30, headers={'User-Agent': UA}) as h:
+            pre = await h.get(url)
+        if pre.status_code != 402: return pre.json()
+        terms = json.loads(base64.b64decode(pre.headers['payment-required']))
+        a = next((x for x in terms['accepts'] if x['network'] == 'eip155:8453'), None)
+        if not a or int(a['amount']) / 1e6 > cap:
+            raise ToolError(f'refusing to pay: quoted {a and int(a["amount"]) / 1e6} USDC is above X402_MAX_PRICE_USD={cap}')
+        client = x402Client()
+        register_exact_evm_client(client, EthAccountSigner(Account.from_key(os.environ['X402_PAYER_PRIVATE_KEY'])), networks='eip155:8453')
+        async with wrapHttpxWithPayment(client, timeout=60, headers={'User-Agent': UA}) as h:
+            r = await h.get(url)
+        if r.status_code != 200: raise ToolError(f'paid call failed: HTTP {r.status_code}')
+        return r.json()
+    return asyncio.run(go())
+
+
+@server.tool()
+def best_execution(need: str, max_price_usd: float = 0, verified_only: bool = False, n: int = 10) -> dict:
+    """Best execution for an x402 purchase: for a task (e.g. "web search", "token price"), the x402 endpoints that do
+    it, ranked by relevance, whether they answered a valid 402 at their listed price in the daily check, whether
+    their seller has 5+ genuine buyers, and price. Full ranking = paid route GET /v1/route ($0.001 per call in USDC
+    on Base) and needs X402_PAYER_PRIVATE_KEY; without a wallet this returns the free three-pick demo."""
+    from urllib.parse import urlencode
+    q = {'need': need, **({'max_price': max_price_usd} if max_price_usd else {}), **({'verified': 1} if verified_only else {})}
+    if os.environ.get('X402_PAYER_PRIVATE_KEY'):
+        return _pay_get(f'{ROUTE_API}/v1/route?' + urlencode({**q, 'n': max(1, min(n, 40))}))
+    demo = _api_at(ROUTE_API, '/v1/route/demo?' + urlencode(q))
+    demo['note'] = ('Free demo: three picks only. The full ranking is GET /v1/route ($0.001 per call over x402); set '
+                    'X402_PAYER_PRIVATE_KEY (a Base wallet with a little USDC) to let this tool pay for it.')
+    return demo
+
+
+def _api_at(base, path):
+    req = urllib.request.Request(base + path, headers={'User-Agent': UA})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        return json.load(r)
 
 
 if __name__ == '__main__':

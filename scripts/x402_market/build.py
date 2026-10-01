@@ -23,6 +23,7 @@ OUT = os.path.join(common.ROOT, 'data', 'x402_market')
 WEEKCACHE = os.path.join(common.STATE, 'x402_index')
 CATS = common.CATEGORIES
 MIN_BUYERS = 5  # same threshold as the seller leaderboard
+SENS_K = (1, 2, 3, 5)  # ORDER_014: min-genuine-buyer thresholds for the single-buyer sensitivity panel
 FATES = ['ours', 'c1', 'c2', 'fanout', 'dust', 'clean']
 FATE_LABEL = {'ours': 'My own test and API payments', 'c1': 'Closed loops and self-payments',
               'c2': 'Funding-linked payer and seller', 'fanout': 'Fan-out from shared funders',
@@ -159,6 +160,19 @@ def main():
         got = next(s['usd'] for s in M[w]['waterfall'] if s['step'] == 'clean')
         assert abs(pub - got) < 0.05 + 1e-6 * pub, f'{w}: waterfall clean {got} != index clean {pub}'
 
+    # ORDER_014: sensitivity of clean USD to the single-buyer filter. Clean = d05 sellers with >= 2 distinct payers, minus
+    # fan-out sellers; here the payer threshold is 1 / 2 (published) / 3 / 5, everything else unchanged.
+    sens = []
+    for w in weeks:
+        d05 = common.jload(index_build.week_cache(dt.date.fromisoformat(w)))['agg']['d05']
+        for k in SENS_K:
+            xs = [x for q, x in d05.items() if len(x['payers']) >= k and q not in fan[w]]
+            sens.append({'week_start': w, 'min_buyers': k, 'clean_usd': round(sum(x['usd'] for x in xs), 2), 'sellers': len(xs),
+                         'payments': sum(x['n'] for x in xs), 'published': k == 2})
+        pub = next(float(r['usd']) for r in weekly if r['week_start'] == w and r['stage'] == 'clean' and r['category'] == 'all')
+        got = next(r['clean_usd'] for r in sens if r['week_start'] == w and r['min_buyers'] == 2)
+        assert abs(pub - got) < 0.05 + 1e-6 * pub, f'{w}: sensitivity k=2 {got} != index clean {pub}'
+
     # buyer sets per week (clean, after fan-out), from the index caches
     bsets = {}
     for w in weeks:
@@ -223,7 +237,7 @@ def main():
            'data_usd': float(next(r['usd'] for r in weekly if r['week_start'] == w and r['stage'] == 'clean' and r['category'] == 'data')),
            'threshold_usd': round(cd[weeks[0]] * 1.2 ** ((dt.date.fromisoformat(w) - dt.date.fromisoformat(weeks[0])).days / 30.44), 2)} for w in weeks if w in cd]
 
-    wf_rows = [{'week_start': w, **s} for w in weeks for s in M[w]['waterfall']]
+    wf_rows = [{'week_start': w, **s, 'label': FATE_LABEL[s['step']]} for w in weeks for s in M[w]['waterfall']]  # labels from code, not the week cache
     fac_rows = [{'week_start': w, **{k: v for k, v in f.items()}} for w in weeks for f in M[w]['facilitators']]
     tick_rows = [{'week_start': w, 'category': c, 'payments': t['n'], 'p10_usd': t['p10'], 'median_usd': t['p50'], 'p90_usd': t['p90']}
                  for w in weeks for c, t in sorted(M[w]['tickets'].items())]
@@ -237,7 +251,8 @@ def main():
     for name, rows in (('waterfall.csv', wf_rows), ('facilitators.csv', fac_rows), ('tickets.csv', tick_rows),
                        ('ticket_histogram.csv', tick_hist), ('buyers_weekly.csv', buyers_weekly), ('retention.csv', retention),
                        ('buyer_spend_histogram.csv', spend_hist), ('sellers_per_buyer.csv', spb), ('buyer_tiers.csv', tiers),
-                       ('concentration.csv', conc), ('movers.csv', movers), ('tripwire.csv', tw), ('category_mix.csv', mix)):
+                       ('concentration.csv', conc), ('movers.csv', movers), ('tripwire.csv', tw), ('category_mix.csv', mix),
+                       ('buyer_threshold_sensitivity.csv', sens)):
         write_csv(name, rows)
 
     # per-seller extras for seller pages
@@ -249,7 +264,8 @@ def main():
     doc = {'weeks': weeks, 'latest_week': weeks[-1], 'min_buyers': MIN_BUYERS,
            'fate_labels': FATE_LABEL, 'waterfall': wf_rows, 'facilitators': fac_rows, 'tickets': tick_rows, 'ticket_histogram': tick_hist,
            'buyers_weekly': buyers_weekly, 'retention': retention, 'buyer_spend_histogram': spend_hist, 'sellers_per_buyer': spb,
-           'buyer_tiers': tiers, 'concentration': conc, 'movers': movers, 'tripwire': tw, 'category_mix': mix}
+           'buyer_tiers': tiers, 'concentration': conc, 'movers': movers, 'tripwire': tw, 'category_mix': mix,
+           'buyer_threshold_sensitivity': sens}
     json.dump(doc, open(os.path.join(OUT, 'market.json'), 'w'), default=str)
     lw = weeks[-1]
     print(json.dumps({'weeks': weeks, 'waterfall_latest': M[lw]['waterfall'], 'buyers_latest': buyers_weekly[-1],

@@ -1,7 +1,10 @@
 // x402 Clean Index public API (ORDER_011 Module C). Cloudflare Worker + Hono + x402 v2 middleware.
-// Free:  GET /v1/latest, GET /v1/method
-// Paid:  GET /v1/series, GET /v1/sellers  ($0.001 per call, USDC on Base mainnet, via the public PayAI facilitator)
-// ORDER_012 Build 1 (free, rate-limited, cached 24 h): GET /v1/check?domain=, GET /v1/check/examples
+// Free, keyless, 60 calls/min per client: GET /v1/latest, /v1/method, /v1/metrics, /v1/series?metric= (single series),
+//   /v1/route/demo?need= (3 picks, for the human page). Over the limit these answer 402: pay $0.001 to continue.
+// Free, 30 checks/min per client (they fetch third-party sites, so paying does not lift the limit): /v1/check, /v1/probe.
+// Paid ($0.001 per call, USDC on Base mainnet, via the public PayAI facilitator): bulk history /v1/series?stage=&category=,
+//   /v1/sellers, per-seller full series /v1/seller?address=, routing /v1/route?need= (ORDER_014).
+// Paid calls are counted per day and route in KV (count only; no payer data is stored beyond the public chain record).
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { paymentMiddleware, x402ResourceServer } from "@x402/hono";
@@ -9,12 +12,15 @@ import { ExactEvmScheme } from "@x402/evm/exact/server";
 import { HTTPFacilitatorClient } from "@x402/core/server";
 import data from "./data.json";
 import { EXAMPLES, normaliseDomain, runCheck } from "./check";
+import { rank, out as routeOut, routeMeta, routeReady } from "./route";
 
 type Env = {
-  PAY_TO: string; FACILITATOR_URL: string; PRICE: string;
+  PAY_TO: string; FACILITATOR_URL: string; PRICE: string; ROUTE_PRICE?: string;
   CHECK_CACHE: KVNamespace;                                   // domain -> last check, 24 h TTL
   CHECK_LIMIT?: { limit(o: { key: string }): Promise<{ success: boolean }> }; // 30 checks / min / client
+  FREE_LIMIT?: { limit(o: { key: string }): Promise<{ success: boolean }> };  // 60 free data calls / min / client
 };
+const FREE_PER_MIN = 60; // keep in step with the FREE_LIMIT binding in wrangler.jsonc
 
 const NETWORK = "eip155:8453"; // Base mainnet (CAIP-2)
 const STAGES = ["raw", "d05", "clean"];
@@ -30,26 +36,57 @@ function paywall(env: Env) {
   if (paid) return paid;
   const server = new x402ResourceServer(new HTTPFacilitatorClient({ url: env.FACILITATOR_URL }))
     .register(NETWORK, new ExactEvmScheme());
-  const accepts = [{ scheme: "exact", price: env.PRICE, network: NETWORK, payTo: env.PAY_TO, maxTimeoutSeconds: 60 }];
+  const at = (price: string) => [{ scheme: "exact", price, network: NETWORK, payTo: env.PAY_TO, maxTimeoutSeconds: 60 }];
+  const accepts = at(env.PRICE), over = { accepts, mimeType: "application/json" };
   paid = paymentMiddleware(
     {
       "GET /v1/series": { accepts, description: "x402 Clean Index weekly series (stage x category)", mimeType: "application/json" },
       "GET /v1/sellers": { accepts, description: "x402 Clean Index top cleaned sellers, latest week", mimeType: "application/json" },
+      "GET /v1/seller": { accepts, description: "x402 Clean Index: one seller's full weekly series", mimeType: "application/json" },
+      "GET /v1/route": { accepts: at(env.ROUTE_PRICE ?? env.PRICE), description: "Best execution: x402 endpoints for a task, ranked by price, endpoint check and genuine buyers", mimeType: "application/json" },
+      // free routes, reached only after the client's free per-minute allowance is used up
+      "GET /v1/latest": { ...over, description: "x402 Clean Index latest week (over the free rate limit)" },
+      "GET /v1/method": { ...over, description: "x402 Clean Index method (over the free rate limit)" },
+      "GET /v1/metrics": { ...over, description: "x402 Clean Index metric list (over the free rate limit)" },
+      "GET /v1/route/demo": { ...over, description: "Best execution demo (over the free rate limit)" },
     },
     server,
   );
   return paid;
 }
+// Paid calls: count settled ones per UTC day and route (KV, 400-day TTL). Demand signal only.
+async function countPaid(c: any, route: string) {
+  if (c.res.status !== 200 || !c.res.headers.get("PAYMENT-RESPONSE")) return;
+  const key = `paid:v1:${new Date().toISOString().slice(0, 10)}:${route}`;
+  const n = Number((await c.env.CHECK_CACHE.get(key)) ?? 0) + 1;
+  c.executionCtx.waitUntil(c.env.CHECK_CACHE.put(key, String(n), { expirationTtl: 400 * 86400 }));
+}
+const pay = (route: string) => async (c: any, next: any) => {
+  const r = await paywall(c.env)(c, next); // the middleware returns its 402 instead of setting c.res
+  if (r) return r;
+  await countPaid(c, route);
+};
+// Free while the client is under FREE_PER_MIN calls a minute; past that the same route asks for a $0.001 payment.
+const freeOrPay = (route: string) => async (c: any, next: any) => {
+  if (!c.env.FREE_LIMIT) return next();
+  const { success } = await c.env.FREE_LIMIT.limit({ key: await clientKey(c) });
+  if (success) { await next(); c.header("X-Free-Limit", `${FREE_PER_MIN}/min`); return; }
+  return pay(route + ":overflow")(c, next);
+};
 // ORDER_013: /v1/series?metric=NAME is free (the chart series behind wknipe.com); /v1/series?stage=&category= stays paid.
-app.use("/v1/series", (c, next) => (c.req.query("metric") ? next() : paywall(c.env)(c, next)));
-app.use("/v1/sellers", (c, next) => paywall(c.env)(c, next));
+app.use("/v1/series", (c, next) => (c.req.query("metric") ? freeOrPay("series_metric")(c, next) : pay("series")(c, next)));
+app.use("/v1/sellers", pay("sellers"));
+app.use("/v1/seller", pay("seller"));
+app.use("/v1/route", pay("route"));
+for (const [p, r] of [["/v1/latest", "latest"], ["/v1/method", "method"], ["/v1/metrics", "metrics"], ["/v1/route/demo", "route_demo"]]) app.use(p, freeOrPay(r));
 
 app.get("/", (c) =>
   c.json({
     name: "x402 Clean Index API",
     docs: "https://wknipe.com/x402/",
-    free: ["/v1/latest", "/v1/method", "/v1/metrics", "/v1/series?metric=waterfall", "/v1/check?domain=example.com", "/v1/check/examples", "/v1/badge/policy?domain=example.com", "/v1/probe?url=https://api.example.com/paid"],
-    paid: { routes: ["/v1/series?stage=clean&category=all", "/v1/sellers?category=all&n=20"], price: c.env.PRICE, network: NETWORK, asset: "USDC" },
+    free: ["/v1/latest", "/v1/method", "/v1/metrics", "/v1/series?metric=waterfall", "/v1/route/demo?need=web+search", "/v1/check?domain=example.com", "/v1/check/examples", "/v1/badge/policy?domain=example.com", "/v1/probe?url=https://api.example.com/paid"],
+    free_limit: `${FREE_PER_MIN} calls a minute per client for the data routes (over it they answer 402 at the paid price); 30 a minute for check and probe`,
+    paid: { routes: ["/v1/series?stage=clean&category=all", "/v1/sellers?category=all&n=20", "/v1/seller?address=0x...", "/v1/route?need=web+search&n=20"], price: c.env.PRICE, route_price: c.env.ROUTE_PRICE ?? c.env.PRICE, network: NETWORK, asset: "USDC" },
     data_built_at: data.built_at,
   }),
 );
@@ -197,6 +234,43 @@ app.get("/v1/sellers", (c) => {
   const n = Math.max(1, Math.min(200, Number(c.req.query("n") ?? 20) || 20));
   if (!CATEGORIES.includes(category)) return c.json({ error: "bad category", CATEGORIES }, 400);
   return c.json(data.sellers.filter((r: any) => category === "all" || r.category === category).slice(0, n));
+});
+
+// ORDER_014: per-seller full weekly series (paid)
+app.get("/v1/seller", (c) => {
+  const a = (c.req.query("address") ?? "").trim().toLowerCase();
+  if (!/^0x[0-9a-f]{40}$/.test(a)) return c.json({ error: "give a seller (payTo) address, ?address=0x..." }, 400);
+  const weeks = (data as any).payee_history?.[a];
+  if (!weeks) return c.json({ error: "no demand-cleaned payments to this address in the index", address: a }, 404);
+  return c.json({ address: a, licence: "CC BY 4.0, cite wknipe.com", data_built_at: data.built_at, weeks });
+});
+
+// ORDER_014: best execution. Paid route = full ranking; demo = the three picks the human page shows.
+function routeArgs(c: any) {
+  const need = (c.req.query("need") ?? "").trim().slice(0, 200);
+  const mp = Number(c.req.query("max_price"));
+  return { need, maxPrice: mp > 0 ? mp : null, verifiedOnly: c.req.query("verified") === "1" };
+}
+app.get("/v1/route/demo", (c) => {
+  const a = routeArgs(c);
+  if (!a.need) return c.json({ error: "give a task, ?need=web+search" }, 400);
+  if (!routeReady()) return c.json({ error: "routing table not built" }, 503);
+  const r = rank(a.need, a);
+  return c.json({ need: a.need, ...routeMeta(), matches: r.hits.length,
+    picks: { cheapest_verified: routeOut(r.picks.cheapest_verified), best_value: routeOut(r.picks.best_value), most_used: routeOut(r.picks.most_used) },
+    spread: r.spread, full_ranking: "GET https://api.wknipe.com/v1/route?need=... (x402, " + (c.env.ROUTE_PRICE ?? c.env.PRICE) + " per call)" },
+    200, { "Cache-Control": "public, max-age=600" });
+});
+app.get("/v1/route", (c) => {
+  const a = routeArgs(c);
+  if (!a.need) return c.json({ error: "give a task, ?need=web+search" }, 400);
+  if (!routeReady()) return c.json({ error: "routing table not built" }, 503);
+  const n = Math.max(1, Math.min(40, Number(c.req.query("n") ?? 20) || 20));
+  const r = rank(a.need, a);
+  return c.json({ need: a.need, ...routeMeta(), licence: "CC BY 4.0, cite wknipe.com",
+    ranking: "relevance, then +verified 402 at the listed price, +seller has 5+ genuine buyers, +cheaper (log scale); failed checks sink",
+    picks: { cheapest_verified: routeOut(r.picks.cheapest_verified), best_value: routeOut(r.picks.best_value), most_used: routeOut(r.picks.most_used) },
+    spread: r.spread, results: r.hits.slice(0, n).map((h) => ({ ...routeOut(h), relevance: +h.rel.toFixed(3), score: +h.score.toFixed(3) })) });
 });
 
 export default app;

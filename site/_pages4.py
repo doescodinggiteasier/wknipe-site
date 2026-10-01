@@ -273,17 +273,14 @@ def og_images(d):
     M = d.market; lw = d.latest
     clean = d.w(lw, 'clean', 'all'); raw = d.w(lw, 'raw', 'all'); bw = M['buyers_weekly'][-1]
     P = d.prices; S = d.status; A = d.access
-    pa = next((r for r in P.get('posted_vs_paid', []) if r['category'] == 'all'), {}) if P else {}
-    LS = (rjson(D('x402_prices', 'listings.json')) or {}).get('sellers') or []
-    conv = sum(1 for s in LS if s[1] >= 5) / len(LS) if LS else None
+    pa = next((r for r in P.get('posted_by_category', []) if r['category'] == 'all'), {}) if P else {}
     cards = {
         'home': ('Agent payments, measured', usd(clean) + ' / week', f'demand-cleaned x402 spend of {usd(raw)} settled · {num(int(bw["active_buyers"]))} genuine buyers'),
         'market': ('x402 market', pct(clean / raw) + ' survives', f'of {usd(raw)} settled in the week of {week_label(lw)} after removing manufactured and single-buyer volume'),
         'sellers': ('x402 sellers', f'{sum(1 for s in d.sellers["sellers"] if s["qualifies_latest"])} sellers', 'with 5+ genuine buyers last week, ranked by demand-cleaned USD'),
         'buyers': ('x402 buyers', num(int(bw['active_buyers'])), f'genuine buyers in the week of {week_label(lw)} · {pct(int(bw["new_buyers"]) / int(bw["active_buyers"]))} new'),
-        'prices': ('x402 prices', f'{pa.get("ratio", 0):.1f}× posted' if pa.get('ratio') else 'Posted vs paid', f'median paid {usd(pa.get("paid_median_usd"), True)} vs posted {usd(pa.get("posted_median_usd"), True)} per call'),
+        'prices': ('x402 prices', f'{usd(pa.get("median_usd"), True)} median ask' if pa.get('median_usd') else 'Posted prices', f'per call, across {num(pa.get("priced") or 0)} priced Bazaar listings'),
         'buy': ('Best execution', 'Cheapest verified', 'x402 endpoint for any task an agent needs done · ranked by price, 402 health and real buyers'),
-        'gaps': ('x402 topics', f'{pct(conv)}', 'of listed x402 sellers have 5+ genuine buyers · by topic'),
         'brief': ('State of x402', usd(clean * 52) + ' / yr', 'demand-cleaned x402 spend, latest week × 52 · one printable page'),
         'comps': ('Price comps', f'{num(P.get("listings"))} listings', 'comparable x402 listings, their prices, and whether their sellers have buyers'),
     }

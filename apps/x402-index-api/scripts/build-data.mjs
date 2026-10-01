@@ -39,10 +39,13 @@ const out = {
   weekly: csv("weekly.csv"),
   prices: csv("prices_weekly.csv"),
   sellers: payees.filter((r) => r.week_start === lastWeek).sort((a, b) => b.usd - a.usd).slice(0, 200),
+  // ORDER_014: per-seller full weekly history for the paid GET /v1/seller?address=
+  payee_history: payees.reduce((m, r) => { const { payee, ...rest } = r; (m[String(payee).toLowerCase()] ??= []).push(rest); return m; }, {}),
 };
 // ORDER_013: free chart series, one per chart on wknipe.com (GET /v1/series?metric=NAME). Missing files are skipped.
 const METRICS = {
   waterfall: ["x402_market", "waterfall.csv", "Raw -> clean: USD and payments each filter removes, per week"],
+  buyer_threshold_sensitivity: ["x402_market", "buyer_threshold_sensitivity.csv", "Clean USD per week if sellers needed 1 / 2 (published) / 3 / 5 genuine buyers"],
   category_mix: ["x402_market", "category_mix.csv", "Demand-cleaned payments, USD, sellers and buyers per category per week"],
   concentration: ["x402_market", "concentration.csv", "Top-1 / top-10 seller share, HHI and effective sellers per category per week"],
   buyers_weekly: ["x402_market", "buyers_weekly.csv", "Active genuine buyers per week: new, returning, reactivated, median spend, multi-homing"],
@@ -56,7 +59,6 @@ const METRICS = {
   tripwire: ["x402_market", "tripwire.csv", "Content + data clean USD per week and the +20%/month reopen path"],
   movers: ["x402_market", "movers.csv", "Sellers with >= 5 buyers: entered, exited, continuing, USD change vs the previous week"],
   posted_by_category: ["x402_prices", "posted_by_category.csv", "Posted price p10 / median / p90 per listing category, latest Bazaar snapshot"],
-  posted_vs_paid: ["x402_prices", "posted_vs_paid.csv", "Median posted price vs median clean payment per category"],
   prices_weekly: ["x402_index", "prices_weekly.csv", "Chain-linked Jevons price index, posted and transacted"],
   weekly: ["x402_index", "weekly.csv", "Stage x category: payments, USD, sellers, buyers per week"],
   status_daily: ["x402_status", "status_daily.csv", "Endpoint monitor: share of checked listings answering a valid 402, per day"],
@@ -69,4 +71,28 @@ for (const [name, [dir, file, about]] of Object.entries(METRICS)) {
 }
 console.log("metrics:", Object.keys(out.metrics).join(", "));
 writeFileSync(join(dirname(fileURLToPath(import.meta.url)), "..", "src", "data.json"), JSON.stringify(out));
+
+// ORDER_014: routing table for the paid GET /v1/route (and the 3-result demo on wknipe.com/x402/buy/). Bazaar listings
+// joined with the latest endpoint check and each seller's genuine buyers. It lives only inside the Worker: the site no
+// longer ships it as a bulk file. Missing inputs leave an empty table (the route then answers 503).
+const route = { built_at: out.built_at, snapshot: null, week: null, checked_on: null, sellers: [], rows: [] };
+try {
+  const L = JSON.parse(readFileSync(join(ROOT, "data", "x402_prices", "listings.json"), "utf8"));
+  const ci = Object.fromEntries(L.cols.map((c, i) => [c, i]));
+  const H = {};
+  try {
+    for (const r of csv("status_latest.csv", join(ROOT, "data", "x402_status"))) {
+      const st = r.valid_402 !== "True" ? "failed" : r.price_match === "False" || r.payto_match === "False" ? "differs" : "verified";
+      H[String(r.resource).replace(/^https:\/\//, "")] = [st, +r.latency_ms || null];
+      route.checked_on = r.date;
+    }
+  } catch { /* no monitor data yet */ }
+  Object.assign(route, { snapshot: L.snapshot, week: L.week, sellers: L.sellers.map((s) => [s[0], s[1], s[2], s[3] ? 1 : 0]) });
+  route.rows = L.rows.map((r) => {
+    const h = H[r[ci.host] + r[ci.path]];
+    return [r[ci.host], r[ci.path], r[ci.name] || "", r[ci.what] || "", (r[ci.desc] || "").slice(0, 240), r[ci.price_usd], r[ci.price_network], r[ci.method], r[ci.seller], h ? h[0] : "unchecked", h ? h[1] : null];
+  });
+} catch (e) { console.log("route table: skipped (" + e.message + ")"); }
+writeFileSync(join(dirname(fileURLToPath(import.meta.url)), "..", "src", "route.json"), JSON.stringify(route));
+console.log(`src/route.json: ${route.rows.length} listings, ${route.sellers.length} sellers, checks ${route.checked_on}`);
 console.log(`src/data.json: ${out.weekly.length} weekly rows, ${out.prices.length} price rows, ${out.sellers.length} sellers, latest ${out.latest.latest_week}`);

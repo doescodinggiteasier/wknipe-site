@@ -7,7 +7,11 @@ its exact-scheme USDC amount on Base (else on Solana); "upto" and other schemes 
 unpriced. Buyer evidence joins the listing's Base payTo to the index's demand-cleaned sellers for the latest week.
 Posted prices are already public; this file adds only public on-chain aggregates (buyers and median paid per seller).
 
-Writes data/x402_prices/{listings.json, listings_latest.csv.gz, prices.json, posted_vs_paid.csv, posted_by_category.csv}.
+Writes data/x402_prices/{listings.json, listings_latest.csv.gz, prices.json, posted_by_category.csv}.
+
+ORDER_014: the category-level "posted vs paid" medians compared two different populations (all listings vs all payments)
+and were dropped. prices.json['posted_vs_paid_matched'] compares each seller's own posted price(s) with its own realised
+median payment (sellers with >= 5 genuine buyers); the site shows it only when those sellers carry >= 30% of clean USD.
 No network, no keys. Usage: python3 scripts/x402_prices/build.py
 """
 import collections, csv, datetime as dt, gzip, json, os, statistics, sys, urllib.parse
@@ -94,25 +98,38 @@ def main():
         post.append({'category': c, 'listings': len(withb), 'priced': len(ps), 'p10_usd': pct(ps, .1), 'median_usd': pct(ps, .5), 'p90_usd': pct(ps, .9),
                      'share_seller_any_buyer': round(sum(1 for r in withb if r['buyers_last_week'] >= 1) / len(withb), 4) if withb else None,
                      'share_seller_5_buyers': round(sum(1 for r in withb if r['buyers_last_week'] >= MIN_BUYERS) / len(withb), 4) if withb else None})
-    market = json.load(open(os.path.join(common.ROOT, 'data', 'x402_market', 'market.json')))
-    tk = {r['category']: r for r in market['tickets'] if r['week_start'] == latest}
-    pvp = []
-    for p in post:
-        t = tk.get(p['category'])
-        pvp.append({'category': p['category'], 'listings': p['priced'], 'posted_median_usd': p['median_usd'],
-                    'payments': t['payments'] if t else 0, 'paid_median_usd': t['median_usd'] if t else None,
-                    'ratio': round(t['median_usd'] / p['median_usd'], 3) if t and p['median_usd'] else None})
-    for name, rs in (('posted_by_category.csv', post), ('posted_vs_paid.csv', pvp)):
+    pvp = matched(rows, sel)
+    for name, rs in (('posted_by_category.csv', post),):
         with open(os.path.join(OUT, name), 'w', newline='') as f:
             w = csv.DictWriter(f, fieldnames=list(rs[0])); w.writeheader(); w.writerows(rs)
     prices_weekly = list(csv.DictReader(open(os.path.join(common.OUT, 'prices_weekly.csv'))))
     doc = {'snapshot': snap, 'week': latest, 'listings': len(rows), 'priced': len(priced),
            'distinct_sellers_base': len(sellers), 'networks': dict(collections.Counter(n for r in rows for n in r['networks'])),
            'schemes': dict(collections.Counter(s for r in rows for s in r['schemes'])),
-           'categories': dict(collections.Counter(r['category'] for r in rows)), 'posted_by_category': post, 'posted_vs_paid': pvp,
+           'categories': dict(collections.Counter(r['category'] for r in rows)), 'posted_by_category': post, 'posted_vs_paid_matched': pvp,
            'prices_weekly': prices_weekly, 'price_hist': [{'category': c, 'bin_lo_usd': lo, 'n': n} for c, lo, n in hist(priced)]}
     json.dump(doc, open(os.path.join(OUT, 'prices.json'), 'w'), default=str)
     print(json.dumps({k: v for k, v in doc.items() if k not in ('prices_weekly', 'price_hist')}, indent=1, default=str))
+
+
+MATCH_COVERAGE_MIN = 0.30  # publish the per-seller comparison only above this share of clean USD
+
+
+def matched(rows, sel):
+    """Per seller: median of its own posted Base prices vs its own median demand-cleaned payment, latest week,
+    sellers with >= MIN_BUYERS genuine buyers. Coverage = their clean USD / all clean USD that week."""
+    posted = collections.defaultdict(list)
+    for r in rows:
+        if r['pay_to'] and r['price_network'] == 'base' and r['price_usd']: posted[r['pay_to']].append(r['price_usd'])
+    tot = sum(float(s['usd']) for s in sel.values())
+    m = [(float(sel[q]['median_payment_usd']) / statistics.median(ps), float(sel[q]['usd']))
+         for q, ps in posted.items() if q in sel and int(sel[q]['payers']) >= MIN_BUYERS]
+    rs = sorted(x for x, _ in m); cov = sum(u for _, u in m) / tot if tot else 0
+    return {'sellers': len(m), 'clean_usd_matched': round(sum(u for _, u in m), 2), 'clean_usd_all': round(tot, 2), 'coverage': round(cov, 4),
+            'coverage_min': MATCH_COVERAGE_MIN, 'published': cov >= MATCH_COVERAGE_MIN,
+            'ratio_quantiles': {str(q): pct(rs, q) for q in (.1, .25, .5, .75, .9)} if rs else None,
+            'share_paid_below_half_posted': round(sum(1 for x in rs if x < .5) / len(rs), 4) if rs else None,
+            'share_within_2x': round(sum(1 for x in rs if .5 <= x <= 2) / len(rs), 4) if rs else None}
 
 
 def hist(priced):

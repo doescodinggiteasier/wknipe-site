@@ -1,7 +1,7 @@
 ---
 title: "Wes Knipe"
-pagetitle: "Wes Knipe · agent payments, measured"
-description: "Independent data on what AI agents actually buy and pay for: the demand-cleaned x402 index, seller and buyer statistics, price comps and AI-access tools."
+pagetitle: "Wes Knipe"
+description: "Wes Knipe: analytics consultant with a background in economics, financial advice and early-stage software. Current research: how AI agents pay for things, and how much of that market is real."
 body-classes: wide
 image: /og/home.png
 ---
@@ -9,7 +9,5 @@ image: /og/home.png
 ```{=html}
 <style>#title-block-header { display: none; }</style>
 ```
-
-<!-- TODO(Wes): the lede below is generated from the data; add one sentence in your own voice above it if you want. -->
 
 {{< include _gen/home.md >}}

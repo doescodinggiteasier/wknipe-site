@@ -1,0 +1,24 @@
+---
+title: "x402 in 60 seconds"
+subtitle: "What it is, why the reported volume needs cleaning, and what the tools on this site measure, for readers who know markets better than crypto."
+description: "A plain-English explainer of x402, the web standard that lets software pay per request, and why its reported volume needs cleaning."
+---
+
+<!-- TODO(Wes): edit -->
+
+**What it is.** x402 is a web standard that lets software pay for a single request. A program asks a paid API for something; the API answers with a price (HTTP status 402, "Payment Required"); the program pays in USDC, a digital dollar, and gets its answer. Payments are often fractions of a cent and settle on Base, a public ledger anyone can read.
+
+```{=html}
+<div class="explain-flow" role="img" aria-label="An agent asks an API, gets a 402 price quote, pays in USDC, and the payment settles on a public ledger, which this site reads"><span>Agent asks an API</span><i>→</i><span>402: here is the price</span><i>→</i><span>Agent pays in USDC</span><i>→</i><span>Settles on a public ledger</span><i>→</i><span>I read and clean it</span></div>
+```
+
+**Why the volume needs cleaning.** The ledger shows every payment, but not why it was made. Much of the activity is a wallet paying itself, a circle of wallets funded from one source, or a test. It is the same problem as reported versus real volume on early crypto exchanges, or wash trades in any thin market. I remove those payments, and each week roughly half of the dollars survive.
+
+**What the tools are, in market terms.**
+
+- **[Market dashboard](/x402/)**: reported volume against real volume, with every adjustment shown.
+- **[Price comps](/x402/prices/comps)**: comparable prices for a described service, like comps in a valuation.
+- **[Endpoint status](/x402/status/)**: settlement fails. Does the service answer, and does it charge the price it quotes?
+- **[Best execution](/x402/buy/)**: the cheapest service for a task that actually works, as a broker owes a client.
+
+Everything is computed from public data, and the [method note](https://github.com/doescodinggiteasier/wknipe-site/blob/main/docs/X402_INDEX_METHOD.md) lists every filter.

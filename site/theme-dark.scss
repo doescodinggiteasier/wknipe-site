@@ -1,3 +1,4 @@
 /*-- scss:defaults --*/
+$web-font-path: false; // ORDER_014: darkly would @import Lato from Google Fonts (render-blocking, unused: the site uses Geist)
 // Dark mode. Every colour comes from the palette in theme-base.scss; change shades there, not here.
 @include wk-set(dark);

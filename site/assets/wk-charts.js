@@ -180,19 +180,6 @@
       table: { cols: [{ k: "week_start", label: "Week of" }, { k: "measure", label: "Measure" }, { k: "index_jevons", label: "Index", r: 1 }, { k: "basket_items", label: "Items in both weeks", r: 1, f: fmt.int }, { k: "median_usd", label: "Median", r: 1, f: (x) => fmt.usdFull(+x) }], rows } };
   };
 
-  // Prices: posted vs paid by category (dot pair on a log axis)
-  C.postedPaid = ({ data, width, t }) => {
-    const rows = data.posted_vs_paid.filter((r) => r.posted_median_usd && r.paid_median_usd);
-    const long = rows.flatMap((r) => [{ ...r, s: "Posted (median listing)", v: r.posted_median_usd }, { ...r, s: "Paid (median clean payment)", v: r.paid_median_usd }]);
-    const col = { "Posted (median listing)": t.primary, "Paid (median clean payment)": t.clean };
-    const node = Plot.plot(base(t, width, {
-      height: rows.length * 40 + 40, marginLeft: width < 520 ? 96 : 130, marginRight: 30, x: { type: "log", grid: true, ticks: decades(d3.min(long, (r) => r.v), d3.max(long, (r) => r.v)), tickFormat: fmt.usd, label: "USD per call (log scale)", labelAnchor: "center", labelArrow: false }, y: { domain: rows.map((r) => r.category), tickFormat: (c) => L[c] || c, label: null },
-      marks: [Plot.ruleY(rows, { y: "category", x1: "posted_median_usd", x2: "paid_median_usd", stroke: t.line, strokeWidth: 2 }),
-        Plot.dot(long, { y: "category", x: "v", fill: (d) => col[d.s], r: 6, stroke: t.surface, strokeWidth: 1.5, tip: { fill: t.surface, stroke: t.line }, title: (d) => `${L[d.category] || d.category}\nPosted median ${fmt.usdFull(d.posted_median_usd)} over ${fmt.int(d.listings)} listings\nPaid median ${fmt.usdFull(d.paid_median_usd)} over ${fmt.int(d.payments)} clean payments` })],
-    }));
-    return { node, legend: legend(Object.entries(col)), table: { cols: [{ k: "category", label: "Category", f: (c) => L[c] || c }, { k: "listings", label: "Listings", r: 1, f: fmt.int }, { k: "posted_median_usd", label: "Posted median", r: 1, f: fmt.usdFull }, { k: "payments", label: "Clean payments", r: 1, f: fmt.int }, { k: "paid_median_usd", label: "Paid median", r: 1, f: fmt.usdFull }, { k: "ratio", label: "Paid ÷ posted", r: 1, f: (x) => (x == null ? "–" : x.toFixed(2) + "×") }], rows } };
-  };
-
   // Seller page: one weekly series as bars (USD or buyers)
   C.sellerWeekly = ({ data, opts, width, t }) => {
     const s = opts.history ? opts : data.sellers.find((x) => x.address === opts.address) || { history: [] };
@@ -226,27 +213,5 @@
         Plot.text(rows, { y: opts.label, x: opts.value, text: (d) => (opts.pct ? fmt.pct(d[opts.value], opts.dp ?? 0) : fmt.int(d[opts.value])), textAnchor: "start", dx: 5, fill: t.ink, fontSize: 11 })],
     }));
     return { node, table: { cols: [{ k: opts.label, label: opts.labelName || "Item" }, { k: opts.value, label: opts.valueName || "Value", r: 1, f: opts.pct ? (x) => fmt.pct(x, 1) : fmt.int }, ...(rows[0] && rows[0].n != null ? [{ k: "n", label: "Of", r: 1, f: fmt.int }] : [])], rows } };
-  };
-
-  // Gap map (/x402/gaps/): topics by competition (sellers, log x) and conversion (share with 5+ genuine buyers, y)
-  C.gapmap = ({ data, width, t }) => {
-    const rows = data.topics.filter((r) => r.hit_rate != null && r.topic !== "other").map((r) => ({ ...r, short: r.label.split(/ & |, /)[0] }));
-    const base_ = data.base_rate, narrow = width < 560, xmax = d3.max(rows, (d) => d.sellers);
-    const node = Plot.plot(base(t, width, {
-      height: narrow ? 380 : 440, marginLeft: 46, marginRight: narrow ? 16 : 30, marginBottom: 40,
-      x: { type: "log", label: "Sellers competing (log scale) →", grid: true, tickFormat: "~s", domain: [d3.min(rows, (d) => d.sellers) * 0.85, d3.max(rows, (d) => d.sellers) * 1.25] },
-      y: { label: `↑ Share with ${data.min_buyers}+ genuine buyers`, grid: true, tickFormat: pct0, domain: [0, Math.max(0.5, d3.max(rows, (d) => d.hit_rate) * 1.12)] },
-      r: { range: [4, narrow ? 16 : 22] },
-      marks: [
-        Plot.ruleY([base_], { stroke: t.muted, strokeDasharray: "4,4" }),
-        Plot.text([base_], { frameAnchor: "right", y: (d) => d, text: () => `all sellers ${fmt.pct(base_, 0)}`, textAnchor: "end", dy: -7, fill: t.muted, fontSize: 11 }),
-        Plot.dot(rows, { x: "sellers", y: "hit_rate", r: "buyer_seller_pairs", fill: (d) => (d.hit_rate >= base_ ? t.clean : t.primary), fillOpacity: 0.75, stroke: t.surface, strokeWidth: 1,
-          tip: { fill: t.surface, stroke: t.line }, title: (d) => `${d.label}\n${fmt.int(d.sellers)} sellers · ${fmt.pct(d.hit_rate, 0)} get ${data.min_buyers}+ buyers\n${fmt.int(d.buyer_seller_pairs)} genuine buyers (sum) · ${fmt.usdFull(d.clean_usd)} clean/wk\nMedian ask ${fmt.usdFull(d.posted_median_usd)} · ${fmt.int(d.listings)} listings` }),
-        ...[[(d) => d.sellers < xmax / 3, "middle"], [(d) => d.sellers >= xmax / 3, "end"]].map(([keep, anchor]) =>
-          Plot.text((narrow ? rows.filter((d) => d.hit_rate >= base_) : rows).filter(keep), { x: "sellers", y: "hit_rate", text: "short", dy: -13, dx: anchor === "end" ? 8 : 0, textAnchor: anchor, fill: t.ink, fontSize: narrow ? 10 : 11, fontWeight: 500, stroke: t.surface, strokeWidth: 3, paintOrder: "stroke" })),
-      ],
-    }));
-    return { node, legend: legend([["Above the base rate", t.clean], ["Below it", t.primary]]) + `<span>Dot size = genuine buyers</span>`,
-      table: { cols: [{ k: "label", label: "Topic" }, { k: "sellers", label: "Sellers", r: 1, f: fmt.int }, { k: "hit_rate", label: `Share with ${data.min_buyers}+ buyers`, r: 1, f: (x) => fmt.pct(x, 0) }, { k: "buyer_seller_pairs", label: "Genuine buyers (sum)", r: 1, f: fmt.int }], rows } };
   };
 })();
