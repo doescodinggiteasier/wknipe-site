@@ -72,6 +72,8 @@ website:
             text: API
           - href: badges/index.qmd
             text: Badges
+          - href: tools/verification/index.qmd
+            text: Checks that can fail
       - href: writing/index.qmd
         text: Writing
       - href: about.qmd

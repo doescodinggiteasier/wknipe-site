@@ -1,0 +1,54 @@
+---
+title: "Checks that can fail"
+description: "A small open-source Python kit I use to make my analyses prove their own checks can fail: preconditions, negative controls, exit-status receipts, calibration, shuffled-label controls and pre-registration hashes."
+---
+
+A check that cannot fail looks exactly like a check that passed. Most of the mistakes I have caught in my own work were
+not errors of reasoning. They were checks that went green for a reason that had nothing to do with the data. So I
+collected the checks that caught them into a small Python library, **tripwire-checks**, and use it in my papers. It is
+free and MIT-licensed: [github.com/doescodinggiteasier/tripwire-checks](https://github.com/doescodinggiteasier/tripwire-checks).
+
+Below is what each check does, in a paragraph, with a real case from my own work where one applies.
+
+## Preconditions
+Every script states what must be true before its output means anything (the input has rows, every week appears once,
+the pre-registration is the one that was hashed) and **stops** when one is false. A warning on a run that still
+produces output is a warning nobody reads, and the output outlives it. The script then writes one line into its output
+listing every precondition that held, so a run that skipped one says so in its own file.
+
+## Negative controls
+Before I trust a check, I run it somewhere it **must** fail: in an empty directory, or against a deliberately damaged
+copy of its input. If it still passes, it is reported as *vacuous*, never as a pass. The classic case: a search for
+leftover defects whose file pattern never matched anything, so it counted zero, and "zero defects" passed while every
+defect was still there. In an empty directory it passed too, which is how it was caught.
+
+## Exit-status receipts
+A command's exit code is the verdict, and it is easy to lose: `run > log; echo $?` always reports 0 (the echo
+succeeded), and `tests | tail` reports the tail's status. The kit runs commands with failures propagated through pipes,
+refuses commands whose status could be masked, and writes a receipt: the command, its real exit code, the time, the
+code version and a hash of each input file. When a write-up says "verified", the receipt is the evidence.
+
+## Calibration before counting
+A detector (a classifier, a matching rule, a model acting as judge) does not get to report a count until it has been
+scored on at least five cases known to be true **and** five known to be false, against a bar stated in advance. The
+false half matters most: a detector checked only on positives drifts toward "yes", and its mistakes look exactly like
+its successes.
+
+## Shuffled-label controls
+To see how much of a judge's agreement is real, I also score it against the labels shuffled between cases. In an
+experiment where a model was asked why companies had failed, a judge counted its answers as matching the documented
+cause 58% of the time. Against causes shuffled to the **wrong** company, the same judge still found a "match" a third of
+the time. A stricter judge's chance rate was 12.5%, and under it the headline result disappeared. The shuffled control
+is what showed the first number was mostly leniency.
+
+## Pre-registration hashes
+Before I run an analysis, I write down the hypotheses, metrics and bars, and record the file's hash. The analysis
+refuses to run if the file has changed since, unless the change was logged as a dated, hashed addendum. Edits made
+after seeing results are therefore visible, not silent.
+
+## A result that was too clean
+In a simulation of constitutional rules, one package of rules cut failures to almost exactly zero. The jump was too
+clean, so I checked the mechanism instead of reporting it. It was an artifact: the way council seats were counted
+meant no candidate could ever hold a majority, so the "protection" came from arithmetic, not from the rules. No
+library catches that on its own. The habit it encodes is the same, though: when a check passes, ask whether it could
+have failed.
