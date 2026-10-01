@@ -1,1 +1,18 @@
 date,since,host,resource,pay_to,category,what,old_usd,new_usd,change
+2026-10-01,2026-09-30,laso.finance,https://laso.finance/order-intl-card,0x3291e96b3bff7ed56e3ca8364273c5b4654b2b37,,,103.8,100.0,-0.0366
+2026-10-01,2026-09-30,twitter.use.x402atlas.com,https://twitter.use.x402atlas.com/user-replies,0x51d577c8cbb8b3fb1ba0ce31c7923cc27a07f78b,data,twitter user replies timeline,0.005,0.006,0.2
+2026-10-01,2026-09-30,twitter.use.x402atlas.com,https://twitter.use.x402atlas.com/user-media,0x51d577c8cbb8b3fb1ba0ce31c7923cc27a07f78b,content,user media posts timeline,0.005,0.006,0.2
+2026-10-01,2026-09-30,twitter.use.x402atlas.com,https://twitter.use.x402atlas.com/user-about,0x51d577c8cbb8b3fb1ba0ce31c7923cc27a07f78b,data,twitter user about profile lookup,0.005,0.006,0.2
+2026-10-01,2026-09-30,twitter.use.x402atlas.com,https://twitter.use.x402atlas.com/trends,0x51d577c8cbb8b3fb1ba0ce31c7923cc27a07f78b,search,twitter x trending trends,0.005,0.006,0.2
+2026-10-01,2026-09-30,twitter.use.x402atlas.com,https://twitter.use.x402atlas.com/community-media,0x51d577c8cbb8b3fb1ba0ce31c7923cc27a07f78b,content,community media posts from x,0.005,0.006,0.2
+2026-10-01,2026-09-30,twitter.use.x402atlas.com,https://twitter.use.x402atlas.com/list-followers,0x51d577c8cbb8b3fb1ba0ce31c7923cc27a07f78b,data,twitter list followers lookup,0.005,0.006,0.2
+2026-10-01,2026-09-30,twitter.use.x402atlas.com,https://twitter.use.x402atlas.com/community-tweets,0x51d577c8cbb8b3fb1ba0ce31c7923cc27a07f78b,content,twitter community posts,0.005,0.006,0.2
+2026-10-01,2026-09-30,twitter.use.x402atlas.com,https://twitter.use.x402atlas.com/user-details,0x51d577c8cbb8b3fb1ba0ce31c7923cc27a07f78b,data,twitter user profile lookup,0.005,0.006,0.2
+2026-10-01,2026-09-30,twitter.use.x402atlas.com,https://twitter.use.x402atlas.com/search-lists,0x51d577c8cbb8b3fb1ba0ce31c7923cc27a07f78b,search,search public twitter lists,0.005,0.006,0.2
+2026-10-01,2026-09-30,twitter.use.x402atlas.com,https://twitter.use.x402atlas.com/search-communities,0x51d577c8cbb8b3fb1ba0ce31c7923cc27a07f78b,search,search public twitter communities,0.005,0.006,0.2
+2026-10-01,2026-09-30,twitter.use.x402atlas.com,https://twitter.use.x402atlas.com/list-tweets,0x51d577c8cbb8b3fb1ba0ce31c7923cc27a07f78b,content,public twitter list posts,0.005,0.006,0.2
+2026-10-01,2026-09-30,twitter.use.x402atlas.com,https://twitter.use.x402atlas.com/list-members,0x51d577c8cbb8b3fb1ba0ce31c7923cc27a07f78b,data,twitter list members lookup,0.005,0.006,0.2
+2026-10-01,2026-09-30,twitter.use.x402atlas.com,https://twitter.use.x402atlas.com/list-details,0x51d577c8cbb8b3fb1ba0ce31c7923cc27a07f78b,data,twitter list details lookup,0.005,0.006,0.2
+2026-10-01,2026-09-30,twitter.use.x402atlas.com,https://twitter.use.x402atlas.com/community-members,0x51d577c8cbb8b3fb1ba0ce31c7923cc27a07f78b,data,twitter community members list,0.005,0.006,0.2
+2026-10-01,2026-09-30,twitter.use.x402atlas.com,https://twitter.use.x402atlas.com/autocomplete,0x51d577c8cbb8b3fb1ba0ce31c7923cc27a07f78b,search,twitter x autocomplete search-suggestions user-search,0.005,0.006,0.2
+2026-10-01,2026-09-30,flat-rate-llm.kikoribera03.workers.dev,https://flat-rate-llm.kikoribera03.workers.dev/mcp,0xc210ea7d5692a6401adf25bbcb7acde9cdb7e9ff,,,0.001,0.005,4.0
