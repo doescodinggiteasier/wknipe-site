@@ -12,6 +12,7 @@ CALLS = [('latest_week', {}), ('weekly_series', {'stage': 'clean', 'category': '
          ('market_series', {'metric': 'waterfall', 'week': '2026-09-21'})]
 if os.environ.get('X402_INDEX_API'):  # best_execution always calls the API; test it only when one is given
     CALLS.append(('best_execution', {'need': 'web search'}))
+    CALLS.append(('price_comps', {'find': 'token price lookup'}))
 
 
 async def main():

@@ -92,7 +92,40 @@ try {
     const h = H[r[ci.host] + r[ci.path]];
     return [r[ci.host], r[ci.path], r[ci.name] || "", r[ci.what] || "", (r[ci.desc] || "").slice(0, 240), r[ci.price_usd], r[ci.price_network], r[ci.method], r[ci.seller], h ? h[0] : "unchecked", h ? h[1] : null, r[ci.category]];
   });
+  route.idx = searchIndex(route.rows);
+  for (const r of route.rows) r[4] = "";  // descriptions are indexed above but never returned, so they are not shipped
 } catch (e) { console.log("route table: skipped (" + e.message + ")"); }
 writeFileSync(join(dirname(fileURLToPath(import.meta.url)), "..", "src", "route.json"), JSON.stringify(route));
 console.log(`src/route.json: ${route.rows.length} listings, ${route.sellers.length} sellers, checks ${route.checked_on}`);
 console.log(`src/data.json: ${out.weekly.length} weekly rows, ${out.prices.length} price rows, ${out.sellers.length} sellers, latest ${out.latest.latest_week}`);
+
+// ORDER_014 fix: the Worker's free plan allows ~10 ms CPU per request, and building a MiniSearch index at runtime took
+// ~230 ms (Cloudflare error 1102 on cold isolates). So the inverted index is built here, once: for every token, the
+// documents containing it and a precomputed BM25+ weight summed over fields with MiniSearch's boosts and parameters.
+// Runtime search (src/route.ts) is then a binary search over sorted tokens plus a few array reads.
+function searchIndex(rows) {
+  const FIELDS = [[3, 3], [2, 2], [4, 1], [0, 1.2]]; // [column in route.rows, boost]: what, name, desc, host
+  const K = 1.2, B = 0.7, D = 0.5, N = rows.length;
+  const tok = (x) => String(x || "").toLowerCase().split(/[\n\r\p{Z}\p{P}]+/u).filter(Boolean);
+  const df = FIELDS.map(() => new Map()), lens = FIELDS.map(() => []), tfs = [];
+  rows.forEach((r, id) => {
+    tfs[id] = FIELDS.map(([col], f) => {
+      const ts = tok(r[col]), tf = new Map();
+      ts.forEach((t) => tf.set(t, (tf.get(t) || 0) + 1));
+      tf.forEach((_, t) => df[f].set(t, (df[f].get(t) || 0) + 1));
+      lens[f][id] = ts.length;
+      return tf;
+    });
+  });
+  const avg = lens.map((l) => l.reduce((a, b) => a + b, 0) / N || 1);
+  const post = new Map();
+  rows.forEach((_, id) => FIELDS.forEach(([, boost], f) => tfs[id][f].forEach((tf, t) => {
+    const n = df[f].get(t), idf = Math.log(1 + (N - n + 0.5) / (n + 0.5));
+    const w = boost * idf * (D + (tf * (K + 1)) / (tf + K * (1 - B + (B * lens[f][id]) / avg[f])));
+    let p = post.get(t); if (!p) post.set(t, (p = new Map()));
+    p.set(id, (p.get(id) || 0) + w);
+  })));
+  const tokens = [...post.keys()].sort();
+  // postings as [id delta, weight x 100, ...]: ids ascend, so deltas are small and compress well
+  return { tokens, post: tokens.map((t) => { let last = 0; return [...post.get(t)].flatMap(([id, w]) => { const d = id - last; last = id; return [d, Math.max(1, Math.round(w * 100))]; }); }) };
+}

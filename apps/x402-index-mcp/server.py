@@ -15,6 +15,7 @@ Data source (environment):
   X402_PAYER_PRIVATE_KEY  key of a Base wallet holding a little USDC (optional; needs `pip install "x402[httpx,evm]"`)
   X402_MAX_PRICE_USD      refuse to pay more than this per call (default 0.01)
   Without a wallet the tool returns the free three-pick demo (/v1/route/demo) and says so.
+  price_comps() works the same way: paid GET /v1/comps (every comparable) with a wallet, else the free /v1/comps/demo.
 """
 import csv, json, os, urllib.request
 
@@ -177,6 +178,26 @@ def best_execution(need: str, max_price_usd: float = 0, verified_only: bool = Fa
     demo = _api_at(ROUTE_API, '/v1/route/demo?' + urlencode(q))
     demo['note'] = ('Free demo: three picks only. The full ranking is GET /v1/route ($0.001 per call over x402); set '
                     'X402_PAYER_PRIVATE_KEY (a Base wallet with a little USDC) to let this tool pay for it.')
+    return demo
+
+
+@server.tool()
+def price_comps(find: str = '', category: str = '') -> dict:
+    """Price comps for an x402 API: describe what one paid call returns (e.g. "token price lookup") and/or give a
+    category (content | data | search | compute | other). Returns comparable Bazaar listings (at most 3 per seller),
+    their posted price distribution (p10 / median / p90 and a log histogram), how many comparables' sellers had 5+
+    genuine buyers last week, and the realised median payment at those sellers. Every comparable = paid route
+    GET /v1/comps ($0.001 per call in USDC on Base) and needs X402_PAYER_PRIVATE_KEY; without a wallet this returns the
+    free summary with the 5 closest matches."""
+    from urllib.parse import urlencode
+    if category and category not in CATEGORIES[:5]: raise ToolError(f'category must be one of {CATEGORIES[:5]}')
+    if not find.strip() and not category: raise ToolError('give find (a short description) and/or category')
+    q = urlencode({**({'find': find.strip()} if find.strip() else {}), **({'category': category} if category else {})})
+    if os.environ.get('X402_PAYER_PRIVATE_KEY'):
+        return _pay_get(f'{ROUTE_API}/v1/comps?{q}')
+    demo = _api_at(ROUTE_API, f'/v1/comps/demo?{q}')
+    demo['note'] = ('Free summary: the 5 closest comparables only. Every comparable is GET /v1/comps ($0.001 per call over '
+                    'x402); set X402_PAYER_PRIVATE_KEY (a Base wallet with a little USDC) to let this tool pay for it.')
     return demo
 
 
