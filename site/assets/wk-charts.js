@@ -168,9 +168,9 @@
 
   // History since launch (Dune): raw vs single-buyer-filtered USD per week, log scale; the index's own weeks shaded
   C.history = ({ data, opts, width, t }) => {
-    const rows = data.history.map((r) => ({ ...r, week: utc(r.week_start) })).filter((r) => r.usd > 0);
+    const rows = data.history.map((r) => ({ ...r, week: utc(r.week_start) })).filter((r, i, a) => a.slice(0, i + 1).some((x) => x.usd >= 10));
     const idx = new Set(opts.index_weeks || []), shade = rows.filter((r) => idx.has(r.week_start));
-    const long = rows.flatMap((r) => [{ week: r.week, s: "raw", v: Math.max(r.usd, 1) }, { week: r.week, s: "filtered", v: Math.max(r.usd_after_single_buyer_filter, 1) }]);
+    const long = rows.flatMap((r) => [{ week: r.week, s: "raw", v: Math.max(r.usd, 1) }, ...(r.usd_after_single_buyer_filter == null ? [] : [{ week: r.week, s: "filtered", v: Math.max(r.usd_after_single_buyer_filter, 1) }])]);
     const col = { raw: t.primary, filtered: t.clean };
     const node = Plot.plot(base(t, width, {
       height: 280, marginLeft: 56, marginRight: 16, x: { type: "utc", label: null },
@@ -179,10 +179,10 @@
         shade.length ? Plot.rectX([{ x1: shade[0].week, x2: d3.utcDay.offset(shade[shade.length - 1].week, 7) }], { x1: "x1", x2: "x2", fill: t.line, fillOpacity: 0.5 }) : null,
         Plot.line(long, { x: "week", y: "v", stroke: (d) => col[d.s], z: "s", strokeWidth: 2 }),
         Plot.tip(rows, Plot.pointerX({ x: "week", y: "usd", fill: t.surface, stroke: t.line,
-          title: (d) => `Week of ${fmt.week(d.week_start)}\nAll settlements: ${fmt.usdFull(d.usd)} (${fmt.int(d.settlements)})\nAfter single-buyer filter: ${fmt.usdFull(d.usd_after_single_buyer_filter)}\nLargest facilitator: ${d.top_facilitator} (${fmt.pct(d.top_facilitator_share)})` })),
+          title: (d) => `Week of ${fmt.week(d.week_start)}\nAll settlements: ${fmt.usdFull(d.usd)} (${fmt.int(d.settlements)})` + (d.usd_after_single_buyer_filter == null ? "" : `\nAfter single-buyer filter: ${fmt.usdFull(d.usd_after_single_buyer_filter)}`) + `\nLargest facilitator: ${d.top_facilitator} (${fmt.pct(d.top_facilitator_share)})` })),
       ],
     }));
-    return { node, legend: legend([["All facilitator settlements", t.primary], ["After the single-buyer filter", t.clean], ["Weeks with the full index", t.line]]),
+    return { node, legend: legend([["All facilitator settlements", t.primary], ["After the single-buyer filter", t.clean], ...(idx.size ? [["Weeks with the full index", t.line]] : [])]),
       table: { cols: [{ k: "week_start", label: "Week of" }, { k: "settlements", label: "Settlements", r: 1, f: fmt.int }, { k: "usd", label: "USD", r: 1, f: fmt.usdFull },
         { k: "usd_after_single_buyer_filter", label: "After single-buyer filter", r: 1, f: fmt.usdFull }, { k: "top_facilitator", label: "Largest facilitator" }], rows } };
   };

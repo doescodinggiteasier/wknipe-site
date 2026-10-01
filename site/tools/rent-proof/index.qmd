@@ -1,0 +1,80 @@
+---
+draft: true   # ORDER_016 §3: fake-door draft. Not deployed; needs Wes's word AND a waitlist endpoint before it goes live.
+title: "Rent proof"
+description: "Prove to a landlord that you earn at least 2× or 3× the rent, straight from your bank, without sending bank statements. Not built yet."
+body-classes: wide
+---
+
+```{=html}
+<style>
+  .rp-lede { font-size: 1.15rem; max-width: 40rem; }
+  .rp-card { border: 1px solid var(--line); border-radius: 12px; padding: 1.25rem 1.4rem; margin: 1.5rem 0; max-width: 40rem; background: var(--card, transparent); }
+  .rp-card .k { font: 400 13px/1.4 "Geist Mono", monospace; color: var(--muted); }
+  .rp-proof { font: 500 1.05rem/1.5 Geist, system-ui, sans-serif; margin: .35rem 0 .2rem; }
+  .rp-proof .ok { border-bottom: 2px solid var(--accent); }
+  .rp-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: 1rem 1.5rem; margin: 1.75rem 0; max-width: 46rem; padding: 0; list-style: none; counter-reset: s; }
+  .rp-steps li { border-top: 1px solid var(--line); padding-top: .6rem; counter-increment: s; }
+  .rp-steps li::before { content: counter(s); font: 400 13px "Geist Mono", monospace; color: var(--muted); display: block; margin-bottom: .2rem; }
+  .rp-price { font: 500 1.6rem/1.2 Geist, system-ui, sans-serif; }
+  .rp-form { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.5rem; max-width: 40rem; margin: 1rem 0 .5rem; }
+  .rp-form .full { grid-column: 1 / -1; }
+  @media (max-width: 640px) { .rp-form { grid-template-columns: 1fr; } }
+  .rp-form label { display: block; font: 400 13px/1.4 "Geist Mono", monospace; color: var(--muted); margin-bottom: .25rem; }
+  .rp-form input, .rp-form select { width: 100%; min-width: 0; font: 400 16px/1.45 Geist, system-ui, sans-serif; padding: 8px 0; border: 0;
+    border-bottom: 1px solid var(--line); border-radius: 0; background: transparent; color: var(--ink); }
+  .rp-form input:focus, .rp-form select:focus { outline: none; border-bottom-color: var(--accent); }
+  .rp-form button { padding: 9px 18px; border: 1px solid var(--ink); border-radius: 999px; background: var(--ink); color: var(--bg); font-weight: 500; }
+  .rp-notice { border-left: 2px solid var(--accent); padding: .5rem .9rem; margin: 1.25rem 0; max-width: 40rem; }
+  .rp-small { font-size: .85rem; color: var(--muted); max-width: 40rem; }
+</style>
+```
+
+::: {.rp-lede}
+Show a landlord you earn at least 2× or 3× the rent, straight from your bank's own website. They see yes or no. They don't see your balance, your transactions or your account number.
+:::
+
+::: {.rp-notice}
+**This isn't built yet.** I'm checking whether enough people want it before I build it. Leave your email and I'll write once, when it works with your bank. Nothing is charged.
+:::
+
+```{=html}
+<div class="rp-card" aria-label="Example of what a landlord would see">
+  <div class="k">What your landlord would see</div>
+  <p class="rp-proof"><span class="ok">Yes:</span> monthly deposits are at least 3 × $1,850 rent</p>
+  <div class="k">Checked against Chase · account holder name matches · 1 Oct 2026</div>
+</div>
+<ol class="rp-steps">
+  <li>Enter the rent and the multiple your landlord asks for.</li>
+  <li>Log in to your bank in a secure window. I never see your password or your data.</li>
+  <li>Send the landlord a link. It shows yes or no, and nothing else.</li>
+</ol>
+<p><span class="rp-price">$9</span> per proof, paid by you. Landlords check it free.</p>
+<form class="rp-form" id="rp-form" novalidate>
+  <div class="full"><label for="rp-email">Email</label><input id="rp-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com"></div>
+  <div><label for="rp-bank">Your main bank</label>
+    <select id="rp-bank" name="bank" required>
+      <option value="">Choose…</option>
+      <option>Chase</option><option>Bank of America</option><option>Wells Fargo</option><option>Citi</option>
+      <option>Capital One</option><option>U.S. Bank</option><option>PNC</option><option>Truist</option>
+      <option>Chime</option><option>SoFi</option><option>Navy Federal</option><option>A credit union</option><option>Other</option>
+    </select></div>
+  <div><label for="rp-role">I'm a</label>
+    <select id="rp-role" name="role" required>
+      <option value="">Choose…</option><option>Renter</option><option>Landlord</option><option>Property manager</option>
+    </select></div>
+  <div class="full"><button type="submit">Tell me when it works with my bank</button></div>
+</form>
+<p class="rp-small" id="rp-out" aria-live="polite"></p>
+<p class="rp-small">I keep your email only to send that one note, then delete it. This is a proof you hand over yourself, not a credit check or a background check.</p>
+<script>
+  // Draft only: no endpoint yet. Before deploy, wire this to a waitlist store (e.g. the site Worker + D1) and count bank/role.
+  document.getElementById('rp-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var f = e.target, email = f.email.value.trim();
+    var out = document.getElementById('rp-out');
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email) || !f.bank.value || !f.role.value) { out.textContent = 'Please add an email, your bank and your role.'; return; }
+    out.textContent = 'Thanks. You are on the list. (Draft: nothing was sent.)';
+    f.reset();
+  });
+</script>
+```

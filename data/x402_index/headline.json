@@ -1,6 +1,9 @@
 {
  "latest_week": "2026-09-21..2026-09-27",
  "weeks_available": [
+  "2026-08-03",
+  "2026-08-10",
+  "2026-08-17",
   "2026-08-24",
   "2026-08-31",
   "2026-09-07",
@@ -27,6 +30,9 @@
  "tripwire_4week_base_week": "2026-08-24",
  "tripwire_loglinear_monthly_growth_last_5_weeks": -0.4642,
  "content_plus_data_clean_usd_by_week": {
+  "2026-08-03": 36372.18,
+  "2026-08-10": 75997.81,
+  "2026-08-17": 51763.6,
   "2026-08-24": 2429.97,
   "2026-08-31": 4904.81,
   "2026-09-07": 4081.41,
@@ -42,6 +48,28 @@
  },
  "hand_o2_model_conflicts_set_to_other": 25,
  "fanout_flagged": {
+  "2026-08-03": {},
+  "2026-08-10": {
+   "0xef4364fe4487353df46eb7c811d4fac78b856c7f": {
+    "buyers": 81,
+    "usd": 8.4,
+    "sampled": 12,
+    "shared_funders": {
+     "0x99b9e798a2b42486833c72978824fa80ecdf47be": 12,
+     "0xcef38d64f6a2c99efa53b7b29cf4a527cdd2d8b7": 12,
+     "0x8aec88278196c873f390fdf20bdadcd28a72202c": 12,
+     "0xba987282ab7499ba85c1b6ed798d6379f4a74632": 12,
+     "0x246de6cfa4ba755222cf94431b5e34cad660d0f4": 12,
+     "0xb304866c026f444bdbd8c93ac28dfda69f2708f1": 12,
+     "0x97f27c438a2ebc2200b4a3b9a099f342949be1b7": 4
+    },
+    "buyers_with_shared_funder": 76,
+    "isolated_buyers": 12,
+    "circular": null,
+    "flagged": true
+   }
+  },
+  "2026-08-17": {},
   "2026-08-24": {},
   "2026-08-31": {},
   "2026-09-07": {},
@@ -64,6 +92,9 @@
   }
  },
  "fanout_checked": {
+  "2026-08-03": 11,
+  "2026-08-10": 10,
+  "2026-08-17": 7,
   "2026-08-24": 8,
   "2026-08-31": 7,
   "2026-09-07": 10,
@@ -75,6 +106,33 @@
   "0x6ac87b6a48e329e2557c7f6054ed1518be76fbf9"
  ],
  "filter": {
+  "2026-08-03": {
+   "settlements": 1478932,
+   "funding_lookups": 16,
+   "new_lookups": 7,
+   "lookup_failures": 0,
+   "endpoint_coverage": 0.9016,
+   "c1_payments": 3165,
+   "c2_payments": 44968
+  },
+  "2026-08-10": {
+   "settlements": 2355763,
+   "funding_lookups": 5,
+   "new_lookups": 0,
+   "lookup_failures": 0,
+   "endpoint_coverage": 0.9016,
+   "c1_payments": 3195,
+   "c2_payments": 32271
+  },
+  "2026-08-17": {
+   "settlements": 4156642,
+   "funding_lookups": 2,
+   "new_lookups": 0,
+   "lookup_failures": 0,
+   "endpoint_coverage": 0.9208,
+   "c1_payments": 4122,
+   "c2_payments": 0
+  },
   "2026-08-24": {
    "settlements": 394794,
    "funding_lookups": 267,

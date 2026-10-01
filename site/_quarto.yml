@@ -48,6 +48,8 @@ website:
             text: Buyers
           - href: x402/prices/index.qmd
             text: Prices
+          - href: x402/solana/index.qmd
+            text: Solana
           - href: access/index.qmd
             text: State of AI access
           - href: weekly/index.qmd

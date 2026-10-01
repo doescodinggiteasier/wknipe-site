@@ -65,7 +65,7 @@
   // ---------- lazy script loading ----------
   const loaded = {};
   WK.load = (src) => (loaded[src] ||= new Promise((res, rej) => { const s = document.createElement("script"); s.src = src; s.onload = res; s.onerror = rej; document.head.appendChild(s); }));
-  WK.plotReady = () => WK.load("/assets/vendor/d3-7.min.js").then(() => WK.load("/assets/vendor/plot-0.6.17.min.js")).then(() => WK.load("/assets/wk-charts.js?v=18"));
+  WK.plotReady = () => WK.load("/assets/vendor/d3-7.min.js").then(() => WK.load("/assets/vendor/plot-0.6.17.min.js")).then(() => WK.load("/assets/wk-charts.js?v=19"));
   const jsonCache = {};
   WK.json = (url) => (jsonCache[url] ||= fetch(url).then((r) => { if (!r.ok) throw new Error(url + " " + r.status); return r.json(); }));
 

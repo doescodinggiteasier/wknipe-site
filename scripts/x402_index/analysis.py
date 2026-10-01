@@ -63,7 +63,7 @@ def raw_rows(week):
         if r['hash'] in seen or not r.get('payee'): continue
         seen.add(r['hash'])
         if r['payer'] in common.OURS or r['payee'] in common.OURS: continue
-        rows.append((r['payer'], r['payee'], r['usdc_atomic'], r['selector'], r['ts']))
+        rows.extend([(r['payer'], r['payee'], r['usdc_atomic'], r['selector'], r['ts'])] * int(r.get('n', 1)))  # n: grouped Dune rows
     return rows
 
 

@@ -47,7 +47,7 @@ def main():
         if r['hash'] in seen or r.get('payee') not in target: continue
         seen.add(r['hash'])
         for g, cats in GROUPS.items():
-            if cat.get(r['payee']) in cats: usd[g][r['payer']] += r['usdc_atomic'] / 1e6
+            if cat.get(r['payee']) in cats: usd[g][r['payer']] += r['usdc_atomic'] * int(r.get('n', 1)) / 1e6
     out = {'week': str(week), 'buyer_wallets_looked_up': len(buyers), 'lookup_failures': failed,
            'method': __doc__.strip().splitlines()[2:6], 'groups': {}}
     for g in GROUPS:

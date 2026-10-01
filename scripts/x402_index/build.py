@@ -72,7 +72,7 @@ def load_week(start):
         seen.add(r['hash'])
         if r.get('payer') and r.get('payee') and r.get('usdc_atomic') is not None:
             if r['payer'].lower() in common.OURS or r['payee'].lower() in common.OURS: continue  # our own test traffic
-            rows.append((r['payer'].lower(), r['payee'].lower(), int(r['usdc_atomic'])))
+            rows.extend([(r['payer'].lower(), r['payee'].lower(), int(r['usdc_atomic']))] * int(r.get('n', 1)))  # n: grouped Dune rows
     return rows
 
 

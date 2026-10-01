@@ -84,7 +84,7 @@ def main():
         for line in open(raw):
             if q in line:
                 t = json.loads(line)
-                if t.get('payee') == q: amts[t['usdc_atomic'] / 1e6] += 1
+                if t.get('payee') == q: amts[t['usdc_atomic'] / 1e6] += int(t.get('n', 1))
         r['ticket_tiers'] = ', '.join(f'${k:g}×{v}' for k, v in amts.most_common(4))
     with open(REVIEW, 'w', newline='') as f:
         wr = csv.DictWriter(f, fieldnames=FIELDS); wr.writeheader()

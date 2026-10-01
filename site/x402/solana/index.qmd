@@ -1,0 +1,8 @@
+---
+title: "x402 on Solana"
+subtitle: "The same measurement on the other chain: every USDC payment settled by a known x402 facilitator on Solana, weekly since launch, from Dune. Most of last week's money was one transfer."
+description: "x402 on Solana: weekly USDC volume through the 27 published facilitators since launch, facilitator shares, sellers with buyers and repeat buyers, and the single-buyer filter."
+body-classes: wide
+---
+
+{{< include ../../_gen/solana.md >}}

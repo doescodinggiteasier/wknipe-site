@@ -72,7 +72,7 @@ def week_market(start, cat):
         if r['hash'] in seen: continue
         seen.add(r['hash'])
         if r.get('payer') and r.get('payee') and r.get('usdc_atomic') is not None:
-            rows.append((r['payer'].lower(), r['payee'].lower(), int(r['usdc_atomic']) / 1e6, (r.get('facilitator') or '').lower()))
+            rows.extend([(r['payer'].lower(), r['payee'].lower(), int(r['usdc_atomic']) / 1e6, (r.get('facilitator') or '').lower())] * int(r.get('n', 1)))  # n: grouped Dune rows
     theirs = [(p, q) for p, q, _, _ in rows if p not in common.OURS and q not in common.OURS]
     comp = sccs(set(theirs))
     fates = []

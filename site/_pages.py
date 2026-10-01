@@ -108,6 +108,7 @@ def build_assets(d):
         ('Sellers', 'x402 seller leaderboard with repeat-buyer rate and top-buyer share', '/x402/sellers/'),
         ('Buyers', 'Genuine buyers per week, retention, spend tiers', '/x402/buyers/'),
         ('Prices', 'Posted prices per call, price index, daily price changes', '/x402/prices/'),
+        ('x402 on Solana', 'Solana x402 volume since launch, facilitators and sellers', '/x402/solana/'),
         ('Price comps', 'Comparable x402 listings for a described API: posted prices and whether their sellers have buyers', '/x402/prices/comps'),
         ('Best execution', 'Demo: three x402 endpoints for a task, cheapest verified, best value, most used', '/x402/buy/'),
         ('State of x402, one page', 'One-page printable brief: genuine volume, buyers, sellers, prices', '/x402/brief/'),
@@ -151,6 +152,7 @@ TOOLS = [
     ('Data', 'Sellers', 'Every seller with 5+ genuine buyers, whether those buyers come back, and how much rides on the biggest one.', '/x402/sellers/'),
     ('Data', 'Buyers', 'How many real buyers pay each week, how many come back, and how little most of them spend.', '/x402/buyers/'),
     ('Data', 'Prices', 'What listings ask per call, how prices move, and every posted-price change.', '/x402/prices/'),
+    ('Data', 'Solana', 'x402 on the other chain: weekly volume since launch, facilitators and sellers, from Dune.', '/x402/solana/'),
     ('Tool', 'Best execution', 'A demo: say what your agent needs and see three endpoints, the cheapest that answers, the best value and the most used.', '/x402/buy/'),
     ('Tool', 'Price comps', 'Describe an API and see what comparable listings charge, and whether anyone pays them.', '/x402/prices/comps'),
     ('Tool', 'Endpoint status', 'Does the endpoint answer, and does it charge what it says? Checked every day, politely.', '/x402/status/'),
@@ -632,6 +634,8 @@ def build():
         pass
     import _pages5
     _pages5.build(d)
+    import _pages6
+    _pages6.build(d)
     return 'ok'
 
 
