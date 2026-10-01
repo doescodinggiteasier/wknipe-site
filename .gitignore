@@ -20,6 +20,7 @@ state/x402_week_*/
 .env.*
 local/
 predictions/private/
+share/
 .DS_Store
 
 # ORDER_013: generated at render by site/_pages.py / _pages4.py (never edit by hand)

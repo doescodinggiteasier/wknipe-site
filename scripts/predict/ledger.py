@@ -2,8 +2,11 @@
 
 Public:  predictions/ledger.json          every sealed prediction: id, date, sha256, ots_file, status (+ text once revealed)
          predictions/ots/<id>.ots         the OpenTimestamps proof that the sha256 existed on the sealing date
-Private: local/predictions/<id>.<ext>     the plaintext, gitignored, until reveal.py publishes it
-PREDICT_HOME overrides the repo root (used by the self-test)."""
+Private: local/predictions/<id>.<ext>     the plaintext plus a `salt: <32 hex>` last line (ORDER_022), gitignored,
+                                          until reveal.py publishes it
+         local/predictions/shares.log     who was shown which sealed prediction (share.py)
+         share/<id>_<name>.zip            a private share package: salted text, proof, README (gitignored)
+PREDICT_HOME overrides the repo root (used by test_predict.py)."""
 import datetime as dt, hashlib, json, os, shutil, subprocess
 
 ROOT = os.path.abspath(os.environ.get('PREDICT_HOME') or os.path.join(os.path.dirname(__file__), '..', '..'))

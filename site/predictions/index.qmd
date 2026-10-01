@@ -42,7 +42,7 @@ html`<div class="table-responsive"><table class="table table-sm">
 //| echo: false
 revealed.length ? html`<h2>Revealed</h2>${revealed.map((p) => html`<section class="mb-4">
   <h3 class="h5">${p.id}${p.title ? ": " + p.title : ""}</h3>
-  <p class="small text-muted">Sealed ${fmt(p.date)} · revealed ${fmt(p.revealed_date)} · <a href="data/${p.id}${p.ext}">original file</a></p>
+  <p class="small text-muted">Sealed ${fmt(p.date)} · revealed ${fmt(p.revealed_date)} · <a href="data/${p.id}${p.ext}">original file</a>${p.salted ? " · the last line is the random salt" : ""}</p>
   <blockquote class="blockquote" style="white-space: pre-wrap; font-size: 1rem">${p.text}</blockquote>
   ${p.resolved ? html`<p><strong>Resolved ${fmt(p.resolved_date)}: ${({true: "right", false: "wrong", partial: "partly right"})[p.resolved]}.</strong> ${p.note}</p>` : ""}
 </section>`)}` : html``
@@ -62,6 +62,8 @@ ots verify -f P-2026-10-01-01.md P-2026-10-01-01.ots
 ```
 
 `ots verify` reports the Bitcoin block that commits to the fingerprint, which proves the text existed no later than that block's time. (Full local verification needs a Bitcoin node; the website verifier doesn't.)
+
+**Why each sealed file ends with a salt line.** Before hashing, the seal script adds one line to my private copy: `salt:` followed by 32 random hex characters. Without it, a short prediction ("Yes.", a name, a year) could be recovered by hashing guesses until one matches the public fingerprint. With 128 random bits added, guessing is hopeless, so a sealed text stays private until I reveal it. The salt line is part of the sealed file: it appears in the revealed text, and it has to stay in when you check the fingerprint.
 
 **Why every fingerprint is listed.** Publishing only the predictions that came true would make any forecaster look good. Here every sealed fingerprint appears the day it's made, so a prediction can be revealed late but never hidden. Predictions still unrevealed after their resolution date are flagged as overdue.
 
