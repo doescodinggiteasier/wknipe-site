@@ -1,41 +1,45 @@
 ---
-title: "About"
-description: "Wes Knipe: economist by training, builder by habit. Independent, reproducible data on what AI agents actually buy and pay for."
+title: "About the site, and me"
+description: "Wes Knipe. When software can pay for things on its own, what does it actually buy, and what is it worth? Independent, reproducible data on AI agent payments."
 ---
 
 ```{=html}
 <style>
   #title-block-header .description { display: none; }
   .bio { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; max-width: 680px; }
-  .resume h3 { font-size: 15px; font: 500 12px/1.4 "IBM Plex Mono", monospace; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 32px 0 10px; }
+  .resume h3 { font-size: 15px; font: 500 12px/1.4 "Geist Mono", monospace; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 32px 0 10px; }
   .cv-row { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; margin: 16px 0 4px; }
-  .cv-d { font: 400 13px/1.4 "IBM Plex Mono", monospace; color: var(--muted); white-space: nowrap; }
+  .cv-d { font: 400 13px/1.4 "Geist Mono", monospace; color: var(--muted); white-space: nowrap; }
   .resume ul { margin: 0 0 6px; padding-left: 20px; } .resume li { margin: 2px 0; }
   @media (max-width: 560px) { .cv-row { flex-direction: column; gap: 0; } }
   @media print { .no-print { display: none !important; } }
 </style>
 ```
 
-::: {.lede}
-I'm Wes Knipe, an economist by training and a builder by habit. AI agents have started paying for things on their own, and nobody seemed to be checking the receipts, so I started checking them.
-:::
-
 ::: {.bio}
-I studied quantitative economics at Cal Poly, with a minor in statistics, and spent the years since in early-stage software: customer interviews, go-to-market, a churn model, a product relaunch, and one very memorable first sale. Before that I was a financial advisor, long enough to pass three licensing exams in two months, and short enough to leave for startups and see how products and companies actually get built. These days I consult on analytics projects and build research tools, including Opportunity Atlas, a pipeline whose whole job is catching AI when it is confidently wrong.
+I'm Wes. I built this site as a home for the tools listed on the front page, and as a place to work through a question I find genuinely interesting. AI agents have started paying for things on their own, and I wanted to read the receipts: for patterns, for usable information, and for the occasional oddity.
 
-I do my best work on long, ambiguous problems, and agent payments is one. Most of what gets said about it is volume, and most of the volume turns out to be agents paying themselves. So this site counts what's left after the loops, the self-dealing and the tests come out (about half, as of this week), and every number says what it's out of. A percentage without a denominator is just a mood.
+I studied quantitative economics at Cal Poly, with a minor in statistics. I started out at a couple of financial advisory firms, where I earned my Series 7 and 66, and then moved to early-stage software to see how products and companies are actually built: customer interviews, go-to-market, a churn model, a product relaunch, and one very memorable first sale. These days I consult on analytics projects and build research tools in my spare time.
 
-I live in Santa Cruz. I also hold an FAA drone license, which has come up less often than you'd think.
+I'm drawn to long, ambiguous problems, and agent payments is one of them. Most of what gets said about it concerns volume, and most of that volume turns out to be agents paying themselves. So this site counts what is left once the loops, the self-dealing and the tests are taken out (about half, as of this week), and every figure states what it is a share of. A percentage without a denominator is just a mood.
 :::
 
-## What this site is
+## The question
 
-Independent, reproducible data on what AI agents actually buy and pay for:
+When software can pay for things on its own, what does it actually buy, and what is it worth? Three smaller questions follow from that one, and each part of the site answers one of them:
+
+1. **How much of the money is real?** Agent payments are easy to fake: a wallet can pay itself, or a hundred wallets can be funded from one. The [market](/x402/), [seller](/x402/sellers/) and [buyer](/x402/buyers/) pages count what remains after removing those.
+2. **What does a call cost?** Listings post a price; buyers pay what they pay. [Prices](/x402/prices/) compares the two, and the [endpoint monitor](/x402/status/) checks whether the posted price is the one actually charged.
+3. **Who lets machines in?** For agents to buy content, sites have to let them through. The [AI-access census](/access/) and the [AI-policy checker](/check/) record what the web's largest sites tell AI crawlers.
+
+## What is here
+
+Independent, reproducible data on what AI agents buy and pay for, and a few tools built on it:
 
 - the demand-cleaned x402 index and its [market dashboard](/x402/);
 - [seller](/x402/sellers/), [buyer](/x402/buyers/) and [price](/x402/prices/) statistics;
 - a daily [endpoint monitor](/x402/status/) and a weekly [census of AI-crawler access](/access/);
-- tools such as [Best execution](/x402/buy/), [Price comps](/x402/prices/comps) and the [AI-policy checker](/check/).
+- tools such as [Best execution](/x402/buy/), [Price comps](/x402/prices/comps), [Topics](/x402/gaps/) and the [AI-policy checker](/check/).
 
 [x402scan](https://www.x402scan.com) is the raw explorer. This site is the part after cleaning: what survives, what buyers actually pay, and who comes back for more.
 

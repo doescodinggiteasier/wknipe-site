@@ -13,7 +13,7 @@ from _pages import D, rcsv, rjson, write, f, GLOSSARY  # noqa: E402
 def status_page(d):
     S = d.status
     if not S:
-        write('status.md', md(decide('checking whether an x402 endpoint you plan to buy from actually answers.') + '<p>The first daily check has not run yet.</p>')); return
+        write('status.md', md(decide('I check every listed x402 endpoint, unpaid, to see whether it answers with a valid payment request. Here are the results.') + '<p>The first daily check has not run yet.</p>')); return
     daily = rcsv(D('x402_status', 'status_daily.csv'))
     last = {r['scope']: r for r in daily if r['date'] == S['latest_day']}
     a, p = last.get('all', {}), last.get('priority', {})
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {{
   }});
 }});
 </script>'''
-    out = [decide('checking whether an x402 endpoint you plan to buy from (or compete with) actually answers, and whether it charges what its listing says. A surprising number don\'t.'),
+    out = [decide('Every day I send each listed x402 endpoint one unpaid request and record whether it answers with a valid 402, and whether the price and address match its listing. Here are the results, by seller and by endpoint, plus a box to check one yourself.'),
            freshness(S['latest_day'], 'checked daily', stale_days=3), selfcheck, kpis(cards),
            chart_frame('failures', f'{pct(1 - f(a.get("valid_402") or 0))} of checked listings do not answer a valid 402' + (f'; the most common failure is {esc(top_fail[0])}' if top_fail else ''),
                        f'Endpoints checked in the last 7 days whose latest check failed, by reason. Denominator: {num(S["endpoints_7d"])} endpoints checked.',
@@ -119,7 +119,7 @@ def access_page(d):
     L = A['latest']; sig = {s['signal']: s for s in A['signals']}
     b0 = A['bots'][0]
     anyb = sig['Blocks at least one AI crawler by name']; allt = sig['Blocks all 7 major training crawlers']; llms = sig['Publishes /llms.txt']
-    p402 = sig['Answers our crawler with HTTP 402']; price = sig['States a machine-readable price']
+    p402 = sig['Answers my crawler with HTTP 402']; price = sig['States a machine-readable price']
     lat = rcsv(D('ai_access', 'access_latest.csv'))
     names402 = [r['domain'] for r in lat if r['http_402'] == 'True']
     json.dump({'bots': [{**b, 'label': b['bot']} for b in A['bots']], 'signals': A['signals']}, open(os.path.join(HERE, 'x402', 'data', 'access_charts.json'), 'w'))
@@ -132,7 +132,7 @@ def access_page(d):
              'robots': r['robots'], 'named': int(r['ai_bots_blocked_by_name']), 'blocked': int(r['ai_bots_blocked']) if r['robots'] == 'found' else None,
              'signals': ' '.join(k for k in ('content_signal', 'rsl', 'tdmrep', 'llms_txt', 'http_402') if r[k] == 'True').replace('_', '-') or '–',
              'bots_t': r['blocked_bots']} for r in lat]
-    out = [decide('seeing how much of the top web lets AI crawlers in, which crawlers get shown the door most, and whether anyone is charging for access yet. This is the other half of agent payments: the sites agents would pay.'),
+    out = [decide('Once a week I read the robots.txt and related files of the top 1,000 websites and record what each one tells AI crawlers, and whether any of them ask to be paid. Here is what they say.'),
            freshness(L['date'], 'updates weekly'), kpis(cards),
            chart_frame('bots', f'{b0["bot"]} is the most blocked AI crawler: {pct(b0["named_block"])} of top sites with a robots.txt block it by name',
                        f'Share of the Tranco top {num(L["checked"])} domains with a robots.txt ({num(L["robots_found"])}) whose rules name the crawler and disallow the whole site. {num(L["robots_unreachable"])} list entries are CDN, API or infrastructure hostnames with no reachable robots.txt; they are excluded.',
@@ -218,7 +218,7 @@ def badge_svg(label, value, color):
     """Flat two-part badge (shields.io style), text measured roughly (6.5 px per char at 11px)."""
     lw = int(len(label) * 6.3 + 12); vw = int(len(value) * 6.6 + 12); w = lw + vw
     return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="20" role="img" aria-label="{esc(label)}: {esc(value)}"><title>{esc(label)}: {esc(value)}</title>'
-            f'<clipPath id="r"><rect width="{w}" height="20" rx="3"/></clipPath><g clip-path="url(#r)"><rect width="{lw}" height="20" fill="#4B2E83"/><rect x="{lw}" width="{vw}" height="20" fill="{color}"/></g>'
+            f'<clipPath id="r"><rect width="{w}" height="20" rx="3"/></clipPath><g clip-path="url(#r)"><rect width="{lw}" height="20" fill="#3A3C44"/><rect x="{lw}" width="{vw}" height="20" fill="{color}"/></g>'
             f'<g fill="#fff" text-anchor="middle" font-family="Verdana,DejaVu Sans,sans-serif" font-size="11"><text x="{lw / 2}" y="14">{esc(label)}</text><text x="{lw + vw / 2}" y="14">{esc(value)}</text></g></svg>')
 
 
@@ -232,13 +232,13 @@ def badges(d):
     for s in d.sellers['sellers']:
         L = s['latest']
         val = f"{usd(L['usd'])}/wk · {L['buyers']} buyers" if L else 'no clean volume this week'
-        open(os.path.join(bd, 'seller', s['address'] + '.svg'), 'w').write(badge_svg('x402 clean volume', val, '#7A5E00' if L and L['buyers'] >= 5 else '#4F5160'))
+        open(os.path.join(bd, 'seller', s['address'] + '.svg'), 'w').write(badge_svg('x402 clean volume', val, '#7A5E00' if L and L['buyers'] >= 5 else '#5F616A'))
     for r in rcsv(D('x402_status', 'seller_uptime.csv')):
         v = f(r['valid_402_share'])
         open(os.path.join(bd, 'status', r['pay_to'] + '.svg'), 'w').write(badge_svg('x402 status', f'402 OK {pct(v)} · 7d', '#1E6B45' if v >= 0.9 else '#7A5E00' if v > 0 else '#A3261E'))
     ex = next((s for s in d.sellers['sellers'] if s['qualifies_latest'] and s['label']), d.sellers['sellers'][0])
     q = ex['address']
-    out = f'''{decide('showing buyers and agents independent, checkable evidence of your demand, your uptime or your AI-access policy. Anyone can claim traction; a badge that updates itself is harder to fake.')}
+    out = f'''{decide("Small SVG badges that show a seller's genuine volume, an endpoint's uptime, or a website's AI policy. They update themselves from the same public data as the rest of the site.")}
 <p>Badges are plain SVG files, no scripts, no tracking. Seller and status badges are rebuilt from the public data every week and every day; the AI-policy badge is computed live by the API (cached 24 h).</p>
 <div class="card-wk" style="display:grid;gap:12px;margin:16px 0 28px">
 <label for="badge-q" style="font-weight:600">Seller address (0x…) or website domain</label>
@@ -283,9 +283,9 @@ def og_images(d):
         'buyers': ('x402 buyers', num(int(bw['active_buyers'])), f'genuine buyers in the week of {week_label(lw)} · {pct(int(bw["new_buyers"]) / int(bw["active_buyers"]))} new'),
         'prices': ('x402 prices', f'{pa.get("ratio", 0):.1f}× posted' if pa.get('ratio') else 'Posted vs paid', f'median paid {usd(pa.get("paid_median_usd"), True)} vs posted {usd(pa.get("posted_median_usd"), True)} per call'),
         'buy': ('Best execution', 'Cheapest verified', 'x402 endpoint for any task an agent needs done · ranked by price, 402 health and real buyers'),
-        'gaps': ('Where to build', f'{pct(conv)} convert', 'of listed x402 sellers get 5+ genuine buyers · which topics beat that'),
+        'gaps': ('x402 topics', f'{pct(conv)}', 'of listed x402 sellers have 5+ genuine buyers · by topic'),
         'brief': ('State of x402', usd(clean * 52) + ' / yr', 'demand-cleaned x402 spend, latest week × 52 · one printable page'),
-        'comps': ('Price comps', f'{num(P.get("listings"))} listings', 'compare your API price and see whether comparables get genuine buyers'),
+        'comps': ('Price comps', f'{num(P.get("listings"))} listings', 'comparable x402 listings, their prices, and whether their sellers have buyers'),
     }
     if S:
         a = next((r for r in rcsv(D('x402_status', 'status_daily.csv')) if r['date'] == S['latest_day'] and r['scope'] == 'all'), None)
@@ -294,16 +294,16 @@ def og_images(d):
         s = {x['signal']: x for x in A['signals']}
         cards['access'] = ('State of AI access', pct(s['Blocks at least one AI crawler by name']['share']), f'of top sites block an AI crawler by name · {s["States a machine-readable price"]["k"]} state a price')
     tmp = os.path.join(og, '_tmp'); os.makedirs(tmp, exist_ok=True)
-    font = 'file://' + os.path.join(HERE, 'fonts', 'plex-sans-latin-var.woff2')
+    font = 'file://' + os.path.join(HERE, 'fonts', 'geist-latin-var.woff2')
     made = 0
     for k, (eyebrow, big, sub) in cards.items():
         html_s = f'''<!doctype html><html><head><meta charset="utf-8"><style>@font-face{{font-family:Plex;src:url("{font}") format("woff2");font-weight:100 700}}
-html,body{{margin:0;width:1200px;height:630px;background:#F1F2F4;font-family:Plex,sans-serif;color:#111114}}
+html,body{{margin:0;width:1200px;height:630px;background:#F7F7F8;font-family:Plex,sans-serif;color:#141416}}
 .w{{position:absolute;top:0;left:0;width:1200px;height:630px;padding:72px 80px;box-sizing:border-box;display:flex;flex-direction:column}}
-.e{{font:600 26px Plex;color:#7A5E00;letter-spacing:.06em;text-transform:uppercase}}.b{{font:600 124px/1.05 Plex;letter-spacing:-.02em;margin:40px 0 18px;color:#4B2E83}}
-.r{{width:120px;height:4px;background:#C9A227;margin-bottom:28px}}.s{{font:500 34px/1.35 Plex;color:#4F5160;max-width:1000px}}
-.f{{margin-top:auto;display:flex;justify-content:space-between;font:600 28px Plex}}.f span:last-child{{color:#4F5160;font-weight:500}}</style></head>
-<body><div style="position:absolute;top:0;left:0;width:1200px;height:18px;background:#33205F;border-bottom:4px solid #C9A227"></div><div class="w"><div class="e">{esc(eyebrow)}</div><div class="b">{esc(big)}</div><div class="r"></div><div class="s">{esc(sub)}</div><div class="f"><span>wknipe.com</span><span>Data through {esc(d.through)}</span></div></div></body></html>'''
+.e{{font:600 26px Plex;color:#5F616A;letter-spacing:.1em;text-transform:uppercase}}.b{{font:600 124px/1.05 Plex;letter-spacing:-.04em;margin:40px 0 18px;color:#141416}}
+.r{{width:120px;height:3px;background:#D4B860;margin-bottom:28px}}.s{{font:500 34px/1.35 Plex;color:#5F616A;max-width:1000px}}
+.f{{margin-top:auto;display:flex;justify-content:space-between;font:600 28px Plex}}.f span:last-child{{color:#5F616A;font-weight:500}}</style></head>
+<body><div class="w"><div class="e">{esc(eyebrow)}</div><div class="b">{esc(big)}</div><div class="r"></div><div class="s">{esc(sub)}</div><div class="f"><span>wknipe.com</span><span>Data through {esc(d.through)}</span></div></div></body></html>'''
         hp = os.path.join(tmp, f'{k}.html'); open(hp, 'w').write(html_s)
         if chrome:
             try:

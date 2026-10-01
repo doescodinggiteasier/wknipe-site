@@ -3,7 +3,7 @@
 
 Per run: share of checked Tranco domains whose robots.txt blocks each named AI crawler (fully; partial blocks counted
 separately), share blocking any / all training crawlers, and adoption of Content-Signal, RSL, TDMRep, llms.txt, plus
-domains answering our identified crawler with HTTP 402 or a machine-readable price.
+domains answering my identified crawler with HTTP 402 or a machine-readable price.
 History is seeded with the ORDER_004 Common Crawl census (CC-MAIN-2026-39, 5% robots.txt sample, 2.67M hosts) for the
 metrics measured the same way; it is a different population (all crawled hosts, not the top sites), marked as a
 method break on the page.
@@ -90,7 +90,7 @@ def main():
     signals = [{'signal': lab, 'share': lr[k]['value'], 'n': lr[k]['n'], 'k': round(lr[k]['value'] * lr[k]['n']), 'cc_sample': cc.get(k)} for k, lab in
                (('robots_found', 'Has a robots.txt'), ('any_ai_bot_blocked', 'Blocks at least one AI crawler by name'), ('all_training_bots_blocked', 'Blocks all 7 major training crawlers'),
                 ('content_signal', 'Content-Signal in robots.txt'), ('llms_txt', 'Publishes /llms.txt'), ('tdmrep', 'TDMRep (/.well-known/tdmrep.json)'),
-                ('rsl', 'RSL licence link'), ('machine_readable_price', 'States a machine-readable price'), ('http_402', 'Answers our crawler with HTTP 402'))]
+                ('rsl', 'RSL licence link'), ('machine_readable_price', 'States a machine-readable price'), ('http_402', 'Answers my crawler with HTTP 402'))]
     json.dump({'runs': meta, 'latest': last, 'bots': bots, 'signals': signals, 'history': rows}, open(os.path.join(OUT, 'access.json'), 'w'))
     print(json.dumps({'latest': last, 'top_bots': bots[:5], 'signals': signals}, indent=1))
 

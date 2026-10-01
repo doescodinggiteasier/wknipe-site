@@ -30,7 +30,7 @@ The scenarios are balanced across which option is optimal: ${Object.entries(doc.
 
 Agents are starting to hold budgets: paying per call for data and content (see the [x402 Clean Index](../x402/index.qmd)), and deciding whether a source is worth its price. Today's agent-payment products control spending with caps, allowlists and human approvals, not with any check that a purchase is worth it. How well the model itself weighs value is therefore the whole policy. This board shows which models can be trusted with that judgement, what each costs per decision, and how noisy each one is on identical inputs.
 
-## What we found so far (board of 30 September 2026)
+## What I found so far (board of 30 September 2026)
 
 - **Most frontier models do the arithmetic.** GPT-6.1 Sol was perfect on all 144 decisions; Gemini 3.8 Flash and DeepSeek V4 Pro were close. Claude Sonnet 5.5 was the frontier exception: it under-bought and flipped on identical prompts about a quarter of the time.
 - **Cheap models vary widely.** Among small and budget models, the share of optimal choices ranges from about 13% to 85%. GPT-6 Luna was the only budget model near the frontier group, at about a quarter of a dollar per 1,000 decisions.

@@ -24,7 +24,7 @@ WEEKCACHE = os.path.join(common.STATE, 'x402_index')
 CATS = common.CATEGORIES
 MIN_BUYERS = 5  # same threshold as the seller leaderboard
 FATES = ['ours', 'c1', 'c2', 'fanout', 'dust', 'clean']
-FATE_LABEL = {'ours': 'Our own test and API payments', 'c1': 'Closed loops and self-payments',
+FATE_LABEL = {'ours': 'My own test and API payments', 'c1': 'Closed loops and self-payments',
               'c2': 'Funding-linked payer and seller', 'fanout': 'Fan-out from shared funders',
               'dust': 'Sellers with a single buyer', 'clean': 'Demand-cleaned'}
 # half-decade log bins for payment sizes and spend per buyer, $0.0001 .. $100k

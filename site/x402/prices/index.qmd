@@ -1,6 +1,6 @@
 ---
 title: "x402 prices"
-subtitle: "What paid API listings ask per call versus what buyers actually pay. The two numbers are not close."
+subtitle: "What x402 listings ask per call, what buyers actually pay, and every posted-price change since daily snapshots began. The two numbers are not close."
 description: "x402 posted vs paid prices per call by category, posted price ranges, a Jevons price index and daily price changes."
 body-classes: wide
 image: /og/prices.png

@@ -1,6 +1,6 @@
 ---
 title: "Badges"
-subtitle: "Embeddable SVG badges that keep themselves up to date: a seller's real volume, an endpoint's 402 status, a publisher's AI policy."
+subtitle: "Small SVG badges showing a seller's genuine volume, an endpoint's uptime or a website's AI policy. They update themselves from the same public data."
 description: "Embeddable badges for x402 sellers (clean volume, genuine buyers), endpoints (402 status) and publishers (AI-access policy)."
 ---
 

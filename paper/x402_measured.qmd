@@ -8,7 +8,7 @@ date: 2026-09-30
 date-format: long
 abstract: |
   x402 lets software pay for an HTTP resource in stablecoins within the request. Raw trackers report its volume as settled;
-  earlier work shows most of that is manufactured. We build a weekly, reproducible, demand-cleaned index of x402 payments
+  earlier work shows most of that is manufactured. I build a weekly, reproducible, demand-cleaned index of x402 payments
   on Base: settlements from 128 known facilitators, minus self-payments, closed loops, funding-linked pairs and
   single-buyer dust, with every seller classified by what it sells. Over {{< meta n.weeks >}} weeks
   ({{< meta n.first_week >}} to {{< meta n.last_week_end >}}), {{< meta n.clean_share_total >}} of
@@ -73,11 +73,11 @@ rule, with its code and intermediate state public; and it **classifies sellers b
 
 ## Data and filters {#sec-data}
 
-**Settlements.** For each Monday-to-Sunday UTC week, we collect every successful transaction sent by 128 known x402
+**Settlements.** For each Monday-to-Sunday UTC week, I collect every successful transaction sent by 128 known x402
 facilitator addresses on Base, from the public Blockscout API, and keep USDC `transferWithAuthorization` calls (both
 signature variants). The payer is the authoriser, the seller the recipient, the amount the USDC value. Across the
 {{< meta n.weeks >}} weeks this gives {{< meta n.settlements_total >}} payer-resolved settlements worth
-{{< meta n.raw_total >}}. Payments to or from our own test addresses are dropped first.
+{{< meta n.raw_total >}}. Payments to or from my own test addresses are dropped first.
 
 **Manufacture filter (after @d05).** Two rules, applied in order, each a lower bound on manufactured activity:
 
@@ -113,7 +113,7 @@ by two or more genuine buyers. Cleaned value per week ranged from {{< meta n.cle
 ## What sellers sell {#sec-categories}
 
 Every seller gets one category from the text of its listings (resource URL, name, tags, description) in every Bazaar
-snapshot we hold, plus an earlier x402scan pull. A small language model (Mistral Small 3.2, with Gemini 2.5 Flash Lite
+snapshot I hold, plus an earlier x402scan pull. A small language model (Mistral Small 3.2, with Gemini 2.5 Flash Lite
 as a fallback) assigns *content*, *data*, *search*, *compute* or *other*; hand labels override it. Against
 {{< meta n.clf_o2_n >}} earlier hand labels, the published labels agree on content / data / neither for
 {{< meta n.clf_o2_acc >}} of sellers. In a blind hand check of {{< meta n.clf_blind_n >}} new sellers, they agreed on

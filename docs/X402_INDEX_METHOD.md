@@ -22,7 +22,7 @@ All inputs are public and free: Blockscout (Base), the Coinbase CDP Bazaar disco
      - the money is either **circular** (the seller's sweeps go to one of those funders) or **isolated** (at least 10 of the 12 sampled buyers pay no other seller that week).
    - **Why shared funding alone isn't enough:** it usually marks one operator running an agent fleet, which is real demand. On 2026-09-30, the buyers of most shared-funder sellers paid them 6–340 times each and also bought from other sellers.
    - Flagged sellers leave the cleaned set. Results are in `state/x402_index/fanout_<week>.json` and `headline.json` → `fanout_flagged`.
-3. **Our own traffic:** payments to or from our addresses (`common.OURS`) are dropped before any filter:
+3. **My own traffic:** payments to or from my addresses (`common.OURS`) are dropped before any filter:
    - the index API's payTo `0x6ac8…fbf9`;
    - the agent test wallet `0x5917…c013`.
 4. **S385 dust filter:** after step 1, drop every seller paid by exactly one distinct buyer in the week.
@@ -36,7 +36,7 @@ Every seller gets exactly one of the categories below. The model definitions are
 - **compute:** the seller runs something on the buyer's input (LLM inference, generation, transcription, conversion, storage, utilities such as DNS or email checks).
 - **other:** mints, memes, games, commerce, swaps, agent infrastructure (attestation, verification, trust scores), tests.
 - **large_ticket (unidentified):** an unlisted seller whose median cleaned payment is above the 99th percentile of posted per-call prices. This is a label from price alone, not an identification; see the unlisted-seller review below.
-- **unclassed:** the seller has no listing in any snapshot we hold.
+- **unclassed:** the seller has no listing in any snapshot I hold.
 
 **Evidence and precedence.**
 - Evidence is the text (URL, name, category, tags, description) of every resource that names the seller as `payTo` on Base, in every Bazaar snapshot in `state/bazaar/` plus the ORDER_001 x402scan pull.
@@ -107,7 +107,7 @@ Every seller gets exactly one of the categories below. The model definitions are
 ## 4. Prices
 - **Posted:** every Bazaar snapshot is one observation for the week that contains its date. Price = the exact-scheme Base USDC `amount` (atomic ÷ 10⁶), per resource (resource URL + payTo, median if a pair repeats).
   - "upto", batch and other schemes are excluded; so are other chains and assets.
-  - Per category we report the resource count, median and IQR.
+  - Per category I report the resource count, median and IQR.
   - The index is chain-linked Jevons: index_t = index_{t−1} × geometric mean of p_t/p_{t−1} over resources listed with a positive price in both weeks. The first week = 100.
   - Churn is reported as `basket_items` (continuing), `entered`, `exited`.
 - **Transacted:** per cleaned seller, the median payment in the week, with the same chain-linked Jevons over sellers paid in consecutive weeks. It can be backfilled from chain data, unlike posted prices. It moves with a seller's product mix as well as its prices.
@@ -125,7 +125,7 @@ Every seller gets exactly one of the categories below. The model definitions are
 - **The manufacture filter is a lower bound.**
   - C1 sees only loops closed on the settlement layer inside one week.
   - C2 sees only funding links among the ~300 busiest addresses, and only in each address's newest 50 transfers at lookup time, not at the week's date.
-  - So the cleaned figures are an **upper bound on genuine demand**. D05 itself found 84.98% of Base x402 settlements operator-internal; we remove far less.
+  - So the cleaned figures are an **upper bound on genuine demand**. D05 itself found 84.98% of Base x402 settlements operator-internal; this index removes far less.
 - **Dust is a crude proxy.** A real seller with one real buyer in a week is dropped. A manufacturer using two wallets is kept.
 - **Categories are inferred from sellers' own listing text by a model** (80% on content / data / neither in the blind check). Sellers with no listing are unclassed.
   - In 2026-09-21, unclassed carried **$50,365 of $74,798** cleaned.

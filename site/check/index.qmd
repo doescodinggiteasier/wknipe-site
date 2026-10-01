@@ -7,7 +7,7 @@ body-classes: wide
 ```{=html}
 <style>
   .ck-form { display: flex; gap: .5rem; flex-wrap: wrap; margin: 1.25rem 0 .5rem; }
-  .ck-form input { flex: 1 1 16rem; min-width: 0; font: 400 17px "IBM Plex Mono", monospace; padding: 8px 0;
+  .ck-form input { flex: 1 1 16rem; min-width: 0; font: 400 17px "Geist Mono", monospace; padding: 8px 0;
     border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background: transparent; color: var(--ink); }
   .ck-form input:focus { outline: none; border-bottom-color: var(--accent); }
   .ck-form button { padding: 8px 16px; border: 1px solid var(--ink); border-radius: 0; background: var(--ink); color: var(--bg); font-weight: 500; }
@@ -15,21 +15,21 @@ body-classes: wide
   .ck-card { border-top: 1px solid var(--line); padding: 24px 0 0; margin: 24px 0 48px; }
   .ck-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
   .ck-head h2 { margin: 0; font-size: 1.5rem; border: 0; overflow-wrap: anywhere; }
-  .ck-meta { font: .75rem/1.4 "IBM Plex Mono", monospace; opacity: .7; }
+  .ck-meta { font: .75rem/1.4 "Geist Mono", monospace; opacity: .7; }
   .ck-verdict { font-size: 1.05rem; margin: .75rem 0 1rem; }
   .ck-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .6rem; margin-bottom: 1rem; }
   .ck-tile { border-top: 1px solid var(--line); padding-top: .4rem; }
-  .ck-tile .k { font: 400 13px/1.4 "IBM Plex Mono", monospace; color: var(--muted); }
+  .ck-tile .k { font: 400 13px/1.4 "Geist Mono", monospace; color: var(--muted); }
   .ck-tile .v { font-weight: 500; overflow-wrap: anywhere; }
   .ck-tile.yes { border-top-color: var(--accent); }
-  .chip { display: inline-block; font: 500 .72rem/1 "IBM Plex Mono", monospace; padding: .28rem .45rem; border-radius: .25rem; white-space: nowrap; }
+  .chip { display: inline-block; font: 500 .72rem/1 "Geist Mono", monospace; padding: .28rem .45rem; border-radius: .25rem; white-space: nowrap; }
   .chip.blocked { background: #f6d5d0; color: #7a1f12; } .chip.partial { background: #f7e7c4; color: #6b4a00; } .chip.allowed { background: #d3eee3; color: #0b5238; }
   body.quarto-dark .chip.blocked { background: #5a221b; color: #ffd9d2; } body.quarto-dark .chip.partial { background: #4d3b12; color: #ffe7b0; }
   body.quarto-dark .chip.allowed { background: #173f31; color: #c9f2e1; }
   .ck-bots { width: 100%; border-collapse: collapse; font-size: .9rem; }
   .ck-bots th, .ck-bots td { padding: .4rem .5rem; border-bottom: 1px solid var(--bs-border-color); text-align: left; vertical-align: top; }
-  .ck-bots th { font: 400 13px/1.4 "IBM Plex Mono", monospace; color: var(--muted); }
-  .ck-bots td.tok { font-family: "IBM Plex Mono", monospace; font-size: .82rem; overflow-wrap: anywhere; }
+  .ck-bots th { font: 400 13px/1.4 "Geist Mono", monospace; color: var(--muted); }
+  .ck-bots td.tok { font-family: "Geist Mono", monospace; font-size: .82rem; overflow-wrap: anywhere; }
   .ck-bots .via { font-size: .75rem; opacity: .7; }
   .ck-scroll { overflow-x: auto; }
   .ck-card h3 { font-size: 1rem; margin: 1.4rem 0 .4rem; }

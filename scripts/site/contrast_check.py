@@ -50,7 +50,7 @@ PAIRS = [
     ('line', 'surface', None, 'hairlines (decorative)'),
     ('nav-fg', 'nav-bg', 4.5, 'header links'), ('nav-hl', 'nav-bg', 4.5, 'header wordmark, active link'),
     ('green', 'surface', 4.5, 'green accent text (OK pills, positive deltas)'), ('green', 'green-tint', 4.5, 'OK pill text'),
-    ('gold', 'nav-bg', None, 'header gold rule (decorative)'),
+    ('accent', 'surface', 3.0, 'accent underlines, selected-chip ring, focus (UI)'), ('accent', 'bg', 3.0, 'accent underlines on page (UI)'),
 ]
 
 

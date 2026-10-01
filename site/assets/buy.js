@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const used = rel.slice().sort((a, b) => b.buyers - a.buyers)[0];
     const value = rel.filter((h) => h.buyers >= MIN && h.state === "verified" && h.price > 0).sort(byPrice)[0];
     $("#buy-picks").innerHTML = [
-      pickCard("cheap", "Cheapest verified", cheap, cheap ? `Lowest listed price among relevant endpoints that passed our check on ${esc(hday)}.` : ""),
+      pickCard("cheap", "Cheapest verified", cheap, cheap ? `Lowest listed price among relevant endpoints that passed my check on ${esc(hday)}.` : ""),
       pickCard("value", "Best value", value, value ? `Cheapest verified endpoint whose seller had ${MIN}+ genuine buyers last week.` : ""),
       pickCard("used", "Most used", used && used.buyers ? used : null, used && used.buyers ? `Its seller had the most genuine buyers last week (${fmt.int(used.buyers)}), across all its endpoints.` : ""),
     ].join("");

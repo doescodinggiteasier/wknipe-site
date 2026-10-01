@@ -1,6 +1,6 @@
 ---
 title: "x402 market"
-subtitle: "What AI agents actually pay for on x402 (Base), after the wash trading, the single-customer shops and the tests come out. Every chart says what it is out of."
+subtitle: "Weekly numbers on x402, the protocol AI agents use to pay for things, after removing the payments that aren't real demand. Every chart says what it is out of and has its data underneath."
 description: "x402 market dashboard: demand-cleaned volume, the raw-to-clean waterfall, category mix, seller concentration, buyers, ticket sizes, facilitator share and movers."
 body-classes: wide
 image: /og/market.png

@@ -3,7 +3,7 @@
 - /x402/buy/    Best execution: for a task an agent needs done, the cheapest listing that verifiably answers 402 at its
                 listed price, and which comparable sellers real buyers actually use. (The buy-side router idea: the price
                 index as the router's decision input.) Client: assets/buy.js.
-- /x402/gaps/   Where to build: per listing topic, how many sellers compete and what share of them get 5+ genuine buyers.
+- /x402/gaps/   Topics: per listing topic, how many sellers compete and what share of them get 5+ genuine buyers.
 - /x402/brief/  State of x402 on one printable page, every number computed from the data files.
 - data:         /x402/data/health.json (latest endpoint check per listing URL), /x402/data/gaps.json;
                 a lighter ⌘K listings index (one entry per host instead of per host + task).
@@ -107,23 +107,23 @@ def gaps_page(d, G):
     under = [r for r in T if r['hit_rate'] >= 2 * base and r['sellers'] <= statistics.median(x['sellers'] for x in T)]
     cards = [stat_card('Sellers listed on Base', num(G['sellers']), foot=f'Bazaar snapshot {G["snapshot"]}', tip='Distinct Base payTo addresses with at least one listing in the Coinbase CDP Bazaar.'),
              stat_card(f'…with {MIN}+ genuine buyers', pct(base), foot=f'{num(G["sellers_5"])} sellers, week of {week_label(G["week"])}', tip='The base rate: share of listed sellers whose payTo had at least 5 genuine buyers in the latest index week.'),
-             stat_card('Best-converting topic', esc(best['label'].split(' &')[0].split(',')[0]), foot=f'{pct(best["hit_rate"])} of {best["sellers"]} sellers', tip='Highest share of sellers with 5+ genuine buyers, among topics with at least 10 sellers.'),
+             stat_card('Highest share with buyers', esc(best['label'].split(' &')[0].split(',')[0]), foot=f'{pct(best["hit_rate"])} of {best["sellers"]} sellers', tip='Highest share of sellers with 5+ genuine buyers, among topics with at least 10 sellers.'),
              stat_card('Most crowded topic', esc(crowd['label'].split(' &')[0].split(',')[0]), foot=f'{num(crowd["sellers"])} sellers, {pct(crowd["hit_rate"])} get buyers', tip='Most sellers whose main topic this is.')]
     uline = ', '.join(f'{esc(r["label"].lower())} ({pct(r["hit_rate"])} of {r["sellers"]})' for r in under[:4])
-    title = f'{esc(best["label"])} converts best: {pct(best["hit_rate"])} of its sellers get {MIN}+ genuine buyers, against {pct(base)} across all listed sellers'
+    title = f'{esc(best["label"])} has the highest share with buyers: {pct(best["hit_rate"])} of its sellers get {MIN}+ genuine buyers, against {pct(base)} across all listed sellers'
     cols = [{'k': 'label', 'label': 'Topic'}, {'k': 'sellers', 'label': 'Sellers', 't': 'int', 'r': 1}, {'k': 'hit_rate', 'label': f'Get {MIN}+ buyers', 't': 'pct', 'r': 1},
             {'k': 'buyer_seller_pairs', 'label': 'Genuine buyers (sum)', 't': 'int', 'r': 1}, {'k': 'clean_usd', 'label': 'Clean $ / week', 't': 'usd', 'r': 1},
             {'k': 'posted_median_usd', 'label': 'Median ask', 't': 'price', 'r': 1}, {'k': 'paid_median_usd', 'label': 'Median paid', 't': 'price', 'r': 1},
             {'k': 'listings', 'label': 'Listings', 't': 'int', 'r': 1}, {'k': 'ex', 'label': 'Typical listings', 't': 'html'}]
     trows = [{**r, 'ex': '<span class="sub">' + esc(' · '.join(r['examples'][:3])) + '</span>', 'ex_t': ' · '.join(r['examples']), 'ex_s': r['label'],
               'hit_rate': r['hit_rate']} for r in G['topics']]
-    out = [decide('choosing what to build or list next. Some kinds of paid API have sellers real buyers use; others are crowded with listings nobody pays for. Better to find out here than after launch.'),
+    out = [decide('Every x402 listing, grouped by what it does, with how many sellers offer it and what share of them have five or more genuine buyers.'),
            freshness(d.through, f'listings snapshot {G["snapshot"]} · buyers week of {week_label(G["week"])}'), kpis(cards),
            chart_frame('gap-map', title,
                        f'Each dot is a listing topic. Across: sellers whose main topic it is (competition, log scale). Up: share of them with {MIN}+ genuine buyers in the week of {week_label(G["week"])} (demand that reaches sellers). '
                        f'Dot size: genuine buyers summed over those sellers. Dashed line: the {pct(base)} base rate. Topics with fewer than 10 sellers are left off the chart.',
                        'gapmap', '/x402/data/gaps.json', csv='/x402/data/gaps.csv', through=d.through, page='/x402/gaps/',
-                       note='Upper left: few sellers, and most of them get buyers, so there may be room for one more. Lower right: a crowded room where nobody is buying.'),
+                       note='Upper left: few sellers, most of them with genuine buyers. Lower right: many sellers, few of them with buyers.'),
            (f'<p>Above the base rate with fewer sellers than the median topic: {uline}. ' if under else '<p>')
            + f'Lowest conversion: {esc(worst["label"].lower())}, where {pct(worst["hit_rate"])} of {worst["sellers"]} sellers get {MIN}+ buyers.</p>',
            '<h2 id="topics">Every topic</h2>',
@@ -139,7 +139,7 @@ def gaps_page(d, G):
 def buy_page(d, hday, hn):
     P = d.prices
     EX = ['web search', 'scrape web page to markdown', 'token price', 'weather forecast', 'llm chat completion', 'company enrichment', 'sec filings', 'twitter search', 'image generation', 'news headlines']
-    ui = f'''{decide('picking which x402 endpoint your agent should call: the cheapest one that verifiably answers at its listed price, and the one real buyers already use. Think of it as comparison shopping for robots.')}
+    ui = f'''{decide('A small search tool: describe a task and it ranks the x402 endpoints that do it by price, by whether they passed my latest check, and by whether real buyers use them.')}
 {freshness(d.through, f"listings {P['snapshot']} · endpoint checks {hday or '–'} · buyers week of {week_label(P['week'])}")}
 <form id="buy-form" class="card-wk" role="search" style="display:grid;gap:12px;margin-bottom:20px" onsubmit="return false">
 <label for="buy-q" style="font-weight:600">What does your agent need done?</label>
@@ -163,7 +163,7 @@ def buy_page(d, hday, hn):
 <li><b>Score</b> = relevance, then +verified, +used by buyers, and a price term (cheaper is better, on a log scale). Failed checks sink to the bottom.</li>
 <li>Nothing here is paid placement, and I never call a paid endpoint. Posted prices can change at any time; the live 402 is the price you actually pay.</li>
 </ul>
-<p class="meta">Selling instead of buying? <a href="/x402/prices/comps">Price comps</a> shows what comparable listings charge; <a href="/x402/gaps/">Where to build</a> shows which topics convert.</p>
+<p class="meta">Related: <a href="/x402/prices/comps">Price comps</a> shows what comparable listings charge; <a href="/x402/gaps/">Topics</a> groups every listing by what it does.</p>
 <script defer src="/assets/buy.js?v={int(dt.datetime.now().timestamp())}"></script>'''
     write('buy.md', md(ui))
 
@@ -202,7 +202,7 @@ def brief_page(d):
                    + (f'The {num(big_b)} wallets spending $100+ bring {pct(big_usd / tier_usd)} of clean dollars.' if big_b and tier_usd else '')),
         ('Sellers', f'<b>{num(con["sellers"])} sellers</b> with 2+ genuine buyers. The top 10 hold {pct(con["top10_share"])} of clean dollars (HHI {num(con["hhi"])}, the equivalent of {con["effective_sellers"]:.1f} equal-sized sellers).'),
         ('What sells', (f'{esc(CAT_LABEL.get(ctop[0], ctop[0]))} is the largest category at {usd(ctop[1])} ({pct(ctop[1] / clean)}). ' if ctop else '')
-                   + (f'Content + data, the categories an AI-content market would need, is {usd(cd)} ({pct(cd / clean, 1)}), {signed_pct(g4)} over four weeks.' if cd is not None else '')),
+                   + (f'Content + data (articles, reports, prices and records) is {usd(cd)} ({pct(cd / clean, 1)}), {signed_pct(g4)} over four weeks.' if cd is not None else '')),
         ('Prices', f'The median listing asks {usd(pv.get("posted_median_usd"), True)} per call; the median clean payment is {usd(pv.get("paid_median_usd"), True)}: buyers pay about {pv.get("ratio", 0):.1f}× the asking median.' if pv else ''),
         ('Infrastructure', (f'{esc(ftop[0].title())} settles {pct(ftop[1] / clean)} of clean dollars. ' if ftop else '')
                    + (f'{pct(f(st["valid_402"]))} of {num(st["checked"])} listed endpoints checked on {st["date"]} answer a valid 402; {pct(f(st["price_match_of_valid"]))} of those at their listed price.' if st else '')),

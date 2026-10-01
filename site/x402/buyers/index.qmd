@@ -1,6 +1,6 @@
 ---
 title: "x402 buyers"
-subtitle: "How many real buyers pay on x402 each week, whether they come back, and how much they spend. Aggregates only; nobody gets named."
+subtitle: "Who pays on x402 each week: how many genuine buyer wallets there are, how many come back, and how little most of them spend. Aggregates only; nobody gets named."
 description: "Genuine x402 buyers per week: new vs returning, retention cohorts, spend tiers and what each tier buys."
 body-classes: wide
 image: /og/buyers.png

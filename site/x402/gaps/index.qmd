@@ -1,6 +1,6 @@
 ---
-title: "Where to build"
-subtitle: "Which kinds of paid API have sellers real buyers use, and which are crowded with listings nobody pays for."
+title: "Topics"
+subtitle: "Every x402 listing grouped by what it does, with how many sellers offer each kind and what share of them have genuine buyers."
 description: "x402 supply vs demand by listing topic: sellers per topic and the share that get 5+ genuine buyers."
 body-classes: wide
 image: /og/gaps.png

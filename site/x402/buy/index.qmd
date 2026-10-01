@@ -1,6 +1,6 @@
 ---
 title: "Best execution"
-subtitle: "Tell it what your agent needs. It finds the cheapest x402 endpoint that actually answers at its listed price, and the one real buyers already use."
+subtitle: "Describe a task and this ranks the x402 endpoints that do it by price, by whether they passed my latest check, and by whether real buyers use them. Comparison shopping, for robots."
 description: "Buy-side router for x402: rank paid API endpoints for a task by price, verified 402 health and genuine buyers."
 body-classes: wide
 image: /og/buy.png

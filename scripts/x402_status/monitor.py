@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""ORDER_013 Phase 4: x402 endpoint status monitor (wknipe.com/x402/status/). Unpaid: we never send a payment.
+"""ORDER_013 Phase 4: x402 endpoint status monitor (wknipe.com/x402/status/). Unpaid: it never sends a payment.
 
 One request per endpoint per check, with an honest user agent, the listing's declared HTTP method (POST gets an empty
 JSON body), no payment header, 10 s timeout, at most 64 KB read, at most 3 redirects, one request at a time per host

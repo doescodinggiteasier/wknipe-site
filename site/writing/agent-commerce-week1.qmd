@@ -62,7 +62,7 @@ Plot.plot({
 **TODO(Wes).** Facts you can use, all sourced:
 
 - D05 (arXiv 2607.12575) finds about 85% of Base x402 settlements are operator-internal.
-- Our lower-bound filter removes much less; see the method box.
+- My lower-bound filter removes much less; see the method box.
 - One seller in week 21 Sep had 874 one-time buyers, 10 of 12 sampled funded by the same three wallets (ORDER_010 dig).
 
 ::: {.callout-note collapse="true"}

@@ -1,6 +1,6 @@
 ---
 title: "x402 endpoint status"
-subtitle: "Do listed x402 endpoints answer with a valid 402 at the price they list? Checked daily, unpaid, and politely."
+subtitle: "Every day I send each listed x402 endpoint one unpaid request and check that it answers with a valid 402 at its listed price. Here are the results, and a box to check one yourself."
 description: "Daily x402 endpoint monitor: share of Bazaar listings answering a valid 402, price and payTo match, latency, per-seller status badges."
 body-classes: wide
 image: /og/status.png
