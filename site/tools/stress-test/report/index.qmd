@@ -1,4 +1,5 @@
 ---
+draft: true   # ORDER_015: unpublished until Gate A2 + Wes go-ahead
 title: "Stress-test report"
 description: "An idea stress-test report."
 body-classes: wide

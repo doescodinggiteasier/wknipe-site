@@ -1,4 +1,5 @@
 ---
+draft: true   # ORDER_015: unpublished until Gate A2 + Wes go-ahead
 title: "Idea stress test"
 description: "Describe a business idea; get its business model, the three claims most likely to kill it, a hostile second opinion and a citation check. Backtested on 52 companies whose outcomes are known, including where it fails."
 body-classes: wide
@@ -63,7 +64,7 @@ Describe a business idea. You get its business model, the three claims it depend
 ::: {}
 [How good is it?]{.k}
 
-[BACKTEST_ONE_LINER]{#st-backtest}  [Method and results →](method/)
+[On 12 failed companies it didn't recognize, it named the real cause of failure in 7/12 (58%); a bare prompt did in 7/12 (58%). That's not enough of a gap, so the bare prompt is what runs.]{#st-backtest}  [Method and results →](method/)
 :::
 ::: {}
 [What you get]{.k}

@@ -133,6 +133,7 @@ Every seller gets exactly one of the categories below. The model definitions are
   - Blockscout has no name tags for any of them. After the unlisted-seller review, the first two count as other (large ticket, inferred); see §3.
 - **Base only.** Solana x402 is not counted, although 6,205 of 19,076 Bazaar resources (33%) accept Solana. On-chain Solana volume was not measured. It is the first v1 item.
 - **Listing concentration.** The largest listed seller holds 7.2% of Base exact-scheme offers (1,374 of 19,211, snapshot 2026-09-30), and the top six hold 28%. Posted medians are therefore resource-weighted, not seller-weighted.
+- **Collection gaps, checked against Dune (2026-10-01).** Hourly settlement counts from Dune (`base.transactions`, same facilitators and selectors) were compared with the Blockscout collection for every index week. Weeks 2026-08-31, 09-07 and 09-14 matched to the payment. Weeks 2026-08-24 (−1.6%) and 2026-09-21 (−9.5%) had hours lost to Blockscout 5xx errors; the missing settlements (6,427 and 62,238) were exported from Dune for just those hours and appended by `scripts/dune/patch_week.py` (rows tagged `"source": "dune"`). Headline effect: week 2026-09-21 raw $134,479 → $143,606, clean $73,345 → $81,695.
 - **Facilitator list is fixed** at 2026-09-27. A new facilitator is invisible until it is added. Settlements that bypass facilitators (direct transfers) are not x402 by this definition.
 - **Posted-price history starts 2026-09-21.** The Bazaar has no history API, so the posted index can't be backfilled. The transacted index can.
 

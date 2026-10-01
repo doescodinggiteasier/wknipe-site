@@ -1,0 +1,109 @@
+{
+ "settlements": 593454,
+ "usd": 134479.25,
+ "payers": 9594,
+ "payees": 27728,
+ "self_payments": 1301,
+ "top20": [
+  {
+   "payee": "0xfa02300b1a598daba1b27b2bf79f9775355dac82",
+   "usd": 50000.0,
+   "payments": 1
+  },
+  {
+   "payee": "0xffde1acbac169f822dabc3d97d6d7127dcae6003",
+   "usd": 26731.86,
+   "payments": 10
+  },
+  {
+   "payee": "0x68396bd35874695ad86cd29410bd80a550991a2b",
+   "usd": 18839.78,
+   "payments": 24072
+  },
+  {
+   "payee": "0x93862e5b2b1fa10a01772e7e9ca7cdc7deb5ca25",
+   "usd": 10480.5,
+   "payments": 783
+  },
+  {
+   "payee": "0x47d3394c7234714e4b9e9b74827c12be847f9dda",
+   "usd": 7326.8,
+   "payments": 3322
+  },
+  {
+   "payee": "0x1f9fd037b19a20e4f36790c4e4d992c54fccd61a",
+   "usd": 4000.0,
+   "payments": 1
+  },
+  {
+   "payee": "0x85b47b40455ab2bd7921f76dce841b48c82d627c",
+   "usd": 1642.58,
+   "payments": 1074
+  },
+  {
+   "payee": "0x7284d41b5b852f2bd4c99bdf95043d84452d299c",
+   "usd": 1641.38,
+   "payments": 82069
+  },
+  {
+   "payee": "0x8a12157b27c22fb239e558dc3cb43c7d1a8c0881",
+   "usd": 1453.26,
+   "payments": 872
+  },
+  {
+   "payee": "0x6a0a10ffd285c971b841bee8892878c0d583bf67",
+   "usd": 996.99,
+   "payments": 202940
+  },
+  {
+   "payee": "0xc8c5cb88db34a231fa0fc24a296b1bccd317558b",
+   "usd": 800.0,
+   "payments": 1
+  },
+  {
+   "payee": "0xe9030014f5dae217d0a152f02a043567b16c1abf",
+   "usd": 559.11,
+   "payments": 24391
+  },
+  {
+   "payee": "0x2670b922ef37c7df47158725c0cc407b5382293f",
+   "usd": 422.36,
+   "payments": 92
+  },
+  {
+   "payee": "0x480cd46e6fade651a0437deadda53d5c8e7d846a",
+   "usd": 365.43,
+   "payments": 237
+  },
+  {
+   "payee": "0x325bdf6f7efab24a2210c48c1b64cab2eae1d430",
+   "usd": 308.35,
+   "payments": 13645
+  },
+  {
+   "payee": "0x17cd53c04d707ef0dd615ef56c633f02915a7905",
+   "usd": 305.1,
+   "payments": 6102
+  },
+  {
+   "payee": "0xe4d278ebd5593089847ac2ad87b78d0446699f71",
+   "usd": 272.3,
+   "payments": 1
+  },
+  {
+   "payee": "0x159be9e316bc5fac8ce05aec4eaae46e8f8a4908",
+   "usd": 244.8,
+   "payments": 2448
+  },
+  {
+   "payee": "0x5aae638ccd22a4117c0441331e8e86ca979d482e",
+   "usd": 234.48,
+   "payments": 4898
+  },
+  {
+   "payee": "0x3291e96b3bff7ed56e3ca8364273c5b4654b2b37",
+   "usd": 222.91,
+   "payments": 19
+  }
+ ]
+}

@@ -1,10 +1,10 @@
 week_start,step,label,payments,usd
 2026-08-24,ours,My own test and API payments,0,0.0
-2026-08-24,c1,Closed loops and self-payments,3817,537.84
-2026-08-24,c2,Funding-linked payer and seller,22916,28612.56
+2026-08-24,c1,Closed loops and self-payments,3878,547.6
+2026-08-24,c2,Funding-linked payer and seller,23238,28739.81
 2026-08-24,fanout,Fan-out from shared funders,0,0.0
-2026-08-24,dust,Sellers with a single buyer,5393,4548.32
-2026-08-24,clean,Demand-cleaned,356241,50870.34
+2026-08-24,dust,Sellers with a single buyer,5497,4586.78
+2026-08-24,clean,Demand-cleaned,362181,51651.22
 2026-08-31,ours,My own test and API payments,0,0.0
 2026-08-31,c1,Closed loops and self-payments,3068,466.53
 2026-08-31,c2,Funding-linked payer and seller,25339,1581.72
@@ -24,8 +24,8 @@ week_start,step,label,payments,usd
 2026-09-14,dust,Sellers with a single buyer,9703,38291.16
 2026-09-14,clean,Demand-cleaned,357463,48422.99
 2026-09-21,ours,My own test and API payments,0,0.0
-2026-09-21,c1,Closed loops and self-payments,2768,562.62
-2026-09-21,c2,Funding-linked payer and seller,20285,489.3
-2026-09-21,fanout,Fan-out from shared funders,872,1453.26
-2026-09-21,dust,Sellers with a single buyer,32196,58629.01
-2026-09-21,clean,Demand-cleaned,537333,73345.07
+2026-09-21,c1,Closed loops and self-payments,3214,640.86
+2026-09-21,c2,Funding-linked payer and seller,24192,540.19
+2026-09-21,fanout,Fan-out from shared funders,976,1620.81
+2026-09-21,dust,Sellers with a single buyer,33180,59108.69
+2026-09-21,clean,Demand-cleaned,594130,81695.3

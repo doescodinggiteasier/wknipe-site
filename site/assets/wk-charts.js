@@ -157,13 +157,34 @@
         Plot.line(rows, { x: "week", y: "threshold_usd", stroke: t.muted, strokeDasharray: "5,4", strokeWidth: 1.5 }),
         Plot.line(rows, { x: "week", y: "content_plus_data_usd", stroke: t.clean, strokeWidth: 2.5 }),
         Plot.dot(rows, { x: "week", y: "content_plus_data_usd", fill: t.clean, r: 4.5, stroke: t.surface, strokeWidth: 1.5, tip: { fill: t.surface, stroke: t.line }, title: (d) => `Week of ${fmt.week(d.week_start)}\nContent + data: ${fmt.usdFull(d.content_plus_data_usd)} (content ${fmt.usdFull(d.content_usd)}, data ${fmt.usdFull(d.data_usd)})\nThreshold path: ${fmt.usdFull(d.threshold_usd)}` }),
-        width < 520 ? null : Plot.text(rows.slice(-1), { x: "week", y: "threshold_usd", text: () => "Reopen path (+20%/mo)", textAnchor: "start", dx: 8, fill: t.muted }),
+        width < 520 ? null : Plot.text(rows.slice(-1), { x: "week", y: "threshold_usd", text: () => "Benchmark (+20%/mo)", textAnchor: "start", dx: 8, fill: t.muted }),
         width < 520 ? null : Plot.text(rows.slice(-1), { x: "week", y: "content_plus_data_usd", text: (d) => "Content + data " + fmt.usd(d.content_plus_data_usd), textAnchor: "start", dx: 8, fill: t.ink }),
         Plot.ruleY([0], { stroke: t.line }),
       ],
     }));
     return { node, legend: legend([["Content + data, demand-cleaned", t.clean], ["+20%/month path from the first week", t.muted, 1]]),
       table: { cols: [{ k: "week_start", label: "Week of" }, { k: "content_usd", label: "Content", r: 1, f: fmt.usdFull }, { k: "data_usd", label: "Data", r: 1, f: fmt.usdFull }, { k: "content_plus_data_usd", label: "Content + data", r: 1, f: fmt.usdFull }, { k: "threshold_usd", label: "Threshold path", r: 1, f: fmt.usdFull }], rows } };
+  };
+
+  // History since launch (Dune): raw vs single-buyer-filtered USD per week, log scale; the index's own weeks shaded
+  C.history = ({ data, opts, width, t }) => {
+    const rows = data.history.map((r) => ({ ...r, week: utc(r.week_start) })).filter((r) => r.usd > 0);
+    const idx = new Set(opts.index_weeks || []), shade = rows.filter((r) => idx.has(r.week_start));
+    const long = rows.flatMap((r) => [{ week: r.week, s: "raw", v: Math.max(r.usd, 1) }, { week: r.week, s: "filtered", v: Math.max(r.usd_after_single_buyer_filter, 1) }]);
+    const col = { raw: t.primary, filtered: t.clean };
+    const node = Plot.plot(base(t, width, {
+      height: 280, marginLeft: 56, marginRight: 16, x: { type: "utc", label: null },
+      y: { type: "log", grid: true, label: null, tickFormat: fmt.usd, ticks: 6 },
+      marks: [
+        shade.length ? Plot.rectX([{ x1: shade[0].week, x2: d3.utcDay.offset(shade[shade.length - 1].week, 7) }], { x1: "x1", x2: "x2", fill: t.line, fillOpacity: 0.5 }) : null,
+        Plot.line(long, { x: "week", y: "v", stroke: (d) => col[d.s], z: "s", strokeWidth: 2 }),
+        Plot.tip(rows, Plot.pointerX({ x: "week", y: "usd", fill: t.surface, stroke: t.line,
+          title: (d) => `Week of ${fmt.week(d.week_start)}\nAll settlements: ${fmt.usdFull(d.usd)} (${fmt.int(d.settlements)})\nAfter single-buyer filter: ${fmt.usdFull(d.usd_after_single_buyer_filter)}\nLargest facilitator: ${d.top_facilitator} (${fmt.pct(d.top_facilitator_share)})` })),
+      ],
+    }));
+    return { node, legend: legend([["All facilitator settlements", t.primary], ["After the single-buyer filter", t.clean], ["Weeks with the full index", t.line]]),
+      table: { cols: [{ k: "week_start", label: "Week of" }, { k: "settlements", label: "Settlements", r: 1, f: fmt.int }, { k: "usd", label: "USD", r: 1, f: fmt.usdFull },
+        { k: "usd_after_single_buyer_filter", label: "After single-buyer filter", r: 1, f: fmt.usdFull }, { k: "top_facilitator", label: "Largest facilitator" }], rows } };
   };
 
   // Prices: chain-linked Jevons index, posted vs transacted (category from opts)

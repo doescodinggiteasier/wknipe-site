@@ -66,6 +66,8 @@ def copy_data(d):
         shutil.copy(p, dst)
     for n in ('prices.json', 'posted_by_category.csv'):  # ORDER_014: listings.json / listings_latest.csv.gz no longer served
         if os.path.exists(D('x402_prices', n)): shutil.copy(D('x402_prices', n), dst)
+    for n in ('history.json', 'base_weekly.csv', 'base_weekly_by_facilitator.csv'):
+        if os.path.exists(D('x402_history', n)): shutil.copy(D('x402_history', n), dst)
     for sub, names in (('x402_status', ('status.json', 'status_daily.csv', 'status_latest.csv')), ('ai_access', ('access.json', 'access_weekly.csv', 'access_latest.csv')),
                        ('bazaar_daily', ('counts.csv', 'price_changes.csv'))):
         for n in names:
@@ -273,6 +275,15 @@ def market(d):
         'waterfall', '/x402/data/market.json', {'week': lw}, chips('week', week_opts, lw), csv=csvp + 'waterfall.csv', metric='waterfall', through=through,
         note=f'The filters are conservative, so "demand-cleaned" is a ceiling on genuine demand. My own payments: {usd(next(r["usd"] for r in wf if r["step"] == "ours"))} this week. {term("d05", "What is D05?")}'))
     parts.append(sensitivity_panel(d))
+    H = rjson(D('x402_history', 'history.json'))
+    if H:
+        hs = H['history']; pk = max(hs, key=lambda r: r['usd'])
+        since = [r for r in hs if r['week_start'] >= '2026-01-01']
+        parts.append(chart_frame('history', f'x402 on Base peaked at {usd(pk["usd"])} in the week of {week_label(pk["week_start"], True)}; {pct(1 - pk["usd_after_single_buyer_filter"] / pk["usd"])} of it was sellers with a single buyer',
+            f'Every settlement by the known facilitators each week since launch ({len(hs)} weeks, {week_label(hs[0]["week_start"], True)} – {week_label(hs[-1]["week_start"], True)}), and what is left after removing sellers paid by one buyer. '
+            f'Log scale. The full cleaning (loops, shared funding, fan-out) needs funding graphs and covers only the shaded weeks; this year the weekly median is {usd(statistics.median(r["usd"] for r in since))}.',
+            'history', '/x402/data/history.json', {'index_weeks': W}, csv=csvp + 'base_weekly.csv', through=through,
+            note='Source: Dune (base.transactions), same facilitator list and settlement definition as the index; the weeks both cover agree to the payment. Query: <a href="https://github.com/doescodinggiteasier/wknipe-site/blob/main/analytics/dune/1_x402_base_history.sql">1_x402_base_history.sql</a>.'))
     parts.append(chart_frame('mix', f'{CAT_LABEL[top_cat["category"]]} is {pct(float(top_cat["usd"]) / tot)} of demand-cleaned spend; publisher-style content is {usd(content)} ({pct(content / tot, 2)})',
         f'Demand-cleaned USD (or payments) per week by what the seller sells, {week_label(W[0])} – {week_label(lw)} ({len(W)} weeks). Categories come from sellers\' own listings; "unclassed" sellers have none.',
         'mix', '/x402/data/market.json', {'metric': 'usd'}, chips('metric', [('usd', 'USD'), ('payments', 'Payments')], 'usd'), csv=csvp + 'category_mix.csv', metric='category_mix', through=through))
