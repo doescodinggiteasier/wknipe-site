@@ -16,3 +16,8 @@ date,since,host,resource,pay_to,category,what,old_usd,new_usd,change
 2026-10-01,2026-09-30,twitter.use.x402atlas.com,https://twitter.use.x402atlas.com/community-members,0x51d577c8cbb8b3fb1ba0ce31c7923cc27a07f78b,data,twitter community members list,0.005,0.006,0.2
 2026-10-01,2026-09-30,twitter.use.x402atlas.com,https://twitter.use.x402atlas.com/autocomplete,0x51d577c8cbb8b3fb1ba0ce31c7923cc27a07f78b,search,twitter x autocomplete search-suggestions user-search,0.005,0.006,0.2
 2026-10-01,2026-09-30,flat-rate-llm.kikoribera03.workers.dev,https://flat-rate-llm.kikoribera03.workers.dev/mcp,0xc210ea7d5692a6401adf25bbcb7acde9cdb7e9ff,,,0.001,0.005,4.0
+2026-10-02,2026-10-01,twitter.use.x402atlas.com,https://twitter.use.x402atlas.com/search,0x51d577c8cbb8b3fb1ba0ce31c7923cc27a07f78b,search,twitter x tweet search,0.006,0.0069,0.15
+2026-10-02,2026-10-01,dripstack.com,https://dripstack.com/api/v2/stock-picks,0xbf22b6ddb5a08c823856a779f1004eea60c5ab92,content,stock picks newsletter articles,4.0,0.5,-0.875
+2026-10-02,2026-10-01,foundry-par007-machine-revenue-mainnet.inference-chip-index.workers.dev,https://foundry-par007-machine-revenue-mainnet.inference-chip-index.workers.dev/v2/official/nhtsa-vin-decode,0x25e8245f07d5e4873987293dad666afbe56a9608,,,0.005,0.003,-0.4
+2026-10-02,2026-10-01,api.seerium.xyz,https://api.seerium.xyz/v1/pulse/macro-clock,0x81832eede3a4ad96cb3d7ca09977636d912fd3d5,data,macro market signals,0.001,0.1,99.0
+2026-10-02,2026-10-01,twin.unykorn.org,https://twin.unykorn.org/screen/entity,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,company ownership and parent lookup,0.03,0.01,-0.6667
