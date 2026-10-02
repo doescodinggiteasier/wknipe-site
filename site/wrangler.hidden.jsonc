@@ -1,0 +1,11 @@
+{
+  // Hidden mode (Wes, 2026-10-02): wknipe.com serves only a "temporarily offline" page (noindex, robots Disallow).
+  // Used by CI whenever the repo-root file SITE_HIDDEN exists. To go live again: delete SITE_HIDDEN (only when Wes
+  // says so), then deploy with the normal wrangler.jsonc.
+  "$schema": "../apps/x402-index-api/node_modules/wrangler/config-schema.json",
+  "account_id": "0134a2c1c491457155b6aa9d6c79a8ae",
+  "name": "wknipe",
+  "compatibility_date": "2026-09-29",
+  "assets": { "directory": "./hidden", "not_found_handling": "single-page-application" },
+  "routes": [{ "pattern": "wknipe.com", "custom_domain": true }]
+}

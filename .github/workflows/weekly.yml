@@ -153,7 +153,8 @@ jobs:
         working-directory: site
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: ../apps/x402-index-api/node_modules/.bin/wrangler deploy
+        # SITE_HIDDEN at the repo root = Wes has taken the site offline: deploy only the placeholder.
+        run: if [ -f ../SITE_HIDDEN ]; then ../apps/x402-index-api/node_modules/.bin/wrangler deploy -c wrangler.hidden.jsonc; else ../apps/x402-index-api/node_modules/.bin/wrangler deploy; fi
 
       - name: Deploy API (Worker x402-index-api, bundled data)
         if: steps.wk.outputs.skip != 'true' && steps.pipe.outputs.pending != 'true'

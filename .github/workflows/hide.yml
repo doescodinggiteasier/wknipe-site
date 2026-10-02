@@ -1,0 +1,36 @@
+# Manual only: deploy the "temporarily offline" placeholder to wknipe.com (site/hidden/, wrangler.hidden.jsonc).
+# Fast (no render, no crawl). The daily and weekly jobs also deploy only the placeholder while SITE_HIDDEN exists.
+name: hide
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  hide:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: apps/x402-index-api/package-lock.json
+      - name: Install Wrangler
+        working-directory: apps/x402-index-api
+        run: npm ci
+      - name: Deploy placeholder
+        working-directory: site
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: ../apps/x402-index-api/node_modules/.bin/wrangler deploy -c wrangler.hidden.jsonc
+      - name: Check wknipe.com serves the placeholder
+        run: |
+          sleep 15
+          for p in / /x402/ /about; do
+            body=$(curl -fsS "https://wknipe.com$p?cb=$GITHUB_RUN_ID")
+            echo "$body" | grep -q "temporarily offline" && echo "$p: placeholder" || { echo "$p: still serving the site"; exit 1; }
+          done
