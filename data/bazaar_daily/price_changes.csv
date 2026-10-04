@@ -23,3 +23,10 @@ date,since,host,resource,pay_to,category,what,old_usd,new_usd,change
 2026-10-02,2026-10-01,twin.unykorn.org,https://twin.unykorn.org/screen/entity,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,company ownership and parent lookup,0.03,0.01,-0.6667
 2026-10-03,2026-10-02,mart402.com,https://mart402.com/v1/extract,0xe3244a21d0d68bfa78b7cad8c3b8777adfbb3188,search,web page scrape to markdown,0.005,0.0025,-0.5
 2026-10-03,2026-10-02,mcp.whitemagic.dev,https://mcp.whitemagic.dev/mcp,0x213b6bb4fb073e86167c58da6cb6e9477557daa8,compute,hybrid memory search for agent continuity,0.01,0.002,-0.8
+2026-10-04,2026-10-03,extract.tollkit.dev,https://extract.tollkit.dev/extract/batch,0xbbfce2d320de6ab328ba93a771c531ebfc9ce704,,,0.15,0.04,-0.7333
+2026-10-04,2026-10-03,extract.tollkit.dev,https://extract.tollkit.dev/extract,0xbbfce2d320de6ab328ba93a771c531ebfc9ce704,,,0.05,0.01,-0.8
+2026-10-04,2026-10-03,gsc-x402.ai,https://gsc-x402.ai/api,0x0bfd52ea41841d0f1121399167bfe36781d40ebb,,,0.005,0.01,1.0
+2026-10-04,2026-10-03,api.aiskills402.com,https://api.aiskills402.com/v1/skills/x402-buyer/file,0x8e37022edcf0f21cf3c9f93fee9d4d32519f36f4,,,0.03,0.05,0.6667
+2026-10-04,2026-10-03,api.aiskills402.com,https://api.aiskills402.com/v1/skills/code-review/file,0x8e37022edcf0f21cf3c9f93fee9d4d32519f36f4,,,0.05,0.01,-0.8
+2026-10-04,2026-10-03,api.aiskills402.com,https://api.aiskills402.com/v1/skills/seo-meta/file,0x8e37022edcf0f21cf3c9f93fee9d4d32519f36f4,,,0.03,0.01,-0.6667
+2026-10-04,2026-10-03,agent402.tools,https://agent402.tools/api/skill/brand-protection,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.027,0.018,-0.3333
