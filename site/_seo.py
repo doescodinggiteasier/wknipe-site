@@ -11,6 +11,7 @@ import datetime as dt, glob, json, os, re
 
 from _pages import Data, D, rcsv, rjson, f, ROOT
 from _wk import usd, num, pct, week_label, METHOD, API, esc
+import _conditional
 
 SITE_URL = 'https://wknipe.com'
 GITHUB = 'https://github.com/doescodinggiteasier'
@@ -142,7 +143,7 @@ def llms(d, site):
              'how much of the reported volume is genuine demand once self-payments, loops, tests and single-customer sellers are removed, who buys and comes back, what calls cost, '
              'and whether sellers deliver. Data is public, CC BY 4.0; code is MIT.')
     L = ['# Wes Knipe', '', f'> {intro}', '', '## Key pages', '']
-    L += [f'- [{t}]({SITE_URL}{p}): {x}' for t, p, x in PAGES]
+    L += [f'- [{t}]({SITE_URL}{p}): {x}' for t, p, x in PAGES if _conditional.show(p)]
     L += ['', '## Method and API', '',
           f'- [Method note]({METHOD}): every filter, category rule and known bias of the x402 Clean Index.',
           f'- [API docs]({SITE_URL}/api/): free JSON for every chart series (rate-limited), paid x402 endpoints for bulk history and routing.',
@@ -164,5 +165,5 @@ def llms(d, site):
     F = ['# Wes Knipe: how AI agents pay for things (full text for LLMs)', '', f'> {intro}', '', f'Source: {SITE_URL}/ · generated {dt.date.today().isoformat()} at build', '',
          '## Latest headline numbers', ''] + headline(d) + ['', '## Method summary (x402 Clean Index)', '', f'Full method note: {METHOD}', '']
     for k in keep: F += [f'### {k}', '', secs[k], '']
-    F += ['## Pages', ''] + [f'- {t}: {SITE_URL}{p} ({x})' for t, p, x in PAGES]
+    F += ['## Pages', ''] + [f'- {t}: {SITE_URL}{p} ({x})' for t, p, x in PAGES if _conditional.show(p)]
     open(os.path.join(site, 'llms-full.txt'), 'w').write('\n'.join(F) + '\n')

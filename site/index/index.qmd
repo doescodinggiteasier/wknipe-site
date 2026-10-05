@@ -4,7 +4,7 @@ description: "Everything wknipe.com publishes: data, tools, benchmarks, APIs and
 body-classes: wide
 listing:
   id: ix
-  contents: entries.yml
+  contents: entries_live.yml   # entries.yml minus hidden entries, written by _index_pages.py (ORDER_024); not _-prefixed: listings skip those
   template: ../_templates/index-rows.ejs
   date-format: iso
   page-size: 1000

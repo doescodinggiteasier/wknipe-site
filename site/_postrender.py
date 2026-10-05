@@ -7,6 +7,7 @@
 - bootstrap-icons.css loads without blocking (icons appear a moment later; none are needed for the first paint).
 - Quarto's head scripts (nav, headroom, clipboard, popper, tippy, bootstrap) get defer. Everything that uses them runs
   on DOMContentLoaded, which fires after deferred scripts have run.
+Then _conditional.apply(): with no published writing, the Writing navbar item and RSS links are removed (ORDER_024).
 Then _seo.apply(): canonical links, JSON-LD, sitemap, robots.txt, llms.txt (ORDER_014 addendum I).
 Idempotent. Runs on every render after Quarto has written _site/.
 """
@@ -40,5 +41,7 @@ if __name__ == '__main__':
         s = open(p, encoding='utf-8').read(); t = fix(s)
         if t != s: open(p, 'w', encoding='utf-8').write(t); n += 1
     print(f'post-render: {n} pages')
+    import _conditional
+    print('writing links removed from', _conditional.apply(SITE), 'pages (none published)' if not _conditional.published_posts() else '(published: kept)')
     import _seo
     print('seo: sitemap urls', _seo.apply(SITE))

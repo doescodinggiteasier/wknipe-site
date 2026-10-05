@@ -145,3 +145,44 @@
   description: What the purchase benchmark measures, its limits, and the seeds and scenario-bank hash to replicate it.
   link: /agents/method
   related: [which-models-buy-well]
+# ORDER_024: pages that were on the home page's tool grid but missing here (the home page now links to the Index instead)
+- slug: x402-solana
+  name: x402 on Solana
+  category: Data
+  date: 2026-10-01
+  featured: false
+  description: "Weekly x402 volume on Solana since launch through the published facilitators, facilitator shares, sellers with repeat buyers, and the single-buyer filter."
+  link: /x402/solana/
+  related: [x402-market, x402-sellers]
+- slug: best-execution
+  name: Best execution
+  category: Tool
+  date: 2026-09-30
+  featured: false
+  description: "A demo: say what an agent needs and see three x402 endpoints for it, the cheapest that answers, the best value and the most used."
+  link: /x402/buy/
+  related: [price-comps, x402-status]
+- slug: x402-brief
+  name: State of x402, one page
+  category: Data
+  date: 2026-09-30
+  featured: false
+  description: "The numbers people ask for first, on one printable page: genuine volume, buyers, sellers, prices, infrastructure and publishers."
+  link: /x402/brief/
+  related: [x402-market, this-week-in-x402]
+- slug: checks-that-can-fail
+  name: Checks that can fail
+  category: Tool
+  date: 2026-10-01
+  featured: false
+  description: "tripwire-checks, a small open-source Python kit that makes an analysis prove its checks can fail: preconditions, negative controls, exit-status receipts, calibration, shuffled-label controls, pre-registration hashes."
+  link: /tools/verification/
+  related: [x402-method]
+- slug: x402-explained
+  name: x402 in 60 seconds
+  category: Method
+  date: 2026-09-30
+  featured: false
+  description: "A plain-English explainer of x402, the web standard that lets software pay per request, and why its reported volume needs cleaning."
+  link: /x402/explained/
+  related: [x402-market, x402-method]

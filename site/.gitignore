@@ -7,3 +7,4 @@
 /index/*.qmd
 !/index/index.qmd
 /index.json
+/index/entries_live.yml

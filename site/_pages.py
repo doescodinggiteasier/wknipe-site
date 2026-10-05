@@ -8,6 +8,7 @@ ROOT = os.path.abspath(os.path.join(HERE, '..'))
 GEN = os.path.join(HERE, '_gen')
 sys.path.insert(0, HERE)
 from _wk import *  # noqa: E402,F401
+import _conditional  # noqa: E402
 
 D = lambda *p: os.path.join(ROOT, 'data', *p)
 
@@ -170,14 +171,7 @@ def page_exists(href):
 
 
 def writing_posts():
-    posts = []
-    for p in sorted(glob.glob(os.path.join(HERE, 'writing', '*.qmd'))):
-        if p.endswith('index.qmd'): continue
-        fm = open(p).read().split('---')[1] if open(p).read().startswith('---') else ''
-        if re.search(r'^draft:\s*true', fm, re.M): continue
-        t = re.search(r'^title:\s*"?(.*?)"?\s*$', fm, re.M); dd = re.search(r'^date:\s*"?([\d-]+)', fm, re.M)
-        posts.append((dd.group(1) if dd else '', t.group(1) if t else os.path.basename(p), '/writing/' + os.path.basename(p)[:-4]))
-    return sorted(posts, reverse=True)
+    return _conditional.published_posts(HERE)  # ORDER_024: one rule for every Writing link
 
 
 WHATS_HERE = [  # ORDER_014 addendum: one plain line per tool, for a reader from finance rather than crypto
@@ -191,8 +185,8 @@ WHATS_HERE = [  # ORDER_014 addendum: one plain line per tool, for a reader from
 ]
 
 
-def home(d):
-    W = d.weeks
+def home_numbers(d):
+    """The three live numbers (settled, genuine, buyers) with their captions; shared with the home-page preview (ORDER_024)."""
     raw = d.head['raw_usd']; clean = d.series('clean', 'all')[-1]
     buyers = int(d.market['buyers_weekly'][-1]['active_buyers'])
     lw = week_label(d.latest)
@@ -202,13 +196,23 @@ def home(d):
     numbers = '<div class="home-nums">' + ''.join(
         f'<div class="hn"><div class="v">{v}</div><div class="k">{esc(k)}</div><p>{esc(g)}</p></div>' + ('<div class="arrow" aria-hidden="true">→</div>' if i < 2 else '')
         for i, (v, k, g) in enumerate(nums)) + '</div>'
+    return numbers
+
+
+def home_who(extra=''):
+    """Who I am: name, the two-sentence bio and links. `extra` (HTML) goes after the bio (the ORDER_024 preview's TODO line)."""
+    return ('<section class="home-who"><p class="home-name">Wes Knipe</p>'
+            '<p class="lede">I\'m Wes. I studied quantitative economics at Cal Poly, started out at a couple of financial advisory firms, and then moved to early-stage software to see how products and companies are actually built. '
+            'These days I consult on analytics projects and build research tools in my spare time.</p>' + extra +
+            '<p class="home-links"><a href="/about">About</a> · <a href="/files/wes-knipe-resume.pdf">Résumé (PDF)</a> · <a href="mailto:wes@wknipe.com">wes@wknipe.com</a></p></section>')
+
+
+def home(d):
+    numbers = home_numbers(d)
     here = '<ul class="rows whats-here">' + ''.join(
         f'<li><a href="{esc(u)}"><span class="t">{esc(t)}</span><span class="d2">{esc(x)}</span><span class="x">→</span></a></li>'
-        for t, x, u in WHATS_HERE if page_exists(u)) + '</ul>'
-    who = ('<section class="home-who"><p class="home-name">Wes Knipe</p>'
-           '<p class="lede">I\'m Wes. I studied quantitative economics at Cal Poly, started out at a couple of financial advisory firms, and then moved to early-stage software to see how products and companies are actually built. '
-           'These days I consult on analytics projects and build research tools in my spare time.</p>'
-           '<p class="home-links"><a href="/about">About</a> · <a href="/files/wes-knipe-resume.pdf">Résumé (PDF)</a> · <a href="mailto:wes@wknipe.com">wes@wknipe.com</a></p></section>')
+        for t, x, u in WHATS_HERE if page_exists(u) and _conditional.show(u)) + '</ul>'
+    who = home_who()
     card = ('<section class="research-card" aria-labelledby="rc-t"><p class="eyebrow">Current research</p><h2 id="rc-t">How AI agents pay for things</h2>'
             '<!-- TODO(Wes): edit -->'
             '<p>A new web standard, x402, lets software pay per request in digital dollars: fractions of a cent, settled on a public ledger. '
