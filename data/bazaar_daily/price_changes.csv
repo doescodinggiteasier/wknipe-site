@@ -30,3 +30,34 @@ date,since,host,resource,pay_to,category,what,old_usd,new_usd,change
 2026-10-04,2026-10-03,api.aiskills402.com,https://api.aiskills402.com/v1/skills/code-review/file,0x8e37022edcf0f21cf3c9f93fee9d4d32519f36f4,,,0.05,0.01,-0.8
 2026-10-04,2026-10-03,api.aiskills402.com,https://api.aiskills402.com/v1/skills/seo-meta/file,0x8e37022edcf0f21cf3c9f93fee9d4d32519f36f4,,,0.03,0.01,-0.6667
 2026-10-04,2026-10-03,agent402.tools,https://agent402.tools/api/skill/brand-protection,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.027,0.018,-0.3333
+2026-10-05,2026-10-04,payload402.edgebytenet.workers.dev,https://payload402.edgebytenet.workers.dev/license/check,0x555379f9f4750eb34ffc8b3daf8eda2ea0f6d112,,,0.005,0.001,-0.8
+2026-10-05,2026-10-04,api.hyperextend.xyz,https://api.hyperextend.xyz/v1/asset_ctx/BTC/latest,0x548fc289526ab2f0391d562a723cda64bbf1abc4,data,market data candles open interest,0.0033,0.0035,0.0606
+2026-10-05,2026-10-04,fiatdock.com,https://fiatdock.com/v1/token/safety,0xeb12bb2f52eed33dba6a00774e48324032fd87c6,data,token safety risk lookup,0.01,0.0045,-0.55
+2026-10-05,2026-10-04,fiatdock.com,https://fiatdock.com/v1/chain/address-intel,0xeb12bb2f52eed33dba6a00774e48324032fd87c6,data,wallet security and intelligence,0.005,0.0045,-0.1
+2026-10-05,2026-10-04,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/markets/stablecoins,0x48d5a78d480b4c32de319c2aef69e682dc304615,data,stablecoin depeg risk status,0.002,0.005,1.5
+2026-10-05,2026-10-04,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/markets/stablecoin-flows,0x48d5a78d480b4c32de319c2aef69e682dc304615,data,stablecoin issuance and redemption,0.002,0.005,1.5
+2026-10-05,2026-10-04,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/calendar,0x48d5a78d480b4c32de319c2aef69e682dc304615,data,economic calendar events lookup,0.002,0.005,1.5
+2026-10-05,2026-10-04,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/news,0x48d5a78d480b4c32de319c2aef69e682dc304615,content,market news and filings,0.003,0.005,0.6667
+2026-10-05,2026-10-04,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/rates/liquidity,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.005,0.01,1.0
+2026-10-05,2026-10-04,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/rates/bank-credit,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.005,0.01,1.0
+2026-10-05,2026-10-04,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/markets/oil-inventories,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.005,0.01,1.0
+2026-10-05,2026-10-04,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/eu/rates,0x48d5a78d480b4c32de319c2aef69e682dc304615,data,euro yield curve and rates,0.005,0.01,1.0
+2026-10-05,2026-10-04,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/eu/macro,0x48d5a78d480b4c32de319c2aef69e682dc304615,data,european macro data lookup,0.005,0.01,1.0
+2026-10-05,2026-10-04,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/cot,0x48d5a78d480b4c32de319c2aef69e682dc304615,data,futures speculator positioning data,0.005,0.01,1.0
+2026-10-05,2026-10-04,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/markets/risk,0x48d5a78d480b4c32de319c2aef69e682dc304615,data,market risk gauge score,0.003,0.01,2.3333
+2026-10-05,2026-10-04,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/sec/fails-to-deliver,0x48d5a78d480b4c32de319c2aef69e682dc304615,data,sec fails to deliver stocks,0.005,0.01,1.0
+2026-10-05,2026-10-04,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/rates/defi-spread,0x48d5a78d480b4c32de319c2aef69e682dc304615,data,defi and tradfi yield comparison,0.005,0.01,1.0
+2026-10-05,2026-10-04,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/rates/curve,0x48d5a78d480b4c32de319c2aef69e682dc304615,data,treasury yield curve data,0.005,0.01,1.0
+2026-10-05,2026-10-04,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/rates/auctions,0x48d5a78d480b4c32de319c2aef69e682dc304615,data,treasury auction data lookup,0.005,0.01,1.0
+2026-10-05,2026-10-04,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/news/policy,0x48d5a78d480b4c32de319c2aef69e682dc304615,content,policy news headlines and details,0.005,0.01,1.0
+2026-10-05,2026-10-04,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/markets/funding-carry,0x48d5a78d480b4c32de319c2aef69e682dc304615,data,funding rate carry trade data,0.005,0.01,1.0
+2026-10-05,2026-10-04,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/intelligence/track-record,0x48d5a78d480b4c32de319c2aef69e682dc304615,data,signal track record and outcomes,0.005,0.01,1.0
+2026-10-05,2026-10-04,api.erb-llm.com,https://api.erb-llm.com/v1/chat/completions,0x23976fb6af8f7fe8756730f0473fb7ffac531ee8,,,0.005,0.001,-0.8
+2026-10-05,2026-10-04,payload402.edgebytenet.workers.dev,https://payload402.edgebytenet.workers.dev/wiki/lookup,0x555379f9f4750eb34ffc8b3daf8eda2ea0f6d112,content,wikipedia intro extract lookup,0.005,0.001,-0.8
+2026-10-05,2026-10-04,dripstack.com,https://dripstack.com/api/v2/stock-picks,0xbf22b6ddb5a08c823856a779f1004eea60c5ab92,content,stock picks newsletter articles,0.5,2.0,3.0
+2026-10-05,2026-10-04,fiatdock.com,https://fiatdock.com/v1/web/read,0xeb12bb2f52eed33dba6a00774e48324032fd87c6,search,web page text extract,0.002,0.0018,-0.1
+2026-10-05,2026-10-04,fiatdock.com,https://fiatdock.com/v1/chain/token-report,0xeb12bb2f52eed33dba6a00774e48324032fd87c6,data,token onchain price safety report,0.05,0.0045,-0.91
+2026-10-05,2026-10-04,agenticfinancegraph.com,https://agenticfinancegraph.com/check/liveness,0xb25c17e26054bf34e507185dd8981888c9e044fd,data,agent liveness rank and evidence,1.0,0.01,-0.99
+2026-10-05,2026-10-04,agdata.shveik.dev,https://agdata.shveik.dev/x402/reddit,0xbba594f5549392df7a8182049291b605948f5f86,search,reddit posts and subreddit info,0.132,0.0495,-0.625
+2026-10-05,2026-10-04,x402-bazaar-rank.x402-bazaar-rank-worker.workers.dev,https://x402-bazaar-rank.x402-bazaar-rank-worker.workers.dev/seller,0xeca891e34b3e5873181fb779672564e198c55354,,,0.05,0.025,-0.5
+2026-10-05,2026-10-04,api.teardrop.dev,https://api.teardrop.dev/tools/mcp#get_token_price,0xf2eec9de86274913f85a8aa6427ad65a9b0bc90a,,,0.002,0.005,1.5
