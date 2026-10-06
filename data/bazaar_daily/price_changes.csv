@@ -61,3 +61,259 @@ date,since,host,resource,pay_to,category,what,old_usd,new_usd,change
 2026-10-05,2026-10-04,agdata.shveik.dev,https://agdata.shveik.dev/x402/reddit,0xbba594f5549392df7a8182049291b605948f5f86,search,reddit posts and subreddit info,0.132,0.0495,-0.625
 2026-10-05,2026-10-04,x402-bazaar-rank.x402-bazaar-rank-worker.workers.dev,https://x402-bazaar-rank.x402-bazaar-rank-worker.workers.dev/seller,0xeca891e34b3e5873181fb779672564e198c55354,,,0.05,0.025,-0.5
 2026-10-05,2026-10-04,api.teardrop.dev,https://api.teardrop.dev/tools/mcp#get_token_price,0xf2eec9de86274913f85a8aa6427ad65a9b0bc90a,,,0.002,0.005,1.5
+2026-10-06,2026-10-05,api.hyperextend.xyz,https://api.hyperextend.xyz/v1/asset_ctx/BTC/latest,0x548fc289526ab2f0391d562a723cda64bbf1abc4,data,market data candles open interest,0.0035,0.003475,-0.0071
+2026-10-06,2026-10-05,x402.aispace.bot,https://x402.aispace.bot/api/v1/video/queue,0xa7f3ad0e69f61864092fabba6cee00af6e584689,,,0.275,0.65,1.3636
+2026-10-06,2026-10-05,pyfile-agent.taile3ff35.ts.net,https://pyfile-agent.taile3ff35.ts.net/v1/chat/completions,0xa43774fd2e867fc45b782456d78f135a215d5561,,,0.005,0.001,-0.8
+2026-10-06,2026-10-05,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/insiders/batch,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.06,0.03,-0.5
+2026-10-06,2026-10-05,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/eu/fundamentals/:company,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.01,0.005,-0.5
+2026-10-06,2026-10-05,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/fundamentals/:symbol,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.01,0.005,-0.5
+2026-10-06,2026-10-05,web-production-220a3.up.railway.app,https://web-production-220a3.up.railway.app/agentic/call/new_launches,0xe81c67c086c83997b41673e1e41e481c14d756f6,,,0.02,0.006,-0.7
+2026-10-06,2026-10-05,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/insiders/:symbol,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.01,0.005,-0.5
+2026-10-06,2026-10-05,agent402.tools,https://agent402.tools/api/skill/trend-analysis,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.015,0.018,0.2
+2026-10-06,2026-10-05,agent402.tools,https://agent402.tools/api/skill/structured-scrape,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.032,0.023,-0.2812
+2026-10-06,2026-10-05,agent402.tools,https://agent402.tools/api/skill/ipo-watch,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.041,0.023,-0.439
+2026-10-06,2026-10-05,agent402.tools,https://agent402.tools/api/skill/macro-context,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.041,0.036,-0.122
+2026-10-06,2026-10-05,agent402.tools,https://agent402.tools/api/skill/earnings-watch,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.024,0.015,-0.375
+2026-10-06,2026-10-05,agent402.tools,https://agent402.tools/api/skill/options-analytics,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.026,0.017,-0.3462
+2026-10-06,2026-10-05,agent402.tools,https://agent402.tools/api/skill/inflation-check,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.023,0.018,-0.2174
+2026-10-06,2026-10-05,agent402.tools,https://agent402.tools/api/skill/entity-enrich,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.023,0.022,-0.0435
+2026-10-06,2026-10-05,agent402.tools,https://agent402.tools/api/skill/defi-protocol-scanner,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.034,0.025,-0.2647
+2026-10-06,2026-10-05,agent402.tools,https://agent402.tools/api/skill/sec-filings-deep-dive,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.029,0.028,-0.0345
+2026-10-06,2026-10-05,agent402.tools,https://agent402.tools/api/skill/macro-economics,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.036,0.032,-0.1111
+2026-10-06,2026-10-05,agent402.tools,https://agent402.tools/api/skill/earnings-deep-dive,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.042,0.033,-0.2143
+2026-10-06,2026-10-05,agent402.tools,https://agent402.tools/api/skill/content-extraction,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.044,0.035,-0.2045
+2026-10-06,2026-10-05,agents.daedalusdevelopmentgroup.com,https://agents.daedalusdevelopmentgroup.com/v1/privacy/redact,0x8afbd522f8a16bea184b41c593b8925a66830bc6,,,0.005,0.01,1.0
+2026-10-06,2026-10-05,asistent-crypto.vercel.app,https://asistent-crypto.vercel.app/api/x402/data/funding-oi,0xbeebd30639e99bbce11faa2b463fcccf6215831b,data,crypto funding rate and open interest,0.01,0.02,1.0
+2026-10-06,2026-10-05,agent-endpoint-readiness.ryannelson2000.workers.dev,https://agent-endpoint-readiness.ryannelson2000.workers.dev/v1/audit,0x9fa7899e2b7159b9516e0ef22b5ba39b31538af8,other,agent endpoint readiness audit,0.005,0.002,-0.6
+2026-10-06,2026-10-05,asistent-crypto.vercel.app,https://asistent-crypto.vercel.app/api/x402/query,0xbeebd30639e99bbce11faa2b463fcccf6215831b,,,0.05,0.04,-0.2
+2026-10-06,2026-10-05,agents.daedalusdevelopmentgroup.com,https://agents.daedalusdevelopmentgroup.com/v1/pgp/keys/publish,0x8afbd522f8a16bea184b41c593b8925a66830bc6,,,0.005,0.01,1.0
+2026-10-06,2026-10-05,agents.daedalusdevelopmentgroup.com,https://agents.daedalusdevelopmentgroup.com/v1/pgp/sign,0x8afbd522f8a16bea184b41c593b8925a66830bc6,,,0.005,0.01,1.0
+2026-10-06,2026-10-05,agents.daedalusdevelopmentgroup.com,https://agents.daedalusdevelopmentgroup.com/v1/pgp/keys/lookup,0x8afbd522f8a16bea184b41c593b8925a66830bc6,,,0.001,0.01,9.0
+2026-10-06,2026-10-05,agents.daedalusdevelopmentgroup.com,https://agents.daedalusdevelopmentgroup.com/v1/comms/proof,0x8afbd522f8a16bea184b41c593b8925a66830bc6,,,0.005,0.01,1.0
+2026-10-06,2026-10-05,agents.daedalusdevelopmentgroup.com,https://agents.daedalusdevelopmentgroup.com/v1/pgp/encrypt,0x8afbd522f8a16bea184b41c593b8925a66830bc6,,,0.005,0.01,1.0
+2026-10-06,2026-10-05,agents.daedalusdevelopmentgroup.com,https://agents.daedalusdevelopmentgroup.com/v1/uuid-generate,0x8afbd522f8a16bea184b41c593b8925a66830bc6,compute,generate uuid,0.001,0.01,9.0
+2026-10-06,2026-10-05,agents.daedalusdevelopmentgroup.com,https://agents.daedalusdevelopmentgroup.com/v1/timestamp,0x8afbd522f8a16bea184b41c593b8925a66830bc6,compute,timestamp generation service,0.001,0.01,9.0
+2026-10-06,2026-10-05,agents.daedalusdevelopmentgroup.com,https://agents.daedalusdevelopmentgroup.com/v1/random,0x8afbd522f8a16bea184b41c593b8925a66830bc6,compute,random number generation,0.001,0.01,9.0
+2026-10-06,2026-10-05,agents.daedalusdevelopmentgroup.com,https://agents.daedalusdevelopmentgroup.com/v1/pgp/verify,0x8afbd522f8a16bea184b41c593b8925a66830bc6,,,0.001,0.01,9.0
+2026-10-06,2026-10-05,agents.daedalusdevelopmentgroup.com,https://agents.daedalusdevelopmentgroup.com/v1/audit/mutual/verdict,0x8afbd522f8a16bea184b41c593b8925a66830bc6,,,0.005,0.01,1.0
+2026-10-06,2026-10-05,agents.daedalusdevelopmentgroup.com,https://agents.daedalusdevelopmentgroup.com/v1/mail/threads,0x8afbd522f8a16bea184b41c593b8925a66830bc6,,,0.005,0.01,1.0
+2026-10-06,2026-10-05,agents.daedalusdevelopmentgroup.com,https://agents.daedalusdevelopmentgroup.com/v1/mail/fetch,0x8afbd522f8a16bea184b41c593b8925a66830bc6,,,0.002,0.01,4.0
+2026-10-06,2026-10-05,agents.daedalusdevelopmentgroup.com,https://agents.daedalusdevelopmentgroup.com/v1/local-model-swarm-seat,0x8afbd522f8a16bea184b41c593b8925a66830bc6,compute,local model swarm seat,0.25,0.01,-0.96
+2026-10-06,2026-10-05,agents.daedalusdevelopmentgroup.com,https://agents.daedalusdevelopmentgroup.com/v1/im/threads,0x8afbd522f8a16bea184b41c593b8925a66830bc6,,,0.001,0.01,9.0
+2026-10-06,2026-10-05,agents.daedalusdevelopmentgroup.com,https://agents.daedalusdevelopmentgroup.com/v1/im/send,0x8afbd522f8a16bea184b41c593b8925a66830bc6,,,0.002,0.01,4.0
+2026-10-06,2026-10-05,agents.daedalusdevelopmentgroup.com,https://agents.daedalusdevelopmentgroup.com/v1/im/presence,0x8afbd522f8a16bea184b41c593b8925a66830bc6,,,0.001,0.01,9.0
+2026-10-06,2026-10-05,agents.daedalusdevelopmentgroup.com,https://agents.daedalusdevelopmentgroup.com/v1/im/poll,0x8afbd522f8a16bea184b41c593b8925a66830bc6,,,0.001,0.01,9.0
+2026-10-06,2026-10-05,asistent-crypto.vercel.app,https://asistent-crypto.vercel.app/api/x402/data/address,0xbeebd30639e99bbce11faa2b463fcccf6215831b,data,ethereum address balance and transfers,0.01,0.02,1.0
+2026-10-06,2026-10-05,asistent-crypto.vercel.app,https://asistent-crypto.vercel.app/api/x402/data/whale-flows,0xbeebd30639e99bbce11faa2b463fcccf6215831b,data,large eth transfers from exchanges,0.01,0.02,1.0
+2026-10-06,2026-10-05,asistent-crypto.vercel.app,https://asistent-crypto.vercel.app/api/x402/data/market-history,0xbeebd30639e99bbce11faa2b463fcccf6215831b,data,crypto market intelligence signals,0.01,0.02,1.0
+2026-10-06,2026-10-05,asistent-crypto.vercel.app,https://asistent-crypto.vercel.app/api/x402/data/implied-volatility,0xbeebd30639e99bbce11faa2b463fcccf6215831b,data,crypto implied volatility and percentile,0.01,0.02,1.0
+2026-10-06,2026-10-05,asistent-crypto.vercel.app,https://asistent-crypto.vercel.app/api/x402/data/orderbook-depth,0xbeebd30639e99bbce11faa2b463fcccf6215831b,data,crypto order book depth and slippage,0.01,0.03,2.0
+2026-10-06,2026-10-05,asistent-crypto.vercel.app,https://asistent-crypto.vercel.app/api/x402/data/brief,0xbeebd30639e99bbce11faa2b463fcccf6215831b,data,crypto market intelligence signals,0.01,0.05,4.0
+2026-10-06,2026-10-05,asistent-crypto.vercel.app,https://asistent-crypto.vercel.app/api/x402/data/funding-by-venue,0xbeebd30639e99bbce11faa2b463fcccf6215831b,data,funding rate and open interest by venue,0.01,0.02,1.0
+2026-10-06,2026-10-05,the-stall.intuitek.ai,https://the-stall.intuitek.ai/cap/vision-analyze,0x03d773c52b67993e60ecb3134b17436fe03b584c,,,0.05,0.261,4.22
+2026-10-06,2026-10-05,x402.asterpay.io,https://x402.asterpay.io/v1/agent/deep-analysis/batch,0xd5f8481d8f25d3966d2010dbf9b47ffbdf745a9e,,,0.01,0.05,4.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/xrpl-drops,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,xrp to drops conversion,0.001,0.003,2.0
+2026-10-06,2026-10-05,apollo.x402.paywithlocus.com,https://apollo.x402.paywithlocus.com/apollo/org-search,0x3c5cbe28eca3b96023c45d3f877da834f1c7d5fa,search,organization search by name,0.005,0.038,6.6
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/erc20-decimals,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,erc20 token decimals lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/btc-tip,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,bitcoin block height utxo,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/json-canonical,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,canonical json and digest,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/solana-slot,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,solana onchain slot data,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/research/hn-front-page,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,content,hacker news front page,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/hash-md5,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,hashing digest deterministic integrity md5,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/eth-pad-hex,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,pad hex to fixed byte width,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/encode-hex,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,hex encode utf-8 text,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/encode-base32,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,base32 encode string,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/decode-base58,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,base58 decode to bytes,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/erc20-name,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,erc20 token name lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/solana-epoch,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,solana epoch progress data,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/hash-hmac,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,hmac of message under key,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/csv-to-json,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,csv to json conversion,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/contract-owner,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,contract owner lookup,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/btc-script-type,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,bitcoin output script lookup,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/btc-mempool,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,bitcoin mempool size and backlog,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/json-to-csv,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,render json rows as csv,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/bitcoin,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,bitcoin price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/solana,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,solana crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/ethereum,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,ethereum price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/web/dns,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,dns record lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/solana-rent-exempt,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,solana account rent exempt lamports,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/geo/weather-forecast,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,daily weather forecast lookup,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/compound-growth,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,compound interest calculation,0.002,0.003,0.5
+2026-10-06,2026-10-05,vaunt-dispatch-production.up.railway.app,https://vaunt-dispatch-production.up.railway.app/agent/x402/evaluate,0xf4b1093a9498523e18c484989df5157012abb85f,,,0.05,0.5,9.0
+2026-10-06,2026-10-05,keboola-adp.ngrok.app,https://keboola-adp.ngrok.app/v1/orders,0x90159e4f1aa11ab09d0362ea6ee32b1fd870cb0c,,,0.1,0.001,-0.99
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/evm-block-number,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,evm chain block height,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/xrpl-server-info,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,xrpl node health and network state,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/xrpl-currency-decode,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,xrpl currency code to ticker,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/web/unshorten,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,expand short links and show redirect chain,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/web/robots,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,search,robots.txt scraping and compliance,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/uuid-v5,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,deterministic uuid v5 generation,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/time-convert,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,convert unix time to iso8601,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/text-stats,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,text statistics calculation,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/records/fx-convert,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,currency conversion rate lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/random-bytes,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,generate random bytes and uuid,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/vechain,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,vechain token price and change,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/sui,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,sui crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/sonic-3,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/shiba-inu,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/sei-network,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/pepe,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/ondo-finance,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/maker,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/lido-dao,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/internet-computer,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/hyperliquid,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/filecoin,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,filecoin price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/dai,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/curve-dao-token,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/compound-governance-token,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto token price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/chiliz,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/chainlink,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/celestia,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,celestia token price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/blockstack,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/bittensor,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/avalanche-2,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/arbitrum,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/aptos,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/algorand,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,algorand crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/aerodrome-finance,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/aave,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/percent-change,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,percentage change between two values,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/hash-sha512,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,sha512 hash of input,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/hash-sha384,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,sha384 hash of input,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/hash-sha3-512,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,sha3-512 hash digest,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/hash-sha3-256,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,hashing digest deterministic integrity sha3-256,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/hash-sha256,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,sha256 hash of input data,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/hash-sha224,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,hashing digest of input,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/hash-sha1,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,sha1 hash of input data,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/hash-ripemd160,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,ripemd160 hash of input,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/hash-keccak256,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,keccak256 hash computation,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/hash-hash160,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,bitcoin hash160 computation,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/hash-double-sha256,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,double sha256 hash computation,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/hash-blake2s256,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,blake2s256 hash of input,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/hash-blake2b512,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,blake2b-512 hash of input,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/geo/weather-now,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,current weather conditions lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/geo/public-holidays,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,public holidays lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/geo/business-day,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,business day check and next day,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/evm-block-tx-count,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,evm block transaction count,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/eth-message-hash,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,eth message hash computation,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/eth-checksum-address,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,checksum ethereum address,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/encode-base58,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,base58 encoding utility,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/decode-hex,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,decode hex to text,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/decode-base64,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,decode base64 to text,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/compare-digest,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,compare hashes in constant time,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/chain-info,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,evm chain reference data,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/records/fx-rates,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,currency exchange rates lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/worldcoin-wld,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/virtual-protocol,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/usd-coin,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/uniswap,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/tron,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/the-graph,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/tether,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/stellar,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,stellar xlm crypto price,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/ripple,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/render-token,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/raydium,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/pyth-network,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/polkadot,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,polkadot crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/pendle,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/paypal-usd,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/optimism,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/okb,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/near,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/morpho,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/monero,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/mantle,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/litecoin,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,litecoin price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/kaspa,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,kaspa crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/jupiter-exchange-solana,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/jito-governance-token,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto token price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/injective-protocol,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price and change,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/immutable-x,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/hedera-hashgraph,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/floki,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/ethereum-name-service,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/ethereum-classic,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/ethena-usde,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/ethena,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/dogwifcoin,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/dogecoin,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,dogecoin price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/crypto-com-chain,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price and change,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/cosmos,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/cardano,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,cardano ada price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/bonk,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/bitcoin-cash,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/binancecoin,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/berachain-bera,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/geo/postal-code,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,postal code to address lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/geo/geocode,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,geocode location to coordinates,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/geo/earthquakes,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,recent earthquake data lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/geo/country,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,country facts lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/geo/air-quality,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,air quality data lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/evm-node-info,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,evm node onchain data,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/evm-chain-id,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,evm chain id lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/eth-units,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,convert ethereum token units,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/eth-namehash,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,eth namehash and labelhash,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/erc20-symbol,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,erc20 token symbol lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/encode-url,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,url encode decode utility,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/encode-base64,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,base64 encode text or bytes,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/abi-function-selector,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,function selector from solidity signature,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/abi-event-topic,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,ethereum abi event topic lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/price/xdce-crowd-sale,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,crypto price lookup,0.001,0.003,2.0
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/weighted-average,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,weighted average calculation,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/web/whois,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,domain whois and rdap lookup,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/web/tls-cert,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,ssl certificate expiry check,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/web/sitemap,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,search,crawl website urls from sitemap,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/web/rss,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,content,rss feed latest items,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/web/page-meta,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,search,page metadata lookup,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/web/ip-whois,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,ip address ownership lookup,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/web/headers-audit,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,security headers audit,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/web/email-check,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,email validation and deliverability check,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/storage-slot-mapping,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,solidity mapping entry storage slot,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/stellar-ledger,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,stellar ledger data lookup,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/stellar-fee-stats,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,stellar network fee statistics,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/solana-inflation,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,solana inflation rate data,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/solana-blockhash,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,solana blockhash and validity,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/slippage-calc,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,slippage calculation for trade fills,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/research/wikidata-search,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,search,wikidata entity search by name,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/research/wiki-summary,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,wikipedia article summary,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/research/wiki-search,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,search,wikipedia article search,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/research/pypi-package,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,pypi package facts lookup,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/research/isbn,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,isbn lookup for book details,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/research/hn-search,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,search,hacker news stories or comments,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/research/crates-package,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,rust crate facts lookup,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/records/vehicle-recalls,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,vehicle safety recall lookup,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/records/fx-history,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,exchange rate history lookup,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/json-flatten,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,flatten nested json to leaf paths,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/geo/weather-alerts,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,us weather alerts by state,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/evm-priority-fee,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,evm priority fee lookup,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/evm-nonce,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,evm address nonce lookup,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/erc20-domain-separator,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,erc20 token domain separator,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/defi/token-prices,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,batch token prices lookup,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/defi/protocol-search,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,defi protocol lookup,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/defi/chains,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,defi chain tvl market share,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/decode-jwt,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,decode jwt header and claims,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/decode-bech32,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,decode and verify bech32 string,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/contract-paused,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,other,contract paused status check,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/evm-storage,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,read raw storage slot from contract,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/evm-native-balance,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,evm native coin balance lookup,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/evm-gas-price,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,evm gas price lookup,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/evm-code,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,evm contract address check,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/calldata-split,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,split evm calldata into words,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/btc-fees,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,bitcoin fee rates lookup,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/btc-bits-to-target,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,bitcoin nbits to target and difficulty,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/base58check-verify,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,base58check address validation,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/apr-apy,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,apr apy conversion calculator,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/research/npm-package,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,npm package dependency facts,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/research/doi,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,doi citation metadata lookup,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/research/book-search,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,search,book metadata search,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/records/vin-decode,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,vehicle vin decode lookup,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/eth-rlp-encode,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,rlp encode ethereum value,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/eth-contract-address,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,predict ethereum contract address,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/eth-address-from-pubkey,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,ethereum address from public key,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/erc20-nonce,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,erc20 permit nonce lookup,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/encode-packed,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,abi encode packed function,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/ai/json-repair,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,repair malformed json data,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/address-identify,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,data,address chain and validation,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/abi-encode,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,abi encode typed parameters,0.002,0.003,0.5
+2026-10-06,2026-10-05,twin.unykorn.org,https://twin.unykorn.org/abi-decode,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,decode abi data against types,0.002,0.003,0.5
