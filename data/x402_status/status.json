@@ -1,14 +1,14 @@
 {
- "built": "2026-10-07",
- "latest_day": "2026-10-07",
- "days": 8,
+ "built": "2026-10-08",
+ "latest_day": "2026-10-08",
+ "days": 9,
  "user_agent": "wknipe-x402-status/1.0 (+https://wknipe.com/x402/status/; one unpaid request per endpoint per day)",
  "scope_latest": {
-  "endpoints_listed": 35289,
-  "sellers_with_buyers_listed": 540,
-  "endpoints_of_sellers_with_buyers": 12302,
-  "priority_checked_today": 2053,
-  "rotating_checked_today": 1034,
+  "endpoints_listed": 33793,
+  "sellers_with_buyers_listed": 539,
+  "endpoints_of_sellers_with_buyers": 12779,
+  "priority_checked_today": 2040,
+  "rotating_checked_today": 1052,
   "caps": {
    "per_seller_daily": 5,
    "per_host_daily": 60,
@@ -17,63 +17,63 @@
  },
  "latest": [
   {
-   "date": "2026-10-07",
+   "date": "2026-10-08",
    "scope": "all",
-   "checked": 3087,
-   "hosts": 1025,
-   "responds": 0.9896,
-   "valid_402": 0.9404,
-   "price_match_of_valid": 0.973,
-   "payto_match_of_valid": 0.9762,
-   "median_latency_ms": 219,
-   "p90_latency_ms": 691
+   "checked": 3092,
+   "hosts": 994,
+   "responds": 0.9929,
+   "valid_402": 0.9473,
+   "price_match_of_valid": 0.9754,
+   "payto_match_of_valid": 0.9751,
+   "median_latency_ms": 263,
+   "p90_latency_ms": 703
   },
   {
-   "date": "2026-10-07",
+   "date": "2026-10-08",
    "scope": "priority",
-   "checked": 2053,
-   "hosts": 686,
-   "responds": 0.9961,
-   "valid_402": 0.963,
-   "price_match_of_valid": 0.9747,
+   "checked": 2040,
+   "hosts": 687,
+   "responds": 0.9956,
+   "valid_402": 0.9549,
+   "price_match_of_valid": 0.9789,
    "payto_match_of_valid": 0.9985,
-   "median_latency_ms": 217,
-   "p90_latency_ms": 667
+   "median_latency_ms": 255,
+   "p90_latency_ms": 657
   }
  ],
- "endpoints_7d": 12454,
+ "endpoints_7d": 12710,
  "failure_reasons_7d": [
   [
    "HTTP 400",
-   349
+   362
   ],
   [
    "no response (TimeoutError)",
-   96
+   105
   ],
   [
    "HTTP 502",
-   96
+   99
   ],
   [
    "HTTP 404",
-   71
+   74
   ],
   [
    "HTTP 503",
-   63
+   61
   ],
   [
    "HTTP 200",
-   52
+   54
   ],
   [
    "no response (URLError)",
-   21
+   26
   ],
   [
    "HTTP 422",
-   17
+   19
   ],
   [
    "HTTP 429",
@@ -85,7 +85,7 @@
   ],
   [
    "HTTP 403",
-   6
+   9
   ],
   [
    "402 without parseable accepts",
