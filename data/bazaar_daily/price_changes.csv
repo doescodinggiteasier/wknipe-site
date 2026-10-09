@@ -582,3 +582,99 @@ date,since,host,resource,pay_to,category,what,old_usd,new_usd,change
 2026-10-08,2026-10-07,agdata.shveik.dev,https://agdata.shveik.dev/x402/amazon-reviews,0xbba594f5549392df7a8182049291b605948f5f86,,,0.0458,0.0498,0.0873
 2026-10-08,2026-10-07,gblin-sentinel.vercel.app,https://gblin-sentinel.vercel.app/api/data/risk-pulse-pro,0x0eba5d314f4f5dcb7a094953fa9311a45172dd1b,,,0.03,0.005,-0.8333
 2026-10-08,2026-10-07,percallapi.com,https://percallapi.com/carrier-lookup,0xed6013a7f5a5cd54e21e5bdf8028a76a4e7b2ee5,,,0.02,0.01,-0.5
+2026-10-09,2026-10-08,twitter.use.x402atlas.com,https://twitter.use.x402atlas.com/search,0x51d577c8cbb8b3fb1ba0ce31c7923cc27a07f78b,search,twitter x tweet search,0.006,0.005,-0.1667
+2026-10-09,2026-10-08,x402.ochinimus.app,https://x402.ochinimus.app/api/btc-price,0x22db3a9686ee5261e7bf3ed4f91277232e8076e6,data,bitcoin spot price lookup,0.001,0.005,4.0
+2026-10-09,2026-10-08,api.hyperextend.xyz,https://api.hyperextend.xyz/v1/liquidations/BTC,0x548fc289526ab2f0391d562a723cda64bbf1abc4,data,bitcoin liquidation tape data,0.011,0.111,9.0909
+2026-10-09,2026-10-08,x402.ochinimus.app,https://x402.ochinimus.app/api/sol-price,0x22db3a9686ee5261e7bf3ed4f91277232e8076e6,data,solana spot price lookup,0.001,0.005,4.0
+2026-10-09,2026-10-08,x402-echo-service.onrender.com,https://x402-echo-service.onrender.com/uuid,0x9cc774a8ed49d89cba1a288f4a050b8f7fba77ee,,,0.05,0.001,-0.98
+2026-10-09,2026-10-08,x402.ochinimus.app,https://x402.ochinimus.app/api/liquidation-stats,0x22db3a9686ee5261e7bf3ed4f91277232e8076e6,data,crypto liquidation stats lookup,0.004,0.01,1.5
+2026-10-09,2026-10-08,x402.donnyautomation.com,https://x402.donnyautomation.com/lei,0x2740651e046c59ab2a6510401140643292d3a96f,,,0.03,0.01,-0.6667
+2026-10-09,2026-10-08,api.hyperextend.xyz,https://api.hyperextend.xyz/v1/candles/BTC/1m,0x548fc289526ab2f0391d562a723cda64bbf1abc4,,,0.051,0.05093,-0.0014
+2026-10-09,2026-10-08,x402tap.com,https://x402tap.com/api/prediction-arb,0xb810b599bc730aa85800babe7f5d160524322c86,data,prediction market arbitrage signal,0.005,0.05,9.0
+2026-10-09,2026-10-08,x402.ochinimus.app,https://x402.ochinimus.app/api/funding-rate,0x22db3a9686ee5261e7bf3ed4f91277232e8076e6,data,crypto funding rate lookup,0.002,0.005,1.5
+2026-10-09,2026-10-08,x402.ochinimus.app,https://x402.ochinimus.app/api/liquidations,0x22db3a9686ee5261e7bf3ed4f91277232e8076e6,data,crypto liquidation data feed,0.003,0.005,0.6667
+2026-10-09,2026-10-08,x402.ochinimus.app,https://x402.ochinimus.app/api/positioning,0x22db3a9686ee5261e7bf3ed4f91277232e8076e6,data,crypto open interest and positioning,0.004,0.005,0.25
+2026-10-09,2026-10-08,402cron.com,https://402cron.com/buy/starter,0x8e37022edcf0f21cf3c9f93fee9d4d32519f36f4,,,2.0,1.0,-0.5
+2026-10-09,2026-10-08,x402tap.com,https://x402tap.com/protected,0xb810b599bc730aa85800babe7f5d160524322c86,content,premium content access,0.001,0.01,9.0
+2026-10-09,2026-10-08,api.zkrobotics.fr,https://api.zkrobotics.fr/x402/base/wallet,0x60fd97850059df9600c4e26f09ac58ef51561963,,,0.002,0.0015,-0.25
+2026-10-09,2026-10-08,api.zkrobotics.fr,https://api.zkrobotics.fr/x402/sentiment,0x60fd97850059df9600c4e26f09ac58ef51561963,,,0.004,0.003,-0.25
+2026-10-09,2026-10-08,api.zkrobotics.fr,https://api.zkrobotics.fr/x402/grammar,0x60fd97850059df9600c4e26f09ac58ef51561963,,,0.008,0.007,-0.125
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/news-search,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.006,0.0065,0.0833
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/satellite-image,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.015,0.013,-0.1333
+2026-10-09,2026-10-08,x402.ochinimus.app,https://x402.ochinimus.app/api/base-balance,0x22db3a9686ee5261e7bf3ed4f91277232e8076e6,data,evm wallet token balances,0.002,0.005,1.5
+2026-10-09,2026-10-08,x402.ochinimus.app,https://x402.ochinimus.app/api/price,0x22db3a9686ee5261e7bf3ed4f91277232e8076e6,data,crypto spot price lookup,0.001,0.005,4.0
+2026-10-09,2026-10-08,x402.ochinimus.app,https://x402.ochinimus.app/api/perp,0x22db3a9686ee5261e7bf3ed4f91277232e8076e6,data,perp market data funding open interest,0.001,0.005,4.0
+2026-10-09,2026-10-08,x402.ochinimus.app,https://x402.ochinimus.app/api/liq-pulse,0x22db3a9686ee5261e7bf3ed4f91277232e8076e6,data,crypto liquidation data feed,0.001,0.005,4.0
+2026-10-09,2026-10-08,x402.ochinimus.app,https://x402.ochinimus.app/api/funding-pulse,0x22db3a9686ee5261e7bf3ed4f91277232e8076e6,data,funding rates and open interest,0.001,0.005,4.0
+2026-10-09,2026-10-08,x402.ochinimus.app,https://x402.ochinimus.app/api/eth-price,0x22db3a9686ee5261e7bf3ed4f91277232e8076e6,data,ethereum price lookup,0.001,0.005,4.0
+2026-10-09,2026-10-08,x402.ochinimus.app,https://x402.ochinimus.app/api/base-gas,0x22db3a9686ee5261e7bf3ed4f91277232e8076e6,data,base gas price lookup,0.001,0.005,4.0
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/html-to-pdf,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.015,0.0045,-0.7
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/web-read-batch,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.015,0.005,-0.6667
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/token-security,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.015,0.009,-0.4
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/site-crawl,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.02,0.005,-0.75
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/search-read,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.02,0.005,-0.75
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/weather,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.005,0.002,-0.6
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/whois,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.005,0.0045,-0.1
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/vin-decode,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.005,0.0035,-0.3
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/useragent-parse,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.005,0.002,-0.6
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/translate,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.005,0.009,0.8
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/timezone,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.005,0.002,-0.6
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/text-embed,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.005,0.002,-0.6
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/ssl-check,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.005,0.009,0.8
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/rss-fetch,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.005,0.0025,-0.5
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/tts,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.015,0.04,1.6667
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/tech-stack,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.01,0.009,-0.1
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/doc-parse,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.01,0.009,-0.1
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/chart-render,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.01,0.009,-0.1
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/airport-status,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.005,0.0045,-0.1
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/postal-code,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.005,0.0025,-0.5
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/domain-check,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.006,0.009,0.5
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/trends-hot,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.006,0.0155,1.5833
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/dev-search,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.006,0.0045,-0.25
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/crypto-news,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.006,0.0025,-0.5833
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/defi-tvl,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.006,0.002,-0.6667
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/perp-funding,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.006,0.0025,-0.5833
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/site-map,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.008,0.0025,-0.6875
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/gas-price,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.005,0.002,-0.6
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/sec-filings,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.006,0.0025,-0.5833
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/company-lookup,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.006,0.009,0.5
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/iban-validate,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.005,0.0025,-0.5
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/vat-validate,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.006,0.0045,-0.25
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/holidays,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.005,0.003,-0.4
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/evm-tx,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.005,0.002,-0.6
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/erc20-info,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.005,0.0045,-0.1
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/defi-yields,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.006,0.0055,-0.0833
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/hyperliquid,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.005,0.0045,-0.1
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/prediction-markets,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.008,0.009,0.125
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/image-resize,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.006,0.0045,-0.25
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/barcode,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.005,0.0025,-0.5
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/evm-balance,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.005,0.002,-0.6
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/web-scrape,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.008,0.0025,-0.6875
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/geocode,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.005,0.003,-0.4
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/phone-validate,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.005,0.0045,-0.1
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/crypto-prices,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.005,0.002,-0.6
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/email-validate,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.005,0.0035,-0.3
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/web-search,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.006,0.0035,-0.4167
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/dns-lookup,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.005,0.002,-0.6
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/webpage-reader,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.01,0.009,-0.1
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/ip-lookup,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.005,0.0055,0.1
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/exchange-rates,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.005,0.0045,-0.1
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/qr-code,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.005,0.004,-0.2
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/screenshot,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.01,0.009,-0.1
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/ocr,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.015,0.009,-0.4
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/pdf-extract,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.008,0.0055,-0.3125
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/email-verify,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.005,0.0025,-0.5
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/sanctions-screen,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.01,0.009,-0.1
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/cve-lookup,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.006,0.009,0.5
+2026-10-09,2026-10-08,agdata.shveik.dev,https://agdata.shveik.dev/x402/unblock,0xbba594f5549392df7a8182049291b605948f5f86,,,0.01555,0.01955,0.2572
+2026-10-09,2026-10-08,agdata.shveik.dev,https://agdata.shveik.dev/x402/google-search,0xbba594f5549392df7a8182049291b605948f5f86,search,google search results as json,0.027,0.03005,0.113
+2026-10-09,2026-10-08,agdata.shveik.dev,https://agdata.shveik.dev/x402/youtube-transcript,0xbba594f5549392df7a8182049291b605948f5f86,,,0.028,0.032,0.1429
+2026-10-09,2026-10-08,api.vextorium.com,https://api.vextorium.com/evm-internas-pago,0xb9f06d2734b7e9d7b21b64c4d8b95bd774b71acf,,,0.004,0.006,0.5
+2026-10-09,2026-10-08,api.vextorium.com,https://api.vextorium.com/ricos-red-pago,0xb9f06d2734b7e9d7b21b64c4d8b95bd774b71acf,,,0.002,0.004,1.0
+2026-10-09,2026-10-08,api.vextorium.com,https://api.vextorium.com/v1/rich-list,0xb9f06d2734b7e9d7b21b64c4d8b95bd774b71acf,,,0.002,0.004,1.0
+2026-10-09,2026-10-08,agdata.shveik.dev,https://agdata.shveik.dev/x402/google-maps-reviews,0xbba594f5549392df7a8182049291b605948f5f86,,,0.03265,0.03665,0.1225
+2026-10-09,2026-10-08,agentsvc.io,https://agentsvc.io/api/v1/proxy/satellite-compare,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.015,0.013,-0.1333
+2026-10-09,2026-10-08,agproxy.shveik.dev,https://agproxy.shveik.dev/x402/fetch,0xbba594f5549392df7a8182049291b605948f5f86,,,0.0116,0.0156,0.3448
+2026-10-09,2026-10-08,apexfaucet.xyz,https://apexfaucet.xyz/api/x402/arc-holders,0xd334ab5151c624cada654854e2879903dc4217ed,,,0.003,0.002,-0.3333
+2026-10-09,2026-10-08,agdata.shveik.dev,https://agdata.shveik.dev/x402/indeed-jobs,0xbba594f5549392df7a8182049291b605948f5f86,,,0.0191,0.0231,0.2094
+2026-10-09,2026-10-08,twin.unykorn.org,https://twin.unykorn.org/v1/embeddings,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,text embeddings generation,0.002,0.003,0.5
