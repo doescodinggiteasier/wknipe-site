@@ -1006,3 +1006,30 @@ date,since,host,resource,pay_to,category,what,old_usd,new_usd,change
 2026-10-12,2026-10-11,saylorinnovations.com,https://saylorinnovations.com/api/bio/pdb/:pdb_id,0xa2a8df0f7caabea4e120a2568118f141569fc8aa,,,0.002,0.01,4.0
 2026-10-12,2026-10-11,saylorinnovations.com,https://saylorinnovations.com/api/bio/alphafold/:id,0xa2a8df0f7caabea4e120a2568118f141569fc8aa,,,0.002,0.01,4.0
 2026-10-12,2026-10-11,saylorinnovations.com,https://saylorinnovations.com/api/bio/protein/:id,0xa2a8df0f7caabea4e120a2568118f141569fc8aa,,,0.003,0.01,2.3333
+2026-10-13,2026-10-12,dripstack.com,https://dripstack.com/api/v2/stock-picks,0xbf22b6ddb5a08c823856a779f1004eea60c5ab92,content,stock picks newsletter articles,2.0,3.0,0.5
+2026-10-13,2026-10-12,x402tap.com,https://x402tap.com/api/web-search,0xb810b599bc730aa85800babe7f5d160524322c86,search,web search ranked results,0.003,0.015,4.0
+2026-10-13,2026-10-12,dns.use.x402atlas.com,https://dns.use.x402atlas.com/whois,0x446e51deab3ae656c99e65369e8ef1148d23d7f7,,,0.005,0.01,1.0
+2026-10-13,2026-10-12,options.lonestaroracle.xyz,https://options.lonestaroracle.xyz/flow,0x52ab53912d37759b2ad364f22dd06b16714b6c06,data,options flow unusual activity,0.01,0.05,4.0
+2026-10-13,2026-10-12,twitter.use.x402atlas.com,https://twitter.use.x402atlas.com/trends,0x51d577c8cbb8b3fb1ba0ce31c7923cc27a07f78b,,,0.006,0.03,4.0
+2026-10-13,2026-10-12,x402.ochinimus.app,https://x402.ochinimus.app/api/eth-price,0x22db3a9686ee5261e7bf3ed4f91277232e8076e6,,,0.005,0.001,-0.8
+2026-10-13,2026-10-12,ausrine-who.onrender.com,https://ausrine-who.onrender.com/who/:target,0x15841575b048291622909439029bb674753ae2db,,,0.01,0.001,-0.9
+2026-10-13,2026-10-12,ari001.tailb4ac3a.ts.net,https://ari001.tailb4ac3a.ts.net/v1/ventures/x402_chain_reads_v1/base_eth_getbalance,0xbf324f1f5b648a67905a86af3e1093c667eaa035,,,0.003,0.002,-0.3333
+2026-10-13,2026-10-12,api.aiskills402.com,https://api.aiskills402.com/v1/skills/prompt-injection-guard/file,0x8e37022edcf0f21cf3c9f93fee9d4d32519f36f4,,,0.05,0.07,0.4
+2026-10-13,2026-10-12,api.aiskills402.com,https://api.aiskills402.com/v1/skills/done-means-done/file,0x8e37022edcf0f21cf3c9f93fee9d4d32519f36f4,,,0.05,0.1,1.0
+2026-10-13,2026-10-12,ari001.tailb4ac3a.ts.net,https://ari001.tailb4ac3a.ts.net/v1/ventures/x402_chain_reads_v1/chain_fees_digest,0xbf324f1f5b648a67905a86af3e1093c667eaa035,,,0.003,0.002,-0.3333
+2026-10-13,2026-10-12,kyb-br-agents.marcelfons.workers.dev,https://kyb-br-agents.marcelfons.workers.dev/v1/batch/sanctions,0xb5a72bb9106975869165c380e52d157388346626,,,0.25,0.15,-0.4
+2026-10-13,2026-10-12,kyb-br-agents.marcelfons.workers.dev,https://kyb-br-agents.marcelfons.workers.dev/v1/sanctions,0xb5a72bb9106975869165c380e52d157388346626,,,0.03,0.02,-0.3333
+2026-10-13,2026-10-12,rooms.aurmada.com,https://rooms.aurmada.com/x402/v1/email/check,0xef56e1fa792b8f3e87dcb09fa36261d213c10a09,,,0.002,0.001,-0.5
+2026-10-13,2026-10-12,rooms.aurmada.com,https://rooms.aurmada.com/x402/v1/web/extract,0xef56e1fa792b8f3e87dcb09fa36261d213c10a09,,,0.003,0.002,-0.3333
+2026-10-13,2026-10-12,rooms.aurmada.com,https://rooms.aurmada.com/x402/v1/ens,0xef56e1fa792b8f3e87dcb09fa36261d213c10a09,,,0.003,0.002,-0.3333
+2026-10-13,2026-10-12,rooms.aurmada.com,https://rooms.aurmada.com/x402/v1/onchain/token,0xef56e1fa792b8f3e87dcb09fa36261d213c10a09,,,0.005,0.003,-0.4
+2026-10-13,2026-10-12,rooms.aurmada.com,https://rooms.aurmada.com/x402/v1/onchain/address,0xef56e1fa792b8f3e87dcb09fa36261d213c10a09,,,0.003,0.002,-0.3333
+2026-10-13,2026-10-12,rooms.aurmada.com,https://rooms.aurmada.com/x402/v1/agent-verify,0xef56e1fa792b8f3e87dcb09fa36261d213c10a09,,,0.01,0.005,-0.5
+2026-10-13,2026-10-12,rooms.aurmada.com,https://rooms.aurmada.com/x402/v1/trust-check,0xef56e1fa792b8f3e87dcb09fa36261d213c10a09,,,0.01,0.003,-0.7
+2026-10-13,2026-10-12,x402.asterpay.io,https://x402.asterpay.io/v2/x402/agent/trust-score/:address,0xd5f8481d8f25d3966d2010dbf9b47ffbdf745a9e,other,agent trust score lookup,0.005,0.0075,0.5
+2026-10-13,2026-10-12,oceanalt.com,https://oceanalt.com/api/x402/credits,0x93c67dabee533a9689a1e3a67201352b6b29dcd4,,,0.05,0.1,1.0
+2026-10-13,2026-10-12,x402.asterpay.io,https://x402.asterpay.io/v1/agent/deep-analysis/:address,0xd5f8481d8f25d3966d2010dbf9b47ffbdf745a9e,data,agent trust score analysis,0.01,0.015,0.5
+2026-10-13,2026-10-12,api.loyalspark.online,https://api.loyalspark.online/x402-gateway/programs,0x40a8cdd6a10ec1a8cb3dfb2834675e7a2cf4ad8b,,,0.001,0.05,49.0
+2026-10-13,2026-10-12,claim-grounding.prospectintel.workers.dev,https://claim-grounding.prospectintel.workers.dev/v1/verify_claim,0x485ffc037f02dddc154a454a9ca89c4b1b29e25b,,,0.1,1.0,9.0
+2026-10-13,2026-10-12,claim-grounding.prospectintel.workers.dev,https://claim-grounding.prospectintel.workers.dev/v1/deep_verify,0x485ffc037f02dddc154a454a9ca89c4b1b29e25b,,,2.0,0.75,-0.625
+2026-10-13,2026-10-12,prospect-intelligence.prospectintel.workers.dev,https://prospect-intelligence.prospectintel.workers.dev/v1/email,0x485ffc037f02dddc154a454a9ca89c4b1b29e25b,,,0.5,0.08,-0.84
