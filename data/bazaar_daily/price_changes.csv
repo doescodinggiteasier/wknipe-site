@@ -1261,3 +1261,68 @@ date,since,host,resource,pay_to,category,what,old_usd,new_usd,change
 2026-10-15,2026-10-14,stack.halowerk.com,https://stack.halowerk.com/stack/articles/angular,0x2880edfff13100677bf97a3cbdf3bc34771c4e5e,,,0.004,0.005,0.25
 2026-10-15,2026-10-14,stack.halowerk.com,https://stack.halowerk.com/stack/articles/apache,0x2880edfff13100677bf97a3cbdf3bc34771c4e5e,,,0.004,0.005,0.25
 2026-10-15,2026-10-14,x402.billionaireorder.com,https://x402.billionaireorder.com/v1/virtual-traits,0x2f58f210fca0e3a486eacc29057a04576aee265e,compute,generate agent personality vector,0.01,0.05,4.0
+2026-10-16,2026-10-15,api.hyperextend.xyz,https://api.hyperextend.xyz/v1/asset_ctx/BTC/latest,0x548fc289526ab2f0391d562a723cda64bbf1abc4,data,market data candles open interest,0.003475,0.0035,0.0072
+2026-10-16,2026-10-15,base-gas-x402-production.up.railway.app,https://base-gas-x402-production.up.railway.app/gas,0x0d083590c048a243e24a75e3a7c968145de25b44,,,0.005,0.002,-0.6
+2026-10-16,2026-10-15,api.surplusintelligence.ai,https://api.surplusintelligence.ai/v1/chat/completions,0x0f99fc0cbd7a114b2da171fda5a0167858f7afc2,compute,openai compatible model inference,0.003302,0.003301,-0.0003
+2026-10-16,2026-10-15,workers.miodiollc.com,https://workers.miodiollc.com/v1/risk/:address,0x4da1ed782bd61bae9add5a5cabbcf32f767f8d7f,,,0.04,0.005,-0.875
+2026-10-16,2026-10-15,www.mahastrategies.com,https://www.mahastrategies.com/api/v1/compress,0xec84c1cd6602bbe387bc8e6f0d3c062f2762de28,compute,compress documents for llm input,0.001,0.005001,4.001
+2026-10-16,2026-10-15,filingdelta.xyz,https://filingdelta.xyz/cpi/:id,0x6d41a1b675ccf7980a0254d0c1317cccb4b42f2a,,,0.05,0.01,-0.8
+2026-10-16,2026-10-15,filingdelta.xyz,https://filingdelta.xyz/delta/:ticker,0x6d41a1b675ccf7980a0254d0c1317cccb4b42f2a,,,0.1,0.02,-0.8
+2026-10-16,2026-10-15,api.language123.net,https://api.language123.net/v1/extract,0x0360f2276f55a7430667134577d396cd76ffddfe,,,0.002,0.001,-0.5
+2026-10-16,2026-10-15,canaryguard-402.onrender.com,https://canaryguard-402.onrender.com/v1/sanitize,0x73279fa4bada7cac888c62cda4f5c8104765f6f1,,,0.003,0.008,1.6667
+2026-10-16,2026-10-15,api.mekler.ai,https://api.mekler.ai/v1/compute/inference/generate-completions,0xf6c6e2e530bb311c14a49c1a07c720fc232c07c5,,,0.005,0.001939,-0.6122
+2026-10-16,2026-10-15,www.x402pulse.dev,https://www.x402pulse.dev/v1/wallstreet/insider-trades,0x5e901f973c17e5542b4da2a64c7fdc736b2a6e74,,,0.0525,0.0084,-0.84
+2026-10-16,2026-10-15,www.x402pulse.dev,https://www.x402pulse.dev/v1/skilled-whales,0x5e901f973c17e5542b4da2a64c7fdc736b2a6e74,,,0.0525,0.0084,-0.84
+2026-10-16,2026-10-15,www.x402pulse.dev,https://www.x402pulse.dev/v1/health/hospitals,0x5e901f973c17e5542b4da2a64c7fdc736b2a6e74,,,0.0525,0.0084,-0.84
+2026-10-16,2026-10-15,www.x402pulse.dev,https://www.x402pulse.dev/v1/travel/trip-check,0x5e901f973c17e5542b4da2a64c7fdc736b2a6e74,,,0.0875,0.014,-0.84
+2026-10-16,2026-10-15,www.x402pulse.dev,https://www.x402pulse.dev/v1/top-traders,0x5e901f973c17e5542b4da2a64c7fdc736b2a6e74,,,0.0875,0.014,-0.84
+2026-10-16,2026-10-15,www.x402pulse.dev,https://www.x402pulse.dev/v1/oil/markets,0x5e901f973c17e5542b4da2a64c7fdc736b2a6e74,,,0.0875,0.014,-0.84
+2026-10-16,2026-10-15,www.x402pulse.dev,https://www.x402pulse.dev/v1/health/safety-signals,0x5e901f973c17e5542b4da2a64c7fdc736b2a6e74,,,0.0875,0.014,-0.84
+2026-10-16,2026-10-15,www.x402pulse.dev,https://www.x402pulse.dev/v1/smart-money,0x5e901f973c17e5542b4da2a64c7fdc736b2a6e74,,,0.0875,0.014,-0.84
+2026-10-16,2026-10-15,www.x402pulse.dev,https://www.x402pulse.dev/v1/disagreements,0x5e901f973c17e5542b4da2a64c7fdc736b2a6e74,,,0.175,0.028,-0.84
+2026-10-16,2026-10-15,www.x402pulse.dev,https://www.x402pulse.dev/v1/attention/markets,0x5e901f973c17e5542b4da2a64c7fdc736b2a6e74,,,0.0875,0.014,-0.84
+2026-10-16,2026-10-15,www.x402pulse.dev,https://www.x402pulse.dev/v1/wallstreet/yield-curve,0x5e901f973c17e5542b4da2a64c7fdc736b2a6e74,,,0.00875,0.0014,-0.84
+2026-10-16,2026-10-15,www.x402pulse.dev,https://www.x402pulse.dev/v1/wallstreet/events,0x5e901f973c17e5542b4da2a64c7fdc736b2a6e74,,,0.0175,0.0028,-0.84
+2026-10-16,2026-10-15,www.x402pulse.dev,https://www.x402pulse.dev/v1/wallstreet/financials,0x5e901f973c17e5542b4da2a64c7fdc736b2a6e74,,,0.035,0.0056,-0.84
+2026-10-16,2026-10-15,www.x402pulse.dev,https://www.x402pulse.dev/v1/wallstreet/morning-brief,0x5e901f973c17e5542b4da2a64c7fdc736b2a6e74,,,0.35,0.056,-0.84
+2026-10-16,2026-10-15,www.x402pulse.dev,https://www.x402pulse.dev/v1/wallstreet/company-brief,0x5e901f973c17e5542b4da2a64c7fdc736b2a6e74,,,0.35,0.056,-0.84
+2026-10-16,2026-10-15,www.x402pulse.dev,https://www.x402pulse.dev/v1/travel/exchange-rates,0x5e901f973c17e5542b4da2a64c7fdc736b2a6e74,,,0.00875,0.0014,-0.84
+2026-10-16,2026-10-15,www.x402pulse.dev,https://www.x402pulse.dev/v1/travel/advisory,0x5e901f973c17e5542b4da2a64c7fdc736b2a6e74,,,0.00875,0.0014,-0.84
+2026-10-16,2026-10-15,www.x402pulse.dev,https://www.x402pulse.dev/v1/travel/disruptions,0x5e901f973c17e5542b4da2a64c7fdc736b2a6e74,,,0.0175,0.0028,-0.84
+2026-10-16,2026-10-15,www.x402pulse.dev,https://www.x402pulse.dev/v1/travel/airport-forecast,0x5e901f973c17e5542b4da2a64c7fdc736b2a6e74,,,0.0175,0.0028,-0.84
+2026-10-16,2026-10-15,www.x402pulse.dev,https://www.x402pulse.dev/v1/travel/airport-status,0x5e901f973c17e5542b4da2a64c7fdc736b2a6e74,,,0.0175,0.0028,-0.84
+2026-10-16,2026-10-15,www.x402pulse.dev,https://www.x402pulse.dev/v1/attention/topic,0x5e901f973c17e5542b4da2a64c7fdc736b2a6e74,,,0.00875,0.0014,-0.84
+2026-10-16,2026-10-15,www.x402pulse.dev,https://www.x402pulse.dev/v1/attention/spikes,0x5e901f973c17e5542b4da2a64c7fdc736b2a6e74,,,0.035,0.0056,-0.84
+2026-10-16,2026-10-15,www.x402pulse.dev,https://www.x402pulse.dev/v1/attention/trending,0x5e901f973c17e5542b4da2a64c7fdc736b2a6e74,,,0.0175,0.0028,-0.84
+2026-10-16,2026-10-15,www.x402pulse.dev,https://www.x402pulse.dev/v1/oil/positioning,0x5e901f973c17e5542b4da2a64c7fdc736b2a6e74,,,0.035,0.0056,-0.84
+2026-10-16,2026-10-15,www.x402pulse.dev,https://www.x402pulse.dev/v1/oil/supply,0x5e901f973c17e5542b4da2a64c7fdc736b2a6e74,,,0.0175,0.0028,-0.84
+2026-10-16,2026-10-15,www.x402pulse.dev,https://www.x402pulse.dev/v1/oil/inventories,0x5e901f973c17e5542b4da2a64c7fdc736b2a6e74,,,0.0175,0.0028,-0.84
+2026-10-16,2026-10-15,www.x402pulse.dev,https://www.x402pulse.dev/v1/oil/prices,0x5e901f973c17e5542b4da2a64c7fdc736b2a6e74,,,0.00875,0.0014,-0.84
+2026-10-16,2026-10-15,www.x402pulse.dev,https://www.x402pulse.dev/v1/health/hospital,0x5e901f973c17e5542b4da2a64c7fdc736b2a6e74,,,0.035,0.0056,-0.84
+2026-10-16,2026-10-15,www.x402pulse.dev,https://www.x402pulse.dev/v1/health/drug-shortages,0x5e901f973c17e5542b4da2a64c7fdc736b2a6e74,,,0.0175,0.0028,-0.84
+2026-10-16,2026-10-15,www.x402pulse.dev,https://www.x402pulse.dev/v1/health/drug-approvals,0x5e901f973c17e5542b4da2a64c7fdc736b2a6e74,,,0.0175,0.0028,-0.84
+2026-10-16,2026-10-15,www.x402pulse.dev,https://www.x402pulse.dev/v1/health/drug-label,0x5e901f973c17e5542b4da2a64c7fdc736b2a6e74,,,0.00875,0.0014,-0.84
+2026-10-16,2026-10-15,www.x402pulse.dev,https://www.x402pulse.dev/v1/health/recalls,0x5e901f973c17e5542b4da2a64c7fdc736b2a6e74,,,0.00875,0.0014,-0.84
+2026-10-16,2026-10-15,www.x402pulse.dev,https://www.x402pulse.dev/v1/health/drug-safety,0x5e901f973c17e5542b4da2a64c7fdc736b2a6e74,,,0.0175,0.0028,-0.84
+2026-10-16,2026-10-15,www.x402pulse.dev,https://www.x402pulse.dev/v1/wallet,0x5e901f973c17e5542b4da2a64c7fdc736b2a6e74,,,0.035,0.0056,-0.84
+2026-10-16,2026-10-15,www.x402pulse.dev,https://www.x402pulse.dev/v1/whales,0x5e901f973c17e5542b4da2a64c7fdc736b2a6e74,,,0.0175,0.0028,-0.84
+2026-10-16,2026-10-15,pyd.fi,https://pyd.fi/api/agents/yields,0x8a1b107e1ddabc868e40b8718f09537b0a50c9ab,,,0.005,0.01,1.0
+2026-10-16,2026-10-15,www.taifoon.io,https://www.taifoon.io/api/coordination/x402/class/mcp.digest,0x3574999dd4c96eb73bd6e11d4177010c83e14f5b,,,0.007415,0.008,0.0789
+2026-10-16,2026-10-15,www.taifoon.io,https://www.taifoon.io/api/coordination/x402/class/risk.address,0x3574999dd4c96eb73bd6e11d4177010c83e14f5b,,,0.011667,0.01,-0.1429
+2026-10-16,2026-10-15,agdata.shveik.dev,https://agdata.shveik.dev/x402/reddit,0xbba594f5549392df7a8182049291b605948f5f86,,,0.0495,0.0535,0.0808
+2026-10-16,2026-10-15,api.sitecheck-api.workers.dev,https://api.sitecheck-api.workers.dev/api/media/transcript,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.1,0.0045,-0.955
+2026-10-16,2026-10-15,api.sitecheck-api.workers.dev,https://api.sitecheck-api.workers.dev/api/youtube/transcript,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.03,0.01,-0.6667
+2026-10-16,2026-10-15,api.jarvisclaw.ai,https://api.jarvisclaw.ai/v1/marketplace/api/3759,0xdc59fa7b64988b846e76ec9849bb68f889071506,data,energy benchmark prices lookup,0.003312,0.00828,1.5
+2026-10-16,2026-10-15,prediction-bot-iggf.onrender.com,https://prediction-bot-iggf.onrender.com/sentiment,0xaa94e1f602ca71695a257c289fb54bd4f9a6ba15,,,0.05,0.35,6.0
+2026-10-16,2026-10-15,api.sitecheck-api.workers.dev,https://api.sitecheck-api.workers.dev/api/tts,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.02,0.002,-0.9
+2026-10-16,2026-10-15,agent402.tools,https://agent402.tools/api/skill/crypto-research,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.063,0.054,-0.1429
+2026-10-16,2026-10-15,agent402.tools,https://agent402.tools/api/skill/macro-dashboard,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.071,0.065,-0.0845
+2026-10-16,2026-10-15,agent402.tools,https://agent402.tools/api/skill/article-digest,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.108,0.09,-0.1667
+2026-10-16,2026-10-15,r3l4y58.bithash.cc,https://r3l4y58.bithash.cc/fastlane,0xe39571a1b62c21454dbee4dc699cb20ed40b372f,search,web page scrape,0.01,0.001,-0.9
+2026-10-16,2026-10-15,api.getanyapi.com,https://api.getanyapi.com/v1/run/instagram.following,0x754bd2a6799e766b1e2b9f1ae7fbdc0ced96ef13,,,0.0015,0.00188,0.2533
+2026-10-16,2026-10-15,agdata.shveik.dev,https://agdata.shveik.dev/x402/youtube-comments,0xbba594f5549392df7a8182049291b605948f5f86,,,0.09,0.094,0.0444
+2026-10-16,2026-10-15,agdata.shveik.dev,https://agdata.shveik.dev/x402/tiktok-comments,0xbba594f5549392df7a8182049291b605948f5f86,,,0.05925,0.06325,0.0675
+2026-10-16,2026-10-15,agdata.shveik.dev,https://agdata.shveik.dev/x402/instagram-comments,0xbba594f5549392df7a8182049291b605948f5f86,,,0.1146,0.1186,0.0349
+2026-10-16,2026-10-15,stealthguard-402.onrender.com,https://stealthguard-402.onrender.com/v1/pre_trade_agent_gate,0x73279fa4bada7cac888c62cda4f5c8104765f6f1,,,0.005,0.003,-0.4
+2026-10-16,2026-10-15,stealthguard-402.onrender.com,https://stealthguard-402.onrender.com/v1/polymarket_alpha_divergence,0x73279fa4bada7cac888c62cda4f5c8104765f6f1,,,0.008,0.005,-0.375
+2026-10-16,2026-10-15,swarm-agent.net,https://swarm-agent.net/services/report,0x67beebd18ebb2b8b721474374c116478ef088853,,,2.0,0.99,-0.505
