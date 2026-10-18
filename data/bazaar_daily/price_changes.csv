@@ -1411,3 +1411,50 @@ date,since,host,resource,pay_to,category,what,old_usd,new_usd,change
 2026-10-17,2026-10-16,mearef.dev,https://mearef.dev/v1/:country/:series,0x1f0409ccd20a2fb497d4decef4e17e9d0688fea6,,,0.005,0.003,-0.4
 2026-10-17,2026-10-16,afriref.dev,https://afriref.dev/v1/:country/:series,0x1f0409ccd20a2fb497d4decef4e17e9d0688fea6,,,0.005,0.003,-0.4
 2026-10-17,2026-10-16,asiaref.dev,https://asiaref.dev/v1/:country/:series,0x1f0409ccd20a2fb497d4decef4e17e9d0688fea6,,,0.005,0.003,-0.4
+2026-10-18,2026-10-17,chat.gedx402.com,https://chat.gedx402.com/v1/chat/completions,0xb3c2776ce3f99cb3366520c27b4ac5d436942ab6,compute,llm chat completions,0.001,0.005,4.0
+2026-10-18,2026-10-17,api.gondola-ai.com,https://api.gondola-ai.com/v1/images/generations,0x98886846918c7debe86e1d74e249dcdd64a9d367,compute,image generation from prompt,0.01,0.013495,0.3495
+2026-10-18,2026-10-17,api.hyperextend.xyz,https://api.hyperextend.xyz/v1/asset_ctx/BTC/latest,0x548fc289526ab2f0391d562a723cda64bbf1abc4,data,market data candles open interest,0.0035,0.003475,-0.0071
+2026-10-18,2026-10-17,api.anchor-x402.com,https://api.anchor-x402.com/v1/screen,0x127462e296fac1a7f5cf33ba57bb2f0fff5cd0b6,,,0.02,0.005,-0.75
+2026-10-18,2026-10-17,api.losbeto.xyz,https://api.losbeto.xyz/pyth-price,0xd5ba9711a3d052846a3695c70e7fcb8b3168fe7d,data,crypto price and confidence,0.01,0.005,-0.5
+2026-10-18,2026-10-17,www.blockchainiq.co,https://www.blockchainiq.co/api/x402/v1/dashboards/:slug,0x617da9383fba67e86137bc4924b8b7e400fb7c9e,,,0.25,0.05,-0.8
+2026-10-18,2026-10-17,api.secondedoracle.xyz,https://api.secondedoracle.xyz/v1/x402/checks,0x010ab46d566cde25cca0ee55eb105e781c7bcf3a,compute,transaction and agent check,0.25,0.5,1.0
+2026-10-18,2026-10-17,usaref.dev,https://usaref.dev/v1/answers/employment-cost,0x1f0409ccd20a2fb497d4decef4e17e9d0688fea6,,,0.1,0.05,-0.5
+2026-10-18,2026-10-17,afriref.dev,https://afriref.dev/v1/answers/payroll,0x1f0409ccd20a2fb497d4decef4e17e9d0688fea6,,,0.1,0.05,-0.5
+2026-10-18,2026-10-17,rugshield-402.onrender.com,https://rugshield-402.onrender.com/v1/scan,0x73279fa4bada7cac888c62cda4f5c8104765f6f1,,,0.008,0.01,0.25
+2026-10-18,2026-10-17,x402-gateway.blackwoodstate8.workers.dev,https://x402-gateway.blackwoodstate8.workers.dev/v1/speech-to-text,0xe9949ca82543031952eb55eb045f80a94c728ffc,,,0.08,0.05,-0.375
+2026-10-18,2026-10-17,x402-gateway.blackwoodstate8.workers.dev,https://x402-gateway.blackwoodstate8.workers.dev/v1/pdf-text,0x2b1ccdec444abefea996d5b472f3dfaad0446a8b,,,0.2,0.05,-0.75
+2026-10-18,2026-10-17,api.integrityphase.com,https://api.integrityphase.com/verify/webhook-integrity,0x17301b640f11c3635226ac703118d7ea393a8151,,,22.471911,22.461815,-0.0004
+2026-10-18,2026-10-17,subnano.me,https://subnano.me/api/posts/:postId/access,0xb44cd235a9a08435a4ffa79f8dfab32dcb9c401b,,,0.25,0.56,1.24
+2026-10-18,2026-10-17,402registry.com,https://402registry.com/buy/catalog,0x8e37022edcf0f21cf3c9f93fee9d4d32519f36f4,,,0.05,0.005,-0.9
+2026-10-18,2026-10-17,402registry.com,https://402registry.com/buy/one,0x8e37022edcf0f21cf3c9f93fee9d4d32519f36f4,,,0.1,0.01,-0.9
+2026-10-18,2026-10-17,fiatdock.com,https://fiatdock.com/s/svc_bbc969e8-c8dc-49f7-804e-f87d5d9044ad,0xfe257ef6dc89f5b688ac52ef3eb8648c629fa9c4,,,0.01,0.004,-0.6
+2026-10-18,2026-10-17,fiatdock.com,https://fiatdock.com/s/svc_2bbf8ea2-baed-4f72-abac-6295f880b67a,0xfe257ef6dc89f5b688ac52ef3eb8648c629fa9c4,,,0.01,0.008,-0.2
+2026-10-18,2026-10-17,ichimoku-signal.fizzl.eu,https://ichimoku-signal.fizzl.eu/signal/:pair,0x6b0f4651ed42893ab58139938175e4a69f175f25,data,crypto technical analysis signal,0.02,0.01,-0.5
+2026-10-18,2026-10-17,seo.openverbs.com,https://seo.openverbs.com/v1/keyword-suggestions,0xb3f4de103f34b99f0da19b4f16d6b53a14c2194a,,,0.04,0.15,2.75
+2026-10-18,2026-10-17,www.taifoon.io,https://www.taifoon.io/api/coordination/x402/class/mcp.digest,0x3574999dd4c96eb73bd6e11d4177010c83e14f5b,,,0.006803,0.006553,-0.0367
+2026-10-18,2026-10-17,api.oassis.dev,https://api.oassis.dev/web/v1/map,0x23fc725e8eaa1c58900c6507ba89be99a6dfc75d,,,0.001,0.002,1.0
+2026-10-18,2026-10-17,api.oassis.dev,https://api.oassis.dev/web/v1/scrape,0x23fc725e8eaa1c58900c6507ba89be99a6dfc75d,,,0.002,0.004,1.0
+2026-10-18,2026-10-17,srv1553682.hstgr.cloud,https://srv1553682.hstgr.cloud/fng/api/fear-greed,0xd32714cc95753d5cd50f56570e98c9d87e7c6dfe,data,crypto fear and greed index,0.0021,0.001925,-0.0833
+2026-10-18,2026-10-17,cryptyx.ai,https://cryptyx.ai/api/intelligence/query,0x0cd2c9724f185a029101b4aeacf3f114415c394f,,,0.25,0.05,-0.8
+2026-10-18,2026-10-17,api.oassis.dev,https://api.oassis.dev/web/v1/scrape/batch,0x23fc725e8eaa1c58900c6507ba89be99a6dfc75d,,,0.002,0.004,1.0
+2026-10-18,2026-10-17,api.oassis.dev,https://api.oassis.dev/web/v1/session,0x23fc725e8eaa1c58900c6507ba89be99a6dfc75d,,,0.006,0.007,0.1667
+2026-10-18,2026-10-17,api.loyalspark.online,https://api.loyalspark.online/x402-gateway/offers,0x40a8cdd6a10ec1a8cb3dfb2834675e7a2cf4ad8b,,,0.001,0.01,9.0
+2026-10-18,2026-10-17,canaryguard-402.onrender.com,https://canaryguard-402.onrender.com/v1/mcp-tool-auditor,0x73279fa4bada7cac888c62cda4f5c8104765f6f1,,,0.009,0.01,0.1111
+2026-10-18,2026-10-17,canaryguard-402.onrender.com,https://canaryguard-402.onrender.com/v1/eip712-signature-audit,0x73279fa4bada7cac888c62cda4f5c8104765f6f1,,,0.009,0.01,0.1111
+2026-10-18,2026-10-17,canaryguard-402.onrender.com,https://canaryguard-402.onrender.com/v1/llm-token-pricing,0x73279fa4bada7cac888c62cda4f5c8104765f6f1,,,0.008,0.01,0.25
+2026-10-18,2026-10-17,canaryguard-402.onrender.com,https://canaryguard-402.onrender.com/v1/tx-status-base,0x73279fa4bada7cac888c62cda4f5c8104765f6f1,,,0.008,0.01,0.25
+2026-10-18,2026-10-17,canaryguard-402.onrender.com,https://canaryguard-402.onrender.com/v1/url-agent-readiness,0x73279fa4bada7cac888c62cda4f5c8104765f6f1,,,0.009,0.01,0.1111
+2026-10-18,2026-10-17,canaryguard-402.onrender.com,https://canaryguard-402.onrender.com/v1/json-repair-and-sanitize,0x73279fa4bada7cac888c62cda4f5c8104765f6f1,,,0.008,0.01,0.25
+2026-10-18,2026-10-17,canaryguard-402.onrender.com,https://canaryguard-402.onrender.com/v1/crypto-price-onchain,0x73279fa4bada7cac888c62cda4f5c8104765f6f1,,,0.008,0.01,0.25
+2026-10-18,2026-10-17,canaryguard-402.onrender.com,https://canaryguard-402.onrender.com/v1/uniswap-pool-state,0x73279fa4bada7cac888c62cda4f5c8104765f6f1,,,0.009,0.01,0.1111
+2026-10-18,2026-10-17,canaryguard-402.onrender.com,https://canaryguard-402.onrender.com/v1/wallet-sanctions-check,0x73279fa4bada7cac888c62cda4f5c8104765f6f1,,,0.009,0.01,0.1111
+2026-10-18,2026-10-17,canaryguard-402.onrender.com,https://canaryguard-402.onrender.com/v1/contract-info,0x73279fa4bada7cac888c62cda4f5c8104765f6f1,,,0.009,0.01,0.1111
+2026-10-18,2026-10-17,srv1553682.hstgr.cloud,https://srv1553682.hstgr.cloud/route/fear-greed,0xd32714cc95753d5cd50f56570e98c9d87e7c6dfe,data,crypto fear and greed index,0.0021,0.001925,-0.0833
+2026-10-18,2026-10-17,api.xynaptic.io,https://api.xynaptic.io/v1/station-departures,0x4ff893df9ab8603d5460fbbaee0d9b8c0fa4d5e9,data,rail station departures lookup,0.005,0.02,3.0
+2026-10-18,2026-10-17,tenergy.me,https://tenergy.me/x402,0x0af1fc69afbda04cd529457e693327efa0b10c5f,,,0.371449,0.34843,-0.062
+2026-10-18,2026-10-17,api.xynaptic.io,https://api.xynaptic.io/v1/company-search,0x4ff893df9ab8603d5460fbbaee0d9b8c0fa4d5e9,data,french company details lookup,0.005,0.02,3.0
+2026-10-18,2026-10-17,api.xynaptic.io,https://api.xynaptic.io/v1/train-status,0x4ff893df9ab8603d5460fbbaee0d9b8c0fa4d5e9,data,french train status lookup,0.005,0.02,3.0
+2026-10-18,2026-10-17,api.xynaptic.io,https://api.xynaptic.io/v1/security-search,0x4ff893df9ab8603d5460fbbaee0d9b8c0fa4d5e9,data,company filings and identity lookup,0.005,0.02,3.0
+2026-10-18,2026-10-17,api.xynaptic.io,https://api.xynaptic.io/v1/crypto-gas-fees,0x4ff893df9ab8603d5460fbbaee0d9b8c0fa4d5e9,data,crypto gas fees by chain,0.005,0.02,3.0
+2026-10-18,2026-10-17,api.xynaptic.io,https://api.xynaptic.io/v1/gas-tariff-zone,0x4ff893df9ab8603d5460fbbaee0d9b8c0fa4d5e9,data,gas tariff zone lookup,0.005,0.02,3.0
+2026-10-18,2026-10-17,api.xynaptic.io,https://api.xynaptic.io/v1/security-eu-price,0x4ff893df9ab8603d5460fbbaee0d9b8c0fa4d5e9,data,european stock price lookup,0.005,0.02,3.0
