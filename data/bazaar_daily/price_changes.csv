@@ -1458,3 +1458,57 @@ date,since,host,resource,pay_to,category,what,old_usd,new_usd,change
 2026-10-18,2026-10-17,api.xynaptic.io,https://api.xynaptic.io/v1/crypto-gas-fees,0x4ff893df9ab8603d5460fbbaee0d9b8c0fa4d5e9,data,crypto gas fees by chain,0.005,0.02,3.0
 2026-10-18,2026-10-17,api.xynaptic.io,https://api.xynaptic.io/v1/gas-tariff-zone,0x4ff893df9ab8603d5460fbbaee0d9b8c0fa4d5e9,data,gas tariff zone lookup,0.005,0.02,3.0
 2026-10-18,2026-10-17,api.xynaptic.io,https://api.xynaptic.io/v1/security-eu-price,0x4ff893df9ab8603d5460fbbaee0d9b8c0fa4d5e9,data,european stock price lookup,0.005,0.02,3.0
+2026-10-19,2026-10-18,web.cyberwarex.com,https://web.cyberwarex.com/fetch,0x058d0cc5cc97e61e8a9f38d6d6365bce525921b2,search,web page scrape to markdown,0.002,0.001,-0.5
+2026-10-19,2026-10-18,api.gondola-ai.com,https://api.gondola-ai.com/v1/images/generations,0x98886846918c7debe86e1d74e249dcdd64a9d367,compute,image generation from prompt,0.013495,0.012483,-0.075
+2026-10-19,2026-10-18,api.loyalspark.online,https://api.loyalspark.online/x402-gateway/offers,0x40a8cdd6a10ec1a8cb3dfb2834675e7a2cf4ad8b,,,0.01,0.001,-0.9
+2026-10-19,2026-10-18,oracle.cyberwarex.com,https://oracle.cyberwarex.com/contract,0x058d0cc5cc97e61e8a9f38d6d6365bce525921b2,data,smart contract risk scan,0.02,0.008,-0.6
+2026-10-19,2026-10-18,api.loyalspark.online,https://api.loyalspark.online/x402-gateway/rewards,0x40a8cdd6a10ec1a8cb3dfb2834675e7a2cf4ad8b,,,0.01,0.001,-0.9
+2026-10-19,2026-10-18,oracle.cyberwarex.com,https://oracle.cyberwarex.com/honeypot,0x058d0cc5cc97e61e8a9f38d6d6365bce525921b2,compute,honeypot scam detection simulation,0.04,0.005,-0.875
+2026-10-19,2026-10-18,oracle.cyberwarex.com,https://oracle.cyberwarex.com/token,0x058d0cc5cc97e61e8a9f38d6d6365bce525921b2,data,erc20 token safety report,0.06,0.012,-0.8
+2026-10-19,2026-10-18,web.cyberwarex.com,https://web.cyberwarex.com/extract,0x058d0cc5cc97e61e8a9f38d6d6365bce525921b2,search,web page element scrape,0.002,0.001,-0.5
+2026-10-19,2026-10-18,minifetch.com,https://minifetch.com/api/v1/x402/extract/url-content,0xffa9155a0e4b3d8d42351da226cc1feee449686f,,,0.002,0.001,-0.5
+2026-10-19,2026-10-18,minifetch.com,https://minifetch.com/api/v1/x402/extract/url-preview,0xffa9155a0e4b3d8d42351da226cc1feee449686f,search,extract page metadata for previews,0.002,0.001,-0.5
+2026-10-19,2026-10-18,kino402.com,https://kino402.com/v1/generate,0x2a266c87f7b0d1f8a471d2d5234f5cf4fb62b206,,,0.144,0.288,1.0
+2026-10-19,2026-10-18,pool.linkrra.com,https://pool.linkrra.com/api/billing/x402/chat/completions,0xaa0a350f6080940c138a8a50c0fa8c8387782eb4,,,0.01,0.001,-0.9
+2026-10-19,2026-10-18,api.asi.xynatec.com,https://api.asi.xynatec.com/v1/x402/search,0x00f057e7a338143ed94dbf32ce28e6831f6e4776,,,0.01,0.005,-0.5
+2026-10-19,2026-10-18,www.taifoon.io,https://www.taifoon.io/api/coordination/x402/class/mcp.digest,0x3574999dd4c96eb73bd6e11d4177010c83e14f5b,,,0.006553,0.005606,-0.1445
+2026-10-19,2026-10-18,clinkagent.com,https://clinkagent.com/token/verdict,0xb1ef5415e9d3695e16977b8be422ab7512f788c0,,,0.02,0.01,-0.5
+2026-10-19,2026-10-18,api.losbeto.xyz,https://api.losbeto.xyz/pyth-price,0xd5ba9711a3d052846a3695c70e7fcb8b3168fe7d,data,crypto price and confidence,0.005,0.01,1.0
+2026-10-19,2026-10-18,oracle.cyberwarex.com,https://oracle.cyberwarex.com/v1/holders/creator,0x058d0cc5cc97e61e8a9f38d6d6365bce525921b2,,,0.02,0.01,-0.5
+2026-10-19,2026-10-18,oracle.cyberwarex.com,https://oracle.cyberwarex.com/v1/holders/verdict,0x058d0cc5cc97e61e8a9f38d6d6365bce525921b2,,,0.03,0.01,-0.6667
+2026-10-19,2026-10-18,oracle.cyberwarex.com,https://oracle.cyberwarex.com/v1/holders/pool,0x058d0cc5cc97e61e8a9f38d6d6365bce525921b2,,,0.02,0.01,-0.5
+2026-10-19,2026-10-18,api.zkrobotics.fr,https://api.zkrobotics.fr/x402/extract-json,0x60fd97850059df9600c4e26f09ac58ef51561963,,,0.008,0.007,-0.125
+2026-10-19,2026-10-18,api.zkrobotics.fr,https://api.zkrobotics.fr/x402/translate,0x60fd97850059df9600c4e26f09ac58ef51561963,,,0.008,0.007,-0.125
+2026-10-19,2026-10-18,x402-gateway.blackwoodstate8.workers.dev,https://x402-gateway.blackwoodstate8.workers.dev/v1/gas-fees,0x1cb6aac2eabf9644a22f17b0e758061f8412a7e1,,,0.003,0.002,-0.3333
+2026-10-19,2026-10-18,x402-seller-pmlm.onrender.com,https://x402-seller-pmlm.onrender.com/news,0x079471e6f43b6feef80895e19cbfcbb496904852,,,0.005,0.004,-0.2
+2026-10-19,2026-10-18,api.secondedoracle.xyz,https://api.secondedoracle.xyz/v1/x402/checks,0x010ab46d566cde25cca0ee55eb105e781c7bcf3a,compute,transaction and agent check,0.5,0.25,-0.5
+2026-10-19,2026-10-18,agdata.shveik.dev,https://agdata.shveik.dev/x402/youtube-transcript,0xbba594f5549392df7a8182049291b605948f5f86,,,0.032,0.024,-0.25
+2026-10-19,2026-10-18,agdata.shveik.dev,https://agdata.shveik.dev/x402/unblock,0xbba594f5549392df7a8182049291b605948f5f86,,,0.01955,0.01655,-0.1535
+2026-10-19,2026-10-18,api.mekler.ai,https://api.mekler.ai/v1/email/domains/check-mail-configuration,0xf6c6e2e530bb311c14a49c1a07c720fc232c07c5,,,0.002,0.003,0.5
+2026-10-19,2026-10-18,minifetch.com,https://minifetch.com/api/v1/x402/proxy/render/extract/url-content,0xffa9155a0e4b3d8d42351da226cc1feee449686f,,,0.004,0.003,-0.25
+2026-10-19,2026-10-18,minifetch.com,https://minifetch.com/api/v1/x402/proxy/extract/url-content,0xffa9155a0e4b3d8d42351da226cc1feee449686f,,,0.003,0.002,-0.3333
+2026-10-19,2026-10-18,x402-seller-pmlm.onrender.com,https://x402-seller-pmlm.onrender.com/honeypot-check,0xa4096858c850fe94c96e6a5c5b548b98f185aa68,,,0.002,0.01,4.0
+2026-10-19,2026-10-18,api.mekler.ai,https://api.mekler.ai/v1/compute/inference/generate-completions,0xf6c6e2e530bb311c14a49c1a07c720fc232c07c5,,,0.001939,0.002796,0.442
+2026-10-19,2026-10-18,api.zkrobotics.fr,https://api.zkrobotics.fr/x402/summarize,0x60fd97850059df9600c4e26f09ac58ef51561963,,,0.005,0.0055,0.1
+2026-10-19,2026-10-18,aizamon.com,https://aizamon.com/x402/v1/spread,0xb88544cf8e9e97eeb2f313e0d3528fc1e50c2887,,,0.01,0.001,-0.9
+2026-10-19,2026-10-18,x402-seller-pmlm.onrender.com,https://x402-seller-pmlm.onrender.com/token-safety,0xa4096858c850fe94c96e6a5c5b548b98f185aa68,,,0.002,0.01,4.0
+2026-10-19,2026-10-18,x402-factory.com,https://x402-factory.com/v1/movers/sports-mlb,0xcc42ed39a06b6cf3f484307ef76b88bf56fb305f,data,sports probability moves alerts,0.02,0.04,1.0
+2026-10-19,2026-10-18,x402-factory.com,https://x402-factory.com/v1/movers/fed,0xcc42ed39a06b6cf3f484307ef76b88bf56fb305f,data,federal reserve probability alerts,0.02,0.04,1.0
+2026-10-19,2026-10-18,x402-factory.com,https://x402-factory.com/v1/board/sports-nba,0xcc42ed39a06b6cf3f484307ef76b88bf56fb305f,data,nba prediction market data,0.03,0.04,0.3333
+2026-10-19,2026-10-18,x402-factory.com,https://x402-factory.com/v1/movers/science-tech,0xcc42ed39a06b6cf3f484307ef76b88bf56fb305f,data,science tech probability movers,0.02,0.04,1.0
+2026-10-19,2026-10-18,minifetch.com,https://minifetch.com/api/v1/x402/search/keyword,0xffa9155a0e4b3d8d42351da226cc1feee449686f,,,0.002,0.001,-0.5
+2026-10-19,2026-10-18,beta.surplusintelligence.ai,https://beta.surplusintelligence.ai/v1/chat/completions,0x8f6c8e776dbade0e0779286bba5d2ede32edc314,compute,openai compatible model inference,0.003302,0.003304,0.0006
+2026-10-19,2026-10-18,api.delx.ai,https://api.delx.ai/api/v1/x402/query-string,0x9f8bd9875b3e0b632a24a3a7c73f7787175e73a2,,,0.001,0.002,1.0
+2026-10-19,2026-10-18,api.delx.ai,https://api.delx.ai/api/v1/x402/number-base,0x9f8bd9875b3e0b632a24a3a7c73f7787175e73a2,,,0.001,0.002,1.0
+2026-10-19,2026-10-18,api.delx.ai,https://api.delx.ai/api/v1/x402/hex-convert,0x9f8bd9875b3e0b632a24a3a7c73f7787175e73a2,,,0.001,0.002,1.0
+2026-10-19,2026-10-18,api.delx.ai,https://api.delx.ai/api/v1/x402/diff-lines,0x9f8bd9875b3e0b632a24a3a7c73f7787175e73a2,,,0.001,0.002,1.0
+2026-10-19,2026-10-18,api.delx.ai,https://api.delx.ai/api/v1/x402/dedupe-lines,0x9f8bd9875b3e0b632a24a3a7c73f7787175e73a2,,,0.001,0.002,1.0
+2026-10-19,2026-10-18,api.delx.ai,https://api.delx.ai/api/v1/x402/clamp,0x9f8bd9875b3e0b632a24a3a7c73f7787175e73a2,,,0.001,0.002,1.0
+2026-10-19,2026-10-18,tradeapex.ai,https://tradeapex.ai/x402/related,0x22d957d6b9c1eb43c9d246187d6a86876fb5ff61,,,0.002,0.02,9.0
+2026-10-19,2026-10-18,mpp.tracefast.xyz,https://mpp.tracefast.xyz/api/v1/chains/1/consensus/queues,0x2a65491e93ad0d484b74405401a38e2e0e5edd7e,,,0.05,0.025,-0.5
+2026-10-19,2026-10-18,srv1553682.hstgr.cloud,https://srv1553682.hstgr.cloud/route/macro-econ,0xd32714cc95753d5cd50f56570e98c9d87e7c6dfe,,,0.0042,0.0035,-0.1667
+2026-10-19,2026-10-18,clearcut-production-bcc0.up.railway.app,https://clearcut-production-bcc0.up.railway.app/api/remove-background,0x9acfdc5a3d6bfbb127615751e0f0e44014e32abf,,,0.01,0.001,-0.9
+2026-10-19,2026-10-18,api.getanyapi.com,https://api.getanyapi.com/v1/run/google.ai_overview,0x754bd2a6799e766b1e2b9f1ae7fbdc0ced96ef13,,,0.0048,0.0015,-0.6875
+2026-10-19,2026-10-18,x402.billionaireorder.com,https://x402.billionaireorder.com/v1/virtual-traits,0x2f58f210fca0e3a486eacc29057a04576aee265e,compute,generate agent personality vector,0.05,0.01,-0.8
+2026-10-19,2026-10-18,138-68-190-61.nip.io,https://138-68-190-61.nip.io/v1/agent,0x03a9da69d5c84b479982e716067fa7c01da81db3,,,0.005,0.01,1.0
+2026-10-19,2026-10-18,api.integrityphase.com,https://api.integrityphase.com/verify/webhook-integrity,0x17301b640f11c3635226ac703118d7ea393a8151,,,22.461815,22.44669,-0.0007
