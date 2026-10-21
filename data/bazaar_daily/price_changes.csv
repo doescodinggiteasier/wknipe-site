@@ -1666,3 +1666,45 @@ date,since,host,resource,pay_to,category,what,old_usd,new_usd,change
 2026-10-20,2026-10-19,x402-data-api.sigrunner.workers.dev,https://x402-data-api.sigrunner.workers.dev/chain/erc20-meta,0x5765ae06a52dc7a0bb71c36a11db512c7ea9ed10,,,0.005,0.01,1.0
 2026-10-20,2026-10-19,x402-data-api.sigrunner.workers.dev,https://x402-data-api.sigrunner.workers.dev/chain/tx,0x5765ae06a52dc7a0bb71c36a11db512c7ea9ed10,,,0.001,0.005,4.0
 2026-10-20,2026-10-19,twin.unykorn.org,https://twin.unykorn.org/v1/chat/completions,0x7d9a65d06dcc435a52d5880c6310bd6e96c156db,compute,llm chat completions,0.005,0.002,-0.6
+2026-10-21,2026-10-20,api.gondola-ai.com,https://api.gondola-ai.com/v1/images/generations,0x98886846918c7debe86e1d74e249dcdd64a9d367,compute,image generation from prompt,0.033062,0.013495,-0.5918
+2026-10-21,2026-10-20,oracle.cyberwarex.com,https://oracle.cyberwarex.com/verdict,0x058d0cc5cc97e61e8a9f38d6d6365bce525921b2,data,token safety verdict and reasons,0.02,0.01,-0.5
+2026-10-21,2026-10-20,api.hyperextend.xyz,https://api.hyperextend.xyz/v1/liquidations/BTC,0x548fc289526ab2f0391d562a723cda64bbf1abc4,data,bitcoin liquidation tape data,0.111,0.011,-0.9009
+2026-10-21,2026-10-20,api.agentwork.run,https://api.agentwork.run/v1/web/read,0x1cfc6489bc9703a2a49715b8a746d8c6075f3a80,,,0.005,0.003,-0.4
+2026-10-21,2026-10-20,api.hyperextend.xyz,https://api.hyperextend.xyz/v1/candles/BTC/1m,0x548fc289526ab2f0391d562a723cda64bbf1abc4,,,0.05093,0.05096,0.0006
+2026-10-21,2026-10-20,kino402.com,https://kino402.com/v1/generate,0x2a266c87f7b0d1f8a471d2d5234f5cf4fb62b206,,,0.374,1.125,2.008
+2026-10-21,2026-10-20,api.integrityphase.com,https://api.integrityphase.com/verify/webhook-integrity,0x17301b640f11c3635226ac703118d7ea393a8151,,,22.424039,22.461815,0.0017
+2026-10-21,2026-10-20,oracle.cyberwarex.com,https://oracle.cyberwarex.com/v1/holders/quick,0x058d0cc5cc97e61e8a9f38d6d6365bce525921b2,,,0.1,0.02,-0.8
+2026-10-21,2026-10-20,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/fundamentals/:symbol,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.005,0.01,1.0
+2026-10-21,2026-10-20,makememoneynomistakes.ai,https://makememoneynomistakes.ai/api/v1/pathways/session,0x751fd2618def5623b3766673160dd9a4dcdb6618,,,0.4,0.05,-0.875
+2026-10-21,2026-10-20,api.hivemindos.app,https://api.hivemindos.app/v1/x402/svg-studio/svgs.animate,0xbd62f8dcb52e21ca5bdf20ba173488da101ebcf0,,,0.6,0.78,0.3
+2026-10-21,2026-10-20,api.hivemindos.app,https://api.hivemindos.app/v1/x402/svg-studio/svgs.edit,0xbd62f8dcb52e21ca5bdf20ba173488da101ebcf0,,,0.5,0.78,0.56
+2026-10-21,2026-10-20,api.hivemindos.app,https://api.hivemindos.app/v1/x402/svg-studio/svgs.generate,0xbd62f8dcb52e21ca5bdf20ba173488da101ebcf0,,,0.5,0.3,-0.4
+2026-10-21,2026-10-20,api.hivemindos.app,https://api.hivemindos.app/v1/x402/svg-studio/svgs.vectorize,0xbd62f8dcb52e21ca5bdf20ba173488da101ebcf0,,,0.4,0.25,-0.375
+2026-10-21,2026-10-20,agent-evidence-api.thx93.workers.dev,https://agent-evidence-api.thx93.workers.dev/v1/weather/forecast,0x9c0e2b44180439294fa30ae2b2a94f8655455fd0,,,0.003,0.01,2.3333
+2026-10-21,2026-10-20,agent-evidence-api.thx93.workers.dev,https://agent-evidence-api.thx93.workers.dev/v1/weather/alerts,0x9c0e2b44180439294fa30ae2b2a94f8655455fd0,,,0.003,0.01,2.3333
+2026-10-21,2026-10-20,sift.srv1996466.hstgr.cloud,https://sift.srv1996466.hstgr.cloud/v1/crypto/token-risk,0x33d25c0a915e1114b341d09a7cf7cecab60afa0d,,,0.01,0.015,0.5
+2026-10-21,2026-10-20,agent-evidence-api.thx93.workers.dev,https://agent-evidence-api.thx93.workers.dev/v1/evidence,0x9c0e2b44180439294fa30ae2b2a94f8655455fd0,,,0.003,0.01,2.3333
+2026-10-21,2026-10-20,aizamon.com,https://aizamon.com/x402/v1/match,0xb88544cf8e9e97eeb2f313e0d3528fc1e50c2887,,,0.05,0.001,-0.98
+2026-10-21,2026-10-20,agents.daedalusdevelopmentgroup.com,https://agents.daedalusdevelopmentgroup.com/v1/translate,0x8afbd522f8a16bea184b41c593b8925a66830bc6,,,0.003,0.01,2.3333
+2026-10-21,2026-10-20,agents.daedalusdevelopmentgroup.com,https://agents.daedalusdevelopmentgroup.com/v1/pdf-extract,0x8afbd522f8a16bea184b41c593b8925a66830bc6,,,0.005,0.01,1.0
+2026-10-21,2026-10-20,agents.daedalusdevelopmentgroup.com,https://agents.daedalusdevelopmentgroup.com/v1/embeddings,0x8afbd522f8a16bea184b41c593b8925a66830bc6,,,0.001,0.01,9.0
+2026-10-21,2026-10-20,agents.daedalusdevelopmentgroup.com,https://agents.daedalusdevelopmentgroup.com/v1/threat-check,0x8afbd522f8a16bea184b41c593b8925a66830bc6,,,0.005,0.01,1.0
+2026-10-21,2026-10-20,agents.daedalusdevelopmentgroup.com,https://agents.daedalusdevelopmentgroup.com/v1/web-search,0x8afbd522f8a16bea184b41c593b8925a66830bc6,,,0.005,0.01,1.0
+2026-10-21,2026-10-20,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/eu/fundamentals/:company,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.005,0.01,1.0
+2026-10-21,2026-10-20,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/insiders/:symbol,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.005,0.01,1.0
+2026-10-21,2026-10-20,market-calendar-api.onrender.com,https://market-calendar-api.onrender.com/v1/opex-calendar,0xc577c27d10767abfc10d867b443577fe296e7d23,,,0.001,0.01,9.0
+2026-10-21,2026-10-20,market-calendar-api.onrender.com,https://market-calendar-api.onrender.com/v1/opex,0xc577c27d10767abfc10d867b443577fe296e7d23,,,0.001,0.01,9.0
+2026-10-21,2026-10-20,filings-specs-api.onrender.com,https://filings-specs-api.onrender.com/v1/spec,0x6bffcc85172372ad4e9c1ffafe97980a2c778fc7,,,0.001,0.01,9.0
+2026-10-21,2026-10-20,filings-specs-api.onrender.com,https://filings-specs-api.onrender.com/v1/position-size,0x6bffcc85172372ad4e9c1ffafe97980a2c778fc7,,,0.001,0.01,9.0
+2026-10-21,2026-10-20,www.taifoon.io,https://www.taifoon.io/api/coordination/x402/class/mcp.digest,0x3574999dd4c96eb73bd6e11d4177010c83e14f5b,,,0.005606,0.005455,-0.0269
+2026-10-21,2026-10-20,flow-kg4x.vercel.app,https://flow-kg4x.vercel.app/api/fill,0xcf8a8350cb42a6680005ca7ff9e485bb55fa74fa,,,0.042571,0.042561,-0.0002
+2026-10-21,2026-10-20,x402-data-api.sigrunner.workers.dev,https://x402-data-api.sigrunner.workers.dev/chain/block-number,0x5765ae06a52dc7a0bb71c36a11db512c7ea9ed10,,,0.005,0.01,1.0
+2026-10-21,2026-10-20,api.getanyapi.com,https://api.getanyapi.com/v1/run/google.ai_overview,0x754bd2a6799e766b1e2b9f1ae7fbdc0ced96ef13,,,0.0015,0.0048,2.2
+2026-10-21,2026-10-20,foundry-api-production-95ae.up.railway.app,https://foundry-api-production-95ae.up.railway.app/v1/security/certfr27-evidence,0xace6b7bba8c9c1a429e58ffe407d1305734f107e,,,0.01,0.005,-0.5
+2026-10-21,2026-10-20,foundry-api-production-95ae.up.railway.app,https://foundry-api-production-95ae.up.railway.app/v1/security/postgresql-release-evidence,0xace6b7bba8c9c1a429e58ffe407d1305734f107e,,,0.0035,0.003,-0.1429
+2026-10-21,2026-10-20,foundry-api-production-95ae.up.railway.app,https://foundry-api-production-95ae.up.railway.app/v1/security/cve-httpd-facts,0xace6b7bba8c9c1a429e58ffe407d1305734f107e,,,0.01,0.005,-0.5
+2026-10-21,2026-10-20,foundry-api-production-95ae.up.railway.app,https://foundry-api-production-95ae.up.railway.app/v1/security/psf47-evidence,0xace6b7bba8c9c1a429e58ffe407d1305734f107e,,,0.0035,0.005,0.4286
+2026-10-21,2026-10-20,foundry-api-production-95ae.up.railway.app,https://foundry-api-production-95ae.up.railway.app/v1/security/psf-evidence,0xace6b7bba8c9c1a429e58ffe407d1305734f107e,,,0.0025,0.005,1.0
+2026-10-21,2026-10-20,foundry-api-production-95ae.up.railway.app,https://foundry-api-production-95ae.up.railway.app/v1/lifecycle/postgresql/terminal-history,0xace6b7bba8c9c1a429e58ffe407d1305734f107e,,,0.0025,0.003,0.2
+2026-10-21,2026-10-20,foundry-api-production-95ae.up.railway.app,https://foundry-api-production-95ae.up.railway.app/v1/security/certfr-change-brief,0xace6b7bba8c9c1a429e58ffe407d1305734f107e,,,0.05,0.01,-0.8
+2026-10-21,2026-10-20,foundry-api-production-95ae.up.railway.app,https://foundry-api-production-95ae.up.railway.app/v1/security/go37-conditions,0xace6b7bba8c9c1a429e58ffe407d1305734f107e,,,0.05,0.01,-0.8
