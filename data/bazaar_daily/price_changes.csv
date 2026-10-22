@@ -1708,3 +1708,25 @@ date,since,host,resource,pay_to,category,what,old_usd,new_usd,change
 2026-10-21,2026-10-20,foundry-api-production-95ae.up.railway.app,https://foundry-api-production-95ae.up.railway.app/v1/lifecycle/postgresql/terminal-history,0xace6b7bba8c9c1a429e58ffe407d1305734f107e,,,0.0025,0.003,0.2
 2026-10-21,2026-10-20,foundry-api-production-95ae.up.railway.app,https://foundry-api-production-95ae.up.railway.app/v1/security/certfr-change-brief,0xace6b7bba8c9c1a429e58ffe407d1305734f107e,,,0.05,0.01,-0.8
 2026-10-21,2026-10-20,foundry-api-production-95ae.up.railway.app,https://foundry-api-production-95ae.up.railway.app/v1/security/go37-conditions,0xace6b7bba8c9c1a429e58ffe407d1305734f107e,,,0.05,0.01,-0.8
+2026-10-22,2026-10-21,pro-api.coingecko.com,https://pro-api.coingecko.com/api/v3/x402/onchain/search/pools,0x110cdbba7fe6434ec4ce3464cc523942ad6fb784,data,onchain dex pools and tokens,0.01,0.005,-0.5
+2026-10-22,2026-10-21,api.gondola-ai.com,https://api.gondola-ai.com/v1/images/generations,0x98886846918c7debe86e1d74e249dcdd64a9d367,compute,image generation from prompt,0.013495,0.01,-0.259
+2026-10-22,2026-10-21,app.tenna.ai,https://app.tenna.ai/api/x402/lumi/launch_digest,0x7eaf3c393a8996e124c0fa7ccbc55019854c4c5b,data,token launch statistics digest,0.01,0.1,9.0
+2026-10-22,2026-10-21,x402-data-api.sigrunner.workers.dev,https://x402-data-api.sigrunner.workers.dev/crypto/prices,0x5765ae06a52dc7a0bb71c36a11db512c7ea9ed10,,,0.004,0.001,-0.75
+2026-10-22,2026-10-21,kino402.com,https://kino402.com/v1/generate,0x2a266c87f7b0d1f8a471d2d5234f5cf4fb62b206,,,1.125,0.073,-0.9351
+2026-10-22,2026-10-21,x402.donnyautomation.com,https://x402.donnyautomation.com/edgar/events,0x2740651e046c59ab2a6510401140643292d3a96f,,,0.05,0.01,-0.8
+2026-10-22,2026-10-21,chat-api.memchat.io,https://chat-api.memchat.io/api/v1/x402/video-gen,0x9deebb5d1b22e4a6e027977cead13893a7e4cc1a,compute,ai video generation,0.945001,0.98,0.037
+2026-10-22,2026-10-21,trading-time-api.onrender.com,https://trading-time-api.onrender.com/v1/settlement-date,0x98ad309e7ea4ceec93ce61e7d89cf697c2f4fd10,,,0.001,0.01,9.0
+2026-10-22,2026-10-21,sanity.wickedapi.com,https://sanity.wickedapi.com/check,0x0244a232e387e8cd2dc09674073f36cce1ec3cbd,,,0.001,0.004,3.0
+2026-10-22,2026-10-21,makememoneynomistakes.ai,https://makememoneynomistakes.ai/api/v1/pathways/session,0x751fd2618def5623b3766673160dd9a4dcdb6618,,,0.05,0.01,-0.8
+2026-10-22,2026-10-21,emailiq.dev,https://emailiq.dev/email/intelligence,0xe9f3e1194170f059ee01c4306fb5d56bfbee4735,,,0.01,0.1,9.0
+2026-10-22,2026-10-21,verifylite.hydratinghealingtouch.workers.dev,https://verifylite.hydratinghealingtouch.workers.dev/safe,0xb33134504393140cfd963d76f62907d660880932,,,0.03,0.009,-0.7
+2026-10-22,2026-10-21,micro-saas-agent.onrender.com,https://micro-saas-agent.onrender.com/api/brief,0xb4527dccac81eb73d4988a51a4cb1fbbf2c3cabd,,,0.05,0.02,-0.6
+2026-10-22,2026-10-21,verdict.kechlab.com,https://verdict.kechlab.com/v1/triage,0xb36c56a749f81ffeb44a134082dd4744e1d254eb,,,0.0093,0.0095,0.0215
+2026-10-22,2026-10-21,verdict.kechlab.com,https://verdict.kechlab.com/v1/moderate,0xb36c56a749f81ffeb44a134082dd4744e1d254eb,,,0.0093,0.0095,0.0215
+2026-10-22,2026-10-21,verdict.kechlab.com,https://verdict.kechlab.com/v1/canary-check,0xb36c56a749f81ffeb44a134082dd4744e1d254eb,,,0.0093,0.0095,0.0215
+2026-10-22,2026-10-21,verdict.kechlab.com,https://verdict.kechlab.com/v1/ask-human,0xb36c56a749f81ffeb44a134082dd4744e1d254eb,,,0.0093,0.0095,0.0215
+2026-10-22,2026-10-21,verdict.kechlab.com,https://verdict.kechlab.com/v1/answer-gate,0xb36c56a749f81ffeb44a134082dd4744e1d254eb,,,0.0093,0.0095,0.0215
+2026-10-22,2026-10-21,www.taifoon.io,https://www.taifoon.io/api/coordination/x402/class/mcp.digest,0x3574999dd4c96eb73bd6e11d4177010c83e14f5b,,,0.005455,0.007358,0.3489
+2026-10-22,2026-10-21,agentalog.com,https://agentalog.com/api/credito,0x7c22d10a957c62044d03db5c0086f500fc645a26,,,0.1,1.0,9.0
+2026-10-22,2026-10-21,api.arysphere.com,https://api.arysphere.com/v1/ventures/x402_chain_reads_v1/eth_mainnet_getlogs,0xbf324f1f5b648a67905a86af3e1093c667eaa035,,,0.005,0.003,-0.4
+2026-10-22,2026-10-21,api.getanyapi.com,https://api.getanyapi.com/v1/run/google.ai_overview,0x754bd2a6799e766b1e2b9f1ae7fbdc0ced96ef13,,,0.0048,0.0015,-0.6875
