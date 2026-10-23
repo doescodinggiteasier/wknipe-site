@@ -1730,3 +1730,24 @@ date,since,host,resource,pay_to,category,what,old_usd,new_usd,change
 2026-10-22,2026-10-21,agentalog.com,https://agentalog.com/api/credito,0x7c22d10a957c62044d03db5c0086f500fc645a26,,,0.1,1.0,9.0
 2026-10-22,2026-10-21,api.arysphere.com,https://api.arysphere.com/v1/ventures/x402_chain_reads_v1/eth_mainnet_getlogs,0xbf324f1f5b648a67905a86af3e1093c667eaa035,,,0.005,0.003,-0.4
 2026-10-22,2026-10-21,api.getanyapi.com,https://api.getanyapi.com/v1/run/google.ai_overview,0x754bd2a6799e766b1e2b9f1ae7fbdc0ced96ef13,,,0.0048,0.0015,-0.6875
+2026-10-23,2026-10-22,api.gondola-ai.com,https://api.gondola-ai.com/v1/images/generations,0x98886846918c7debe86e1d74e249dcdd64a9d367,compute,image generation from prompt,0.01,0.011808,0.1808
+2026-10-23,2026-10-22,x402.freeq.one,https://x402.freeq.one/mcp,0x90b0dc893406d6ea63bb077ed59f5e8340f98d84,,,0.001,0.002,1.0
+2026-10-23,2026-10-22,api.losbeto.xyz,https://api.losbeto.xyz/br-brief,0xd5ba9711a3d052846a3695c70e7fcb8b3168fe7d,content,brazil macro market intelligence report,0.5,0.4,-0.2
+2026-10-23,2026-10-22,api.losbeto.xyz,https://api.losbeto.xyz/agent-market,0xd5ba9711a3d052846a3695c70e7fcb8b3168fe7d,data,market catalog data,0.01,0.007,-0.3
+2026-10-23,2026-10-22,www.blockchainiq.co,https://www.blockchainiq.co/api/x402/v1/calendar,0x617da9383fba67e86137bc4924b8b7e400fb7c9e,,,0.02,0.03,0.5
+2026-10-23,2026-10-22,scraplingdata.xyz,https://scraplingdata.xyz/v1/lookup/protocol,0x72c80c01fd89bac74f47cf604b61acd119c9bcdb,,,0.002,0.001,-0.5
+2026-10-23,2026-10-22,scraplingdata.xyz,https://scraplingdata.xyz/v1/lookup/pool,0x72c80c01fd89bac74f47cf604b61acd119c9bcdb,,,0.003,0.001,-0.6667
+2026-10-23,2026-10-22,scraplingdata.xyz,https://scraplingdata.xyz/v1/lookup/coin,0x72c80c01fd89bac74f47cf604b61acd119c9bcdb,,,0.002,0.001,-0.5
+2026-10-23,2026-10-22,scraplingdata.xyz,https://scraplingdata.xyz/v1/lookup/yields,0x72c80c01fd89bac74f47cf604b61acd119c9bcdb,,,0.003,0.002,-0.3333
+2026-10-23,2026-10-22,scraplingdata.xyz,https://scraplingdata.xyz/v1/lookup/polymarket,0x72c80c01fd89bac74f47cf604b61acd119c9bcdb,,,0.003,0.005,0.6667
+2026-10-23,2026-10-22,thumbnailcreator.ai,https://thumbnailcreator.ai/api/x402/generations,0x9d2a61830b537e5f4efff1bb8d32dd31a958f823,compute,generate youtube thumbnails with ai,0.167,0.26,0.5569
+2026-10-23,2026-10-22,paid-md.hihat.workers.dev,https://paid-md.hihat.workers.dev/research,0xf00679cd8b440c8bd541fb2aab1382e6ffd65a51,,,0.05,0.02,-0.6
+2026-10-23,2026-10-22,paid-md.hihat.workers.dev,https://paid-md.hihat.workers.dev/extract,0xf00679cd8b440c8bd541fb2aab1382e6ffd65a51,,,0.01,0.005,-0.5
+2026-10-23,2026-10-22,www.taifoon.io,https://www.taifoon.io/api/coordination/x402/class/mcp.digest,0x3574999dd4c96eb73bd6e11d4177010c83e14f5b,,,0.007358,0.01,0.3591
+2026-10-23,2026-10-22,api.zkrobotics.fr,https://api.zkrobotics.fr/x402/base/wallet,0x60fd97850059df9600c4e26f09ac58ef51561963,,,0.002,0.0025,0.25
+2026-10-23,2026-10-22,www.blockchainiq.co,https://www.blockchainiq.co/api/x402/v1/event-risk,0x617da9383fba67e86137bc4924b8b7e400fb7c9e,,,0.005,0.05,9.0
+2026-10-23,2026-10-22,api.aiskills402.com,https://api.aiskills402.com/v1/skills/mcp-tool-schema/file,0x8e37022edcf0f21cf3c9f93fee9d4d32519f36f4,,,0.01,0.03,2.0
+2026-10-23,2026-10-22,agent-data-tools.revmesh2074.workers.dev,https://agent-data-tools.revmesh2074.workers.dev/ai/chat,0x2074c40346ae2a90e0e4a391bcee6f16bf5277f5,,,0.01,0.002,-0.8
+2026-10-23,2026-10-22,flow-kg4x.vercel.app,https://flow-kg4x.vercel.app/api/fill,0xcf8a8350cb42a6680005ca7ff9e485bb55fa74fa,,,0.042561,0.017677,-0.5847
+2026-10-23,2026-10-22,agentalog.com,https://agentalog.com/api/credito,0x7c22d10a957c62044d03db5c0086f500fc645a26,,,1.0,0.1,-0.9
+2026-10-23,2026-10-22,tanod.dev,https://tanod.dev/v1/pdf/bank-statement,0x593857a4a4f619543ea12394137c3004ce841720,,,0.02,0.01,-0.5
