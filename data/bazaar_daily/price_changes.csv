@@ -1751,3 +1751,52 @@ date,since,host,resource,pay_to,category,what,old_usd,new_usd,change
 2026-10-23,2026-10-22,flow-kg4x.vercel.app,https://flow-kg4x.vercel.app/api/fill,0xcf8a8350cb42a6680005ca7ff9e485bb55fa74fa,,,0.042561,0.017677,-0.5847
 2026-10-23,2026-10-22,agentalog.com,https://agentalog.com/api/credito,0x7c22d10a957c62044d03db5c0086f500fc645a26,,,1.0,0.1,-0.9
 2026-10-23,2026-10-22,tanod.dev,https://tanod.dev/v1/pdf/bank-statement,0x593857a4a4f619543ea12394137c3004ce841720,,,0.02,0.01,-0.5
+2026-10-24,2026-10-23,app.tenna.ai,https://app.tenna.ai/api/x402/tenna/observatory_round_preview,0x7eaf3c393a8996e124c0fa7ccbc55019854c4c5b,data,crypto price forecast lookup,0.01,0.1,9.0
+2026-10-24,2026-10-23,poolproof.ru,https://poolproof.ru/v1/launch,0x11efa031d56316bd63720d172f9d5c1448e9a21f,data,pump.fun token launch history,0.005,0.015,2.0
+2026-10-24,2026-10-23,api.vextorium.com,https://api.vextorium.com/prueba-x402-pago,0xb9f06d2734b7e9d7b21b64c4d8b95bd774b71acf,,,0.001,0.003,2.0
+2026-10-24,2026-10-23,api.vextorium.com,https://api.vextorium.com/reparar-json-pago,0xb9f06d2734b7e9d7b21b64c4d8b95bd774b71acf,,,0.002,0.003,0.5
+2026-10-24,2026-10-23,api.vextorium.com,https://api.vextorium.com/ine-espana-pago,0xb9f06d2734b7e9d7b21b64c4d8b95bd774b71acf,,,0.002,0.003,0.5
+2026-10-24,2026-10-23,api.vextorium.com,https://api.vextorium.com/ics-eventos-pago,0xb9f06d2734b7e9d7b21b64c4d8b95bd774b71acf,,,0.002,0.003,0.5
+2026-10-24,2026-10-23,api.vextorium.com,https://api.vextorium.com/doi-info-pago,0xb9f06d2734b7e9d7b21b64c4d8b95bd774b71acf,,,0.002,0.003,0.5
+2026-10-24,2026-10-23,api.vextorium.com,https://api.vextorium.com/clima-espacial-pago,0xb9f06d2734b7e9d7b21b64c4d8b95bd774b71acf,,,0.002,0.003,0.5
+2026-10-24,2026-10-23,api.vextorium.com,https://api.vextorium.com/codigo-postal-pago,0xb9f06d2734b7e9d7b21b64c4d8b95bd774b71acf,,,0.002,0.003,0.5
+2026-10-24,2026-10-23,api.vextorium.com,https://api.vextorium.com/carburantes-ue-pago,0xb9f06d2734b7e9d7b21b64c4d8b95bd774b71acf,,,0.002,0.003,0.5
+2026-10-24,2026-10-23,api.vextorium.com,https://api.vextorium.com/especie-info-pago,0xb9f06d2734b7e9d7b21b64c4d8b95bd774b71acf,,,0.002,0.003,0.5
+2026-10-24,2026-10-23,api.vextorium.com,https://api.vextorium.com/regex-probar-pago,0xb9f06d2734b7e9d7b21b64c4d8b95bd774b71acf,,,0.002,0.003,0.5
+2026-10-24,2026-10-23,bob.assimilatethis.com,https://bob.assimilatethis.com/search,0x87d2c7808872985cfce3847ee172ebb87d772dbe,,,0.003,0.005,0.6667
+2026-10-24,2026-10-23,makememoneynomistakes.ai,https://makememoneynomistakes.ai/api/v1/agents/page,0x751fd2618def5623b3766673160dd9a4dcdb6618,,,0.002,0.01,4.0
+2026-10-24,2026-10-23,makememoneynomistakes.ai,https://makememoneynomistakes.ai/api/v1/bouncer/log/page,0x751fd2618def5623b3766673160dd9a4dcdb6618,,,0.005,0.01,1.0
+2026-10-24,2026-10-23,verdict.kechlab.com,https://verdict.kechlab.com/v1/triage,0xb36c56a749f81ffeb44a134082dd4744e1d254eb,,,0.0095,0.0091,-0.0421
+2026-10-24,2026-10-23,verdict.kechlab.com,https://verdict.kechlab.com/v1/moderate,0xb36c56a749f81ffeb44a134082dd4744e1d254eb,,,0.0095,0.0091,-0.0421
+2026-10-24,2026-10-23,verdict.kechlab.com,https://verdict.kechlab.com/v1/canary-check,0xb36c56a749f81ffeb44a134082dd4744e1d254eb,,,0.0095,0.0091,-0.0421
+2026-10-24,2026-10-23,verdict.kechlab.com,https://verdict.kechlab.com/v1/ask-human,0xb36c56a749f81ffeb44a134082dd4744e1d254eb,,,0.0095,0.0091,-0.0421
+2026-10-24,2026-10-23,verdict.kechlab.com,https://verdict.kechlab.com/v1/answer-gate,0xb36c56a749f81ffeb44a134082dd4744e1d254eb,,,0.0095,0.0091,-0.0421
+2026-10-24,2026-10-23,nbx4.dev,https://nbx4.dev/v1/report,0x15dbec18a30457013c6a436ff25f607ef834c46c,,,0.02,0.01,-0.5
+2026-10-24,2026-10-23,bot-bazaar.fly.dev,https://bot-bazaar.fly.dev/v1/x402/seller-check,0x847f54ae8ddfd71ed7bc930c1f7a73576fab03a9,,,0.005,0.01,1.0
+2026-10-24,2026-10-23,macro-data-api-313m.onrender.com,https://macro-data-api-313m.onrender.com/v1/spread,0x5d4201f59a0ac8bcdb6106752846a4993395ff31,,,0.001,0.01,9.0
+2026-10-24,2026-10-23,market-hours-api.onrender.com,https://market-hours-api.onrender.com/v1/next,0xb2b76adbc021dda03d2b04943079b9d174d5779f,,,0.001,0.01,9.0
+2026-10-24,2026-10-23,botsrated.com,https://botsrated.com/v1/check,0x7f936f42f46b6c4cbd3242cf8a1759dfe829e349,,,0.002,0.001,-0.5
+2026-10-24,2026-10-23,gdzlcxskuhupymyxywzm.supabase.co,https://gdzlcxskuhupymyxywzm.supabase.co/functions/v1/frcompany/v1/search,0xaba4b06f3eddff5731d72b374e39e22291e68cb7,,,0.01,0.005,-0.5
+2026-10-24,2026-10-23,futures-expiry-api.onrender.com,https://futures-expiry-api.onrender.com/v1/expirations,0xcb3ae5bf8b1b4b3fe9d987a9a733830095a2927b,,,0.001,0.01,9.0
+2026-10-24,2026-10-23,trading-time-api.onrender.com,https://trading-time-api.onrender.com/v1/fx-sessions,0x98ad309e7ea4ceec93ce61e7d89cf697c2f4fd10,,,0.0011,0.011,9.0
+2026-10-24,2026-10-23,api.language123.net,https://api.language123.net/v1/tts,0x0360f2276f55a7430667134577d396cd76ffddfe,,,0.002,0.001,-0.5
+2026-10-24,2026-10-23,market-calendar-api.onrender.com,https://market-calendar-api.onrender.com/v1/releases,0xc577c27d10767abfc10d867b443577fe296e7d23,,,0.0011,0.011,9.0
+2026-10-24,2026-10-23,stationfx.com,https://stationfx.com/tech-scout/syntheses/full,0x22f7e9518dff04a5db1fddaabc0e001b8c425b3a,,,5.0,0.05,-0.99
+2026-10-24,2026-10-23,stationfx.com,https://stationfx.com/tech-scout/syntheses/top,0x22f7e9518dff04a5db1fddaabc0e001b8c425b3a,,,1.0,0.01,-0.99
+2026-10-24,2026-10-23,verifylite.hydratinghealingtouch.workers.dev,https://verifylite.hydratinghealingtouch.workers.dev/seo-check,0xb33134504393140cfd963d76f62907d660880932,,,0.004,0.01,1.5
+2026-10-24,2026-10-23,us-agentic.com,https://us-agentic.com/v1/markdown,0x7ae0dfd6c42a2a45e55d1f1722a4ef0b0b77107b,compute,html to markdown conversion,0.001,0.005,4.0
+2026-10-24,2026-10-23,grokbot-dashboard.a3migos.workers.dev,https://grokbot-dashboard.a3migos.workers.dev/api/research,0x3687c765a3e56d4c2cf5edc71456946fbea8c9ce,,,0.01,0.005,-0.5
+2026-10-24,2026-10-23,api.vextorium.com,https://api.vextorium.com/wikipedia-resumen-pago,0xb9f06d2734b7e9d7b21b64c4d8b95bd774b71acf,,,0.002,0.003,0.5
+2026-10-24,2026-10-23,api.vextorium.com,https://api.vextorium.com/wallet-sancionada-pago,0xb9f06d2734b7e9d7b21b64c4d8b95bd774b71acf,,,0.002,0.003,0.5
+2026-10-24,2026-10-23,api.vextorium.com,https://api.vextorium.com/ciclones-activos-pago,0xb9f06d2734b7e9d7b21b64c4d8b95bd774b71acf,,,0.002,0.003,0.5
+2026-10-24,2026-10-23,api.vextorium.com,https://api.vextorium.com/wikipedia-tendencias-pago,0xb9f06d2734b7e9d7b21b64c4d8b95bd774b71acf,,,0.002,0.003,0.5
+2026-10-24,2026-10-23,api.vextorium.com,https://api.vextorium.com/producto-alimento-pago,0xb9f06d2734b7e9d7b21b64c4d8b95bd774b71acf,,,0.002,0.003,0.5
+2026-10-24,2026-10-23,api.vextorium.com,https://api.vextorium.com/jsonpath-consulta-pago,0xb9f06d2734b7e9d7b21b64c4d8b95bd774b71acf,,,0.002,0.003,0.5
+2026-10-24,2026-10-23,api.vextorium.com,https://api.vextorium.com/co2-atmosferico-pago,0xb9f06d2734b7e9d7b21b64c4d8b95bd774b71acf,,,0.002,0.003,0.5
+2026-10-24,2026-10-23,aiagentscity.com,https://aiagentscity.com/api/x402/trustscan/npm,0x363c520492edba89057bce696b74263b3295a72a,,,0.01,0.1,9.0
+2026-10-24,2026-10-23,aiagentscity.com,https://aiagentscity.com/api/x402/agent-watch/census,0x363c520492edba89057bce696b74263b3295a72a,,,0.01,0.1,9.0
+2026-10-24,2026-10-23,api.seerium.xyz,https://api.seerium.xyz/v1/pro/screener,0x81832eede3a4ad96cb3d7ca09977636d912fd3d5,data,prediction market screener data,0.001,0.1,99.0
+2026-10-24,2026-10-23,radar-cnpj.com,https://radar-cnpj.com/api/credito,0x7c22d10a957c62044d03db5c0086f500fc645a26,,,0.1,1.0,9.0
+2026-10-24,2026-10-23,workspace-x402-paywall.onrender.com,https://workspace-x402-paywall.onrender.com/ai/ask,0xd7cdd563e8f6a249b076a702b7e2c233ccf3481d,,,0.01,0.005,-0.5
+2026-10-24,2026-10-23,api.getanyapi.com,https://api.getanyapi.com/v1/run/google.ai_overview,0x754bd2a6799e766b1e2b9f1ae7fbdc0ced96ef13,,,0.0015,0.0048,2.2
+2026-10-24,2026-10-23,api.messari.io,https://api.messari.io/metrics/v2/assets/roi,0x75ddd3c42eace13c59ea0cd1141b886a1c70d2a5,data,cryptocurrency asset roi snapshots,0.1,0.75,6.5
