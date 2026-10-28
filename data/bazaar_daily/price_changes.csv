@@ -2712,3 +2712,24 @@ date,since,host,resource,pay_to,category,what,old_usd,new_usd,change
 2026-10-27,2026-10-26,x402-markettwits-news.onrender.com,https://x402-markettwits-news.onrender.com/ru/key-rate,0x2c257ee70952a16f00c99d40fdff2d28f1a5b8a2,,,0.0015,0.001,-0.3333
 2026-10-27,2026-10-26,x402-markettwits-news.onrender.com,https://x402-markettwits-news.onrender.com/ru/fx,0x2c257ee70952a16f00c99d40fdff2d28f1a5b8a2,,,0.0015,0.001,-0.3333
 2026-10-27,2026-10-26,x402.fairseal.io,https://x402.fairseal.io/v1/veo/verify,0xbd5eb5559f5ac14475ac0c81b6735a4d9106ce28,,,0.002,0.02,9.0
+2026-10-28,2026-10-27,mart402.com,https://mart402.com/v1/extract,0xe3244a21d0d68bfa78b7cad8c3b8777adfbb3188,,,0.0025,0.005,1.0
+2026-10-28,2026-10-27,api.cogdepot.com,https://api.cogdepot.com/v1/feed,0x54d218316f48173df31559d4ca8f7448677ab8c0,,,5.0,0.01,-0.998
+2026-10-28,2026-10-27,embed.gedx402.com,https://embed.gedx402.com/v1/rerank,0xb3c2776ce3f99cb3366520c27b4ac5d436942ab6,compute,rerank documents against query,0.0023,0.002275,-0.0109
+2026-10-28,2026-10-27,kino402.com,https://kino402.com/v1/generate,0x2a266c87f7b0d1f8a471d2d5234f5cf4fb62b206,,,0.073,0.389,4.3288
+2026-10-28,2026-10-27,agentshield.live,https://agentshield.live/bic,0xc87e9a5f237eada767e57eee8fae67ab565225ae,,,0.001,0.005,4.0
+2026-10-28,2026-10-27,agentshield.live,https://agentshield.live/isbn,0xc87e9a5f237eada767e57eee8fae67ab565225ae,,,0.001,0.002,1.0
+2026-10-28,2026-10-27,agentshield.live,https://agentshield.live/ean,0xc87e9a5f237eada767e57eee8fae67ab565225ae,,,0.001,0.002,1.0
+2026-10-28,2026-10-27,agentshield.live,https://agentshield.live/fx,0xc87e9a5f237eada767e57eee8fae67ab565225ae,,,0.001,0.005,4.0
+2026-10-28,2026-10-27,agentshield.live,https://agentshield.live/vat,0xc87e9a5f237eada767e57eee8fae67ab565225ae,,,0.001,0.005,4.0
+2026-10-28,2026-10-27,agentshield.live,https://agentshield.live/iban,0xc87e9a5f237eada767e57eee8fae67ab565225ae,,,0.001,0.005,4.0
+2026-10-28,2026-10-27,x402.api.nodely.io,https://x402.api.nodely.io/v1/scrape,0x27bfde54149948b6507efc3f2b1656e422a2c986,,,0.01,0.012,0.2
+2026-10-28,2026-10-27,x402.api.nodely.io,https://x402.api.nodely.io/v1/search,0x27bfde54149948b6507efc3f2b1656e422a2c986,,,0.01,0.009,-0.1
+2026-10-28,2026-10-27,x402-data-api.sigrunner.workers.dev,https://x402-data-api.sigrunner.workers.dev/chain/nonce,0x5765ae06a52dc7a0bb71c36a11db512c7ea9ed10,,,0.01,0.002,-0.8
+2026-10-28,2026-10-27,agent-data-tools.revmesh2074.workers.dev,https://agent-data-tools.revmesh2074.workers.dev/base/nonce,0x2074c40346ae2a90e0e4a391bcee6f16bf5277f5,,,0.003,0.01,2.3333
+2026-10-28,2026-10-27,agent-data-tools.revmesh2074.workers.dev,https://agent-data-tools.revmesh2074.workers.dev/base/balance,0x2074c40346ae2a90e0e4a391bcee6f16bf5277f5,,,0.003,0.01,2.3333
+2026-10-28,2026-10-27,x402-data-api.sigrunner.workers.dev,https://x402-data-api.sigrunner.workers.dev/chain/total-supply,0x5765ae06a52dc7a0bb71c36a11db512c7ea9ed10,,,0.003,0.002,-0.3333
+2026-10-28,2026-10-27,ask.singitai.app,https://ask.singitai.app/v1/images/generations,0xc23d1dc0f5fce1abffb051e06cb93f0329968b4e,,,0.014,0.066,3.7143
+2026-10-28,2026-10-27,aizamon.com,https://aizamon.com/x402/v1/match,0xb88544cf8e9e97eeb2f313e0d3528fc1e50c2887,,,0.001,0.01,9.0
+2026-10-28,2026-10-27,aizamon.com,https://aizamon.com/x402/v1/spread,0xb88544cf8e9e97eeb2f313e0d3528fc1e50c2887,,,0.001,0.01,9.0
+2026-10-28,2026-10-27,poolproof.ru,https://poolproof.ru/v1/stable,0x11efa031d56316bd63720d172f9d5c1448e9a21f,data,stablecoin peg analysis,0.01,0.03,2.0
+2026-10-28,2026-10-27,enrich-api.interzoid.com,https://enrich-api.interzoid.com/enrich,0xdceca23ff8a7145e1b5b35427c9886cf21a67566,,,35.0,0.5,-0.9857
