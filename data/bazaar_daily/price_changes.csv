@@ -2826,3 +2826,58 @@ date,since,host,resource,pay_to,category,what,old_usd,new_usd,change
 2026-10-29,2026-10-28,x402-markettwits-news.onrender.com,https://x402-markettwits-news.onrender.com/moex/quote,0x2c257ee70952a16f00c99d40fdff2d28f1a5b8a2,,,0.003,0.0015,-0.5
 2026-10-29,2026-10-28,falcon-comps.vercel.app,https://falcon-comps.vercel.app/v1/lbo,0xa30f3c68f2f6067ee5b9d5f651426e44ea8adae9,,,3.99,4.49,0.1253
 2026-10-29,2026-10-28,agent-distribution-gateway.vercel.app,https://agent-distribution-gateway.vercel.app/api/v1/enrich/person,0x7c38096030c9cf41ec551dacdfc1abaa60590abc,,,0.1,0.03,-0.7
+2026-10-30,2026-10-29,api.gondola-ai.com,https://api.gondola-ai.com/v1/images/generations,0x98886846918c7debe86e1d74e249dcdd64a9d367,compute,image generation from prompt,0.033062,0.02699,-0.1837
+2026-10-30,2026-10-29,orchard-data.letom1176.workers.dev,https://orchard-data.letom1176.workers.dev/api/fear-greed,0xc863b1c6658971ca427e90665dccce90a41a2bc2,,,0.001,0.003,2.0
+2026-10-30,2026-10-29,coil.trade,https://coil.trade/api/board/brief,0x7b53524d5c5d29efb8c1d128c56f62fe38cd9476,,,0.02,0.05,1.5
+2026-10-30,2026-10-29,coil.trade,https://coil.trade/api/board/asof,0x7b53524d5c5d29efb8c1d128c56f62fe38cd9476,data,point in time financial scores,0.02,0.05,1.5
+2026-10-30,2026-10-29,coil.trade,https://coil.trade/api/board/top-volume,0x7b53524d5c5d29efb8c1d128c56f62fe38cd9476,data,top us stock volume scores,0.02,0.05,1.5
+2026-10-30,2026-10-29,coil.trade,https://coil.trade/api/board/buylist,0x7b53524d5c5d29efb8c1d128c56f62fe38cd9476,data,stock buy signals and scores,0.02,0.05,1.5
+2026-10-30,2026-10-29,api.loyalspark.online,https://api.loyalspark.online/x402-gateway/offers,0x40a8cdd6a10ec1a8cb3dfb2834675e7a2cf4ad8b,,,0.001,0.01,9.0
+2026-10-30,2026-10-29,coil.trade,https://coil.trade/api/live/session,0x7b53524d5c5d29efb8c1d128c56f62fe38cd9476,,,0.1,0.25,1.5
+2026-10-30,2026-10-29,coil.trade,https://coil.trade/api/board/agent,0x7b53524d5c5d29efb8c1d128c56f62fe38cd9476,,,0.1,0.25,1.5
+2026-10-30,2026-10-29,srv1553682.hstgr.cloud,https://srv1553682.hstgr.cloud/route/fear-greed,0xd32714cc95753d5cd50f56570e98c9d87e7c6dfe,data,crypto fear and greed index,0.00161,0.001575,-0.0217
+2026-10-30,2026-10-29,api.loyalspark.online,https://api.loyalspark.online/x402-gateway/programs,0x40a8cdd6a10ec1a8cb3dfb2834675e7a2cf4ad8b,,,0.001,0.01,9.0
+2026-10-30,2026-10-29,api.loyalspark.online,https://api.loyalspark.online/x402-gateway/merchant-profile,0x40a8cdd6a10ec1a8cb3dfb2834675e7a2cf4ad8b,,,0.005,0.001,-0.8
+2026-10-30,2026-10-29,beta.surplusintelligence.ai,https://beta.surplusintelligence.ai/v1/chat/completions,0x8f6c8e776dbade0e0779286bba5d2ede32edc314,compute,openai compatible model inference,0.003305,0.003304,-0.0003
+2026-10-30,2026-10-29,shop.lordevo.com,https://shop.lordevo.com/api/quick/dns-lookup,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.003,0.002,-0.3333
+2026-10-30,2026-10-29,bess-x402.onrender.com,https://bess-x402.onrender.com/v1/dev/cron,0x1129a6bb9c6165ff07fdc509c107b522ca0e1871,,,0.002,0.003,0.5
+2026-10-30,2026-10-29,api.fastaf.co,https://api.fastaf.co/x402/v1/youtube,0x05b75e13f071a09a26b50a18ce5bd02a0755d76f,,,0.001,0.005,4.0
+2026-10-30,2026-10-29,bess-x402.onrender.com,https://bess-x402.onrender.com/v1/web/ssl,0x1129a6bb9c6165ff07fdc509c107b522ca0e1871,,,0.002,0.003,0.5
+2026-10-30,2026-10-29,bess-x402.onrender.com,https://bess-x402.onrender.com/v1/web/wayback,0x1129a6bb9c6165ff07fdc509c107b522ca0e1871,,,0.002,0.003,0.5
+2026-10-30,2026-10-29,bess-x402.onrender.com,https://bess-x402.onrender.com/v1/web/wikipedia,0x1129a6bb9c6165ff07fdc509c107b522ca0e1871,,,0.002,0.003,0.5
+2026-10-30,2026-10-29,bob.assimilatethis.com,https://bob.assimilatethis.com/research,0x87d2c7808872985cfce3847ee172ebb87d772dbe,,,0.01,0.02,1.0
+2026-10-30,2026-10-29,bess-x402.onrender.com,https://bess-x402.onrender.com/v1/crypto/btc-fees,0x1129a6bb9c6165ff07fdc509c107b522ca0e1871,,,0.002,0.003,0.5
+2026-10-30,2026-10-29,shop.lordevo.com,https://shop.lordevo.com/api/quick/seo-page,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.03,0.01,-0.6667
+2026-10-30,2026-10-29,shop.lordevo.com,https://shop.lordevo.com/api/quick/agent-readiness,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.03,0.02,-0.3333
+2026-10-30,2026-10-29,shop.lordevo.com,https://shop.lordevo.com/api/quick/site-snapshot,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.05,0.02,-0.6
+2026-10-30,2026-10-29,shop.lordevo.com,https://shop.lordevo.com/api/quick/security-scan-lite,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.15,0.02,-0.8667
+2026-10-30,2026-10-29,shop.lordevo.com,https://shop.lordevo.com/api/quick/seo-audit-lite,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.1,0.02,-0.8
+2026-10-30,2026-10-29,bess-x402.onrender.com,https://bess-x402.onrender.com/v1/weather/us-forecast,0x1129a6bb9c6165ff07fdc509c107b522ca0e1871,,,0.002,0.003,0.5
+2026-10-30,2026-10-29,bob.assimilatethis.com,https://bob.assimilatethis.com/search,0x87d2c7808872985cfce3847ee172ebb87d772dbe,,,0.005,0.01,1.0
+2026-10-30,2026-10-29,api.maximusmediahouse.com,https://api.maximusmediahouse.com/v1/batch,0x8cb59b1bffb39c130ab85a8177e93eae9ddbaf10,,,0.4,0.02,-0.95
+2026-10-30,2026-10-29,shop.lordevo.com,https://shop.lordevo.com/api/quick/structured-data,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.01,0.005,-0.5
+2026-10-30,2026-10-29,shop.lordevo.com,https://shop.lordevo.com/api/quick/sitemap-urls,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.01,0.005,-0.5
+2026-10-30,2026-10-29,shop.lordevo.com,https://shop.lordevo.com/api/quick/page-quality,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.01,0.005,-0.5
+2026-10-30,2026-10-29,shop.lordevo.com,https://shop.lordevo.com/api/quick/myr-rates,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.003,0.002,-0.3333
+2026-10-30,2026-10-29,shop.lordevo.com,https://shop.lordevo.com/api/quick/domain-lookalike,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.003,0.002,-0.3333
+2026-10-30,2026-10-29,shop.lordevo.com,https://shop.lordevo.com/api/quick/http-ping,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.003,0.002,-0.3333
+2026-10-30,2026-10-29,shop.lordevo.com,https://shop.lordevo.com/api/quick/cors-check,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.003,0.002,-0.3333
+2026-10-30,2026-10-29,shop.lordevo.com,https://shop.lordevo.com/api/quick/canonical-check,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.003,0.002,-0.3333
+2026-10-30,2026-10-29,shop.lordevo.com,https://shop.lordevo.com/api/quick/ip-info,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.003,0.002,-0.3333
+2026-10-30,2026-10-29,shop.lordevo.com,https://shop.lordevo.com/api/quick/domain-rdap,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.003,0.002,-0.3333
+2026-10-30,2026-10-29,shop.lordevo.com,https://shop.lordevo.com/api/quick/ssl-cert,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.003,0.002,-0.3333
+2026-10-30,2026-10-29,shop.lordevo.com,https://shop.lordevo.com/api/quick/email-validate,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.003,0.002,-0.3333
+2026-10-30,2026-10-29,shop.lordevo.com,https://shop.lordevo.com/api/quick/link-check,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.003,0.002,-0.3333
+2026-10-30,2026-10-29,shop.lordevo.com,https://shop.lordevo.com/api/quick/can-fetch,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.003,0.002,-0.3333
+2026-10-30,2026-10-29,shop.lordevo.com,https://shop.lordevo.com/api/quick/url-trust,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.003,0.002,-0.3333
+2026-10-30,2026-10-29,mesh402.wreckbots.io,https://mesh402.wreckbots.io/v1/check,0xdcda1d533253946c5d7ca72568d1a9351e56ab9e,,,0.005,0.003,-0.4
+2026-10-30,2026-10-29,api.mekongtradeintel.com,https://api.mekongtradeintel.com/dnswhois,0x198f3895551b309ff5c5f59e690fb0823d10ea93,,,0.001,0.005,4.0
+2026-10-30,2026-10-29,poolproof.ru,https://poolproof.ru/v1/deployer,0x11efa031d56316bd63720d172f9d5c1448e9a21f,data,solana wallet deployment data,0.01,0.03,2.0
+2026-10-30,2026-10-29,poolproof.ru,https://poolproof.ru/v1/safety,0x11efa031d56316bd63720d172f9d5c1448e9a21f,data,solana token safety analysis,0.01,0.03,2.0
+2026-10-30,2026-10-29,poolproof.ru,https://poolproof.ru/v1/launches,0x11efa031d56316bd63720d172f9d5c1448e9a21f,data,pump.fun launch feed with creator context,0.01,0.03,2.0
+2026-10-30,2026-10-29,poolproof.ru,https://poolproof.ru/v1/known,0x11efa031d56316bd63720d172f9d5c1448e9a21f,data,asset risk and protocol health,0.02,0.06,2.0
+2026-10-30,2026-10-29,poolproof.ru,https://poolproof.ru/v1/exit-cost,0x11efa031d56316bd63720d172f9d5c1448e9a21f,data,solana exit cost calculation,0.01,0.03,2.0
+2026-10-30,2026-10-29,agents.ai-rook.com,https://agents.ai-rook.com/api/market-pulse,0xd5f96558fcb1f127c77c7d95eea067f526d08618,,,0.025,0.25,9.0
+2026-10-30,2026-10-29,mpp.tracefast.xyz,https://mpp.tracefast.xyz/api/v1/chains/1/contracts/:address/bytecode,0x2a65491e93ad0d484b74405401a38e2e0e5edd7e,,,0.01,0.005,-0.5
+2026-10-30,2026-10-29,verdict.genexxis.com,https://verdict.genexxis.com/card,0x9287e3102d411029025c7617d75245bfc7920f17,,,0.25,0.5,1.0
+2026-10-30,2026-10-29,api.integrityphase.com,https://api.integrityphase.com/verify/webhook-integrity,0x17301b640f11c3635226ac703118d7ea393a8151,,,11.143303,11.189438,0.0041
