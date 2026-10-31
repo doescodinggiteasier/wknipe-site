@@ -2881,3 +2881,33 @@ date,since,host,resource,pay_to,category,what,old_usd,new_usd,change
 2026-10-30,2026-10-29,mpp.tracefast.xyz,https://mpp.tracefast.xyz/api/v1/chains/1/contracts/:address/bytecode,0x2a65491e93ad0d484b74405401a38e2e0e5edd7e,,,0.01,0.005,-0.5
 2026-10-30,2026-10-29,verdict.genexxis.com,https://verdict.genexxis.com/card,0x9287e3102d411029025c7617d75245bfc7920f17,,,0.25,0.5,1.0
 2026-10-30,2026-10-29,api.integrityphase.com,https://api.integrityphase.com/verify/webhook-integrity,0x17301b640f11c3635226ac703118d7ea393a8151,,,11.143303,11.189438,0.0041
+2026-10-31,2026-10-30,api.gondola-ai.com,https://api.gondola-ai.com/v1/images/generations,0x98886846918c7debe86e1d74e249dcdd64a9d367,compute,image generation from prompt,0.02699,0.023279,-0.1375
+2026-10-31,2026-10-30,api.losbeto.xyz,https://api.losbeto.xyz/llm,0xd5ba9711a3d052846a3695c70e7fcb8b3168fe7d,compute,llm inference on any subject,0.005,0.006,0.2
+2026-10-31,2026-10-30,api.losbeto.xyz,https://api.losbeto.xyz/agent-market,0xd5ba9711a3d052846a3695c70e7fcb8b3168fe7d,data,market catalog data,0.007,0.009,0.2857
+2026-10-31,2026-10-30,agent402.tools,https://agent402.tools/api/tts,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.12,0.007,-0.9417
+2026-10-31,2026-10-30,x402.spendthebits.com,https://x402.spendthebits.com/x402/giftcards/quote/,0xcab797230aa7a9caa2d6da4ac8b2a06416225ca9,,,0.02,0.05,1.5
+2026-10-31,2026-10-30,agents.avasis.ai,https://agents.avasis.ai/v1/tip/base-gas,0x6264191d6dd5427435b5e829077842e130ef1fc8,,,0.01,0.002,-0.8
+2026-10-31,2026-10-30,wafermap.xyz,https://wafermap.xyz/v1/wallet-balances,0xefa0fdf4ca8fd79227fb9a19e5cfd24a2a864b81,,,0.002,0.00138,-0.31
+2026-10-31,2026-10-30,wafermap.xyz,https://wafermap.xyz/v1/tts-melo,0xefa0fdf4ca8fd79227fb9a19e5cfd24a2a864b81,,,0.002,0.00138,-0.31
+2026-10-31,2026-10-30,wafermap.xyz,https://wafermap.xyz/v1/translate,0xefa0fdf4ca8fd79227fb9a19e5cfd24a2a864b81,,,0.002,0.00138,-0.31
+2026-10-31,2026-10-30,wafermap.xyz,https://wafermap.xyz/v1/stock-tokens,0xefa0fdf4ca8fd79227fb9a19e5cfd24a2a864b81,,,0.002,0.00138,-0.31
+2026-10-31,2026-10-30,wafermap.xyz,https://wafermap.xyz/v1/gemma-4,0xefa0fdf4ca8fd79227fb9a19e5cfd24a2a864b81,,,0.002,0.00138,-0.31
+2026-10-31,2026-10-30,agentsvc.io,https://agentsvc.io/api/v1/proxy/email-verify,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.0025,0.002,-0.2
+2026-10-31,2026-10-30,subnano.ai,https://subnano.ai/api/posts/:postId/access,0xb44cd235a9a08435a4ffa79f8dfab32dcb9c401b,,,0.5,0.25,-0.5
+2026-10-31,2026-10-30,bob.assimilatethis.com,https://bob.assimilatethis.com/search,0x87d2c7808872985cfce3847ee172ebb87d772dbe,,,0.01,0.05,4.0
+2026-10-31,2026-10-30,shop.lordevo.com,https://shop.lordevo.com/api/quick/verdict-card,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.02,0.01,-0.5
+2026-10-31,2026-10-30,shop.lordevo.com,https://shop.lordevo.com/api/quick/tech-stack,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.02,0.01,-0.5
+2026-10-31,2026-10-30,shop.lordevo.com,https://shop.lordevo.com/api/quick/site-verdict,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.02,0.01,-0.5
+2026-10-31,2026-10-30,shop.lordevo.com,https://shop.lordevo.com/api/quick/links-batch,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.02,0.01,-0.5
+2026-10-31,2026-10-30,shop.lordevo.com,https://shop.lordevo.com/api/quick/broken-links,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.02,0.01,-0.5
+2026-10-31,2026-10-30,agent-data-tools.revmesh2074.workers.dev,https://agent-data-tools.revmesh2074.workers.dev/hash,0x2074c40346ae2a90e0e4a391bcee6f16bf5277f5,,,0.002,0.01,4.0
+2026-10-31,2026-10-30,agent-data-tools.revmesh2074.workers.dev,https://agent-data-tools.revmesh2074.workers.dev/validate/luhn,0x2074c40346ae2a90e0e4a391bcee6f16bf5277f5,,,0.002,0.01,4.0
+2026-10-31,2026-10-30,agent-data-tools.revmesh2074.workers.dev,https://agent-data-tools.revmesh2074.workers.dev/jwt/decode,0x2074c40346ae2a90e0e4a391bcee6f16bf5277f5,,,0.002,0.01,4.0
+2026-10-31,2026-10-30,agent-data-tools.revmesh2074.workers.dev,https://agent-data-tools.revmesh2074.workers.dev/semver,0x2074c40346ae2a90e0e4a391bcee6f16bf5277f5,,,0.002,0.01,4.0
+2026-10-31,2026-10-30,agent-data-tools.revmesh2074.workers.dev,https://agent-data-tools.revmesh2074.workers.dev/text/language,0x2074c40346ae2a90e0e4a391bcee6f16bf5277f5,,,0.002,0.01,4.0
+2026-10-31,2026-10-30,agent-data-tools.revmesh2074.workers.dev,https://agent-data-tools.revmesh2074.workers.dev/evm/checksum,0x2074c40346ae2a90e0e4a391bcee6f16bf5277f5,,,0.002,0.01,4.0
+2026-10-31,2026-10-30,agent-data-tools.revmesh2074.workers.dev,https://agent-data-tools.revmesh2074.workers.dev/xml/to-json,0x2074c40346ae2a90e0e4a391bcee6f16bf5277f5,,,0.002,0.01,4.0
+2026-10-31,2026-10-30,agent-data-tools.revmesh2074.workers.dev,https://agent-data-tools.revmesh2074.workers.dev/calc/compound-interest,0x2074c40346ae2a90e0e4a391bcee6f16bf5277f5,,,0.002,0.01,4.0
+2026-10-31,2026-10-30,wafermap.xyz,https://wafermap.xyz/v1/stock-signal,0xefa0fdf4ca8fd79227fb9a19e5cfd24a2a864b81,,,0.02,0.0138,-0.31
+2026-10-31,2026-10-30,agent402.tools,https://agent402.tools/api/tts-hd,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.24,0.013,-0.9458
+2026-10-31,2026-10-30,scraper-production-6a87.up.railway.app,https://scraper-production-6a87.up.railway.app/v1/scrape/markdown,0x0395c1bed0b83ad6f0329b4132191934733e637c,,,0.005,0.001,-0.8
