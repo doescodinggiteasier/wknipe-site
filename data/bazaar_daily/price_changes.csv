@@ -2911,3 +2911,50 @@ date,since,host,resource,pay_to,category,what,old_usd,new_usd,change
 2026-10-31,2026-10-30,wafermap.xyz,https://wafermap.xyz/v1/stock-signal,0xefa0fdf4ca8fd79227fb9a19e5cfd24a2a864b81,,,0.02,0.0138,-0.31
 2026-10-31,2026-10-30,agent402.tools,https://agent402.tools/api/tts-hd,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.24,0.013,-0.9458
 2026-10-31,2026-10-30,scraper-production-6a87.up.railway.app,https://scraper-production-6a87.up.railway.app/v1/scrape/markdown,0x0395c1bed0b83ad6f0329b4132191934733e637c,,,0.005,0.001,-0.8
+2026-11-01,2026-10-31,api.gondola-ai.com,https://api.gondola-ai.com/v1/images/generations,0x98886846918c7debe86e1d74e249dcdd64a9d367,compute,image generation from prompt,0.023279,0.021929,-0.058
+2026-11-01,2026-10-31,api.loyalspark.online,https://api.loyalspark.online/x402-gateway/recipient-api/offers,0x40a8cdd6a10ec1a8cb3dfb2834675e7a2cf4ad8b,,,0.01,0.001,-0.9
+2026-11-01,2026-10-31,notary.forgemesh.io,https://notary.forgemesh.io/api/notarize,0x814efe784709f5bf8df47735d87602b01030e5d2,other,ai output cryptographic receipt,0.001,0.005,4.0
+2026-11-01,2026-10-31,api.losbeto.xyz,https://api.losbeto.xyz/llm,0xd5ba9711a3d052846a3695c70e7fcb8b3168fe7d,compute,llm inference on any subject,0.006,0.005,-0.1667
+2026-11-01,2026-10-31,imagegen.coinopai.com,https://imagegen.coinopai.com/prompt-styles,0x4c1a4fce51fea51f128a01cce8becb106d391155,,,0.001,0.005,4.0
+2026-11-01,2026-10-31,api.losbeto.xyz,https://api.losbeto.xyz/ai-news,0xd5ba9711a3d052846a3695c70e7fcb8b3168fe7d,content,crypto market news headlines,0.01,0.008,-0.2
+2026-11-01,2026-10-31,api.babyblueviper.com,https://api.babyblueviper.com/regime,0x161dbdd73d025e9aedd4918a67c28e5bf9a87fb9,data,crypto risk exposure scalar,0.02475,0.02325,-0.0606
+2026-11-01,2026-10-31,sentedge.ai,https://sentedge.ai/api/x402-demand/score,0x7bebee9f4c1694e18fd9bf3bf0f113d7fb2d6bb3,,,0.01,0.006,-0.4
+2026-11-01,2026-10-31,travel.forgemesh.io,https://travel.forgemesh.io/api/fare-pulse,0x6b1ac7935dad576b921af0e6edc27319bc27aadd,data,cheapest live flight fares,0.001,0.005,4.0
+2026-11-01,2026-10-31,voice.forgemesh.io,https://voice.forgemesh.io/v1/tts/base,0x962794fb8ad92941faf1ab446b9e30637b86f331,compute,text to speech synthesis,0.001,0.005,4.0
+2026-11-01,2026-10-31,api.losbeto.xyz,https://api.losbeto.xyz/web-search,0xd5ba9711a3d052846a3695c70e7fcb8b3168fe7d,search,web search results to text,0.01,0.005,-0.5
+2026-11-01,2026-10-31,voice.forgemesh.io,https://voice.forgemesh.io/v1/tts/pro,0x962794fb8ad92941faf1ab446b9e30637b86f331,compute,text to speech audio generation,0.003,0.005,0.6667
+2026-11-01,2026-10-31,47620.xyz,https://47620.xyz/x/polygon/gas,0x7f4ce6c23f851f13b386efdb22fe0d09821b9d53,data,polygon gas price and transfer cost,0.005,0.01,1.0
+2026-11-01,2026-10-31,x402.forgemesh.io,https://x402.forgemesh.io/the-daily-402,0x84a1827f1705c257e80771fdc2b152aea4a57a08,content,daily featured endpoint information,0.001,0.005,4.0
+2026-11-01,2026-10-31,x402.forgemesh.io,https://x402.forgemesh.io/current-time,0x850363a27f0ac6feb9c7a3ec4c1d295262df9432,compute,current time lookup,0.001,0.005,4.0
+2026-11-01,2026-10-31,api.losbeto.xyz,https://api.losbeto.xyz/thesis-engine,0xd5ba9711a3d052846a3695c70e7fcb8b3168fe7d,content,crypto market thesis and data,0.24,0.13,-0.4583
+2026-11-01,2026-10-31,api.losbeto.xyz,https://api.losbeto.xyz/br-brief,0xd5ba9711a3d052846a3695c70e7fcb8b3168fe7d,content,brazil macro market intelligence report,0.4,0.21,-0.475
+2026-11-01,2026-10-31,x402.forgemesh.io,https://x402.forgemesh.io/daily,0x84a1827f1705c257e80771fdc2b152aea4a57a08,,,0.001,0.005,4.0
+2026-11-01,2026-10-31,x402.forgemesh.io,https://x402.forgemesh.io/agent-fortune,0x850363a27f0ac6feb9c7a3ec4c1d295262df9432,content,ai agent fortune and lucky numbers,0.001,0.005,4.0
+2026-11-01,2026-10-31,hcrb.in,https://hcrb.in/v1/tools/context-distill/call,0xc59c85e661d34084a7769f955d17fd38254a6235,,,0.005,0.01,1.0
+2026-11-01,2026-10-31,quickbuild.quynguyenbac.workers.dev,https://quickbuild.quynguyenbac.workers.dev/api/ip,0x751a4c3841be287544c371b4ee09bd3366aea7cf,,,0.001,0.005,4.0
+2026-11-01,2026-10-31,ask.singitai.app,https://ask.singitai.app/v1/exa/answer,0xc23d1dc0f5fce1abffb051e06cb93f0329968b4e,,,0.0075,0.005,-0.3333
+2026-11-01,2026-10-31,www.taifoon.io,https://www.taifoon.io/api/coordination/x402/class/mcp.digest,0x3574999dd4c96eb73bd6e11d4177010c83e14f5b,,,0.008645,0.006795,-0.214
+2026-11-01,2026-10-31,api.zkrobotics.fr,https://api.zkrobotics.fr/x402/base/wallet,0x60fd97850059df9600c4e26f09ac58ef51561963,,,0.0025,0.002,-0.2
+2026-11-01,2026-10-31,agent-tools.jbarkules.workers.dev,https://agent-tools.jbarkules.workers.dev/v1/domain/lookup,0x0dea0030a17bf886543a757c55924710258c2eec,,,0.0018,0.003,0.6667
+2026-11-01,2026-10-31,ask.singitai.app,https://ask.singitai.app/v1/exa/contents,0xc23d1dc0f5fce1abffb051e06cb93f0329968b4e,,,0.0023,0.001,-0.5652
+2026-11-01,2026-10-31,1gateway.dev,https://1gateway.dev/v1/onchain/base/token-flows,0x6246eee0355dd7a93c888fe59e1151388a0cc5a1,,,0.004,0.008,1.0
+2026-11-01,2026-10-31,aircraft.report,https://aircraft.report/v1/aircraft/:n,0x383f9a82b2a6475ccdc3412ef881932f1f9021cd,,,0.001,0.01,9.0
+2026-11-01,2026-10-31,coil.trade,https://coil.trade/learn/research/does-a-trend-template-and-volatility-contraction-breakout-beat-the-market/full,0x7b53524d5c5d29efb8c1d128c56f62fe38cd9476,,,0.25,0.1,-0.6
+2026-11-01,2026-10-31,coil.trade,https://coil.trade/learn/research/is-chasing-a-strong-stock-a-losing-habit/full,0x7b53524d5c5d29efb8c1d128c56f62fe38cd9476,,,0.25,0.1,-0.6
+2026-11-01,2026-10-31,coil.trade,https://coil.trade/learn/research/does-buying-a-deeply-oversold-high-volatility-stock-the-next-day-pay/full,0x7b53524d5c5d29efb8c1d128c56f62fe38cd9476,,,0.25,0.1,-0.6
+2026-11-01,2026-10-31,coil.trade,https://coil.trade/learn/research/does-buying-a-3x-inverse-index-fund-after-a-gap-down-pay/full,0x7b53524d5c5d29efb8c1d128c56f62fe38cd9476,,,0.25,0.1,-0.6
+2026-11-01,2026-10-31,coil.trade,https://coil.trade/learn/research/does-buying-the-laggards-of-a-leading-sector-group-beat-the-market/full,0x7b53524d5c5d29efb8c1d128c56f62fe38cd9476,,,0.25,0.1,-0.6
+2026-11-01,2026-10-31,coil.trade,https://coil.trade/learn/research/does-buying-a-neglected-stock-after-a-big-volume-gap-up-beat-the-market/full,0x7b53524d5c5d29efb8c1d128c56f62fe38cd9476,,,0.25,0.1,-0.6
+2026-11-01,2026-10-31,coil.trade,https://coil.trade/learn/research/does-weak-breadth-at-a-market-high-predict-a-worse-stock-market/full,0x7b53524d5c5d29efb8c1d128c56f62fe38cd9476,,,0.25,0.1,-0.6
+2026-11-01,2026-10-31,coil.trade,https://coil.trade/learn/research/does-buying-the-opening-range-breakout-on-strong-stocks-make-money/full,0x7b53524d5c5d29efb8c1d128c56f62fe38cd9476,,,0.25,0.1,-0.6
+2026-11-01,2026-10-31,coil.trade,https://coil.trade/learn/research/does-waiting-for-a-30-minute-pivot-candle-improve-a-stock-entry/full,0x7b53524d5c5d29efb8c1d128c56f62fe38cd9476,,,0.25,0.1,-0.6
+2026-11-01,2026-10-31,x402.forgemesh.io,https://x402.forgemesh.io/is-site-up,0x850363a27f0ac6feb9c7a3ec4c1d295262df9432,,,0.002,0.005,1.5
+2026-11-01,2026-10-31,x402.forgemesh.io,https://x402.forgemesh.io/random-token-generator,0x850363a27f0ac6feb9c7a3ec4c1d295262df9432,compute,generate random strings and uuids,0.001,0.005,4.0
+2026-11-01,2026-10-31,library.forgemesh.io,https://library.forgemesh.io/book-of-the-day,0x85df5380debe236ad6bf49de788243924b080267,content,daily book recommendation,0.001,0.005,4.0
+2026-11-01,2026-10-31,x402.forgemesh.io,https://x402.forgemesh.io/random-fortune-generator,0x850363a27f0ac6feb9c7a3ec4c1d295262df9432,,,0.001,0.005,4.0
+2026-11-01,2026-10-31,x402.forgemesh.io,https://x402.forgemesh.io/metric-imperial-convert,0x850363a27f0ac6feb9c7a3ec4c1d295262df9432,compute,unit conversion calculation,0.001,0.005,4.0
+2026-11-01,2026-10-31,x402.forgemesh.io,https://x402.forgemesh.io/validate-phone-number,0x850363a27f0ac6feb9c7a3ec4c1d295262df9432,,,0.003,0.005,0.6667
+2026-11-01,2026-10-31,port-402-production.up.railway.app,https://port-402-production.up.railway.app/v1/memory/:key,0x672a660139eb7e487f62fdb138b1519d7d48b7f7,,,0.001,0.002,1.0
+2026-11-01,2026-10-31,library.forgemesh.io,https://library.forgemesh.io/book-metadata,0x85df5380debe236ad6bf49de788243924b080267,,,0.002,0.005,1.5
+2026-11-01,2026-10-31,app.domainhelp.com,https://app.domainhelp.com/api/v1/domain-availability,0x18b385c3f08902b5a44ef1b562764bd598e1a65b,,,0.001,0.004,3.0
+2026-11-01,2026-10-31,tools.rocketman.dev,https://tools.rocketman.dev/v1/image/metadata/strip,0xd271031dc95ce2cde5466ebbbb0e59cdbe2d67fb,,,0.003,0.001,-0.6667
