@@ -2958,3 +2958,32 @@ date,since,host,resource,pay_to,category,what,old_usd,new_usd,change
 2026-11-01,2026-10-31,library.forgemesh.io,https://library.forgemesh.io/book-metadata,0x85df5380debe236ad6bf49de788243924b080267,,,0.002,0.005,1.5
 2026-11-01,2026-10-31,app.domainhelp.com,https://app.domainhelp.com/api/v1/domain-availability,0x18b385c3f08902b5a44ef1b562764bd598e1a65b,,,0.001,0.004,3.0
 2026-11-01,2026-10-31,tools.rocketman.dev,https://tools.rocketman.dev/v1/image/metadata/strip,0xd271031dc95ce2cde5466ebbbb0e59cdbe2d67fb,,,0.003,0.001,-0.6667
+2026-11-02,2026-11-01,api.gondola-ai.com,https://api.gondola-ai.com/v1/images/generations,0x98886846918c7debe86e1d74e249dcdd64a9d367,compute,image generation from prompt,0.021929,0.019905,-0.0923
+2026-11-02,2026-11-01,orchard-data.letom1176.workers.dev,https://orchard-data.letom1176.workers.dev/api/fear-greed,0xc863b1c6658971ca427e90665dccce90a41a2bc2,,,0.003,0.002,-0.3333
+2026-11-02,2026-11-01,api.surplusintelligence.ai,https://api.surplusintelligence.ai/v1/chat/completions,0x0f99fc0cbd7a114b2da171fda5a0167858f7afc2,compute,openai compatible model inference,0.003301,0.003302,0.0003
+2026-11-02,2026-11-01,api.loyalspark.online,https://api.loyalspark.online/x402-gateway/offers,0x40a8cdd6a10ec1a8cb3dfb2834675e7a2cf4ad8b,,,0.01,0.001,-0.9
+2026-11-02,2026-11-01,blockrun.ai,https://blockrun.ai/api/v1/audio/sound-effects,0xe9030014f5dae217d0a152f02a043567b16c1abf,compute,sound effect generation from prompt,0.053501,0.0535,-0.0
+2026-11-02,2026-11-01,chain.cyberwarex.com,https://chain.cyberwarex.com/price,0x058d0cc5cc97e61e8a9f38d6d6365bce525921b2,,,0.002,0.001,-0.5
+2026-11-02,2026-11-01,vedetta.dethboy.com,https://vedetta.dethboy.com/v1/feed,0x21e16f1bc3aa847236354c8193d0cb21cf412efa,,,0.005,0.07,13.0
+2026-11-02,2026-11-01,voice.forgemesh.io,https://voice.forgemesh.io/v1/tts/batch,0x962794fb8ad92941faf1ab446b9e30637b86f331,compute,batch text to speech synthesis,0.002,0.005,1.5
+2026-11-02,2026-11-01,voice.forgemesh.io,https://voice.forgemesh.io/v1/audio/speech,0x962794fb8ad92941faf1ab446b9e30637b86f331,compute,text to speech generation,0.001,0.005,4.0
+2026-11-02,2026-11-01,apexrunner.ai,https://apexrunner.ai/signals/market-tick,0x8d0663bbb967ebf1c047405a888ddf865f3e8854,data,market tick trading signals,0.007,0.014,1.0
+2026-11-02,2026-11-01,voice.forgemesh.io,https://voice.forgemesh.io/v1/audio/speech-long,0x962794fb8ad92941faf1ab446b9e30637b86f331,compute,text to speech synthesis,0.003,0.005,0.6667
+2026-11-02,2026-11-01,voice.forgemesh.io,https://voice.forgemesh.io/v1/tts/base-long,0x962794fb8ad92941faf1ab446b9e30637b86f331,compute,text to speech audio generation,0.003,0.005,0.6667
+2026-11-02,2026-11-01,beta.surplusintelligence.ai,https://beta.surplusintelligence.ai/v1/chat/completions,0x8f6c8e776dbade0e0779286bba5d2ede32edc314,compute,openai compatible model inference,0.003304,0.003305,0.0003
+2026-11-02,2026-11-01,api.loyalspark.online,https://api.loyalspark.online/x402-gateway/merchant-profile,0x40a8cdd6a10ec1a8cb3dfb2834675e7a2cf4ad8b,,,0.001,0.005,4.0
+2026-11-02,2026-11-01,1gateway.dev,https://1gateway.dev/v1/onchain/base/token-flows,0x6246eee0355dd7a93c888fe59e1151388a0cc5a1,,,0.008,0.018,1.25
+2026-11-02,2026-11-01,verdict.kechlab.com,https://verdict.kechlab.com/v1/moderate,0xb36c56a749f81ffeb44a134082dd4744e1d254eb,,,0.0091,0.0088,-0.033
+2026-11-02,2026-11-01,verdict.kechlab.com,https://verdict.kechlab.com/v1/triage,0xb36c56a749f81ffeb44a134082dd4744e1d254eb,,,0.0091,0.0088,-0.033
+2026-11-02,2026-11-01,readfetch.com,https://readfetch.com/v1/crawl,0x26c2308adc8fe5ffe6d4183588dd2dd22ed86071,,,0.06,0.003,-0.95
+2026-11-02,2026-11-01,emberagent.uk,https://emberagent.uk/p/horror-story,0xd7f17417862e3a371130713515d4df64a2942d36,,,0.031,0.022,-0.2903
+2026-11-02,2026-11-01,agentreststop.com,https://agentreststop.com/v1/TokenSnapshot,0x07afe1caea868dc8ab8d5a00bcb19d055570539a,,,0.02,0.002,-0.9
+2026-11-02,2026-11-01,shop.lordevo.com,https://shop.lordevo.com/api/quick/page-markdown,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.005,0.002,-0.6
+2026-11-02,2026-11-01,x402check.dev,https://x402check.dev/preflight,0xd98451514c7510e3fcd0463de973b9a6bb89a86f,,,0.002,0.01,4.0
+2026-11-02,2026-11-01,ask.singitai.app,https://ask.singitai.app/v1/exa/contents,0xc23d1dc0f5fce1abffb051e06cb93f0329968b4e,,,0.001,0.002,1.0
+2026-11-02,2026-11-01,synaptic.websterberrymarketing.com,https://synaptic.websterberrymarketing.com/agents/06-email-domain-validator,0x7d58e3606a71a788633fbf12698d20847cca426c,,,0.01,0.005,-0.5
+2026-11-02,2026-11-01,ask.singitai.app,https://ask.singitai.app/v1/exa/answer,0xc23d1dc0f5fce1abffb051e06cb93f0329968b4e,,,0.005,0.006,0.2
+2026-11-02,2026-11-01,ask.singitai.app,https://ask.singitai.app/v1/exa/search,0xc23d1dc0f5fce1abffb051e06cb93f0329968b4e,,,0.0101,0.008,-0.2079
+2026-11-02,2026-11-01,subnano.ai,https://subnano.ai/api/posts/:postId/access,0xb44cd235a9a08435a4ffa79f8dfab32dcb9c401b,,,0.25,0.1,-0.6
+2026-11-02,2026-11-01,verifylite.hydratinghealingtouch.workers.dev,https://verifylite.hydratinghealingtouch.workers.dev/domain,0xb33134504393140cfd963d76f62907d660880932,,,0.007,0.0042,-0.4
+2026-11-02,2026-11-01,baconservices.com,https://baconservices.com/api/agent-commerce/v1/capabilities/remove-background/execute,0xdec990f28082da7efc9c50df26adba40b66cc4d6,,,0.2,0.05,-0.75
