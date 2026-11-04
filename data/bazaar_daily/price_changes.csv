@@ -3023,3 +3023,34 @@ date,since,host,resource,pay_to,category,what,old_usd,new_usd,change
 2026-11-03,2026-11-02,money-reactor.makar52nn2016.workers.dev,https://money-reactor.makar52nn2016.workers.dev/api/fx-rates,0xf47b7e5912fd4218ac4c992cdc6fae04e1ff512e,,,0.1,0.005,-0.95
 2026-11-03,2026-11-02,fiatdock.com,https://fiatdock.com/s/svc_e60d1345-ee04-4f6f-9c85-915c6970976d,0xfe257ef6dc89f5b688ac52ef3eb8648c629fa9c4,,,0.04,0.02,-0.5
 2026-11-03,2026-11-02,x402.forgemesh.io,https://x402.forgemesh.io/currency-exchange-rates,0x850363a27f0ac6feb9c7a3ec4c1d295262df9432,,,0.003,0.005,0.6667
+2026-11-04,2026-11-03,api.kadec0.xyz,https://api.kadec0.xyz/v1/token-price,0x4df66b6c140778fe0717880a7c6dde5ea53acdea,data,crypto token price and market data,0.01,0.02,1.0
+2026-11-04,2026-11-03,api.kadec0.xyz,https://api.kadec0.xyz/v1/weather,0x4df66b6c140778fe0717880a7c6dde5ea53acdea,data,weather forecast and air quality,0.005,0.01,1.0
+2026-11-04,2026-11-03,api.kadec0.xyz,https://api.kadec0.xyz/v1/trending-coins,0x4df66b6c140778fe0717880a7c6dde5ea53acdea,data,trending crypto coins data,0.01,0.02,1.0
+2026-11-04,2026-11-03,bob.assimilatethis.com,https://bob.assimilatethis.com/search,0x87d2c7808872985cfce3847ee172ebb87d772dbe,,,0.05,0.005,-0.9
+2026-11-04,2026-11-03,api.kadec0.xyz,https://api.kadec0.xyz/v1/hackernews,0x4df66b6c140778fe0717880a7c6dde5ea53acdea,content,hacker news stories and search,0.01,0.02,1.0
+2026-11-04,2026-11-03,api.kadec0.xyz,https://api.kadec0.xyz/v1/gas-oracle,0x4df66b6c140778fe0717880a7c6dde5ea53acdea,data,ethereum gas price oracle,0.01,0.02,1.0
+2026-11-04,2026-11-03,pkgpulse.letom1176.workers.dev,https://pkgpulse.letom1176.workers.dev/api/pick,0xc863b1c6658971ca427e90665dccce90a41a2bc2,,,0.01,0.015,0.5
+2026-11-04,2026-11-03,x402-data-api.sigrunner.workers.dev,https://x402-data-api.sigrunner.workers.dev/chain/block-number,0x5765ae06a52dc7a0bb71c36a11db512c7ea9ed10,,,0.01,0.002,-0.8
+2026-11-04,2026-11-03,x402-data-api.sigrunner.workers.dev,https://x402-data-api.sigrunner.workers.dev/chain/code,0x5765ae06a52dc7a0bb71c36a11db512c7ea9ed10,,,0.01,0.002,-0.8
+2026-11-04,2026-11-03,agent402.tools,https://agent402.tools/api/onchain-sql,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.02,0.04,1.0
+2026-11-04,2026-11-03,srv1553682.hstgr.cloud,https://srv1553682.hstgr.cloud/fng/api/fear-greed,0xd32714cc95753d5cd50f56570e98c9d87e7c6dfe,data,crypto fear and greed index,0.00161,0.0014,-0.1304
+2026-11-04,2026-11-03,agentforge-taupe.vercel.app,https://agentforge-taupe.vercel.app/v1/contract-docs,0xfa6f352e71c44d217df04ecad902c82b72d2378c,compute,smart contract documentation generation,0.02,0.05,1.5
+2026-11-04,2026-11-03,api.quorumz.com,https://api.quorumz.com/api/agent/v1/events,0x9ce92953d33237af061c6b1aa29c597c8656b547,,,0.4,0.02,-0.95
+2026-11-04,2026-11-03,api.quorumz.com,https://api.quorumz.com/api/agent/v1/quorums,0x9ce92953d33237af061c6b1aa29c597c8656b547,,,0.2,0.01,-0.95
+2026-11-04,2026-11-03,x402.freeq.one,https://x402.freeq.one/tools/cargo_run,0x90b0dc893406d6ea63bb077ed59f5e8340f98d84,,,0.009894,0.009941,0.0048
+2026-11-04,2026-11-03,seeker.4itools.store,https://seeker.4itools.store/paid/utils.uuid,0x08eeadafc44fae93badf80b09a5f0493eb22ab85,,,0.002,0.001,-0.5
+2026-11-04,2026-11-03,seeker.4itools.store,https://seeker.4itools.store/paid/token.verdict,0x08eeadafc44fae93badf80b09a5f0493eb22ab85,,,0.01,0.1,9.0
+2026-11-04,2026-11-03,api.getanyapi.com,https://api.getanyapi.com/v1/run/instagram.following,0x754bd2a6799e766b1e2b9f1ae7fbdc0ced96ef13,,,0.00188,0.00173,-0.0798
+2026-11-04,2026-11-03,agent-utils-x402-production.revenue-agent-jw.workers.dev,https://agent-utils-x402-production.revenue-agent-jw.workers.dev/v1/callers/score,0xa8be97662353949449c70c8d9d120746f9a25e69,,,0.02,0.002,-0.9
+2026-11-04,2026-11-03,agent-utils-x402-production.revenue-agent-jw.workers.dev,https://agent-utils-x402-production.revenue-agent-jw.workers.dev/v1/x402/check,0xa8be97662353949449c70c8d9d120746f9a25e69,,,0.02,0.002,-0.9
+2026-11-04,2026-11-03,agent-utils-x402-production.revenue-agent-jw.workers.dev,https://agent-utils-x402-production.revenue-agent-jw.workers.dev/v1/recalls/check,0xa8be97662353949449c70c8d9d120746f9a25e69,,,0.005,0.002,-0.6
+2026-11-04,2026-11-03,agent-utils-x402-production.revenue-agent-jw.workers.dev,https://agent-utils-x402-production.revenue-agent-jw.workers.dev/v1/sec/filings,0xa8be97662353949449c70c8d9d120746f9a25e69,,,0.003,0.002,-0.3333
+2026-11-04,2026-11-03,agent-utils-x402-production.revenue-agent-jw.workers.dev,https://agent-utils-x402-production.revenue-agent-jw.workers.dev/v1/calendar/us-business-days,0xa8be97662353949449c70c8d9d120746f9a25e69,,,0.01,0.002,-0.8
+2026-11-04,2026-11-03,agent-utils-x402-production.revenue-agent-jw.workers.dev,https://agent-utils-x402-production.revenue-agent-jw.workers.dev/v1/weather/climate-day,0xa8be97662353949449c70c8d9d120746f9a25e69,,,0.01,0.002,-0.8
+2026-11-04,2026-11-03,agent-utils-x402-production.revenue-agent-jw.workers.dev,https://agent-utils-x402-production.revenue-agent-jw.workers.dev/v1/weather/us,0xa8be97662353949449c70c8d9d120746f9a25e69,,,0.01,0.002,-0.8
+2026-11-04,2026-11-03,x402-v2-mint-concierge-reader.vercel.app,https://x402-v2-mint-concierge-reader.vercel.app/v1/concierge-reader,0xc22f9caebac37fe72d5142f35f21f6696ea9ef69,,,0.01,0.005,-0.5
+2026-11-04,2026-11-03,api.shopsocial-api.workers.dev,https://api.shopsocial-api.workers.dev/api/social/instagram-related-profiles,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.002,0.02,9.0
+2026-11-04,2026-11-03,api.shopsocial-api.workers.dev,https://api.shopsocial-api.workers.dev/api/social/instagram,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.002,0.005,1.5
+2026-11-04,2026-11-03,api.shopsocial-api.workers.dev,https://api.shopsocial-api.workers.dev/api/social/instagram-reel,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.002,0.005,1.5
+2026-11-04,2026-11-03,api.shopsocial-api.workers.dev,https://api.shopsocial-api.workers.dev/api/social/instagram-posts,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.002,0.005,1.5
+2026-11-04,2026-11-03,llmexpert.io,https://llmexpert.io/v1/transcribe,0xe83376a42d248166df738112d922fb4f9a656b30,,,0.4,0.04,-0.9
