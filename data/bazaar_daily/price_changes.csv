@@ -3054,3 +3054,24 @@ date,since,host,resource,pay_to,category,what,old_usd,new_usd,change
 2026-11-04,2026-11-03,api.shopsocial-api.workers.dev,https://api.shopsocial-api.workers.dev/api/social/instagram-reel,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.002,0.005,1.5
 2026-11-04,2026-11-03,api.shopsocial-api.workers.dev,https://api.shopsocial-api.workers.dev/api/social/instagram-posts,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.002,0.005,1.5
 2026-11-04,2026-11-03,llmexpert.io,https://llmexpert.io/v1/transcribe,0xe83376a42d248166df738112d922fb4f9a656b30,,,0.4,0.04,-0.9
+2026-11-05,2026-11-04,search.cyberwarex.com,https://search.cyberwarex.com/search,0x058d0cc5cc97e61e8a9f38d6d6365bce525921b2,search,web search results as json,0.003,0.00435,0.45
+2026-11-05,2026-11-04,api.kadec0.xyz,https://api.kadec0.xyz/v1/geocode,0x4df66b6c140778fe0717880a7c6dde5ea53acdea,data,address to coordinates lookup,0.01,0.02,1.0
+2026-11-05,2026-11-04,api.kadec0.xyz,https://api.kadec0.xyz/v1/nutrition,0x4df66b6c140778fe0717880a7c6dde5ea53acdea,data,food nutrition lookup,0.01,0.02,1.0
+2026-11-05,2026-11-04,api.babyblueviper.com,https://api.babyblueviper.com/agent-economy-brief,0x161dbdd73d025e9aedd4918a67c28e5bf9a87fb9,,,0.0693,0.052,-0.2496
+2026-11-05,2026-11-04,api.tickersfeed.net,https://api.tickersfeed.net/crypto/market,0xe82ebef57fa5af958b8ecb6843d4327d314f59e3,,,0.001,0.002,1.0
+2026-11-05,2026-11-04,api.loyalspark.online,https://api.loyalspark.online/x402-gateway/merchant-profile,0x40a8cdd6a10ec1a8cb3dfb2834675e7a2cf4ad8b,,,0.005,0.001,-0.8
+2026-11-05,2026-11-04,amanchain-relay.gitajhd.workers.dev,https://amanchain-relay.gitajhd.workers.dev/api/x402/aman-csv-preflight,0xfb5625d44be488414606773244f0de35410b2f39,,,0.004984,0.00498,-0.0008
+2026-11-05,2026-11-04,api.gentechlabs.net,https://api.gentechlabs.net/v1/market/price/ETH/,0x7ebff188f2eba16518c02864589b1403a5d1296a,data,crypto market price lookup,0.005,0.001,-0.8
+2026-11-05,2026-11-04,api.gentechlabs.net,https://api.gentechlabs.net/v1/gas/gas/,0x7ebff188f2eba16518c02864589b1403a5d1296a,,,0.005,0.001,-0.8
+2026-11-05,2026-11-04,verdict.kechlab.com,https://verdict.kechlab.com/v1/tool-output-guard,0xb36c56a749f81ffeb44a134082dd4744e1d254eb,,,0.0132,0.0091,-0.3106
+2026-11-05,2026-11-04,agoreum.xyz,https://agoreum.xyz/api/v1/x402/tools/payment-feedback,0xd17763658955116881b93cec9ecba0fb168d2a3c,,,0.5,0.01,-0.98
+2026-11-05,2026-11-04,agoreum.xyz,https://agoreum.xyz/api/v1/x402/tools/usdc-payment-check,0xd17763658955116881b93cec9ecba0fb168d2a3c,,,0.1,0.01,-0.9
+2026-11-05,2026-11-04,agoreum.xyz,https://agoreum.xyz/api/v1/x402/tools/mcp-server-check,0xd17763658955116881b93cec9ecba0fb168d2a3c,,,0.5,0.03,-0.94
+2026-11-05,2026-11-04,agoreum.xyz,https://agoreum.xyz/api/v1/x402/tools/erc8004-agent-check,0xd17763658955116881b93cec9ecba0fb168d2a3c,,,0.1,0.01,-0.9
+2026-11-05,2026-11-04,agoreum.xyz,https://agoreum.xyz/api/v1/x402/tools/x402-endpoint-check,0xd17763658955116881b93cec9ecba0fb168d2a3c,,,0.5,0.01,-0.98
+2026-11-05,2026-11-04,agoreum.xyz,https://agoreum.xyz/api/v1/x402/tools/screen-text,0xd17763658955116881b93cec9ecba0fb168d2a3c,,,0.5,0.01,-0.98
+2026-11-05,2026-11-04,api.babyblueviper.com,https://api.babyblueviper.com/decision-receipt,0x161dbdd73d025e9aedd4918a67c28e5bf9a87fb9,,,0.0825,0.08,-0.0303
+2026-11-05,2026-11-04,api.babyblueviper.com,https://api.babyblueviper.com/reason,0x161dbdd73d025e9aedd4918a67c28e5bf9a87fb9,,,0.0825,0.08,-0.0303
+2026-11-05,2026-11-04,money-reactor.makar52nn2016.workers.dev,https://money-reactor.makar52nn2016.workers.dev/api/cron-next,0xf47b7e5912fd4218ac4c992cdc6fae04e1ff512e,,,0.002,0.05,24.0
+2026-11-05,2026-11-04,money-reactor.makar52nn2016.workers.dev,https://money-reactor.makar52nn2016.workers.dev/api/color,0xf47b7e5912fd4218ac4c992cdc6fae04e1ff512e,,,0.002,0.05,24.0
+2026-11-05,2026-11-04,money-reactor.makar52nn2016.workers.dev,https://money-reactor.makar52nn2016.workers.dev/api/base64,0xf47b7e5912fd4218ac4c992cdc6fae04e1ff512e,,,0.002,0.05,24.0
