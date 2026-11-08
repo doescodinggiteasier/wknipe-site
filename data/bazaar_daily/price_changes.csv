@@ -3559,3 +3559,15 @@ date,since,host,resource,pay_to,category,what,old_usd,new_usd,change
 2026-11-07,2026-11-06,agent-data-tools.revmesh2074.workers.dev,https://agent-data-tools.revmesh2074.workers.dev/crypto/trending,0x2074c40346ae2a90e0e4a391bcee6f16bf5277f5,,,0.01,0.002,-0.8
 2026-11-07,2026-11-06,agent-data-tools.revmesh2074.workers.dev,https://agent-data-tools.revmesh2074.workers.dev/crypto/price,0x2074c40346ae2a90e0e4a391bcee6f16bf5277f5,,,0.01,0.002,-0.8
 2026-11-07,2026-11-06,money-reactor.makar52nn2016.workers.dev,https://money-reactor.makar52nn2016.workers.dev/api/ip-info,0xf47b7e5912fd4218ac4c992cdc6fae04e1ff512e,,,0.1,0.005,-0.95
+2026-11-08,2026-11-07,api.gondola-ai.com,https://api.gondola-ai.com/v1/images/generations,0x8180a3cb090815d50de7d786fa98f4a908e70cd0,compute,image generation from prompt,0.01,0.02058,1.058
+2026-11-08,2026-11-07,www.tereno.xyz,https://www.tereno.xyz/api/v1/capabilities/chain.snapshot/invoke,0xfbf218accbb0d57fc4e8fc3e2a885c910c4c9e94,,,0.002,0.01,4.0
+2026-11-08,2026-11-07,app.tenna.ai,https://app.tenna.ai/api/x402/lumi/lpc_nft_info,0x7eaf3c393a8996e124c0fa7ccbc55019854c4c5b,data,nft collection facts lookup,0.01,0.1,9.0
+2026-11-08,2026-11-07,402post.com,https://402post.com/v1/featured,0xbc0dcc70d8b5d85541d86ffc68d988fd59c22e68,,,0.5,0.05,-0.9
+2026-11-08,2026-11-07,app.tenna.ai,https://app.tenna.ai/api/x402/lumi/social_timing_check,0x7eaf3c393a8996e124c0fa7ccbc55019854c4c5b,data,social post price timing analysis,0.01,0.1,9.0
+2026-11-08,2026-11-07,www.tereno.xyz,https://www.tereno.xyz/api/v1/capabilities/contract.guard/invoke,0xfbf218accbb0d57fc4e8fc3e2a885c910c4c9e94,,,0.02,0.01,-0.5
+2026-11-08,2026-11-07,image.kagurazaka.dev,https://image.kagurazaka.dev/v1/resize,0xf1643bd00d3c071d9a0c12a4e7d3a17e6e19f8a5,,,0.002,0.003,0.5
+2026-11-08,2026-11-07,coord.taifoon.dev,https://coord.taifoon.dev/v1/x402/class/market.price,0x3574999dd4c96eb73bd6e11d4177010c83e14f5b,,,0.003,0.001714,-0.4287
+2026-11-08,2026-11-07,tolca.tonbot.ca,https://tolca.tonbot.ca/v1/sanctions-check,0x35f0b86a7e33f561faf7cfa5654cad9162c4a17d,,,0.01,0.005,-0.5
+2026-11-08,2026-11-07,wafermap.xyz,https://wafermap.xyz/v1/gemma-4,0xefa0fdf4ca8fd79227fb9a19e5cfd24a2a864b81,,,0.00138,0.002,0.4493
+2026-11-08,2026-11-07,tanod.dev,https://tanod.dev/v1/ocr,0x593857a4a4f619543ea12394137c3004ce841720,,,0.01,0.0025,-0.75
+2026-11-08,2026-11-07,tanod.dev,https://tanod.dev/v1/pdf/html-to-pdf,0x593857a4a4f619543ea12394137c3004ce841720,,,0.01,0.0045,-0.55
