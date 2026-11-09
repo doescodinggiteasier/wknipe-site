@@ -3571,3 +3571,11 @@ date,since,host,resource,pay_to,category,what,old_usd,new_usd,change
 2026-11-08,2026-11-07,wafermap.xyz,https://wafermap.xyz/v1/gemma-4,0xefa0fdf4ca8fd79227fb9a19e5cfd24a2a864b81,,,0.00138,0.002,0.4493
 2026-11-08,2026-11-07,tanod.dev,https://tanod.dev/v1/ocr,0x593857a4a4f619543ea12394137c3004ce841720,,,0.01,0.0025,-0.75
 2026-11-08,2026-11-07,tanod.dev,https://tanod.dev/v1/pdf/html-to-pdf,0x593857a4a4f619543ea12394137c3004ce841720,,,0.01,0.0045,-0.55
+2026-11-09,2026-11-08,api.gondola-ai.com,https://api.gondola-ai.com/v1/images/generations,0x8180a3cb090815d50de7d786fa98f4a908e70cd0,compute,image generation from prompt,0.02058,0.016531,-0.1967
+2026-11-09,2026-11-08,47620.xyz,https://47620.xyz/x/block/0,0x7f4ce6c23f851f13b386efdb22fe0d09821b9d53,data,solana block header data,0.005,0.01,1.0
+2026-11-09,2026-11-08,47620.xyz,https://47620.xyz/x/base/block/latest,0x7f4ce6c23f851f13b386efdb22fe0d09821b9d53,data,base block header and summary,0.005,0.01,1.0
+2026-11-09,2026-11-08,x402.telnyx.com,https://x402.telnyx.com/v1/chat/completions/_t/deepseek-v4-flash-0731,0x19a78b27a28ed93c3c914878bde7f2f843afaea8,,,0.005214,0.002,-0.6164
+2026-11-09,2026-11-08,x402.telnyx.com,https://x402.telnyx.com/v1/chat/completions/_t/llama-3.3-70b,0x19a78b27a28ed93c3c914878bde7f2f843afaea8,,,0.007016,0.002,-0.7149
+2026-11-09,2026-11-08,amanchain-relay.gitajhd.workers.dev,https://amanchain-relay.gitajhd.workers.dev/api/x402/aman-image-gen,0xfb5625d44be488414606773244f0de35410b2f39,compute,ai image generation from text,0.007476,0.007475,-0.0001
+2026-11-09,2026-11-08,apkcube.com,https://apkcube.com/api/v1/apps/:packageName/versions,0xaf4ed8d6d780d15e0937e7fbe65627ed451e9c09,,,0.05,0.01,-0.8
+2026-11-09,2026-11-08,x402.forgemesh.io,https://x402.forgemesh.io/endpoint-of-the-day,0x84a1827f1705c257e80771fdc2b152aea4a57a08,other,daily featured paid service,0.001,0.005,4.0
