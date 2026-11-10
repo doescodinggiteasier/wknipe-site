@@ -3579,3 +3579,66 @@ date,since,host,resource,pay_to,category,what,old_usd,new_usd,change
 2026-11-09,2026-11-08,amanchain-relay.gitajhd.workers.dev,https://amanchain-relay.gitajhd.workers.dev/api/x402/aman-image-gen,0xfb5625d44be488414606773244f0de35410b2f39,compute,ai image generation from text,0.007476,0.007475,-0.0001
 2026-11-09,2026-11-08,apkcube.com,https://apkcube.com/api/v1/apps/:packageName/versions,0xaf4ed8d6d780d15e0937e7fbe65627ed451e9c09,,,0.05,0.01,-0.8
 2026-11-09,2026-11-08,x402.forgemesh.io,https://x402.forgemesh.io/endpoint-of-the-day,0x84a1827f1705c257e80771fdc2b152aea4a57a08,other,daily featured paid service,0.001,0.005,4.0
+2026-11-10,2026-11-09,api.gondola-ai.com,https://api.gondola-ai.com/v1/images/generations,0x8180a3cb090815d50de7d786fa98f4a908e70cd0,compute,image generation from prompt,0.016531,0.013495,-0.1837
+2026-11-10,2026-11-09,x402.telnyx.com,https://x402.telnyx.com/v1/chat/completions/_t/llama-3.1-8b,0x19a78b27a28ed93c3c914878bde7f2f843afaea8,,,0.002237,0.002,-0.1059
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/markets/funding-rates,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.001,0.1,99.0
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/markets/gas-price,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.001,0.1,99.0
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/eu/fx,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.001,0.1,99.0
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/markets/usdc-yield,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.002,0.1,49.0
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/markets/gas,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.001,0.1,99.0
+2026-11-10,2026-11-09,agent402.tools,https://agent402.tools/api/onchain-sql,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.04,0.03,-0.25
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/markets/stablecoins,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.005,0.1,19.0
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/news,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.005,0.1,19.0
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/fundamentals/:symbol,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.01,0.1,9.0
+2026-11-10,2026-11-09,api.loyalspark.online,https://api.loyalspark.online/x402-gateway/merchant-profile,0x40a8cdd6a10ec1a8cb3dfb2834675e7a2cf4ad8b,,,0.001,0.005,4.0
+2026-11-10,2026-11-09,zeroworker-web-action-api.zeroworker-lab.workers.dev,https://zeroworker-web-action-api.zeroworker-lab.workers.dev/v1/preflight,0xad277cf8b5d9fa5008d06cbdbe349f5df3c0cc8f,,,0.003,0.002,-0.3333
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/intelligence/candles/:symbol,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.005,0.1,19.0
+2026-11-10,2026-11-09,router.forgemesh.io,https://router.forgemesh.io/api/services,0xa1ebb2a8a8ed5497cf09c861a1e135520a3b3396,search,search service registry with filters,0.001,0.005,4.0
+2026-11-10,2026-11-09,x402.agentindex.world,https://x402.agentindex.world/search,0xb3f32bdfe8d07825bc0d7387295ab1d7559ba69d,,,0.01,0.002,-0.8
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/markets/technical/:symbol,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.01,0.1,9.0
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/fundamentals/batch,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.03,0.1,2.3333
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/rates/tokenized-treasuries,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.01,0.1,9.0
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/insiders/:symbol,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.01,0.1,9.0
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/eu/fundamentals/:company,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.01,0.1,9.0
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/earnings/:symbol,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.01,0.1,9.0
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/intelligence/:symbol,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.005,0.1,19.0
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/intelligence/track-record,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.01,0.1,9.0
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/eu/macro,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.01,0.1,9.0
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/rates/curve,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.01,0.1,9.0
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/intelligence/summary,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.01,0.1,9.0
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/markets/defi-yields,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.002,0.1,49.0
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/markets/yields,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.002,0.1,49.0
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/rates/defi-spread,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.01,0.1,9.0
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/eu/rates,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.01,0.1,9.0
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/eu/short-positions,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.01,0.1,9.0
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/intelligence/premium,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.01,0.1,9.0
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/intelligence/top-momentum,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.005,0.1,19.0
+2026-11-10,2026-11-09,btcnode.uk,https://btcnode.uk/api/reddit/trending,0x6a667a72d3d36d95421474019aa46f0308d643fc,,,0.01,0.001,-0.9
+2026-11-10,2026-11-09,x402-apis.pages.dev,https://x402-apis.pages.dev/v1/company,0x896babcda513322af2218fe7346353846835f978,,,0.005,0.002,-0.6
+2026-11-10,2026-11-09,amanchain-relay.gitajhd.workers.dev,https://amanchain-relay.gitajhd.workers.dev/api/x402/aman-csv-preflight,0xfb5625d44be488414606773244f0de35410b2f39,,,0.004984,0.004982,-0.0004
+2026-11-10,2026-11-09,x402.telnyx.com,https://x402.telnyx.com/v1/chat/completions/_t/qwen3.8-27b,0x19a78b27a28ed93c3c914878bde7f2f843afaea8,,,0.015211,0.002,-0.8685
+2026-11-10,2026-11-09,amanchain-relay.gitajhd.workers.dev,https://amanchain-relay.gitajhd.workers.dev/api/x402/aman-image-gen,0xfb5625d44be488414606773244f0de35410b2f39,compute,ai image generation from text,0.007475,0.007476,0.0001
+2026-11-10,2026-11-09,tolca.tonbot.ca,https://tolca.tonbot.ca/v1/pkg-check,0x35f0b86a7e33f561faf7cfa5654cad9162c4a17d,,,0.02,0.003,-0.85
+2026-11-10,2026-11-09,api.proofestry.dev,https://api.proofestry.dev/x402/v1/provenance/mark,0x1543e42a4a812b647c4393272745ed29d6ddcbea,,,0.005,0.01,1.0
+2026-11-10,2026-11-09,agentsvc.io,https://agentsvc.io/api/v1/proxy/web-scrape-batch,0x622efa6ceb83a5b6edbc931332f4db68b7f74f27,,,0.05,0.03,-0.4
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/insiders/batch,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.06,0.1,0.6667
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/datasets/:symbol,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.02,0.1,4.0
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/sec/ownership/:symbol,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.01,0.1,9.0
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/intelligence/smart-money/:symbol,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.02,0.1,4.0
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/explain/:symbol,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.02,0.1,4.0
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/cot/:market,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.01,0.1,9.0
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/report/:symbol,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.03,0.1,2.3333
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/decision/lite/:symbol,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.05,0.1,1.0
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/sec/fails-to-deliver/:symbol,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.01,0.1,9.0
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/sec/form-144/:symbol,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.01,0.1,9.0
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/sec/dividends/:symbol,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.01,0.1,9.0
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/intelligence/premium/:symbol,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.01,0.1,9.0
+2026-11-10,2026-11-09,api.marketintelligenceapi.com,https://api.marketintelligenceapi.com/api/v1/intelligence/positioning/:symbol,0x48d5a78d480b4c32de319c2aef69e682dc304615,,,0.01,0.1,9.0
+2026-11-10,2026-11-09,btcnode.uk,https://btcnode.uk/api/whales,0x6a667a72d3d36d95421474019aa46f0308d643fc,,,0.01,0.001,-0.9
+2026-11-10,2026-11-09,tanod.dev,https://tanod.dev/v1/search,0x593857a4a4f619543ea12394137c3004ce841720,,,0.007,0.005,-0.2857
+2026-11-10,2026-11-09,imagegen.coinopai.com,https://imagegen.coinopai.com/generate,0x4c1a4fce51fea51f128a01cce8becb106d391155,compute,ai image generation from prompt,0.25,0.05,-0.8
+2026-11-10,2026-11-09,btcnode.uk,https://btcnode.uk/api/agent/conan,0x6a667a72d3d36d95421474019aa46f0308d643fc,,,0.01,0.001,-0.9
+2026-11-10,2026-11-09,btcnode.uk,https://btcnode.uk/api/agent/scrape,0x6a667a72d3d36d95421474019aa46f0308d643fc,,,0.01,0.001,-0.9
+2026-11-10,2026-11-09,btcnode.uk,https://btcnode.uk/api/agent/whales,0x6a667a72d3d36d95421474019aa46f0308d643fc,,,0.01,0.001,-0.9
+2026-11-10,2026-11-09,btcnode.uk,https://btcnode.uk/api/agent/taint/:address,0x6a667a72d3d36d95421474019aa46f0308d643fc,,,0.01,0.001,-0.9
+2026-11-10,2026-11-09,btcnode.uk,https://btcnode.uk/api/agent/address/:address,0x6a667a72d3d36d95421474019aa46f0308d643fc,,,0.01,0.001,-0.9
