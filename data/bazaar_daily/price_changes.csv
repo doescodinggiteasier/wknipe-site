@@ -3680,3 +3680,34 @@ date,since,host,resource,pay_to,category,what,old_usd,new_usd,change
 2026-11-11,2026-11-10,agent-utils-x402-production.revenue-agent-jw.workers.dev,https://agent-utils-x402-production.revenue-agent-jw.workers.dev/v1/clinical-trials/study,0xa8be97662353949449c70c8d9d120746f9a25e69,,,0.002,0.001,-0.5
 2026-11-11,2026-11-10,agent-utils-x402-production.revenue-agent-jw.workers.dev,https://agent-utils-x402-production.revenue-agent-jw.workers.dev/v1/clinical-trials/search,0xa8be97662353949449c70c8d9d120746f9a25e69,,,0.002,0.001,-0.5
 2026-11-11,2026-11-10,agent-utils-x402-production.revenue-agent-jw.workers.dev,https://agent-utils-x402-production.revenue-agent-jw.workers.dev/v1/federal-register/search,0xa8be97662353949449c70c8d9d120746f9a25e69,,,0.002,0.001,-0.5
+2026-11-12,2026-11-11,api.gondola-ai.com,https://api.gondola-ai.com/v1/images/generations,0x8180a3cb090815d50de7d786fa98f4a908e70cd0,,,0.01282,0.023279,0.8158
+2026-11-12,2026-11-11,coord.taifoon.dev,https://coord.taifoon.dev/v1/x402/class/inference.metered,0x3574999dd4c96eb73bd6e11d4177010c83e14f5b,,,0.001,0.0012,0.2
+2026-11-12,2026-11-11,api.getanyapi.com,https://api.getanyapi.com/v1/run/twitter.search,0x754bd2a6799e766b1e2b9f1ae7fbdc0ced96ef13,,,0.001,0.00154,0.54
+2026-11-12,2026-11-11,filingdelta.xyz,https://filingdelta.xyz/delta/:ticker,0x6d41a1b675ccf7980a0254d0c1317cccb4b42f2a,,,0.01,0.05,4.0
+2026-11-12,2026-11-11,dripstack.com,https://dripstack.com/api/v1/publications/:publicationSlug/:postSlug,0xbf22b6ddb5a08c823856a779f1004eea60c5ab92,content,newsletter post summary and metadata,1.0,6.0,5.0
+2026-11-12,2026-11-11,x402.swaphunt.dev,https://x402.swaphunt.dev/v1/market/fear-greed,0xd6b585dd2f48263d08fb75ea28c1598d845d23a8,,,0.001,0.005,4.0
+2026-11-12,2026-11-11,filingdelta.xyz,https://filingdelta.xyz/policy/:id,0x6d41a1b675ccf7980a0254d0c1317cccb4b42f2a,,,0.02,0.05,1.5
+2026-11-12,2026-11-11,embed.gedx402.com,https://embed.gedx402.com/v1/rerank,0xb3c2776ce3f99cb3366520c27b4ac5d436942ab6,,,0.002275,0.0027,0.1868
+2026-11-12,2026-11-11,fiatdock.com,https://fiatdock.com/s/svc_8b5c724e-a162-4b80-9976-7975b58c1552,0xfe257ef6dc89f5b688ac52ef3eb8648c629fa9c4,,,0.005,0.003,-0.4
+2026-11-12,2026-11-11,47620.xyz,https://47620.xyz/x/epoch,0x7f4ce6c23f851f13b386efdb22fe0d09821b9d53,data,solana epoch data lookup,0.005,0.01,1.0
+2026-11-12,2026-11-11,x402.clashofcoins.com,https://x402.clashofcoins.com/shop/x402/buy,0x8b29dabd6fbb5a09dacbc7978eaed66a8540721d,,,0.02,1.99,98.5
+2026-11-12,2026-11-11,coord.taifoon.dev,https://coord.taifoon.dev/v1/chat/completions/deepseek-v4-flash,0x3574999dd4c96eb73bd6e11d4177010c83e14f5b,,,0.001,0.0012,0.2
+2026-11-12,2026-11-11,x402.telnyx.com,https://x402.telnyx.com/v1/chat/completions/_t/llama-3.1-70b,0x19a78b27a28ed93c3c914878bde7f2f843afaea8,,,0.007016,0.002,-0.7149
+2026-11-12,2026-11-11,api.agentsearchhq.com,https://api.agentsearchhq.com/x402/v1/extract,0xc49b157887e51c21cb655f39cf65d6a4c2a4c337,,,0.007,0.004,-0.4286
+2026-11-12,2026-11-11,coord.taifoon.dev,https://coord.taifoon.dev/v1/chat/completions/qwen3-235b-a22b-instruct-2507,0x3574999dd4c96eb73bd6e11d4177010c83e14f5b,,,0.001,0.0012,0.2
+2026-11-12,2026-11-11,filingdelta.xyz,https://filingdelta.xyz/insider/:ticker,0x6d41a1b675ccf7980a0254d0c1317cccb4b42f2a,,,0.02,0.05,1.5
+2026-11-12,2026-11-11,filingdelta.xyz,https://filingdelta.xyz/guidance/:ticker,0x6d41a1b675ccf7980a0254d0c1317cccb4b42f2a,,,0.02,0.05,1.5
+2026-11-12,2026-11-11,filingdelta.xyz,https://filingdelta.xyz/cpi/:id,0x6d41a1b675ccf7980a0254d0c1317cccb4b42f2a,,,0.01,0.05,4.0
+2026-11-12,2026-11-11,filingdelta.xyz,https://filingdelta.xyz/macro/:id,0x6d41a1b675ccf7980a0254d0c1317cccb4b42f2a,,,0.01,0.05,4.0
+2026-11-12,2026-11-11,coord.taifoon.dev,https://coord.taifoon.dev/v1/chat/completions,0x3574999dd4c96eb73bd6e11d4177010c83e14f5b,,,0.001,0.0012,0.2
+2026-11-12,2026-11-11,preflight.kagurazaka.dev,https://preflight.kagurazaka.dev/v1/preflight,0xf1643bd00d3c071d9a0c12a4e7d3a17e6e19f8a5,,,0.002,0.007,2.5
+2026-11-12,2026-11-11,api.integrityphase.com,https://api.integrityphase.com/verify/webhook-integrity,0x17301b640f11c3635226ac703118d7ea393a8151,,,11.232169,11.165699,-0.0059
+2026-11-12,2026-11-11,api.cleave.fi,https://api.cleave.fi/x402/gas,0x0000000000000000000000000000000000000000,,,5.0,0.8,-0.84
+2026-11-12,2026-11-11,api.gentechlabs.net,https://api.gentechlabs.net/v1/defender/classify/8453/:address,0x7ebff188f2eba16518c02864589b1403a5d1296a,,,0.01,0.008,-0.2
+2026-11-12,2026-11-11,api.gentechlabs.net,https://api.gentechlabs.net/v1/agents/search/,0x7ebff188f2eba16518c02864589b1403a5d1296a,,,0.01,0.002,-0.8
+2026-11-12,2026-11-11,api.gentechlabs.net,https://api.gentechlabs.net/v1/nft/search/,0x7ebff188f2eba16518c02864589b1403a5d1296a,,,0.01,0.002,-0.8
+2026-11-12,2026-11-11,api.loyalspark.online,https://api.loyalspark.online/x402-gateway/rewards,0x40a8cdd6a10ec1a8cb3dfb2834675e7a2cf4ad8b,,,0.001,0.01,9.0
+2026-11-12,2026-11-11,nightshift-x402.nightshift-labs.workers.dev,https://nightshift-x402.nightshift-labs.workers.dev/v1/web/security-headers,0xb5afc89b57fa8270bb7261348179d28099bea2a0,,,0.005,0.003,-0.4
+2026-11-12,2026-11-11,horizonpulse.dev,https://horizonpulse.dev/api/sec/10k-risk,0x5b32c973596078a967562ca652761404f19be0e9,,,0.5,0.05,-0.9
+2026-11-12,2026-11-11,imagegen.coinopai.com,https://imagegen.coinopai.com/generate/hd,0x4c1a4fce51fea51f128a01cce8becb106d391155,,,0.5,0.1,-0.8
+2026-11-12,2026-11-11,seo.forgemesh.io,https://seo.forgemesh.io/v1/placement-vet,0xcc73d69a4d04fa41afa3727c45140d51d71f615c,,,0.02,0.05,1.5
