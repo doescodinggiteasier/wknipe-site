@@ -3737,3 +3737,33 @@ date,since,host,resource,pay_to,category,what,old_usd,new_usd,change
 2026-11-13,2026-11-12,api.getanyapi.com,https://api.getanyapi.com/v1/run/yahoo_finance.quote,0x754bd2a6799e766b1e2b9f1ae7fbdc0ced96ef13,,,0.00105,0.00205,0.9524
 2026-11-13,2026-11-12,api.getanyapi.com,https://api.getanyapi.com/v1/run/google_finance.quote,0x754bd2a6799e766b1e2b9f1ae7fbdc0ced96ef13,,,0.0022,0.00216,-0.0182
 2026-11-13,2026-11-12,nightshift-x402.nightshift-labs.workers.dev,https://nightshift-x402.nightshift-labs.workers.dev/v1/web/link-check,0xb5afc89b57fa8270bb7261348179d28099bea2a0,,,0.01,0.003,-0.7
+2026-11-14,2026-11-13,x402.telnyx.com,https://x402.telnyx.com/v1/chat/completions/_t/glm,0x19a78b27a28ed93c3c914878bde7f2f843afaea8,,,0.023386,0.002,-0.9145
+2026-11-14,2026-11-13,coord.taifoon.dev,https://coord.taifoon.dev/v1/x402/class/tee.typed.compile,0x3574999dd4c96eb73bd6e11d4177010c83e14f5b,,,0.001,0.00122,0.22
+2026-11-14,2026-11-13,coord.taifoon.dev,https://coord.taifoon.dev/v1/x402/class/mech.predict,0x3574999dd4c96eb73bd6e11d4177010c83e14f5b,,,0.01,0.002586,-0.7414
+2026-11-14,2026-11-13,api.loyalspark.online,https://api.loyalspark.online/x402-gateway/merchant-profile,0x40a8cdd6a10ec1a8cb3dfb2834675e7a2cf4ad8b,,,0.001,0.005,4.0
+2026-11-14,2026-11-13,amanchain-relay.gitajhd.workers.dev,https://amanchain-relay.gitajhd.workers.dev/api/x402/aman-csv-preflight,0xfb5625d44be488414606773244f0de35410b2f39,,,0.00498,0.004984,0.0008
+2026-11-14,2026-11-13,horizonpulse.dev,https://horizonpulse.dev/api/funding-report,0x5b32c973596078a967562ca652761404f19be0e9,,,1.0,0.25,-0.75
+2026-11-14,2026-11-13,horizonpulse.dev,https://horizonpulse.dev/api/seller-dd/single,0x5b32c973596078a967562ca652761404f19be0e9,,,5.0,1.0,-0.8
+2026-11-14,2026-11-13,horizonpulse.dev,https://horizonpulse.dev/api/research/report/brief,0x5b32c973596078a967562ca652761404f19be0e9,,,1.0,0.25,-0.75
+2026-11-14,2026-11-13,www.taifoon.io,https://www.taifoon.io/api/coordination/x402/class/mcp.digest,0x3574999dd4c96eb73bd6e11d4177010c83e14f5b,,,0.006795,0.0012,-0.8234
+2026-11-14,2026-11-13,api.agent-data.workers.dev,https://api.agent-data.workers.dev/api/v1/wikipedia,0x2a991f1cf788ff7fb5df8f9d507cfc98b5b1bd4e,,,0.003,0.005,0.6667
+2026-11-14,2026-11-13,api.jobsproperty-api.workers.dev,https://api.jobsproperty-api.workers.dev/api/jobs/themuse-jobs,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.002,0.02,9.0
+2026-11-14,2026-11-13,agent-data-tools.revmesh2074.workers.dev,https://agent-data-tools.revmesh2074.workers.dev/hyperliquid/indicators,0x6293ded2684f1a76e26becef87c137d691fbf800,,,0.01,0.05,4.0
+2026-11-14,2026-11-13,amanchain-relay.gitajhd.workers.dev,https://amanchain-relay.gitajhd.workers.dev/api/x402/aman-wallet-portfolio,0xfb5625d44be488414606773244f0de35410b2f39,data,crypto wallet portfolio balance,0.007475,0.007476,0.0001
+2026-11-14,2026-11-13,amanchain-relay.gitajhd.workers.dev,https://amanchain-relay.gitajhd.workers.dev/api/x402/aman-swap-quote,0xfb5625d44be488414606773244f0de35410b2f39,other,defi swap quote and pricing,0.007475,0.007476,0.0001
+2026-11-14,2026-11-13,amanchain-relay.gitajhd.workers.dev,https://amanchain-relay.gitajhd.workers.dev/api/x402/aman-crypto-prices,0xfb5625d44be488414606773244f0de35410b2f39,data,live crypto prices and market data,0.007475,0.007476,0.0001
+2026-11-14,2026-11-13,amanchain-relay.gitajhd.workers.dev,https://amanchain-relay.gitajhd.workers.dev/api/x402/aman-market-summary,0xfb5625d44be488414606773244f0de35410b2f39,data,crypto market data lookup,0.007475,0.007476,0.0001
+2026-11-14,2026-11-13,amanchain-relay.gitajhd.workers.dev,https://amanchain-relay.gitajhd.workers.dev/api/x402/aman-image-gen,0xfb5625d44be488414606773244f0de35410b2f39,compute,ai image generation from text,0.007475,0.007476,0.0001
+2026-11-14,2026-11-13,amanchain-relay.gitajhd.workers.dev,https://amanchain-relay.gitajhd.workers.dev/api/x402/aman-price-feed,0xfb5625d44be488414606773244f0de35410b2f39,data,crypto price feed,0.007473,0.007476,0.0004
+2026-11-14,2026-11-13,amanchain-relay.gitajhd.workers.dev,https://amanchain-relay.gitajhd.workers.dev/api/x402/aman-token-audit,0xfb5625d44be488414606773244f0de35410b2f39,data,token security and risk audit,0.007473,0.007476,0.0004
+2026-11-14,2026-11-13,signals.incomefather.com,https://signals.incomefather.com/solana/token-verdict,0x6d7be981c103ed360874a7703ad3cd6a98929afb,,,0.02,0.01,-0.5
+2026-11-14,2026-11-13,signals.incomefather.com,https://signals.incomefather.com/bundle/token-pre-trade,0x6d7be981c103ed360874a7703ad3cd6a98929afb,,,0.025,0.015,-0.4
+2026-11-14,2026-11-13,signals.incomefather.com,https://signals.incomefather.com/base/token-verdict,0x6d7be981c103ed360874a7703ad3cd6a98929afb,,,0.02,0.01,-0.5
+2026-11-14,2026-11-13,public-domain-check-production.up.railway.app,https://public-domain-check-production.up.railway.app/v1/pd-status/batch,0x13b61a1337170281a6be0c2da150079692394f0b,,,0.03,0.015,-0.5
+2026-11-14,2026-11-13,agent-data-tools.revmesh2074.workers.dev,https://agent-data-tools.revmesh2074.workers.dev/robots,0x6293ded2684f1a76e26becef87c137d691fbf800,,,0.01,0.001,-0.9
+2026-11-14,2026-11-13,1gateway.dev,https://1gateway.dev/v1/ai/embed,0x6246eee0355dd7a93c888fe59e1151388a0cc5a1,,,0.002,0.003,0.5
+2026-11-14,2026-11-13,1gateway.dev,https://1gateway.dev/v1/files/upload,0x6246eee0355dd7a93c888fe59e1151388a0cc5a1,,,0.0065,0.0066,0.0154
+2026-11-14,2026-11-13,agent402.tools,https://agent402.tools/api/skill/onchain-analyst,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.021,0.03,0.4286
+2026-11-14,2026-11-13,agent402.tools,https://agent402.tools/api/x-user-tweets,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.08,0.09,0.125
+2026-11-14,2026-11-13,agent-data-tools.revmesh2074.workers.dev,https://agent-data-tools.revmesh2074.workers.dev/commodity/price,0x6293ded2684f1a76e26becef87c137d691fbf800,,,0.01,0.001,-0.9
+2026-11-14,2026-11-13,api.jobsproperty-api.workers.dev,https://api.jobsproperty-api.workers.dev/api/realestate/loopnet,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.002,0.01,4.0
