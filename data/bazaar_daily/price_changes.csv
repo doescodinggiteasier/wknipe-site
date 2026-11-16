@@ -3846,3 +3846,39 @@ date,since,host,resource,pay_to,category,what,old_usd,new_usd,change
 2026-11-15,2026-11-14,api.getanyapi.com,https://api.getanyapi.com/v1/run/semrush.overview,0x754bd2a6799e766b1e2b9f1ae7fbdc0ced96ef13,,,0.00495,0.00595,0.202
 2026-11-15,2026-11-14,agent-data-tools.revmesh2074.workers.dev,https://agent-data-tools.revmesh2074.workers.dev/stablecoin/charts,0x6293ded2684f1a76e26becef87c137d691fbf800,,,0.01,0.005,-0.5
 2026-11-15,2026-11-14,x402.orthogonal.com,https://x402.orthogonal.com/apollo/api/v1/organizations/enrich,0xccd231829e24b42195b500028f8779b8f8b1131a,,,0.01,0.04,3.0
+2026-11-16,2026-11-15,api.gondola-ai.com,https://api.gondola-ai.com/v1/images/generations,0x8180a3cb090815d50de7d786fa98f4a908e70cd0,,,0.029689,0.017881,-0.3977
+2026-11-16,2026-11-15,orchard-data.letom1176.workers.dev,https://orchard-data.letom1176.workers.dev/api/fear-greed,0xc863b1c6658971ca427e90665dccce90a41a2bc2,,,0.002,0.001,-0.5
+2026-11-16,2026-11-15,agentdatafeed.com,https://agentdatafeed.com/v1/security-advisories,0x3eda32e2315084dd09c8913694840fe6006557ee,,,0.003,0.004,0.3333
+2026-11-16,2026-11-15,mart402.com,https://mart402.com/v1/extract,0xe3244a21d0d68bfa78b7cad8c3b8777adfbb3188,,,0.005,0.0025,-0.5
+2026-11-16,2026-11-15,api.sumvid.app,https://api.sumvid.app/v1/transcript,0x9036ff40101eeff4cb8a377d59e9432819b5d420,compute,youtube video transcript extraction,0.005,0.003,-0.4
+2026-11-16,2026-11-15,api.rafidsystem.com,https://api.rafidsystem.com/api/v1/x402/property/analyze,0x29d4d3ced89d7adcb0ae47ef6892ce24bd2b125f,compute,rental yield and cost calculation,0.01,0.2,19.0
+2026-11-16,2026-11-15,api.agentsearchhq.com,https://api.agentsearchhq.com/x402/v1/screenshot,0xc49b157887e51c21cb655f39cf65d6a4c2a4c337,,,0.01,0.004,-0.6
+2026-11-16,2026-11-15,api.agentsearchhq.com,https://api.agentsearchhq.com/x402/v1/news,0xc49b157887e51c21cb655f39cf65d6a4c2a4c337,,,0.008,0.003,-0.625
+2026-11-16,2026-11-15,api.agentsearchhq.com,https://api.agentsearchhq.com/x402/v1/search_and_read,0xc49b157887e51c21cb655f39cf65d6a4c2a4c337,,,0.009,0.005,-0.4444
+2026-11-16,2026-11-15,api.agentsearchhq.com,https://api.agentsearchhq.com/x402/v1/render,0xc49b157887e51c21cb655f39cf65d6a4c2a4c337,,,0.01,0.005,-0.5
+2026-11-16,2026-11-15,api.agentsearchhq.com,https://api.agentsearchhq.com/x402/v1/extract,0xc49b157887e51c21cb655f39cf65d6a4c2a4c337,,,0.004,0.002,-0.5
+2026-11-16,2026-11-15,api.agentsearchhq.com,https://api.agentsearchhq.com/x402/v1/search,0xc49b157887e51c21cb655f39cf65d6a4c2a4c337,,,0.008,0.003,-0.625
+2026-11-16,2026-11-15,scaudit.madebydevx.com,https://scaudit.madebydevx.com/v1/quick,0xb3cddccee6b150c8effd55b961afc0ecefe7f247,,,0.9,0.09,-0.9
+2026-11-16,2026-11-15,tokencheck.madebydevx.com,https://tokencheck.madebydevx.com/v1/token/verdict,0xb3cddccee6b150c8effd55b961afc0ecefe7f247,,,0.01,0.005,-0.5
+2026-11-16,2026-11-15,logigrain.net,https://logigrain.net/api/nisa,0x716fde0dac4ef6ed2018206d43697c6bb71d7eb3,,,0.001,0.01,9.0
+2026-11-16,2026-11-15,verdict.kechlab.com,https://verdict.kechlab.com/v1/triage,0xb36c56a749f81ffeb44a134082dd4744e1d254eb,,,0.0084,0.0075,-0.1071
+2026-11-16,2026-11-15,verdict.kechlab.com,https://verdict.kechlab.com/v1/moderate,0xb36c56a749f81ffeb44a134082dd4744e1d254eb,,,0.0084,0.0075,-0.1071
+2026-11-16,2026-11-15,dspaid.duckdns.org,https://dspaid.duckdns.org/v1/tools/code-audit,0xe0b4d6bfc033390c9d7ded6a67cee35451eff934,,,0.05,0.025,-0.5
+2026-11-16,2026-11-15,quantagentshop.com,https://quantagentshop.com/v1/seo-audit,0x4d8d8d4f04512029172e0176744eec4ae5238309,,,0.01,0.0099,-0.01
+2026-11-16,2026-11-15,dspaid.duckdns.org,https://dspaid.duckdns.org/v1/tools/agent-card-eval,0xe0b4d6bfc033390c9d7ded6a67cee35451eff934,,,0.05,0.025,-0.5
+2026-11-16,2026-11-15,saferead.grindfree.net,https://saferead.grindfree.net/v1/read,0xe4b5827994b7b3cd38f9830d9ecf58b51b77721b,,,0.003,0.002,-0.3333
+2026-11-16,2026-11-15,crawlsafe.grindfree.net,https://crawlsafe.grindfree.net/v1/check,0xe4b5827994b7b3cd38f9830d9ecf58b51b77721b,,,0.002,0.001,-0.5
+2026-11-16,2026-11-15,relay.straelo.com,https://relay.straelo.com/evm-wallet-balance-lookup,0x267ead21c0a5c1bf7e44cb357641556edc52d232,,,0.005,0.001,-0.8
+2026-11-16,2026-11-15,x402.agentindex.world,https://x402.agentindex.world/research,0xb3f32bdfe8d07825bc0d7387295ab1d7559ba69d,,,0.005,0.015,2.0
+2026-11-16,2026-11-15,tgw-mindset-api.fly.dev,https://tgw-mindset-api.fly.dev/claim-audit,0xe59c573e4a397a75ec1f99d0c4faf66505e516ba,,,0.04,0.01,-0.75
+2026-11-16,2026-11-15,marketplaceforaiagents.com,https://marketplaceforaiagents.com/api/public/v1/google-search,0x05e82e03753c7bc99fb24d10a876cce53f24b7b7,search,google search results with snippets,0.003,0.005,0.6667
+2026-11-16,2026-11-15,tgw-mindset-api.fly.dev,https://tgw-mindset-api.fly.dev/search,0xe59c573e4a397a75ec1f99d0c4faf66505e516ba,,,0.02,0.01,-0.5
+2026-11-16,2026-11-15,tgw-mindset-api.fly.dev,https://tgw-mindset-api.fly.dev/offer-normalize,0xe59c573e4a397a75ec1f99d0c4faf66505e516ba,,,0.05,0.01,-0.8
+2026-11-16,2026-11-15,tgw-mindset-api.fly.dev,https://tgw-mindset-api.fly.dev/research-pack,0xe59c573e4a397a75ec1f99d0c4faf66505e516ba,,,0.1,0.02,-0.8
+2026-11-16,2026-11-15,tgw-mindset-api.fly.dev,https://tgw-mindset-api.fly.dev/invoice-check,0xe59c573e4a397a75ec1f99d0c4faf66505e516ba,,,0.03,0.01,-0.6667
+2026-11-16,2026-11-15,tgw-mindset-api.fly.dev,https://tgw-mindset-api.fly.dev/vendor-check,0xe59c573e4a397a75ec1f99d0c4faf66505e516ba,,,0.04,0.01,-0.75
+2026-11-16,2026-11-15,tgw-mindset-api.fly.dev,https://tgw-mindset-api.fly.dev/quote-invoice-check,0xe59c573e4a397a75ec1f99d0c4faf66505e516ba,,,0.05,0.01,-0.8
+2026-11-16,2026-11-15,api.getanyapi.com,https://api.getanyapi.com/v1/run/semrush.keywords,0x754bd2a6799e766b1e2b9f1ae7fbdc0ced96ef13,,,0.00495,0.00595,0.202
+2026-11-16,2026-11-15,logigrain.net,https://logigrain.net/api/housing-loan,0x716fde0dac4ef6ed2018206d43697c6bb71d7eb3,,,0.001,0.01,9.0
+2026-11-16,2026-11-15,logigrain.net,https://logigrain.net/api/nenkin-deferral,0x716fde0dac4ef6ed2018206d43697c6bb71d7eb3,,,0.001,0.01,9.0
+2026-11-16,2026-11-15,agentgas.madebydevx.com,https://agentgas.madebydevx.com/v1/gas,0xd31ba7b698c9775cb27aecba00198bfda5cd227e,,,0.086,0.084,-0.0233
