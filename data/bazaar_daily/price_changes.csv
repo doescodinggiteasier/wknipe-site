@@ -3907,3 +3907,49 @@ date,since,host,resource,pay_to,category,what,old_usd,new_usd,change
 2026-11-17,2026-11-16,x402.orthogonal.com,https://x402.orthogonal.com/apollo/api/v1/people/match,0xccd231829e24b42195b500028f8779b8f8b1131a,,,0.01,0.04,3.0
 2026-11-17,2026-11-16,x402.orthogonal.com,https://x402.orthogonal.com/speixFkLB/api/v1/hourly,0x6013d764502369012df405a21c7dcbb6efd1507b,data,hourly precipitation data lookup,0.01,0.002,-0.8
 2026-11-17,2026-11-16,x402.orthogonal.com,https://x402.orthogonal.com/speixFkLB/api/v1/soil-moisture-daily,0x6013d764502369012df405a21c7dcbb6efd1507b,data,daily soil moisture percentage,0.01,0.002,-0.8
+2026-11-18,2026-11-17,x402.tbs-digital.com,https://x402.tbs-digital.com/weather/current,0xd6fce15298fc9d60f867d9455d497177da9bfb0a,data,current weather forecast and air quality,0.001,0.002,1.0
+2026-11-18,2026-11-17,api.gondola-ai.com,https://api.gondola-ai.com/v1/images/generations,0x8180a3cb090815d50de7d786fa98f4a908e70cd0,,,0.017881,0.026652,0.4905
+2026-11-18,2026-11-17,api.agentweather.io,https://api.agentweather.io/v1/pulse/facilitator,0xa15c55f39ec1dfd87afb09e1959efac2bf44f4ec,,,0.001,0.003,2.0
+2026-11-18,2026-11-17,mart402.com,https://mart402.com/v1/extract,0xe3244a21d0d68bfa78b7cad8c3b8777adfbb3188,,,0.0025,0.005,1.0
+2026-11-18,2026-11-17,api.kadec0.xyz,https://api.kadec0.xyz/v1/cve,0x4df66b6c140778fe0717880a7c6dde5ea53acdea,data,cve vulnerability lookup,0.01,0.02,1.0
+2026-11-18,2026-11-17,medien.halowerk.com,https://medien.halowerk.com/v1/stt,0x2880edfff13100677bf97a3cbdf3bc34771c4e5e,,,0.06,0.02,-0.6667
+2026-11-18,2026-11-17,api.companyrecords-api.workers.dev,https://api.companyrecords-api.workers.dev/api/b2b/linkedin-company-profiles,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.002,0.003,0.5
+2026-11-18,2026-11-17,southpow.media,https://southpow.media/v1/crypto-price,0x5fb2faeaabd58da0ea1e1f64a8c2134c4941efe5,,,0.002,0.05,24.0
+2026-11-18,2026-11-17,subnano.ai,https://subnano.ai/api/posts/:postId/access,0xb44cd235a9a08435a4ffa79f8dfab32dcb9c401b,,,3.0,0.1,-0.9667
+2026-11-18,2026-11-17,api.bicscan.io,https://api.bicscan.io/x402/v1/check,0x9be44d0c67eb8f5f0c3ed629c536b9c12b0d2bc5,,,0.2,1.0,4.0
+2026-11-18,2026-11-17,micro-saas-agent.onrender.com,https://micro-saas-agent.onrender.com/api/verdict/:chain/:address,0xb4527dccac81eb73d4988a51a4cb1fbbf2c3cabd,,,0.01,0.005,-0.5
+2026-11-18,2026-11-17,readfetch.com,https://readfetch.com/v1/crawl,0x26c2308adc8fe5ffe6d4183588dd2dd22ed86071,,,0.003,0.06,19.0
+2026-11-18,2026-11-17,verdict.kechlab.com,https://verdict.kechlab.com/v1/terms-scan,0xb36c56a749f81ffeb44a134082dd4744e1d254eb,,,0.0173,0.0075,-0.5665
+2026-11-18,2026-11-17,agent.regimecard.com,https://agent.regimecard.com/v1/brief,0xd32c540f5bfe52ff791de0a5910e50fde257afac,,,0.01,0.03,2.0
+2026-11-18,2026-11-17,agent.regimecard.com,https://agent.regimecard.com/v1/crypto,0xd32c540f5bfe52ff791de0a5910e50fde257afac,,,0.01,0.05,4.0
+2026-11-18,2026-11-17,api.jobsproperty-api.workers.dev,https://api.jobsproperty-api.workers.dev/api/realestate/openrent-uk-listings,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.002,0.003,0.5
+2026-11-18,2026-11-17,social.gedx402.com,https://social.gedx402.com/v1/sociavault/twitter/user-tweets-all,0xb3c2776ce3f99cb3366520c27b4ac5d436942ab6,,,0.014,0.009,-0.3571
+2026-11-18,2026-11-17,agent402.tools,https://agent402.tools/api/skill/defi-dashboard,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.014,0.018,0.2857
+2026-11-18,2026-11-17,agent402.tools,https://agent402.tools/api/skill/defi-protocol-scanner,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.025,0.031,0.24
+2026-11-18,2026-11-17,agent402.tools,https://agent402.tools/api/skill/location-intel,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.008,0.009,0.125
+2026-11-18,2026-11-17,agent402.tools,https://agent402.tools/api/skill/trip-planner,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.006,0.007,0.1667
+2026-11-18,2026-11-17,x402-markettwits-news.onrender.com,https://x402-markettwits-news.onrender.com/news/top-topics,0x2c257ee70952a16f00c99d40fdff2d28f1a5b8a2,,,0.005,0.0025,-0.5
+2026-11-18,2026-11-17,api.companyrecords-api.workers.dev,https://api.companyrecords-api.workers.dev/api/gov/nrc-licenses,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.002,0.004,1.0
+2026-11-18,2026-11-17,api.jobsproperty-api.workers.dev,https://api.jobsproperty-api.workers.dev/api/jobs/glassdoor-jobs,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.002,0.01,4.0
+2026-11-18,2026-11-17,api.healthtravel-api.workers.dev,https://api.healthtravel-api.workers.dev/api/travel/marketwatch,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.002,0.004,1.0
+2026-11-18,2026-11-17,api.healthtravel-api.workers.dev,https://api.healthtravel-api.workers.dev/api/travel/carvana,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.002,0.004,1.0
+2026-11-18,2026-11-17,api.chainmarket-api.workers.dev,https://api.chainmarket-api.workers.dev/api/finance/alpha-vantage-public,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.002,0.003,0.5
+2026-11-18,2026-11-17,api.chainmarket-api.workers.dev,https://api.chainmarket-api.workers.dev/api/crypto/binance-orderbook-depth,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.002,0.003,0.5
+2026-11-18,2026-11-17,api.shopsocial-api.workers.dev,https://api.shopsocial-api.workers.dev/api/social/instagram-profile,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.002,0.004,1.0
+2026-11-18,2026-11-17,api.shopsocial-api.workers.dev,https://api.shopsocial-api.workers.dev/api/social/instagram-contact,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.002,0.004,1.0
+2026-11-18,2026-11-17,api.agentweather.io,https://api.agentweather.io/v1/readings/changes,0xa15c55f39ec1dfd87afb09e1959efac2bf44f4ec,,,0.001,0.003,2.0
+2026-11-18,2026-11-17,api.shopsocial-api.workers.dev,https://api.shopsocial-api.workers.dev/api/ecommerce/revzilla,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.002,0.003,0.5
+2026-11-18,2026-11-17,api.shopsocial-api.workers.dev,https://api.shopsocial-api.workers.dev/api/social/upwork,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.002,0.01,4.0
+2026-11-18,2026-11-17,api.shopsocial-api.workers.dev,https://api.shopsocial-api.workers.dev/api/ecommerce/singlecare,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.002,0.01,4.0
+2026-11-18,2026-11-17,api.jobsproperty-api.workers.dev,https://api.jobsproperty-api.workers.dev/api/realestate/hemnet,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.002,0.004,1.0
+2026-11-18,2026-11-17,api.jobsproperty-api.workers.dev,https://api.jobsproperty-api.workers.dev/api/realestate/apartments-com,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.002,0.01,4.0
+2026-11-18,2026-11-17,api.jobsproperty-api.workers.dev,https://api.jobsproperty-api.workers.dev/api/realestate/seloger,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.002,0.01,4.0
+2026-11-18,2026-11-17,api.jobsproperty-api.workers.dev,https://api.jobsproperty-api.workers.dev/api/jobs/simplyhired,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.002,0.01,4.0
+2026-11-18,2026-11-17,api.jobsproperty-api.workers.dev,https://api.jobsproperty-api.workers.dev/api/jobs/upwork-jobs,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.002,0.01,4.0
+2026-11-18,2026-11-17,api.jobsproperty-api.workers.dev,https://api.jobsproperty-api.workers.dev/api/jobs/indeed,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.002,0.01,4.0
+2026-11-18,2026-11-17,api.jobsproperty-api.workers.dev,https://api.jobsproperty-api.workers.dev/api/jobs/glassdoor,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.002,0.01,4.0
+2026-11-18,2026-11-17,api.jobsproperty-api.workers.dev,https://api.jobsproperty-api.workers.dev/api/jobs/flexjobs,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.002,0.01,4.0
+2026-11-18,2026-11-17,api.companyrecords-api.workers.dev,https://api.companyrecords-api.workers.dev/api/b2b/webmd-healthcare-provider-directory,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.002,0.003,0.5
+2026-11-18,2026-11-17,api.companyrecords-api.workers.dev,https://api.companyrecords-api.workers.dev/api/b2b/yellowpages,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.002,0.004,1.0
+2026-11-18,2026-11-17,api.companyrecords-api.workers.dev,https://api.companyrecords-api.workers.dev/api/gov/fmcsa-household-goods-complaints,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.002,0.004,1.0
+2026-11-18,2026-11-17,api.chainmarket-api.workers.dev,https://api.chainmarket-api.workers.dev/api/finance/nerdwallet,0xb8491f953e6860d3b5840b73c60883ff099ceafa,,,0.002,0.003,0.5
