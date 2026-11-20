@@ -3993,3 +3993,216 @@ date,since,host,resource,pay_to,category,what,old_usd,new_usd,change
 2026-11-19,2026-11-18,agent-data-tools.revmesh2074.workers.dev,https://agent-data-tools.revmesh2074.workers.dev/defi/usdc-yield,0x6293ded2684f1a76e26becef87c137d691fbf800,,,0.01,0.002,-0.8
 2026-11-19,2026-11-18,api.loyalspark.online,https://api.loyalspark.online/x402-gateway/rewards,0x40a8cdd6a10ec1a8cb3dfb2834675e7a2cf4ad8b,,,0.001,0.01,9.0
 2026-11-19,2026-11-18,agentpaystore.com,https://agentpaystore.com/api/directory/search,0x367f1b3d8ca90d1e087481a9a40d585bf3451a03,,,0.001,0.01,9.0
+2026-11-20,2026-11-19,api.gondola-ai.com,https://api.gondola-ai.com/v1/images/generations,0x8180a3cb090815d50de7d786fa98f4a908e70cd0,,,0.022604,0.020242,-0.1045
+2026-11-20,2026-11-19,subnano.ai,https://subnano.ai/api/posts/:postId/access,0xb44cd235a9a08435a4ffa79f8dfab32dcb9c401b,,,0.1,2.0,19.0
+2026-11-20,2026-11-19,api.payperscreen.com,https://api.payperscreen.com/screen-ip,0xa816343b4f88742faef03f51ec23eee1367c6f76,,,0.01,0.02,1.0
+2026-11-20,2026-11-19,mart402.com,https://mart402.com/v1/extract,0xe3244a21d0d68bfa78b7cad8c3b8777adfbb3188,,,0.005,0.0025,-0.5
+2026-11-20,2026-11-19,api.nohumans.directory,https://api.nohumans.directory/v1/listings/:id/verify-now,0xa733875f2f7e8a2817040b5c60b63ae07d58a1d6,,,2.0,0.252,-0.874
+2026-11-20,2026-11-19,api.x402-hosting.com,https://api.x402-hosting.com/v1/projects/:id/renew,0xac0bba6e3241a398b1911528a3e19f87aee12f6e,,,0.6,0.4,-0.3333
+2026-11-20,2026-11-19,x402.swaphunt.dev,https://x402.swaphunt.dev/v1/tools/price,0xd6b585dd2f48263d08fb75ea28c1598d845d23a8,,,0.001,0.005,4.0
+2026-11-20,2026-11-19,x402-fuelprice-poc.theliminalguy.workers.dev,https://x402-fuelprice-poc.theliminalguy.workers.dev/price,0xb1f5aa2d750547a84fc53b8519de235d7bc29e29,,,0.01,0.0035,-0.65
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/treasury-yield-curve,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.005,0.001,-0.8
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/screenshot,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.004,0.002,-0.5
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/fx-rate,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.002,0.001,-0.5
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/cve-lookup,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,data,cve details and exploitation probability,0.005,0.001,-0.8
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/render,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.01,0.003,-0.7
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/dns-lookup,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,compute,dns record lookup,0.002,0.001,-0.5
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/exchanges,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.005,0.003,-0.4
+2026-11-20,2026-11-19,api.predictionmarketdata.io,https://api.predictionmarketdata.io/exchanges,0x995c0abdcd2ad76548e5f7deb54d32549b2b781f,data,prediction market exchange data,0.001,0.01,9.0
+2026-11-20,2026-11-19,x402.swaphunt.dev,https://x402.swaphunt.dev/v1/vol/realized,0xd6b585dd2f48263d08fb75ea28c1598d845d23a8,,,0.002,0.01,4.0
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/fred-series,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.005,0.001,-0.8
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/token-price-history,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,data,token price history lookup,0.004,0.001,-0.75
+2026-11-20,2026-11-19,x402.swaphunt.dev,https://x402.swaphunt.dev/v1/regime/current,0xd6b585dd2f48263d08fb75ea28c1598d845d23a8,,,0.002,0.01,4.0
+2026-11-20,2026-11-19,stall-row-production.up.railway.app,https://stall-row-production.up.railway.app/v1/tube-search,0x097f9685d1e0752bf8b02d61e5ce9be7ea0fba7f,,,0.01,0.005,-0.5
+2026-11-20,2026-11-19,stall-row-production.up.railway.app,https://stall-row-production.up.railway.app/v1/price-check,0x097f9685d1e0752bf8b02d61e5ce9be7ea0fba7f,,,0.05,0.03,-0.4
+2026-11-20,2026-11-19,stall-row-production.up.railway.app,https://stall-row-production.up.railway.app/v1/page-to-markdown,0x097f9685d1e0752bf8b02d61e5ce9be7ea0fba7f,,,0.01,0.005,-0.5
+2026-11-20,2026-11-19,stall-row-production.up.railway.app,https://stall-row-production.up.railway.app/v1/job-scout,0x097f9685d1e0752bf8b02d61e5ce9be7ea0fba7f,,,0.05,0.03,-0.4
+2026-11-20,2026-11-19,list-smith-production.up.railway.app,https://list-smith-production.up.railway.app/v1/grade,0x097f9685d1e0752bf8b02d61e5ce9be7ea0fba7f,,,0.1,0.03,-0.7
+2026-11-20,2026-11-19,route-verdict-production.up.railway.app,https://route-verdict-production.up.railway.app/v1/check,0x097f9685d1e0752bf8b02d61e5ce9be7ea0fba7f,,,0.05,0.03,-0.4
+2026-11-20,2026-11-19,token-verdict-production.up.railway.app,https://token-verdict-production.up.railway.app/v1/pre-trade,0x097f9685d1e0752bf8b02d61e5ce9be7ea0fba7f,,,0.05,0.03,-0.4
+2026-11-20,2026-11-19,stall-row-production.up.railway.app,https://stall-row-production.up.railway.app/v1/card-smith,0x097f9685d1e0752bf8b02d61e5ce9be7ea0fba7f,,,0.1,0.03,-0.7
+2026-11-20,2026-11-19,api.twitterapi.io,https://api.twitterapi.io/x402/twitter/user/last_tweets,0xf08e0d1dc12420e22122e630e5bd4b2a1d2b43b2,,,0.006,0.003,-0.5
+2026-11-20,2026-11-19,api.twitterapi.io,https://api.twitterapi.io/x402/twitter/tweet/advanced_search,0xf08e0d1dc12420e22122e630e5bd4b2a1d2b43b2,,,0.006,0.003,-0.5
+2026-11-20,2026-11-19,api.twitterapi.io,https://api.twitterapi.io/x402/twitter/user/info,0xf08e0d1dc12420e22122e630e5bd4b2a1d2b43b2,,,0.005,0.003,-0.4
+2026-11-20,2026-11-19,api.twitterapi.io,https://api.twitterapi.io/x402/twitter/tweets,0xf08e0d1dc12420e22122e630e5bd4b2a1d2b43b2,,,0.006,0.001,-0.8333
+2026-11-20,2026-11-19,api.rentaipower.app,https://api.rentaipower.app/v1/chat/completions,0x3babcbe31c1e8fa5dbdfaaaaa46379c1ab0fa521,,,0.002,0.001,-0.5
+2026-11-20,2026-11-19,x402-agent-tools.nerolabs.workers.dev,https://x402-agent-tools.nerolabs.workers.dev/ai-answers,0xa969a3127dcc74b2989a4b4e45ae61b81093164a,,,0.03,0.115,2.8333
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/seo-audit-lite,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/page-quality,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.005,0.003,-0.4
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/seo-page,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/tech-stack,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/security-headers,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/email-auth,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/page-meta,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/page-markdown,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/math-eval,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/pdf-text,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/page-diff,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/feed-parse,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/json-validate,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/text-chunk,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/myr-rates,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/domain-lookalike,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/http-ping,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/cors-check,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/canonical-check,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/structured-data,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/readability,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/link-preview,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/sitemap-urls,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/broken-links,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/links-batch,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/ip-info,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/domain-rdap,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/ssl-cert,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/email-validate,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/dns-lookup,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/link-check,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/can-fetch,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/url-trust,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.005,0.003,-0.4
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/agent-readiness,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,mcp.digitalway.de,https://mcp.digitalway.de/v1/hormuz/intel,0xc4cc6b0974daa3f0924800c1775b45a1947a4596,,,0.005,0.01,1.0
+2026-11-20,2026-11-19,api.gentechlabs.net,https://api.gentechlabs.net/v1/market/price/ETH/,0x7ebff188f2eba16518c02864589b1403a5d1296a,data,crypto market price lookup,0.001,0.01,9.0
+2026-11-20,2026-11-19,apix402data.com,https://apix402data.com/api/search,0x17ea1c2afc105d8e9c976ed65aa97c65cf5720f6,,,0.005,0.001,-0.8
+2026-11-20,2026-11-19,certbeforepay.com,https://certbeforepay.com/v1/feed,0xfcae7e8373264acf7f7d00e9d0171671dcdb095c,,,0.002,0.02,9.0
+2026-11-20,2026-11-19,certbeforepay.com,https://certbeforepay.com/v1/peer/challenge,0xfcae7e8373264acf7f7d00e9d0171671dcdb095c,,,0.005,0.05,9.0
+2026-11-20,2026-11-19,x402.nz1labs.com,https://x402.nz1labs.com/v1/cves/:id,0xbb2186dd8569ef2fe39ddf8e9796640b057ffee3,,,0.02,0.003,-0.85
+2026-11-20,2026-11-19,x402.nz1labs.com,https://x402.nz1labs.com/v1/vulns/:id,0xbb2186dd8569ef2fe39ddf8e9796640b057ffee3,,,0.02,0.003,-0.85
+2026-11-20,2026-11-19,redstick.io,https://redstick.io/api/query,0xf25eafdf2b92175af58ff64fe7e1851616c2c1b3,,,0.02,0.05,1.5
+2026-11-20,2026-11-19,verdict.kechlab.com,https://verdict.kechlab.com/v1/phishing-url,0xb36c56a749f81ffeb44a134082dd4744e1d254eb,,,0.0088,0.0073,-0.1705
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/sec-filings,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/federal-register,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/text-extract,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/unit-convert,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/json-schema-infer,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/json-query,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/csv-parse,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/text-diff,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/regex-test,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/date-calc,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/url-clean,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/cron-next,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/json-repair,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/domain-intel,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,stall-row-production.up.railway.app,https://stall-row-production.up.railway.app/v1/recheck/pack,0x097f9685d1e0752bf8b02d61e5ce9be7ea0fba7f,,,1.0,0.1,-0.9
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/address-label,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.002,0.001,-0.5
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/vin-decode,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,data,vehicle vin specification lookup,0.004,0.001,-0.75
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/sea-ai-infra-weekly,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/time-convert,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/token-count,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,shop.lordevo.com,https://shop.lordevo.com/api/quick/redirect-chain,0x0876a79bb5a88bf338e6b47b4530359527b01d73,,,0.002,0.003,0.5
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/usdc-balance,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.003,0.001,-0.6667
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/vehicle-recalls,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.004,0.003,-0.25
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/earthquakes,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.002,0.001,-0.5
+2026-11-20,2026-11-19,crowdcode.app,https://crowdcode.app/s/crowdcode/agents,0x2c22cdaf0339cec580b00632f51e823cf3b919fa,,,0.35,0.1,-0.7143
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/edgar-filings,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,data,sec filings by ticker or cik,0.005,0.003,-0.4
+2026-11-20,2026-11-19,x402.swaphunt.dev,https://x402.swaphunt.dev/v1/market/momentum-rank,0xd6b585dd2f48263d08fb75ea28c1598d845d23a8,,,0.003,0.015,4.0
+2026-11-20,2026-11-19,x402.swaphunt.dev,https://x402.swaphunt.dev/v1/market/coin-strength,0xd6b585dd2f48263d08fb75ea28c1598d845d23a8,,,0.003,0.015,4.0
+2026-11-20,2026-11-19,stall-row-production.up.railway.app,https://stall-row-production.up.railway.app/v1/physical,0x097f9685d1e0752bf8b02d61e5ce9be7ea0fba7f,,,0.05,0.03,-0.4
+2026-11-20,2026-11-19,stall-row-production.up.railway.app,https://stall-row-production.up.railway.app/v1/ledger-dataset,0x097f9685d1e0752bf8b02d61e5ce9be7ea0fba7f,,,0.1,0.03,-0.7
+2026-11-20,2026-11-19,stall-row-production.up.railway.app,https://stall-row-production.up.railway.app/v1/counterparty-report,0x097f9685d1e0752bf8b02d61e5ce9be7ea0fba7f,,,1.0,0.1,-0.9
+2026-11-20,2026-11-19,stall-row-production.up.railway.app,https://stall-row-production.up.railway.app/v1/orchestrate,0x097f9685d1e0752bf8b02d61e5ce9be7ea0fba7f,,,0.75,0.1,-0.8667
+2026-11-20,2026-11-19,lock-smith-production.up.railway.app,https://lock-smith-production.up.railway.app/v1/audit,0x097f9685d1e0752bf8b02d61e5ce9be7ea0fba7f,,,0.5,0.1,-0.8
+2026-11-20,2026-11-19,stall-row-production.up.railway.app,https://stall-row-production.up.railway.app/v1/fleet-check,0x097f9685d1e0752bf8b02d61e5ce9be7ea0fba7f,,,0.1,0.03,-0.7
+2026-11-20,2026-11-19,list-smith-production.up.railway.app,https://list-smith-production.up.railway.app/v1/fix,0x097f9685d1e0752bf8b02d61e5ce9be7ea0fba7f,,,0.5,0.1,-0.8
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/crypto-market,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.015,0.003,-0.8
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/company-dossier,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.036,0.03,-0.1667
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/crypto-dossier,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.041,0.028,-0.3171
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/domain-intel,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,data,domain security and seo intelligence,0.016,0.008,-0.5
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/market-brief,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.009,0.005,-0.4444
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/company-financials,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,data,company financial metrics lookup,0.02,0.015,-0.25
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/gas-snapshot,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.005,0.001,-0.8
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/ip-info,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,data,ip address information lookup,0.002,0.001,-0.5
+2026-11-20,2026-11-19,certbeforepay.com,https://certbeforepay.com/v1/wallet/check,0xfcae7e8373264acf7f7d00e9d0171671dcdb095c,,,0.008,0.05,5.25
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/calldata-decode,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.003,0.002,-0.3333
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/crypto-news,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.002,0.001,-0.5
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/feed-parse,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.004,0.001,-0.75
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/favicon-grab,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.003,0.001,-0.6667
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/dns-propagation,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,compute,dns propagation check,0.002,0.001,-0.5
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/sitemap,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,search,sitemap urls and lastmod,0.002,0.001,-0.5
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/whois,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,data,domain registration data lookup,0.005,0.001,-0.8
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/pdf,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,compute,pdf to text extraction,0.01,0.001,-0.9
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/crypto-global,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.008,0.003,-0.625
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/tech-stack,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,compute,website tech stack detection,0.005,0.001,-0.8
+2026-11-20,2026-11-19,1gateway.dev,https://1gateway.dev/v1/ai/tts,0x6246eee0355dd7a93c888fe59e1151388a0cc5a1,,,0.004,0.01,1.5
+2026-11-20,2026-11-19,apix402data.com,https://apix402data.com/api/clean-url,0x17ea1c2afc105d8e9c976ed65aa97c65cf5720f6,,,0.02,0.001,-0.95
+2026-11-20,2026-11-19,apix402data.com,https://apix402data.com/api/company,0x17ea1c2afc105d8e9c976ed65aa97c65cf5720f6,,,0.01,0.001,-0.9
+2026-11-20,2026-11-19,x402-dataviz-poc.theliminalguy.workers.dev,https://x402-dataviz-poc.theliminalguy.workers.dev/chart-v2,0xb1f5aa2d750547a84fc53b8519de235d7bc29e29,,,0.01,0.012,0.2
+2026-11-20,2026-11-19,agent-data-tools.revmesh2074.workers.dev,https://agent-data-tools.revmesh2074.workers.dev/recommend,0x6293ded2684f1a76e26becef87c137d691fbf800,,,0.002,0.01,4.0
+2026-11-20,2026-11-19,certbeforepay.com,https://certbeforepay.com/v1/cert/issue,0xfcae7e8373264acf7f7d00e9d0171671dcdb095c,,,0.025,0.05,1.0
+2026-11-20,2026-11-19,certbeforepay.com,https://certbeforepay.com/v1/gate,0xfcae7e8373264acf7f7d00e9d0171671dcdb095c,,,0.015,0.05,2.3333
+2026-11-20,2026-11-19,x402.swaphunt.dev,https://x402.swaphunt.dev/v1/derivatives/funding-rates,0xd6b585dd2f48263d08fb75ea28c1598d845d23a8,,,0.003,0.015,4.0
+2026-11-20,2026-11-19,apix402data.com,https://apix402data.com/api/crypto/whale-flows,0x17ea1c2afc105d8e9c976ed65aa97c65cf5720f6,,,0.15,0.02,-0.8667
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/search-and-cite,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.101,0.093,-0.0792
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/earnings-deep-dive,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.032,0.026,-0.1875
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/defi-protocol-scanner,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.031,0.02,-0.3548
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/financial-research,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.018,0.013,-0.2778
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/earnings-watch,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.014,0.012,-0.1429
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/fraud-signals,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.027,0.01,-0.6296
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/defi-dashboard,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.018,0.009,-0.5
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/trend-analysis,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.013,0.009,-0.3077
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/insider-alert,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.009,0.008,-0.1111
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/forecasting-bake-off,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.009,0.006,-0.3333
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/wallet-balances,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.002,0.001,-0.5
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/extract,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.01,0.001,-0.9
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/macro-dashboard,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.065,0.046,-0.2923
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/macro-context,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.036,0.033,-0.0833
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/crypto-research,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.054,0.031,-0.4259
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/media-pipeline,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.03,0.028,-0.0667
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/macro-economics,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.032,0.028,-0.125
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/sec-filings-deep-dive,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.028,0.027,-0.0357
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/contract-audit,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.022,0.021,-0.0455
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/regulatory-watch,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.023,0.021,-0.087
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/document-intel,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.024,0.019,-0.2083
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/content-extraction,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.035,0.017,-0.5143
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/brand-protection,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.018,0.014,-0.2222
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/any-to-markdown,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.026,0.014,-0.4615
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/fixed-income-desk,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.017,0.013,-0.2353
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/security-audit,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.017,0.012,-0.2941
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/entity-enrich,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.022,0.01,-0.5455
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/yield-dashboard,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.014,0.01,-0.2857
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/tx-forensics,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.011,0.009,-0.1818
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/api-investigation,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.017,0.009,-0.4706
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/structured-scrape,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.023,0.009,-0.6087
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/page-audit,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.017,0.008,-0.5294
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/fx-monitor,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.009,0.008,-0.1111
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/email-deliverability,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.009,0.008,-0.1111
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/competitor-scan,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.014,0.007,-0.5
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/status-snapshot,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,compute,site health and crawlability check,0.008,0.007,-0.125
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/link-preview,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.015,0.007,-0.5333
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/dns-network-ops,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.011,0.006,-0.4545
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/image-ocr,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,compute,image ocr text extraction,0.01,0.006,-0.4
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/webhook-intake,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.006,0.005,-0.1667
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/feed-watch,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.016,0.005,-0.6875
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/ssl-audit,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.006,0.005,-0.1667
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/cheapest-rail,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.009,0.005,-0.4444
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/content-grade,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.012,0.004,-0.6667
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/wallet-audit,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.005,0.004,-0.2
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/domain-age,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,data,domain registration and legitimacy,0.008,0.003,-0.625
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/contact-verify,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.004,0.003,-0.25
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/gas-optimizer,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.007,0.003,-0.5714
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/wallet-readiness,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.008,0.003,-0.625
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/coin-ohlc,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.008,0.003,-0.625
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/image-convert,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,compute,image format conversion,0.005,0.003,-0.4
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/pdf-merge,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,compute,merge pdf files,0.004,0.003,-0.25
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/lei-lookup,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,data,legal entity lookup,0.005,0.002,-0.6
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/audio-convert,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.02,0.002,-0.9
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/skill/fred-snapshot,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.005,0.001,-0.8
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/gravatar-check,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,data,email gravatar avatar enrichment,0.002,0.001,-0.5
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/wallet-transactions,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,data,crypto wallet transaction history,0.002,0.001,-0.5
+2026-11-20,2026-11-19,agent402.tools,https://agent402.tools/api/redact,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,compute,redact pii from text,0.002,0.001,-0.5
+2026-11-20,2026-11-19,apix402data.com,https://apix402data.com/api/security/preflight-402,0x17ea1c2afc105d8e9c976ed65aa97c65cf5720f6,,,0.01,0.001,-0.9
+2026-11-20,2026-11-19,apix402data.com,https://apix402data.com/api/trends,0x17ea1c2afc105d8e9c976ed65aa97c65cf5720f6,,,0.005,0.001,-0.8
+2026-11-20,2026-11-19,apix402data.com,https://apix402data.com/api/agent/compose-pipeline,0x17ea1c2afc105d8e9c976ed65aa97c65cf5720f6,,,0.25,0.05,-0.8
+2026-11-20,2026-11-19,apix402data.com,https://apix402data.com/api/research/dossier,0x17ea1c2afc105d8e9c976ed65aa97c65cf5720f6,,,1.0,0.05,-0.95
+2026-11-20,2026-11-19,apix402data.com,https://apix402data.com/api/agent/escrow-arbitration,0x17ea1c2afc105d8e9c976ed65aa97c65cf5720f6,,,0.15,0.02,-0.8667
+2026-11-20,2026-11-19,apix402data.com,https://apix402data.com/api/defi/intent-routing,0x17ea1c2afc105d8e9c976ed65aa97c65cf5720f6,,,0.15,0.02,-0.8667
+2026-11-20,2026-11-19,apix402data.com,https://apix402data.com/api/market/convergence-index,0x17ea1c2afc105d8e9c976ed65aa97c65cf5720f6,,,0.25,0.03,-0.88
+2026-11-20,2026-11-19,apix402data.com,https://apix402data.com/api/defi/arbitrage-radar,0x17ea1c2afc105d8e9c976ed65aa97c65cf5720f6,,,0.25,0.03,-0.88
+2026-11-20,2026-11-19,apix402data.com,https://apix402data.com/api/defi/yield-matrix,0x17ea1c2afc105d8e9c976ed65aa97c65cf5720f6,,,0.25,0.03,-0.88
+2026-11-20,2026-11-19,apix402data.com,https://apix402data.com/api/agent/execution-firewall,0x17ea1c2afc105d8e9c976ed65aa97c65cf5720f6,,,0.1,0.02,-0.8
+2026-11-20,2026-11-19,stall-row-production.up.railway.app,https://stall-row-production.up.railway.app/v1/tube-search/batch,0x097f9685d1e0752bf8b02d61e5ce9be7ea0fba7f,,,0.05,0.03,-0.4
+2026-11-20,2026-11-19,stall-row-production.up.railway.app,https://stall-row-production.up.railway.app/v1/page-to-markdown/batch,0x097f9685d1e0752bf8b02d61e5ce9be7ea0fba7f,,,0.05,0.03,-0.4
+2026-11-20,2026-11-19,stall-row-production.up.railway.app,https://stall-row-production.up.railway.app/v1/toolkit/pack,0x097f9685d1e0752bf8b02d61e5ce9be7ea0fba7f,,,1.0,0.1,-0.9
+2026-11-20,2026-11-19,stall-row-production.up.railway.app,https://stall-row-production.up.railway.app/v1/ledger-dataset/full,0x097f9685d1e0752bf8b02d61e5ce9be7ea0fba7f,,,1.0,0.1,-0.9
+2026-11-20,2026-11-19,app.gtxagent.com,https://app.gtxagent.com/x402/pre-trade-bundle/intro,0x2eb3e9ee27debc7c66045881c9fc0932f575a480,,,0.1,1.0,9.0
