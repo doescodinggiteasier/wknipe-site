@@ -4307,3 +4307,22 @@ date,since,host,resource,pay_to,category,what,old_usd,new_usd,change
 2026-11-23,2026-11-22,stall-row-production.up.railway.app,https://stall-row-production.up.railway.app/v1/index/changes,0x097f9685d1e0752bf8b02d61e5ce9be7ea0fba7f,,,0.1,0.03,-0.7
 2026-11-23,2026-11-22,gibbr.app,https://gibbr.app/agent/translate,0x367f1b3d8ca90d1e087481a9a40d585bf3451a03,compute,skilled trade term translation,0.002,0.01,4.0
 2026-11-23,2026-11-22,www.omenz.org,https://www.omenz.org/api/tollbooth/v1/quote,0x1bd3aaa92243e3d4352bdce07050aec6fcf5e840,,,0.001,0.002,1.0
+2026-11-24,2026-11-23,api.gondola-ai.com,https://api.gondola-ai.com/v1/images/generations,0x8180a3cb090815d50de7d786fa98f4a908e70cd0,,,0.021929,0.020242,-0.0769
+2026-11-24,2026-11-23,oracle.futureus.win,https://oracle.futureus.win/api/assess-token-risk,0xbab300665ffdac6e73225c5dfbd8e32ebb9d2d6d,,,0.002,0.008,3.0
+2026-11-24,2026-11-23,api.agentweather.io,https://api.agentweather.io/v1/pulse/storm,0xa15c55f39ec1dfd87afb09e1959efac2bf44f4ec,,,0.003,0.001,-0.6667
+2026-11-24,2026-11-23,hcrb.in,https://hcrb.in/v1/modules/compliance/einvoice-transform,0xc59c85e661d34084a7769f955d17fd38254a6235,,,0.01,0.05,4.0
+2026-11-24,2026-11-23,api.getanyapi.com,https://api.getanyapi.com/v1/run/tiktok.search_keyword,0x754bd2a6799e766b1e2b9f1ae7fbdc0ced96ef13,,,0.0016,0.0014,-0.125
+2026-11-24,2026-11-23,x402.wowz.cloud,https://x402.wowz.cloud/v1/videos,0xa2a26b90c540ec87b04507f03a5acf712732d4b4,,,0.15,0.1,-0.3333
+2026-11-24,2026-11-23,x402.wowz.cloud,https://x402.wowz.cloud/v1/research/etsy/listings/best,0xa2a26b90c540ec87b04507f03a5acf712732d4b4,,,0.005,0.01,1.0
+2026-11-24,2026-11-23,ziwei-agent.sageduke800.workers.dev,https://ziwei-agent.sageduke800.workers.dev/api/v1/natal,0xbd911da302bbacde1d4f29ebfa1f8803b075b273,,,0.02,0.01,-0.5
+2026-11-24,2026-11-23,api.gentechlabs.net,https://api.gentechlabs.net/v1/agents/search/,0x7ebff188f2eba16518c02864589b1403a5d1296a,,,0.002,0.005,1.5
+2026-11-24,2026-11-23,dspaid.duckdns.org,https://dspaid.duckdns.org/v1/tools/llm-summarize,0xe0b4d6bfc033390c9d7ded6a67cee35451eff934,,,0.05,0.025,-0.5
+2026-11-24,2026-11-23,quno-production.up.railway.app,https://quno-production.up.railway.app/v1/token/base/:address/risk,0x4619eebe22c199197dc430b10220447abd7a8d58,,,0.02,0.005,-0.75
+2026-11-24,2026-11-23,api.jaibber.com,https://api.jaibber.com/x/stockgenius/rating,0xc65c6117befde4f81b0cfab92251b9477c4aeab3,,,0.05,0.03,-0.4
+2026-11-24,2026-11-23,agent-data.centorprat.workers.dev,https://agent-data.centorprat.workers.dev/agent/payer-profile,0x8d38d6026cf3a9805de9c5f0611cee95b532b120,,,0.03,0.05,0.6667
+2026-11-24,2026-11-23,agent402.tools,https://agent402.tools/api/skill/macro-dashboard,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.046,0.042,-0.087
+2026-11-24,2026-11-23,agent402.tools,https://agent402.tools/api/skill/macro-context,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.033,0.028,-0.1515
+2026-11-24,2026-11-23,agent402.tools,https://agent402.tools/api/skill/macro-economics,0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0,,,0.028,0.024,-0.1429
+2026-11-24,2026-11-23,api.getanyapi.com,https://api.getanyapi.com/v1/run/facebook.search_posts,0x754bd2a6799e766b1e2b9f1ae7fbdc0ced96ef13,,,0.01079,0.01664,0.5422
+2026-11-24,2026-11-23,router.inference.ai.exchange,https://router.inference.ai.exchange/x402/v1/chat/completions,0x8c237a73b80a57b5d6ab8ee170f9a7ffb2fd6c36,,,0.000167,0.001,4.988
+2026-11-24,2026-11-23,x402.orthogonal.com,https://x402.orthogonal.com/apollo/api/v1/mixed_companies/search,0xccd231829e24b42195b500028f8779b8f8b1131a,data,company search by filters,0.01,0.04,3.0
