@@ -1,14 +1,14 @@
 {
- "built": "2026-11-25",
- "latest_day": "2026-11-25",
- "days": 57,
+ "built": "2026-11-26",
+ "latest_day": "2026-11-26",
+ "days": 58,
  "user_agent": "wknipe-x402-status/1.0 (+https://wknipe.com/x402/status/; one unpaid request per endpoint per day)",
  "scope_latest": {
-  "endpoints_listed": 88031,
-  "sellers_with_buyers_listed": 482,
-  "endpoints_of_sellers_with_buyers": 24328,
-  "priority_checked_today": 1806,
-  "rotating_checked_today": 2194,
+  "endpoints_listed": 88800,
+  "sellers_with_buyers_listed": 480,
+  "endpoints_of_sellers_with_buyers": 25037,
+  "priority_checked_today": 1779,
+  "rotating_checked_today": 2221,
   "caps": {
    "per_seller_daily": 5,
    "per_host_daily": 60,
@@ -17,51 +17,51 @@
  },
  "latest": [
   {
-   "date": "2026-11-25",
+   "date": "2026-11-26",
    "scope": "all",
    "checked": 4000,
-   "hosts": 1334,
-   "responds": 0.9972,
-   "valid_402": 0.939,
-   "price_match_of_valid": 0.9484,
-   "payto_match_of_valid": 0.9885,
-   "median_latency_ms": 255,
-   "p90_latency_ms": 672
+   "hosts": 1357,
+   "responds": 0.9962,
+   "valid_402": 0.9407,
+   "price_match_of_valid": 0.9357,
+   "payto_match_of_valid": 0.9676,
+   "median_latency_ms": 196,
+   "p90_latency_ms": 577
   },
   {
-   "date": "2026-11-25",
+   "date": "2026-11-26",
    "scope": "priority",
-   "checked": 1806,
-   "hosts": 612,
-   "responds": 1.0,
-   "valid_402": 0.9524,
-   "price_match_of_valid": 0.9767,
-   "payto_match_of_valid": 0.9901,
-   "median_latency_ms": 229,
-   "p90_latency_ms": 638
+   "checked": 1779,
+   "hosts": 610,
+   "responds": 0.9961,
+   "valid_402": 0.9421,
+   "price_match_of_valid": 0.9772,
+   "payto_match_of_valid": 0.9899,
+   "median_latency_ms": 180,
+   "p90_latency_ms": 588
   }
  ],
- "endpoints_7d": 20121,
+ "endpoints_7d": 20162,
  "failure_reasons_7d": [
   [
    "HTTP 400",
-   510
+   505
   ],
   [
    "HTTP 405",
-   183
+   181
   ],
   [
    "HTTP 404",
-   131
+   147
   ],
   [
    "402 without parseable accepts",
-   94
+   92
   ],
   [
    "HTTP 200",
-   89
+   85
   ],
   [
    "HTTP 406",
@@ -69,11 +69,11 @@
   ],
   [
    "no response (URLError)",
-   75
+   81
   ],
   [
    "HTTP 429",
-   74
+   69
   ],
   [
    "HTTP 530",
@@ -81,15 +81,15 @@
   ],
   [
    "HTTP 503",
-   39
+   41
   ],
   [
    "HTTP 401",
-   27
+   29
   ],
   [
-   "HTTP 502",
-   16
+   "no response (TimeoutError)",
+   21
   ]
  ]
 }
