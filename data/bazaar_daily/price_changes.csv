@@ -4427,3 +4427,15 @@ date,since,host,resource,pay_to,category,what,old_usd,new_usd,change
 2026-11-26,2026-11-25,hawaii-conditions.vercel.app,https://hawaii-conditions.vercel.app/gpt/volcano,0xea8b7221507d1a0549e1ab96000a54401a7fdac1,,,0.25,0.05,-0.8
 2026-11-26,2026-11-25,hawaii-conditions.vercel.app,https://hawaii-conditions.vercel.app/gpt/surf,0xea8b7221507d1a0549e1ab96000a54401a7fdac1,,,0.1,0.01,-0.9
 2026-11-26,2026-11-25,hawaii-conditions.vercel.app,https://hawaii-conditions.vercel.app/gpt/weather,0xea8b7221507d1a0549e1ab96000a54401a7fdac1,,,0.1,0.01,-0.9
+2026-11-27,2026-11-26,api.koinelix.com,https://api.koinelix.com/v1/images/generations,0x8883a4955ae31b5e641080dd3bd7f4a04983a5e0,,,0.006,0.005,-0.1667
+2026-11-27,2026-11-26,agentshield.live,https://agentshield.live/routing,0xc87e9a5f237eada767e57eee8fae67ab565225ae,,,0.05,0.035,-0.3
+2026-11-27,2026-11-26,charterhome.dev,https://charterhome.dev/v1/rent,0xb3ff4e7358c5d3286f6f26cbcc38f08cb9df8c7d,,,0.007,0.012,0.7143
+2026-11-27,2026-11-26,api.awesomefee.com,https://api.awesomefee.com/x402/v1/tron/bandwidth,0x16dde7b0a9b092c4dd985af5d9ca04e389b3c87e,,,0.175946,0.174003,-0.011
+2026-11-27,2026-11-26,onchaincheck.dev,https://onchaincheck.dev/arbitrum/gas,0x2ecb9e1fcca7a62758c679f11bc3241466d181d8,,,0.005,0.003,-0.4
+2026-11-27,2026-11-26,onchaincheck.dev,https://onchaincheck.dev/eth/gas,0x2ecb9e1fcca7a62758c679f11bc3241466d181d8,,,0.005,0.003,-0.4
+2026-11-27,2026-11-26,api.getanyapi.com,https://api.getanyapi.com/v1/run/reddit.search,0x754bd2a6799e766b1e2b9f1ae7fbdc0ced96ef13,,,0.00134,0.00135,0.0075
+2026-11-27,2026-11-26,agent-data.centorprat.workers.dev,https://agent-data.centorprat.workers.dev/chain/block/base,0x8d38d6026cf3a9805de9c5f0611cee95b532b120,,,0.003,0.002,-0.3333
+2026-11-27,2026-11-26,royal-ruby-x402.fly.dev,https://royal-ruby-x402.fly.dev/api/law-lookup,0x9b8a27e03ceba490953cda8ab1291c0e13baf72f,,,0.05,0.005,-0.9
+2026-11-27,2026-11-26,api.getanyapi.com,https://api.getanyapi.com/v1/run/linkedin.profile,0x754bd2a6799e766b1e2b9f1ae7fbdc0ced96ef13,,,0.0035,0.00325,-0.0714
+2026-11-27,2026-11-26,contract-eye-x402.fly.dev,https://contract-eye-x402.fly.dev/api/analyze-contract,0x9b8a27e03ceba490953cda8ab1291c0e13baf72f,,,0.05,0.005,-0.9
+2026-11-27,2026-11-26,agent-b-production-8ff6fffc.up.railway.app,https://agent-b-production-8ff6fffc.up.railway.app/chain/base/wallet,0x9339910952287803630d881f2bbe8a02df5c8012,,,0.01,0.002,-0.8
